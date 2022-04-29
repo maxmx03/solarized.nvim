@@ -24,7 +24,7 @@ local highlights = {
 		CursorColumn = {bg = C.dark, },
 		ColorColumn = {bg = C.dark, },
 		NormalFloat = {bg = C.dark, },
-		Visual = {bg = C.ui_blue, },
+		Visual = {bg = C.alt_bg, },
 		VisualNOS = {bg = C.alt_bg, },
 		WarningMsg = {fg = C.error_red, bg = C.bg, },
 		DiffAdd = {fg = C.alt_bg, bg = C.sign_add, },

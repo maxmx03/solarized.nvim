@@ -1,5 +1,5 @@
 local Dashboard = {
-		DashboardHeader = {fg = C.blue, },
+		DashboardHeader = {fg = C.yellow, },
 		DashboardCenter = {fg = C.purple, },
 		DashboardFooter = {fg = C.cyan, },
 }
