@@ -15,6 +15,7 @@ palette:
 
   search_blue: '#073642'
   white: '#fdf8e3'
+  grey: '#CFCECB'
   gray: '#93a1a1'
   dark_gray: '#3e3e3e'
   context: '#93a1a1'
@@ -192,7 +193,7 @@ Treesitter:
   TSMethod: 'blue'
   TSConstMacro: 'cyan'
   TSFuncMacro: 'blue'
-  TSVariable: 'fg'
+  TSVariable: 'grey'
   TSVariableBuiltin: 'cyan'
   TSProperty: 'cyan'
   TSOperator: 'red'

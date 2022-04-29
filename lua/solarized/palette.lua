@@ -8,6 +8,7 @@ local colors = {
 	search_orange = "#cb4b16",
 	search_blue = "#073642",
 	white = "#fdf8e3",
+	grey = "#CFCECB",
 	gray = "#93a1a1",
 	dark_gray = "#3e3e3e",
 	context = "#93a1a1",
