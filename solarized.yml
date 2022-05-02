@@ -148,7 +148,7 @@ Treesitter:
   TSComment: 'gray'
   TSAnnotation: 'blue'
   TSAttribute: 'cyan'
-  TSConstructor: 'yellow'
+  TSConstructor: 'green'
   TSType: 'yellow'
   TSTypeBuiltin: 'yellow'
   TSConditional: 'purple'
@@ -283,7 +283,7 @@ LSP:
   TelescopeBorder: 'blue bg'
   TelescopePromptPrefix: 'purple' 
 
-  NvimTreeFolderIcon: 'blue'
+  NvimTreeFolderIcon: 'green'
   NvimTreeIndentMarker: 'gray'
   NvimTreeNormal: 'light_gray alt_bg'
   NvimTreeVertSplit: 'alt_bg alt_bg'
