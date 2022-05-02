@@ -1,4 +1,4 @@
-" Author: Max Miliano <milianordelcanto@gmail.com>
+" Author: Max Miliano <milianordelcanto@gmail.com.com>
 
 lua << EOF
 package.loaded['solarized'] = nil

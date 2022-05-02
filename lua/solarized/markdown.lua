@@ -1,9 +1,9 @@
 local markdown = {
 		markdownBlockquote = {fg = C.accent, },
 		markdownBold = {fg = C.yellow, style = "bold", },
-		markdownCode = {fg = C.blue, },
-		markdownCodeBlock = {fg = C.blue, },
-		markdownCodeDelimiter = {fg = C.blue, },
+		markdownCode = {fg = C.green, },
+		markdownCodeBlock = {fg = C.green, },
+		markdownCodeDelimiter = {fg = C.green, },
 		markdownH1 = {fg = C.blue, },
 		markdownH2 = {fg = C.blue, },
 		markdownH3 = {fg = C.blue, },
