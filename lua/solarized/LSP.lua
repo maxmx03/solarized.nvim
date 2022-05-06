@@ -29,7 +29,7 @@ local LSP = {
 		TelescopeMatching = {fg = C.info_yellow, style = "bold", },
 		TelescopeBorder = {fg = C.blue, bg = Config.transparent_background and "NONE" or C.bg, },
 		TelescopePromptPrefix = {fg = C.purple, },
-		NvimTreeFolderIcon = {fg = C.green, },
+		NvimTreeFolderIcon = {fg = C.blue, },
 		NvimTreeIndentMarker = {fg = C.gray, },
 		NvimTreeNormal = {fg = C.light_gray, bg = C.alt_bg, },
 		NvimTreeVertSplit = {fg = C.alt_bg, bg = C.alt_bg, },
