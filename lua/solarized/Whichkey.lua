@@ -7,4 +7,3 @@ local Whichkey = {
 }
 
 return Whichkey
-
