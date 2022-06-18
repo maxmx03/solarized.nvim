@@ -1,9 +1,9 @@
 local Whichkey = {
-  WhichKey = { fg = C.light_gray },
-  WhichKeySeperator = { fg = C.light_gray },
-  WhichKeyGroup = { fg = C.light_gray },
-  WhichKeyDesc = { fg = C.light_gray },
-  WhichKeyFloat = { bg = C.popup_back },
+  WhichKey = { fg = C.purple },
+  WhichKeySeperator = { fg = C.fg },
+  WhichKeyGroup = { fg = C.green },
+  WhichKeyDesc = { fg = C.fg },
+  WhichKeyFloat = { bg = C.alt_bg },
 }
 
 return Whichkey
