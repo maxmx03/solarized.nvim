@@ -25,4 +25,3 @@ local markdown = {
 }
 
 return markdown
-
