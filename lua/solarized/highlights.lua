@@ -1,11 +1,10 @@
 function is_transparent(color)
   if vim.g.transparent_background then
-    return "NONE"
+    return 'NONE'
   end
 
   return color
 end
-
 
 local highlights = {
   Normal = { fg = C.base1, bg = Config.transparent_background and 'NONE' or C.base03 },
@@ -28,7 +27,7 @@ local highlights = {
   LineNr = { fg = C.base01, bg = C.base02 },
   FloatBoder = { fg = C.base0, bg = C.base02 },
   Whitespace = { fg = C.base02 },
-  VertSplit = { fg = C.base00, bg = is_transparent(C.base00)},
+  VertSplit = { fg = C.base00, bg = is_transparent(C.base00) },
   CursorLine = { bg = C.base02 },
   CursorColumn = { bg = C.base02 },
   ColorColumn = { bg = C.base02 },
@@ -88,7 +87,7 @@ local highlights = {
   Define = { fg = C.violet },
   Macro = { fg = C.violet },
   PreCondit = { fg = C.violet },
-  Special = { fg = C.base02 },
+  Special = { fg = C.violet },
   SpecialChar = { fg = C.base1 },
   Tag = { fg = C.blue },
   Debug = { fg = C.red },
