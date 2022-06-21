@@ -1,5 +1,5 @@
 local markdown = {
-  markdownBlockquote = { fg = C.accent },
+  markdownBlockquote = { fg = C.base0 },
   markdownBold = { fg = C.yellow, style = 'bold' },
   markdownCode = { fg = C.green },
   markdownCodeBlock = { fg = C.green },
@@ -11,16 +11,16 @@ local markdown = {
   markdownH5 = { fg = C.blue },
   markdownH6 = { fg = C.blue },
   markdownHeadingDelimiter = { fg = C.blue },
-  markdownHeadingRule = { fg = C.accent },
-  markdownId = { fg = C.purple },
+  markdownHeadingRule = { fg = C.base0 },
+  markdownId = { fg = C.violet },
   markdownIdDeclaration = { fg = C.blue },
-  markdownIdDelimiter = { fg = C.light_gray },
-  markdownLinkDelimiter = { fg = C.light_gray },
+  markdownIdDelimiter = { fg = C.base0 },
+  markdownLinkDelimiter = { fg = C.base0 },
   markdownItalic = { style = 'italic' },
   markdownLinkText = { fg = C.blue },
   markdownListMarker = { fg = C.red },
   markdownOrderedListMarker = { fg = C.red },
-  markdownRule = { fg = C.accent },
+  markdownRule = { fg = C.base0 },
   markdownUrl = { fg = C.cyan, style = 'underline' },
 }
 
