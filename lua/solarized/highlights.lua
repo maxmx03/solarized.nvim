@@ -39,7 +39,7 @@ local highlights = {
   PmenuSbar = { fg = C.base2, bg = C.base0 },
   PmenuThumb = { fg = C.base0, bg = C.base03 },
   MatchWord = { style = 'underline' },
-  MatchParen = { fg = C.red, bg = C.base01, style = 'underline' },
+  MatchParen = { fg = C.base1, bg = C.none },
   MatchWordCur = { style = 'underline' },
   MatchParenCur = { style = 'underline' },
   Cursor = { fg = C.base03, bg = C.base0 },
