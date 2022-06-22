@@ -1,8 +1,8 @@
 local Git = {
-  SignAdd = { fg = C.green },
+  SignAdd = { fg = C.blue },
   SignChange = { fg = C.yellow },
   SignDelete = { fg = C.red },
-  GitSignsAdd = { fg = C.green },
+  GitSignsAdd = { fg = C.blue },
   GitSignsChange = { fg = C.yellow },
   GitSignsDelete = { fg = C.red },
 }

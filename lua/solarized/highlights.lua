@@ -1,4 +1,4 @@
-function is_transparent(color)
+local function is_transparent(color)
   if vim.g.transparent_background then
     return 'NONE'
   end
@@ -8,7 +8,7 @@ end
 
 local highlights = {
   Normal = { fg = C.base1, bg = Config.transparent_background and 'NONE' or C.base03 },
-  SignColumn = { fg = C.base0 },
+  SignColumn = { bg = C.base03 },
   MsgArea = { fg = C.base1, bg = Config.transparent_background and 'NONE' or C.base02 },
   ModeMsg = { fg = C.blue },
   MsgSeparator = { fg = C.base1, bg = C.base02 },
@@ -35,9 +35,14 @@ local highlights = {
   Visual = { fg = C.base01, bg = C.base03 },
   VisualNOS = { bg = C.base02 },
   WarningMsg = { fg = C.red, style = 'bold' },
-  DiffAdd = { fg = C.green },
-  DiffChange = { fg = C.yellow, style = 'underline' },
-  DiffDelete = { fg = C.red },
+  DiffAdd = { fg = C.none, bg = C.blue },
+  DiffChange = { fg = C.none, bg = C.yellow, style = 'underline' },
+  DiffDelete = { fg = C.none, bg = C.red },
+  DiffText = { fg = C.none, bg = C.cyan },
+  DiffAdded = { fg = C.blue },
+  DiffRemoved = { fg = C.red },
+  DiffFile = { fg = C.cyan },
+  DiffIndexLine = { fg = C.base00 },
   QuickFixLine = { bg = C.base02 },
   PmenuSbar = { fg = C.base2, bg = C.base0 },
   PmenuThumb = { fg = C.base0, bg = C.base03 },
