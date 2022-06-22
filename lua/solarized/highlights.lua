@@ -1,11 +1,3 @@
-local function is_transparent(color)
-  if vim.g.transparent_background then
-    return 'NONE'
-  end
-
-  return color
-end
-
 local highlights = {
   Normal = { fg = C.base1, bg = Config.transparent_background and 'NONE' or C.base03 },
   SignColumn = { bg = C.base03 },
@@ -18,7 +10,7 @@ local highlights = {
   SpellRare = { fg = C.cyan, style = 'underline' },
   NormalNC = { fg = C.base1, bg = Config.transparent_background and 'NONE' or C.base02 },
   Pmenu = { fg = C.base0, bg = C.base02 },
-  PmenuSel = { fg = C.base01, bg = C.base2 },
+  PmenuSel = { fg = C.base02, bg = C.base0 },
   WildMenu = { fg = C.base2, bg = C.base02 },
   CursorLineNr = { bg = C.base02, style = 'bold' },
   Comment = { fg = C.base0, style = 'italic' },
@@ -27,7 +19,7 @@ local highlights = {
   LineNr = { fg = C.base01, bg = C.base02 },
   FloatBoder = { fg = C.base0, bg = C.base02 },
   Whitespace = { fg = C.base02 },
-  VertSplit = { fg = C.base00, bg = is_transparent(C.base00) },
+  VertSplit = { fg = C.base00, bg = C.base02 },
   CursorLine = { bg = C.base02 },
   CursorColumn = { bg = C.base02 },
   ColorColumn = { bg = C.base02 },
