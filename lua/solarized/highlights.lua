@@ -60,7 +60,7 @@ local highlights = {
   SpecialKey = { fg = C.blue, style = 'bold' },
   Title = { fg = C.orange, style = 'bold' },
   ErrorMsg = { fg = C.red, bg = C.base02, style = 'bold' },
-  Search = { fg = C.yellow },
+  Search = { fg = C.base1, bg = C.base01 },
   IncSearch = { fg = C.orange },
   Substitute = { fg = C.base0, bg = C.orange },
   MoreMsg = { fg = C.blue },
