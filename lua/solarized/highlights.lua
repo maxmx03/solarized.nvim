@@ -84,7 +84,7 @@ local highlights = {
   Define = { fg = C.violet },
   Macro = { fg = C.violet },
   PreCondit = { fg = C.violet },
-  Special = { fg = C.violet },
+  Special = { fg = C.green },
   SpecialChar = { fg = C.base1 },
   Tag = { fg = C.blue },
   Debug = { fg = C.red },
