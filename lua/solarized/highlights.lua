@@ -12,7 +12,7 @@ local highlights = {
   Pmenu = { fg = C.base0, bg = C.base02 },
   PmenuSel = { fg = C.base02, bg = C.base0 },
   WildMenu = { fg = C.base2, bg = C.base02 },
-  CursorLineNr = { bg = C.base02, style = 'bold' },
+  CursorLineNr = { fg = C.base1, bg = C.base02, style = 'bold' },
   Comment = { fg = C.base0, style = 'italic' },
   Folded = { fg = C.base0, bg = C.base02 },
   FoldColumn = { fg = C.base0, bg = C.base02 },
