@@ -16,6 +16,7 @@ local colors = {
   cyan = '#2aa198',
   green = '#859900',
   none = 'NONE',
+  base04 = '#0D647B',
 }
 
 return colors

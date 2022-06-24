@@ -72,7 +72,7 @@ local LSP = {
   StatusLineTermNC = { fg = C.base02 },
   CodiVirtualText = { fg = C.blue },
   IndentBlanklineContextChar = { fg = C.base00 },
-  IndentBlanklineChar = { fg = C.base02 },
+  IndentBlanklineChar = { fg = C.base04 },
   IndentBlanklineSpaceChar = { fg = C.cyan },
   IndentBlanklineSpaceCharBlankline = { fg = C.yellow },
   DashboardHeader = { fg = C.blue },
