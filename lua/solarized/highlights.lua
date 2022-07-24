@@ -194,6 +194,21 @@ local highlights = {
   TelescopeSelection = { fg = colors.yellow },
   TelescopeMatching = { fg = colors.yellow, reverse = true },
   -- }}}
+
+  -- {{{ DASHBOARD
+  DashboardHeader = { fg = colors.primary },
+  DashboardCenter = { fg = colors.blue },
+  DashboardFooter = { fg = colors.content },
+  -- }}}
+
+  -- {{{ GIT
+  SignAdd = { fg = colors.added },
+  SignChange = { fg = colors.changed },
+  SignDelete = { fg = colors.deleted },
+  GitSignsAdd = { fg = colors.added },
+  GitSignsChange = { fg = colors.changed },
+  GitSignsDelete = { fg = colors.deleted },
+  -- }}}
 }
 
 return highlights

@@ -1,4 +1,37 @@
-## Solarized
+## Solarized Colorscheme for Neovim
 
-[How to create colorscheme](https://speakerdeck.com/cocopon/creating-your-lovely-color-scheme)
+Designed By [Ethan Schoonover](https://github.com/altercation) <br />
+Developed By [Max](https://github.com/maxmx03)
 
+## [Visit The Solarized homepage](https://ethanschoonover.com/solarized/)
+
+## Screenshots
+
+![solarized dark](https://github.com/altercation/solarized/raw/master/img/solarized-vim.png)
+
+## Installation
+
+via [Packer](bdirectory for an example of this. Your README doesn't need to be this elaborate, of course, but should be clear enough that users can get up and running)
+```lua
+use {
+  'maxmx03/solarized.nvim',
+  config = function ()
+    local solarized = pcall(require, 'solarized')
+
+    solarized:setup()
+  end
+}
+```
+
+via [vim-plug]
+
+```
+Plug 'maxmx03/solarized.nvim'
+```
+
+init.lua
+```
+local solarized = pcall(require, 'solarized')
+
+solarized:setup()
+```
