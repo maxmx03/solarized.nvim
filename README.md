@@ -11,7 +11,7 @@ Developed By [Max](https://github.com/maxmx03)
 
 ## Installation
 
-via [Packer](bdirectory for an example of this. Your README doesn't need to be this elaborate, of course, but should be clear enough that users can get up and running)
+via [Packer](https://github.com/wbthomason/packer.nvim)
 ```lua
 use {
   'maxmx03/solarized.nvim',
@@ -23,7 +23,7 @@ use {
 }
 ```
 
-via [vim-plug]
+via [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
 Plug 'maxmx03/solarized.nvim'
