@@ -41,7 +41,7 @@ theme.palette = {
 
     -- ACCENT COLORS
     blue = '#268bd2',
-    purple = '#6c71c4',
+    violet = '#6c71c4',
     magenta = '#d33682',
     red = '#dc3545',
     orange = '#cb4b16',
@@ -75,7 +75,7 @@ theme.palette = {
 
     -- ACCENT COLORS
     blue = '#268bd2',
-    purple = '#6c71c4',
+    violet = '#6c71c4',
     magenta = '#d33682',
     red = '#dc3545',
     orange = '#cb4b16',

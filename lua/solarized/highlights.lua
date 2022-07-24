@@ -2,7 +2,7 @@ local theme = require 'solarized.theme'
 local colors = theme:get_colors()
 
 local highlights = {
-  --{{{ BASE
+  --{{{ BASE - VIM LOOK
   Comment = { fg = colors.comment, italic = true },
   ColorColumn = { bg = colors.bg_alt },
   Conceal = { fg = colors.blue },
@@ -60,23 +60,31 @@ local highlights = {
   -- TermCursorNC = { fg = colors.bg, bg = colors.fg },
   Directory = { fg = colors.blue },
   SpecialKey = { fg = colors.red, reverse = true },
-  Title = { fg = colors.primary, bold = true },
+  Title = { fg = colors.orange, bold = true },
   Search = { fg = colors.yellow, reverse = true },
   IncSearch = { fg = colors.orange },
   Substitute = { fg = colors.fg, bg = colors.orange },
   Question = { fg = colors.cyan, bold = true },
   EndOfBuffer = { fg = colors.bg },
-  String = { fg = colors.green },
-  Character = { fg = colors.green },
-  Constant = { fg = colors.orange },
-  Number = { fg = colors.orange },
-  Boolean = { fg = colors.orange },
-  Float = { fg = colors.orange },
+
+  Constant = { fg = colors.cyan },
+  --       *Constant        any constant
+  --        String          a string constant: "this is a string"
+  --        Character       a character constant: 'c', '\n'
+  --        Number          a number constant: 234, 0xff
+  --        Boolean         a boolean constant: TRUE, false
+  --        Float           a floating point constant: 2.3e10
+  -- String = { fg = colors.cyan },
+  -- Character = { fg = colors.cyan },
+  -- Number = { fg = colors.cyan },
+  -- Boolean = { fg = colors.cyan },
+  -- Float = { fg = colors.cyan },
   Identifier = { fg = colors.blue },
   --       *Identifier      any variable name
   --        Function        function name (also: methods for classes)
   -- Variable = { fg = colors.blue },
   -- Function = { fg = colors.blue },
+
   Statement = { fg = colors.green },
   --       *Statement       any statement
   --        Conditional     if, then, else, endif, switch, etc.
@@ -86,11 +94,12 @@ local highlights = {
   --        Keyword         any other keyword
   --        Exception       try, catch, throw
   -- Conditional = { fg = colors.green },
-  -- Repeat = { fg = colors.gren },
+  -- Repeat = { fg = colors.green },
   -- Label = { fg = colors.green },
   -- Operator = { fg = colors.green },
   -- Keyword = { fg = colors.green },
   -- Exception = { fg = colors.green },
+
   PreProc = { fg = colors.orange },
   --       *PreProc         generic Preprocessor
   --        Include         preprocessor #include
@@ -101,6 +110,7 @@ local highlights = {
   -- Define = { fg = colors.orange },
   -- Macro = { fg = colors.orange },
   -- PreCondit = { fg = colors.orange },
+
   Type = { fg = colors.yellow },
   --       *Type            int, long, char, etc.
   --        StorageClass    static, register, volatile, etc.
@@ -109,6 +119,7 @@ local highlights = {
   -- StorageClass = { fg = colors.yellow },
   -- Structure = { fg = colors.yellow },
   -- Typedef = { fg = colors.yellow }
+
   Special = { fg = colors.red },
   --       *Special         any special symbol
   --        SpecialChar     special character in a constant
@@ -121,6 +132,7 @@ local highlights = {
   -- Delimiter = { fg = colors.red },
   -- SpecialComment = { fg = colors.red },
   -- Debug = { fg = colors.red },
+
   Underlined = { fg = colors.violet, underline = true },
   Bold = { bold = true },
   Italic = { italic = true },
@@ -129,6 +141,26 @@ local highlights = {
   Error = { fg = colors.danger, bg = colors.bg_alt, bold = true },
   ErrorMsg = { fg = colors.danger, reverse = true },
   WarningMsg = { fg = colors.warning, bold = true },
+  --}}}
+
+  --{{{ TREESITTER - VSCODE LOOK
+  TSVariable = { fg = colors.blue },
+  TSNumber = { fg = colors.magenta },
+  TSInclude = { fg = colors.green },
+  TSKeyword = { fg = colors.content, bold = true },
+  TSKeywordFunction = { fg = colors.content, bold = true },
+  TSKeywordReturn = { fg = colors.green },
+  TSTag = { fg = colors.blue },
+  TSTagDelimiter = { fg = colors.secondary },
+  TSTagAttribute = { fg = colors.content },
+  TSTitle = { fg = colors.content },
+  TSText = { fg = colors.content },
+  TSPunctDelimiter = { fg = colors.content },
+  TSPunctBracket = { fg = colors.magenta },
+  TSParameter = { fg = colors.secondary },
+  TSURI = { fg = colors.cyan, underline = true },
+  TSConstructor = { fg = colors.blue },
+  TSTypeBuiltin = { fg = colors.green },
   --}}}
 }
 
