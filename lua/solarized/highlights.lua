@@ -13,7 +13,7 @@ local highlights = {
   CursorColumn = { bg = colors.bg_alt },
   CursorLineNr = { fg = colors.content, bg = colors.bg_alt },
   MatchWord = { bold = true },
-  MatchParen = { fg = colors.red, bg = colors.secondary, bold = true },
+  MatchParen = { fg = colors.red, bg = colors.content, bold = true },
   MatchWordCur = { bold = true },
   MatchParenCur = { bold = true },
   Normal = { fg = colors.content, bg = theme:is_transparent(colors.bg) },
@@ -156,12 +156,44 @@ local highlights = {
   TSTitle = { fg = colors.content },
   TSText = { fg = colors.content },
   TSPunctDelimiter = { fg = colors.content },
-  TSPunctBracket = { fg = colors.magenta },
+  TSPunctBracket = { fg = colors.content, bold = true },
   TSParameter = { fg = colors.secondary },
   TSURI = { fg = colors.cyan, underline = true },
   TSConstructor = { fg = colors.blue },
   TSTypeBuiltin = { fg = colors.green },
   --}}}
+
+  --{{{ NVIM-TREE
+  NvimTreeVertSplit = { fg = colors.bg },
+
+  NvimTreeFolderIcon = { fg = colors.blue },
+  NvimTreeFolderName = { fg = colors.fg },
+  NvimTreeOpenedFolderName = { fg = colors.blue },
+  NvimTreeRootFolder = { fg = colors.blue },
+
+  NvimTreeLspDiagnosticsError = { fg = colors.danger },
+  NvimTreeLspDiagnosticsWarning = { fg = colors.warning },
+  NvimTreeLspDiagnosticsInformation = { fg = colors.info },
+
+  NvimTreeGitStaged = { fg = colors.added },
+  NvimTreeGitNew = { fg = colors.added },
+  NvimTreeGitDeleted = { fg = colors.deleted },
+  --}}}
+
+  -- {{{ NEO-TREE
+  NeoTreeDirectoryName = { fg = colors.fg },
+  NeoTreeDirectoryIcon = { fg = colors.blue },
+  NeoTreeRootName = { fg = colors.blue },
+  -- }}}
+
+  -- {{{ TELESCOPE
+  TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
+  TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },
+  TelescopePromptTitle = { fg = colors.bg, bg = colors.blue },
+
+  TelescopeSelection = { fg = colors.yellow },
+  TelescopeMatching = { fg = colors.yellow, reverse = true },
+  -- }}}
 }
 
 return highlights
