@@ -1,13 +1,8 @@
-" Author: Max Miliano <milianordelcanto@gmail.com>
-
 lua << EOF
 package.loaded['solarized'] = nil
 package.loaded['solarized.highlights'] = nil
-package.loaded['solarized.Treesitter'] = nil
-package.loaded['solarized.markdown'] = nil
-package.loaded['solarized.Whichkey'] = nil
-package.loaded['solarized.Git'] = nil
-package.loaded['solarized.LSP'] = nil
+package.loaded['solarized.utils'] = nil
+package.loaded['solarized.theme'] = nil
 
 require("solarized")
 EOF
