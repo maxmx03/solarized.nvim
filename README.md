@@ -25,13 +25,18 @@ use {
 
 via [vim-plug]
 
-```
+```vim
 Plug 'maxmx03/solarized.nvim'
 ```
 
-init.lua
-```
+## How to Config
+```lua
 local solarized = pcall(require, 'solarized')
 
-solarized:setup()
+local default_config = {
+  transparent = false,
+  color_mode = 'dark',
+}
+
+solarized:setup(default_config)
 ```
