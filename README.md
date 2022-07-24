@@ -16,7 +16,11 @@ via [Packer](https://github.com/wbthomason/packer.nvim)
 use {
   'maxmx03/solarized.nvim',
   config = function ()
-    local solarized = pcall(require, 'solarized')
+    local success, solarized = pcall(require, 'solarized')
+
+    if not success then
+      return
+    end
 
     solarized:setup()
   end
@@ -31,7 +35,11 @@ Plug 'maxmx03/solarized.nvim'
 
 ## How to Config
 ```lua
-local solarized = pcall(require, 'solarized')
+local success, solarized = pcall(require, 'solarized')
+
+if not success then
+  return
+end
 
 local default_config = {
   transparent = false,
