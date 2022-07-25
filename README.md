@@ -56,3 +56,11 @@ local your_config = {
 
 solarized:setup(your_config or default_config)
 ```
+
+## Styles
+
+default
+<img src="./docs/style_default.png" />
+
+vscode
+<img src="./docs/style_default.png" />
