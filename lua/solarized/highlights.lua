@@ -189,6 +189,54 @@ highlights.diagnostic = {
 }
 --}}}
 
+--{{{ LSPSAGA
+highlights.lsp_saga = {
+  -- code action
+  LspSagaCodeActionTitle = { fg = colors.primary, bold = true },
+  LspSagaCodeActionBorder = { fg = colors.primary },
+  LspSagaCodeActionTrunCateLine = { link = 'LspSagaCodeActionBorder' },
+  LspSagaCodeActionContent = { fg = colors.content, bold = true },
+
+  --{{{ finder  
+  LspSagaLspFinderBorder = { fg = colors.primary },
+  LspSagaAutoPreview = { fg = colors.primary },
+  LspSagaFinderSelection = { fg = colors.yellow, bold = true },
+  TargetFileName = { link = 'Comment' },
+
+  DefinitionsIcon = { fg = colors.yellow },
+  Definitions = { fg = colors.primary, bold = true, reverse = true },
+  ReferencesIcon = { fg = colors.yellow },
+  References = { fg =  colors.primary, bold = true, reverse = true },
+  LSFinderBarSepStart = { fg = colors.bg_alt },
+  LSFinderBarSepEnd = { fg = colors.bg_alt },
+  LSFinderBarFind = { fg = colors.primary, bg = colors.bg_alt, bold = true },
+  LSFinderBarParam = { fg = colors.primary, bg = colors.bg_alt, bold = true },
+  --}}}
+
+  -- definition
+  LspSagaDefPreviewBorder = { fg = colors.primary },
+
+  -- hover
+  LspSagaHoverBorder = { fg = colors.primary },
+  LspSagaHoverTrunCateLine = { link = 'LspSagaHoverBorder' },
+
+  -- rename
+  LspSagaRenameBorder = { fg = colors.primary },
+  LspSagaRenameMatch = { link = 'Search' },
+
+  --{{{diagnostic
+  LspSagaDiagnosticError = { link = 'DiagnosticError' },
+  LspSagaDiagnosticWarn = { link = 'DiagnosticWarn' },
+  LspSagaDiagnosticInfo = { link = 'DiagnosticInfo' },
+  LspSagaDiagnosticHint = { link = 'DiagnosticHint' },
+  LspSagaErrorTrunCateLine = { link = 'DiagnosticError' },
+  LspSagaWarnTrunCateLine = { link = 'DiagnosticWarn' },
+  LspSagaInfoTrunCateLine = { link = 'DiagnosticInfo' },
+  LspSagaHintTrunCateLine = { link = 'DiagnosticHint' },
+  --}}}
+}
+--}}}
+
 --{{{ MARKDOWN
 highlights.markdown = {
   markdownH1 = { fg = colors.blue },

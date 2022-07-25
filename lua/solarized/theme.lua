@@ -36,7 +36,7 @@ theme.palette = {
     fg = '#839496',
     content = '#93a1a1',
     comment = '#586e75',
-    primary = '#dc3545',
+    primary = '#268bd2',
     secondary = '#586e75',
 
     -- ACCENT COLORS
@@ -70,7 +70,7 @@ theme.palette = {
     fg = '#657b83',
     content = '#586e75',
     comment = '#93a1a1',
-    primary = '#cb4b16',
+    primary = '#d33682',
     secondary = '#93a1a1',
 
     -- ACCENT COLORS
@@ -166,6 +166,7 @@ function theme:setup(config)
   if self.style == 'vscode' then
     utils.set_highlights(highlights.treesitter)
   end
+  utils.set_highlights(highlights.lsp_saga)
   utils.set_highlights(highlights.diagnostic)
   utils.set_highlights(highlights.markdown)
   utils.set_highlights(highlights.nvim_tree)
