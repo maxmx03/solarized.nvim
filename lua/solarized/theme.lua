@@ -50,7 +50,7 @@ theme.palette = {
     cyan = '#2aa198',
 
     -- DIAGNOSTICS TONES
-    success = '#859900',
+    hint = '#2aa198',
     info = '#b58900',
     warning = '#cb4b16',
     danger = '#dc3545',
@@ -84,7 +84,7 @@ theme.palette = {
     cyan = '#2aa198',
 
     -- DIAGNOSTICS TONES
-    success = '#859900',
+    hint = '#2aa198',
     info = '#b58900',
     warning = '#cb4b16',
     danger = '#dc3545',
@@ -107,6 +107,7 @@ function theme:get_colors()
 
   return colors
 end
+
 --}}}
 
 --{{{ verify if is transparent
@@ -117,6 +118,7 @@ function theme:is_transparent(color)
 
   return color
 end
+
 --}}}
 
 --{{{ solarized:setup
@@ -153,6 +155,8 @@ function theme:setup(config)
   if self.style == 'vscode' then
     utils.set_highlights(highlights.treesitter)
   end
+  utils.set_highlights(highlights.diagnostic)
+  utils.set_highlights(highlights.markdown)
   utils.set_highlights(highlights.nvim_tree)
   utils.set_highlights(highlights.neo_tree)
   utils.set_highlights(highlights.telescope)
@@ -160,6 +164,7 @@ function theme:setup(config)
   utils.set_highlights(highlights.git)
   --}}}
 end
+
 --}}}
 
 return theme

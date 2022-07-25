@@ -171,6 +171,50 @@ highlights.treesitter = {
 }
 --}}}
 
+--{{{ DIAGNOSTIC
+highlights.diagnostic = {
+  DiagnosticError = { fg = colors.danger },
+  DiagnosticWarn = { fg = colors.warning },
+  DiagnosticInfo = { fg = colors.info },
+  DiagnosticHint = { fg = colors.info },
+
+  DiagnosticVirtualTextError = { fg = colors.danger },
+  DiagnosticVirtualTextWarn = { fg = colors.warning },
+  DiagnosticVirtualTextInfo = { fg = colors.info },
+  DiagnosticVirtualTextHint = { fg = colors.hint },
+
+  DiagnosticUnderlineError = { undercurl = true, sp = colors.danger },
+  DiagnosticUnderlineWarn = { undercurl = true, sp = colors.warning },
+  DiagnosticUnderlineInfo = { undercurl = true, sp = colors.info },
+  DiagnosticUnderlineHint = { undercurl = true, sp = colors.hint },
+}
+--}}}
+
+--{{{ MARKDOWN
+highlights.markdown = {
+  markdownH1 = { fg = colors.blue },
+  markdownH2 = { fg = colors.blue },
+  markdownH3 = { fg = colors.blue },
+  markdownH4 = { fg = colors.blue },
+  markdownH5 = { fg = colors.blue },
+  markdownH6 = { fg = colors.blue },
+  markdownHeadingDelimiter = { fg = colors.blue },
+  markdownHeadingRule = { fg = colors.blue },
+  markdownBlockquote = { fg = colors.green },
+  markdownBold = { fg = colors.magenta, bold = true },
+  markdownItalic = { fg = colors.magenta, italic = true },
+  markdownCode = { fg = colors.violet },
+  markdownCodeBlock = { fg = colors.violet },
+  markdownCodeDelimiter = { fg = colors.blue },
+  markdownLinkDelimiter = { fg = colors.blue },
+  markdownLinkText = { fg = colors.cyan },
+  markdownListMarker = { fg = colors.yellow },
+  markdownOrderedListMarker = { fg = colors.yellow },
+  markdownRule = { fg = colors.yellow },
+  markdownUrl = { fg = colors.blue, underline = true },
+}
+--}}}
+
 --{{{ NVIM-TREE
 highlights.nvim_tree = {
   NvimTreeNormalNC = { link = 'NormalNC' },
