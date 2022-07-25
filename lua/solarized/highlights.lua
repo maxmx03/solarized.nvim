@@ -29,7 +29,7 @@ local highlights = {
   TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
   FloatBorder = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
   SignColumn = { fg = colors.fg },
-  MsgArea = { fg = colors.content, bg = theme:is_transparent(colors.bg_alt) },
+  MsgArea = { fg = colors.content, bg = theme:is_transparent(colors.bg) },
   ModeMsg = { fg = colors.blue },
   MsgSeparator = { fg = colors.content, bg = colors.bg_alt },
   MoreMsg = { fg = colors.blue },
