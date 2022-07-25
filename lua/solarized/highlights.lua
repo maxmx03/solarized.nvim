@@ -65,7 +65,7 @@ highlights.base = {
   Title = { fg = colors.orange, bold = true },
   Search = { fg = colors.yellow, reverse = true },
   IncSearch = { fg = colors.orange },
-  Substitute = { fg = colors.fg, bg = colors.orange },
+  Substitute = { fg = colors.orange, reverse = true },
   Question = { fg = colors.cyan, bold = true },
   EndOfBuffer = { fg = colors.bg },
 
@@ -273,6 +273,24 @@ highlights.git = {
   GitGutterAdd = { fg = colors.added },
   GitGutterChange = { fg = colors.changed },
   GitGutterDelete = { fg = colors.deleted },
+}
+--}}}
+
+--{{{ WHICH KEY
+highlights.which_key = {
+  WhichKey = { fg = colors.blue },
+  WhichKeySeperator = { fg = colors.blue },
+  WhichKeyGroup = { fg = colors.orange },
+  WhichKeyDesc = { fg = colors.fg },
+  WhichKeyFloat = { bg = colors.bg_alt },
+}
+--}}}
+
+--{{{ INDENT BLANKLINE
+highlights.indent_blanline = {
+  IndentBlanklineContextChar = { fg = colors.cyan },
+  IndentBlanklineChar = { fg = colors.fg },
+  IndentBlanklineSpaceChar = { fg = colors.cyan },
 }
 --}}}
 

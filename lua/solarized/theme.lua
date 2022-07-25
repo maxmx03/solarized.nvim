@@ -105,6 +105,10 @@ theme.style = 'default'
 function theme:get_colors()
   local colors = self.palette[self.mode]
 
+  if not colors then
+    return self.palette['dark']
+  end
+
   return colors
 end
 
@@ -144,7 +148,14 @@ function theme:setup(config)
     self.style = config.style or self.style
   end
 
-  vim.o.background = self.mode
+  local success = pcall(function()
+    vim.o.background = self.mode
+  end)
+
+  if not success then
+    vim.o.background = 'dark'
+  end
+
   --}}}
 
   --{{{ load highlights
@@ -162,9 +173,10 @@ function theme:setup(config)
   utils.set_highlights(highlights.telescope)
   utils.set_highlights(highlights.dashboard)
   utils.set_highlights(highlights.git)
+  utils.set_highlights(highlights.which_key)
+  utils.set_highlights(highlights.indent_blanline)
   --}}}
 end
-
 --}}}
 
 return theme
