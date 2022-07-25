@@ -118,7 +118,7 @@ local highlights = {
   --        Typedef         A typedef
   -- StorageClass = { fg = colors.yellow },
   -- Structure = { fg = colors.yellow },
-  -- Typedef = { fg = colors.yellow }
+  -- Typedef = { fg = colors.yellow },
 
   Special = { fg = colors.red },
   --       *Special         any special symbol
@@ -160,8 +160,11 @@ local highlights = {
   TSParameter = { fg = colors.secondary },
   TSURI = { fg = colors.cyan, underline = true },
   TSConstructor = { fg = colors.blue },
+  TSType = { fg = colors.blue },
   TSTypeBuiltin = { fg = colors.green },
-  --}}}
+  TSField = { fg = colors.green },
+  TSProperty = { fg = colors.green },
+  -- --}}}
 
   --{{{ NVIM-TREE
   NvimTreeVertSplit = { fg = colors.bg },
