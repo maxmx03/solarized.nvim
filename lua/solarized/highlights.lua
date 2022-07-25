@@ -1,8 +1,10 @@
 local theme = require 'solarized.theme'
 local colors = theme:get_colors()
 
-local highlights = {
-  --{{{ BASE - VIM LOOK
+local highlights = {}
+
+--{{{ BASE - VIM LOOK
+highlights.base = {
   Comment = { fg = colors.comment, italic = true },
   ColorColumn = { bg = colors.bg_alt },
   Conceal = { fg = colors.blue },
@@ -141,9 +143,11 @@ local highlights = {
   Error = { fg = colors.danger, bg = colors.bg_alt, bold = true },
   ErrorMsg = { fg = colors.danger, reverse = true },
   WarningMsg = { fg = colors.warning, bold = true },
-  --}}}
+}
+--}}}
 
-  --{{{ TREESITTER - VSCODE LOOK
+--{{{ TREESITTER - VSCODE LOOK
+highlights.treesitter = {
   TSVariable = { fg = colors.blue },
   TSNumber = { fg = colors.magenta },
   TSInclude = { fg = colors.green },
@@ -164,9 +168,12 @@ local highlights = {
   TSTypeBuiltin = { fg = colors.green },
   TSField = { fg = colors.green },
   TSProperty = { fg = colors.green },
-  -- --}}}
+}
+--}}}
 
-  --{{{ NVIM-TREE
+--{{{ NVIM-TREE
+highlights.nvim_tree = {
+  NvimTreeNormalNC = { link = 'NormalNC' },
   NvimTreeVertSplit = { fg = colors.bg },
 
   NvimTreeFolderIcon = { fg = colors.blue },
@@ -181,37 +188,45 @@ local highlights = {
   NvimTreeGitStaged = { fg = colors.added },
   NvimTreeGitNew = { fg = colors.added },
   NvimTreeGitDeleted = { fg = colors.deleted },
-  --}}}
+}
+--}}}
 
-  -- {{{ NEO-TREE
+-- {{{ NEO-TREE
+highlights.neo_tree = {
   NeoTreeDirectoryName = { fg = colors.fg },
   NeoTreeDirectoryIcon = { fg = colors.blue },
   NeoTreeRootName = { fg = colors.blue },
-  -- }}}
+}
+-- }}}
 
-  -- {{{ TELESCOPE
+--{{{ TELESCOPE
+highlights.telescope = {
   TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
   TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },
   TelescopePromptTitle = { fg = colors.bg, bg = colors.blue },
 
   TelescopeSelection = { fg = colors.yellow },
   TelescopeMatching = { fg = colors.yellow, reverse = true },
-  -- }}}
+}
+--}}}
 
-  -- {{{ DASHBOARD
+--{{{ DASHBOARD
+highlights.dashboard = {
   DashboardHeader = { fg = colors.primary },
   DashboardCenter = { fg = colors.blue },
   DashboardFooter = { fg = colors.content },
-  -- }}}
+}
+--}}}
 
-  -- {{{ GIT
+--{{{ GIT
+highlights.git = {
   SignAdd = { fg = colors.added },
   SignChange = { fg = colors.changed },
   SignDelete = { fg = colors.deleted },
   GitSignsAdd = { fg = colors.added },
   GitSignsChange = { fg = colors.changed },
   GitSignsDelete = { fg = colors.deleted },
-  -- }}}
 }
+--}}}
 
 return highlights

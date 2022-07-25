@@ -1,6 +1,6 @@
 -- {{{ solarized colors
 -- {{{ dark
--- base03    #002b36 background
+-- bas03    #002b36 background
 -- base02    #073642 background highlights
 -- base01    #586e75 comments / secondary content
 -- base0     #839496 foreground / body text
@@ -97,15 +97,19 @@ theme.palette = {
   },
 }
 -- }}}
-theme.color_mode = 'dark'
+theme.mode = 'dark'
 theme.transparent = false
+theme.style = 'default'
 
+--{{{ get colors with the correct theme
 function theme:get_colors()
-  local colors = self.palette[self.color_mode]
+  local colors = self.palette[self.mode]
 
   return colors
 end
+--}}}
 
+--{{{ verify if is transparent
 function theme:is_transparent(color)
   if self.transparent then
     return 'NONE'
@@ -113,8 +117,11 @@ function theme:is_transparent(color)
 
   return color
 end
+--}}}
 
+--{{{ solarized:setup
 function theme:setup(config)
+  --{{{ hl clear, reset syntax, colors_name
   if vim.g.colors_name then
     vim.cmd 'hi clear'
   end
@@ -124,18 +131,35 @@ function theme:setup(config)
   end
 
   vim.g.colors_name = 'solarized'
+  --}}}
+
+  --{{{ default config or user config
+  config = config or {}
 
   if not vim.tbl_isempty(config) then
-    self.color_mode = config.color_mode or self.color_mode
+    self.mode = config.mode or self.mode
     self.transparent = config.transparent or self.transparent
+    self.style = config.style or self.style
   end
 
-  vim.o.background = self.color_mode
+  vim.o.background = self.mode
+  --}}}
 
+  --{{{ load highlights
   local highlights = require 'solarized.highlights'
   local utils = require 'solarized.utils'
 
-  utils.set_highlights(highlights)
+  utils.set_highlights(highlights.base)
+  if self.style == 'vscode' then
+    utils.set_highlights(highlights.treesitter)
+  end
+  utils.set_highlights(highlights.nvim_tree)
+  utils.set_highlights(highlights.neo_tree)
+  utils.set_highlights(highlights.telescope)
+  utils.set_highlights(highlights.dashboard)
+  utils.set_highlights(highlights.git)
+  --}}}
 end
+--}}}
 
 return theme

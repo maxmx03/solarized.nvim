@@ -34,6 +34,8 @@ Plug 'maxmx03/solarized.nvim'
 ```
 
 ## How to Config
+
+example
 ```lua
 local success, solarized = pcall(require, 'solarized')
 
@@ -42,9 +44,15 @@ if not success then
 end
 
 local default_config = {
-  transparent = false,
-  color_mode = 'dark',
+  transparent = false, -- true/false
+  mode = 'dark', -- light/dark
+  style = 'default' -- default/vscode
 }
 
-solarized:setup(default_config)
+local your_config = {
+  mode = 'dark',
+  style = 'vscode',
+}
+
+solarized:setup(your_config or default_config)
 ```
