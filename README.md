@@ -63,4 +63,4 @@ default
 <img src="./docs/style_default.png" />
 
 vscode
-<img src="./docs/style_default.png" />
+<img src="./docs/style_vscode.png" />
