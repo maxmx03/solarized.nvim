@@ -270,6 +270,9 @@ highlights.git = {
   GitSignsAdd = { fg = colors.added },
   GitSignsChange = { fg = colors.changed },
   GitSignsDelete = { fg = colors.deleted },
+  GitGutterAdd = { fg = colors.added },
+  GitGutterChange = { fg = colors.changed },
+  GitGutterDelete = { fg = colors.deleted },
 }
 --}}}
 
