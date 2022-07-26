@@ -45,7 +45,7 @@ highlights.base = {
   LineNr = { fg = colors.secondary, bg = colors.bg_alt },
   Whitespace = { fg = colors.bg_alt },
   VertSplit = { fg = colors.fg, bg = colors.bg_alt },
-  Visual = { fg = colors.secondary, bg = colors.bg },
+  Visual = { bg = colors.bg_alt },
   VisualNOS = { bg = colors.bg_alt },
   DiffAdd = { fg = colors.added, sp = colors.added, reverse = true },
   DiffChange = { fg = colors.changed, sp = colors.changed, reverse = true },
@@ -356,6 +356,39 @@ highlights.indent_blanline = {
   IndentBlanklineContextChar = { fg = colors.cyan },
   IndentBlanklineChar = { fg = colors.fg },
   IndentBlanklineSpaceChar = { fg = colors.cyan },
+}
+--}}}
+
+--{{{ CMP KIND
+highlights.cmp_kind = {
+  CmpItemAbbrDeprecated = { fg = colors.secondary, strikethrough = true },
+  CmpItemAbbrMatch = { fg = colors.yellow, reverse = true },
+  CmpItemAbbrMatchFuzzy = { fg = colors.yellow, reverse = true },
+  CmpItemKindFunction = { fg = colors.primary },
+  CmpItemKindMethod = { fg = colors.primary },
+  CmpItemKindConstructor = { fg = colors.primary },
+  CmpItemKindClass = { fg = colors.primary },
+  CmpItemKindEnum = { fg = colors.primary },
+  CmpItemKindEvent = { fg = colors.yellow },
+  CmpItemKindInterface = { fg = colors.primary },
+  CmpItemKindStruct = { fg = colors.primary },
+  CmpItemKindVariable = { fg = colors.violet },
+  CmpItemKindField = { fg = colors.violet },
+  CmpItemKindProperty = { fg = colors.violet },
+  CmpItemKindEnumMember = { fg = colors.orange },
+  CmpItemKindConstant = { fg = colors.orange },
+  CmpItemKindKeyword = { fg = colors.purple },
+  CmpItemKindModule = { fg = colors.primary },
+  CmpItemKindValue = { fg = colors.fg },
+  CmpItemKindUnit = { fg = colors.fg },
+  CmpItemKindText = { fg = colors.fg },
+  CmpItemKindSnippet = { fg = colors.fg },
+  CmpItemKindFile = { fg = colors.fg },
+  CmpItemKindFolder = { fg = colors.fg },
+  CmpItemKindColor = { fg = colors.fg },
+  CmpItemKindReference = { fg = colors.fg },
+  CmpItemKindOperator = { fg = colors.fg },
+  CmpItemKindTypeParameter = { fg = colors.violet },
 }
 --}}}
 

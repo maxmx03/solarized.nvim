@@ -166,10 +166,12 @@ function theme:setup(config)
 
   if self.style == 'neovim' then
     utils.set_highlights(highlights.treesitter_neovim)
+    utils.set_highlights(highlights.cmp_kind)
   end
 
   if self.style == 'vscode' then
     utils.set_highlights(highlights.treesitter_vscode)
+    utils.set_highlights(highlights.cmp_kind)
   end
 
   utils.set_highlights(highlights.lsp_saga)
@@ -184,6 +186,7 @@ function theme:setup(config)
   utils.set_highlights(highlights.indent_blanline)
   --}}}
 end
+
 --}}}
 
 return theme

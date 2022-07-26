@@ -11,6 +11,7 @@ function utils.set_highlights(highlight_groups)
       reverse = group.reverse or false,
       underline = group.underline or false,
       undercurl = group.undercurl or false,
+      strikethrough = group.strikethrough or false,
       link = group.link or nil,
     }
 
