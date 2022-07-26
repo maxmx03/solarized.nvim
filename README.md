@@ -59,8 +59,12 @@ solarized:setup(your_config or default_config)
 
 ## Styles
 
-default
-<img src="./docs/style_default.png" />
+vim
+<img src="./docs/style_vim.png" />
+
+neovim
+<img src="./docs/style_neovim.png" />
 
 vscode
 <img src="./docs/style_vscode.png" />
+
