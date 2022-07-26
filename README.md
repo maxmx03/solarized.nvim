@@ -46,12 +46,12 @@ end
 local default_config = {
   transparent = false, -- true/false
   mode = 'dark', -- light/dark
-  style = 'default' -- default/vscode
+  style = nil -- neovim/vscode
 }
 
 local your_config = {
   mode = 'dark',
-  style = 'vscode',
+  style = 'neovim',
 }
 
 solarized:setup(your_config or default_config)

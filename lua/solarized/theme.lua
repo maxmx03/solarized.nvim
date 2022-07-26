@@ -99,7 +99,7 @@ theme.palette = {
 -- }}}
 theme.mode = 'dark'
 theme.transparent = false
-theme.style = 'default'
+theme.style = nil
 
 --{{{ get colors with the correct theme
 function theme:get_colors()
@@ -163,9 +163,15 @@ function theme:setup(config)
   local utils = require 'solarized.utils'
 
   utils.set_highlights(highlights.base)
-  if self.style == 'vscode' then
-    utils.set_highlights(highlights.treesitter)
+
+  if self.style == 'neovim' then
+    utils.set_highlights(highlights.treesitter_neovim)
   end
+
+  if self.style == 'vscode' then
+    utils.set_highlights(highlights.treesitter_vscode)
+  end
+
   utils.set_highlights(highlights.lsp_saga)
   utils.set_highlights(highlights.diagnostic)
   utils.set_highlights(highlights.markdown)

@@ -145,8 +145,26 @@ highlights.base = {
 }
 --}}}
 
+--{{{ TREESITTER - NEOVIM LOOK
+highlights.treesitter_neovim = {
+  TSTag = { fg = colors.blue },
+  TSNumber = { fg = colors.violet },
+  TSInclude = { fg = colors.violet },
+  TSKeyword = { fg = colors.blue, italic = true },
+  TSKeywordReturn = { fg = colors.violet, italic = true },
+  TSTagDelimiter = { fg = colors.secondary },
+  TSTagAttribute = { fg = colors.content },
+  TSPunctDelimiter = { fg = colors.content },
+  TSPunctBracket = { fg = colors.content, bold = true },
+  TSParameter = { fg = colors.orange, italic = true },
+  TSConstructor = { fg = colors.blue },
+  TSVariableBuiltin = { fg = colors.violet, italic = true },
+  TSURI = { fg = colors.cyan, underline = true },
+}
+--}}}
+
 --{{{ TREESITTER - VSCODE LOOK
-highlights.treesitter = {
+highlights.treesitter_vscode = {
   TSVariable = { fg = colors.blue },
   TSNumber = { fg = colors.magenta },
   TSInclude = { fg = colors.green },
@@ -197,7 +215,7 @@ highlights.lsp_saga = {
   LspSagaCodeActionTrunCateLine = { link = 'LspSagaCodeActionBorder' },
   LspSagaCodeActionContent = { fg = colors.content, bold = true },
 
-  --{{{ finder  
+  --{{{ finder
   LspSagaLspFinderBorder = { fg = colors.primary },
   LspSagaAutoPreview = { fg = colors.primary },
   LspSagaFinderSelection = { fg = colors.yellow, bold = true },
@@ -206,7 +224,7 @@ highlights.lsp_saga = {
   DefinitionsIcon = { fg = colors.yellow },
   Definitions = { fg = colors.primary, bold = true, reverse = true },
   ReferencesIcon = { fg = colors.yellow },
-  References = { fg =  colors.primary, bold = true, reverse = true },
+  References = { fg = colors.primary, bold = true, reverse = true },
   LSFinderBarSepStart = { fg = colors.bg_alt },
   LSFinderBarSepEnd = { fg = colors.bg_alt },
   LSFinderBarFind = { fg = colors.primary, bg = colors.bg_alt, bold = true },
@@ -224,7 +242,7 @@ highlights.lsp_saga = {
   LspSagaRenameBorder = { fg = colors.primary },
   LspSagaRenameMatch = { link = 'Search' },
 
-  --{{{diagnostic
+  --{{{ diagnostic
   LspSagaDiagnosticError = { link = 'DiagnosticError' },
   LspSagaDiagnosticWarn = { link = 'DiagnosticWarn' },
   LspSagaDiagnosticInfo = { link = 'DiagnosticInfo' },
@@ -304,8 +322,8 @@ highlights.telescope = {
 --{{{ DASHBOARD
 highlights.dashboard = {
   DashboardHeader = { fg = colors.primary },
-  DashboardCenter = { fg = colors.blue },
-  DashboardFooter = { fg = colors.content },
+  DashboardCenter = { fg = colors.fg },
+  DashboardFooter = { fg = colors.violet },
 }
 --}}}
 
