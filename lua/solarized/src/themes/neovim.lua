@@ -6,7 +6,7 @@ return function(colorscheme, config)
 
   return {
     --{{{ BASE
-    Comment = { fg = colors.comment, italic = comment_style.italic or true, bold = comment_style.bold or false },
+    Comment = { fg = colors.comment, italic = comment_style.italic, bold = comment_style.bold },
     ColorColumn = { bg = colors.bg_alt },
     Conceal = { fg = colors.blue },
     Cursor = { fg = colors.bg, bg = colors.fg },
@@ -81,13 +81,13 @@ return function(colorscheme, config)
     -- Number = { fg = colors.cyan },
     -- Boolean = { fg = colors.cyan },
     -- Float = { fg = colors.cyan },
-    Identifier = { fg = colors.blue, italic = functions_style.italic or false, bold = functions_style.bold or false },
+    Identifier = { fg = colors.blue, italic = functions_style.italic, bold = functions_style.bold },
     --       *Identifier      any variable name
     --        Function        function name (also: methods for classes)
     -- Variable = { fg = colors.blue },
     -- Function = { fg = colors.blue },
 
-    Statement = { fg = colors.green, italic = keywords_style.italic or false, bold = keywords_style.bold or false },
+    Statement = { fg = colors.green, italic = keywords_style.italic, bold = keywords_style.bold },
     --       *Statement       any statement
     --        Conditional     if, then, else, endif, switch, etc.
     --        Repeat          for, do, while, etc.
@@ -149,12 +149,12 @@ return function(colorscheme, config)
     TSTag = { fg = colors.blue },
     TSNumber = { fg = colors.violet },
     TSInclude = { fg = colors.violet },
-    TSKeyword = { fg = colors.blue, italic = true },
-    TSKeywordReturn = { fg = colors.violet, italic = true },
+    TSKeyword = { fg = colors.blue, italic = keywords_style.italic, bold = keywords_style.bold },
+    TSKeywordReturn = { fg = colors.violet, italic = keywords_style.italic, bold = keywords_style.bold },
     TSTagDelimiter = { fg = colors.secondary },
     TSTagAttribute = { fg = colors.content },
     TSPunctDelimiter = { fg = colors.content },
-    TSPunctBracket = { fg = colors.content, bold = true },
+    TSPunctBracket = { fg = colors.content },
     TSParameter = { fg = colors.orange, italic = true },
     TSConstructor = { fg = colors.blue },
     TSVariableBuiltin = { fg = colors.violet, italic = true },

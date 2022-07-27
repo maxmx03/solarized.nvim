@@ -3,8 +3,8 @@ M.mode = 'dark'
 M.theme = 'vim'
 M.transparent = false
 M.style = {
-  comments = { italic = false, bold = false },
-  keywords = { italic = false, bold = false },
+  comments = { italic = true, bold = false },
+  keywords = { italic = true, bold = false },
   functions = { italic = false, bold = false },
 }
 

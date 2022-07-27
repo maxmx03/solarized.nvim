@@ -24,9 +24,12 @@ function solarized.setup(user_config)
     solarized.config:set_mode(user_config.mode)
     solarized.config:set_theme(user_config.theme)
     solarized.config:set_transparent(user_config.transparent)
-    solarized.config:set_comments_style(user_config.comments)
-    solarized.config:set_keywords_style(user_config.keywords)
-    solarized.config:set_functions_style(user_config.functions)
+
+    if user_config.style then
+      solarized.config:set_comments_style(user_config.style.comments)
+      solarized.config:set_keywords_style(user_config.style.keywords)
+      solarized.config:set_functions_style(user_config.style.functions)
+    end
   end
 
   solarized:set_colors(colors.dark, colors.light)
