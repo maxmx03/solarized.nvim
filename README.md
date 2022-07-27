@@ -9,6 +9,18 @@ Developed By [Max](https://github.com/maxmx03)
 
 ![solarized dark](https://github.com/altercation/solarized/raw/master/img/solarized-vim.png)
 
+## Themes
+
+### *Vim*
+<img src="./docs/style_vim.png" />
+
+### *Neovim*
+<img src="./docs/style_neovim.png" />
+
+### *Vscode*
+<img src="./docs/style_vscode.png" />
+
+
 ## Installation
 
 via [Packer](https://github.com/wbthomason/packer.nvim)
@@ -22,7 +34,7 @@ use {
       return
     end
 
-    solarized:setup()
+    solarized.setup()
   end
 }
 ```
@@ -32,7 +44,6 @@ via [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
 Plug 'maxmx03/solarized.nvim'
 ```
-
 ## How to Config
 
 example
@@ -44,27 +55,21 @@ if not success then
 end
 
 local default_config = {
-  transparent = false, -- true/false
-  mode = 'dark', -- light/dark
-  style = nil -- neovim/vscode
+  mode = 'dark', -- dark/light
+  theme = 'vim', -- vim/neovim/vscode
+  transparent = false, -- false/true
+  style = {
+   comments = { italic = true, bold = false },
+   keywords = { italic = true, bold = false },
+   functions = { italic = false, bold = false },
+  }
 }
 
-local your_config = {
-  mode = 'dark',
-  style = 'neovim',
-}
+solarized.setup(default_config)
 
-solarized:setup(your_config or default_config)
+vim.cmd 'colorscheme solarized'
+
+-- (alternative)
+-- local theme = 'solarized'
+-- vim.api.nvim_cmd({ cmd = 'colorscheme', args = { theme } }, { output = false })
 ```
-
-## Styles
-
-vim
-<img src="./docs/style_vim.png" />
-
-neovim
-<img src="./docs/style_neovim.png" />
-
-vscode
-<img src="./docs/style_vscode.png" />
-
