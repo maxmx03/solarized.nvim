@@ -1,6 +1,6 @@
-local utils = {}
+local M = {}
 
-function utils.set_highlights(highlight_groups)
+function M.set_highlights(highlight_groups)
   for group_name, group in pairs(highlight_groups) do
     local val = {
       fg = group.fg or 'NONE',
@@ -19,4 +19,4 @@ function utils.set_highlights(highlight_groups)
   end
 end
 
-return utils
+return M
