@@ -1,8 +1,5 @@
-local M= {}
+local M = {}
 
-M.mode = 'dark'
-M.theme = 'vim'
-M.transparent = false
 M.highlights = {
   vim = {},
   neovim = {},
@@ -37,51 +34,48 @@ M.palette = {
   light = {},
 }
 
-function M:new(object)
+function M:new(object, config)
   object = object or {}
 
   self.__index = self
   setmetatable(object, self)
 
+  self.config = config
+
   return object
 end
 
-function M:setPalette(dark, light)
-  self.dark = dark
-  self.light = light
-end
-
-function M:getPalette()
-  return self.palette
-end
-
-function M:setColors(dark, light)
+function M:set_colors(dark, light)
   self.palette.dark = dark
   self.palette.light = light
 end
 
-function M:getColors()
-  local colors = self.palette[self.mode]
+function M:get_colors()
+  local colors = self.palette[self.config.mode]
 
   return colors
 end
 
-function M:setHighlights(vim, neovim, vscode)
-  self.highlights.vim = vim
-  self.highlights.neovim = neovim
-  self.highlights.vscode = vscode
+function M:set_highlight(vim, neovim, vscode)
+  self.highlights.vim = vim(self, self.config)
+  -- self.highlights.neovim = neovim(self, self.config)
+  -- self.highlights.vscode = vscode(self, self.config)
 end
 
-function M:getHighlight()
-  return self.highlights[self.theme]
+function M:get_highlight()
+  return self.highlights[self.config.theme]
 end
 
-function M:getTransparent()
-  return self.transparent
-end
+function M:is_transparent(color, color_alt)
+  if self.config.transparent and color_alt then
+    return color_alt
+  end
 
-function M:setTransparent(transparent)
-  self.transparent = transparent
+  if self.config.transparent then
+    return 'NONE'
+  end
+
+  return color
 end
 
 return M
