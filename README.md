@@ -76,7 +76,7 @@ vim.cmd 'colorscheme solarized'
 
 ## How to customize Solarized
 
-```
+```lua
 local solarized = require 'solarized'
 local colors = solarized:get_colors()
 
