@@ -9,6 +9,9 @@ local utils = require 'solarized.src.utils'
 local config = Config:new {}
 local solarized = Colorscheme:new({}, config)
 
+solarized:set_colors(colors.dark, colors.light)
+solarized:set_highlights_themes(vim_theme, neovim_theme, vscode_theme)
+
 function solarized.setup(user_config)
   if vim.g.colors_name then
     vim.cmd 'hi clear'
@@ -32,10 +35,7 @@ function solarized.setup(user_config)
     end
   end
 
-  solarized:set_colors(colors.dark, colors.light)
-  solarized:set_highlights(vim_theme, neovim_theme, vscode_theme)
-
-  local highlight_groups = solarized:get_highlights()
+  local highlight_groups = solarized:get_highlights_theme()
 
   utils.set_highlights(highlight_groups)
 end

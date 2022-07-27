@@ -73,3 +73,16 @@ vim.cmd 'colorscheme solarized'
 -- local theme = 'solarized'
 -- vim.api.nvim_cmd({ cmd = 'colorscheme', args = { theme } }, { output = false })
 ```
+
+## How to customize Solarized
+
+```
+local solarized = require 'solarized'
+local colors = solarized:get_colors()
+
+solarized.highlights.vim.Normal = { fg = colors.cyan, bg = colors.bg }
+solarized.highlights.neovim.Normal = { fg = colors.cyan, bg = colors.bg }
+solarized.highlights.vscode.Normal = { fg = colors.cyan, bg = colors.bg }
+
+solarized.setup()
+```
