@@ -6,31 +6,7 @@ M.highlights = {
   vscode = {},
 }
 M.palette = {
-  dark = {
-    --{{{ colors
-    -- fg - foreground
-    -- bg - background
-    -- primary - main color
-    -- secondary - secondary color
-    -- disabled - comments
-    -- blue - commom
-    -- yellow - commom
-    -- green - commom
-    -- cyan - commom
-    -- violet - commom
-    -- magenta - commom
-    -- orange - commom
-    -- red - commom
-    -- info - diagnostic
-    -- warning - diagnostic
-    -- error - diagnostic
-    -- hint - diagnostic
-    -- added - git
-    -- changed - git
-    -- removed - git
-    -- deleted - git
-    --}}}
-  },
+  dark = {},
   light = {},
 }
 
@@ -56,13 +32,13 @@ function M:get_colors()
   return colors
 end
 
-function M:set_highlight(vim, neovim, vscode)
+function M:set_highlights(vim, neovim, vscode)
   self.highlights.vim = vim(self, self.config)
-  -- self.highlights.neovim = neovim(self, self.config)
-  -- self.highlights.vscode = vscode(self, self.config)
+  self.highlights.neovim = neovim(self, self.config)
+  self.highlights.vscode = vscode(self, self.config)
 end
 
-function M:get_highlight()
+function M:get_highlights()
   return self.highlights[self.config.theme]
 end
 

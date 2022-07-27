@@ -3,9 +3,9 @@ M.mode = 'dark'
 M.theme = 'vim'
 M.transparent = false
 M.style = {
-  comments = { italic = false, bold = false},
-  keywords = { italic = false, false, bold = false },
-  functions = { italic = false, bold = false},
+  comments = { italic = false, bold = false },
+  keywords = { italic = false, bold = false },
+  functions = { italic = false, bold = false },
 }
 
 function M:new(object)
@@ -22,7 +22,9 @@ function M:get_mode()
 end
 
 function M:set_mode(mode)
-  self.mode = mode
+  if mode then
+    self.mode = mode
+  end
 end
 
 function M:get_theme()
@@ -38,7 +40,9 @@ function M:get_transparent()
 end
 
 function M:set_transparent(transparent)
-  self.transparent = transparent
+  if transparent then
+    self.transparent = transparent
+  end
 end
 
 function M:get_comments_style()
@@ -46,7 +50,9 @@ function M:get_comments_style()
 end
 
 function M:set_comments_style(style)
-  self.style.comments = style
+  if style then
+    self.style.comments = style
+  end
 end
 
 function M:get_keywords_style()
@@ -54,7 +60,9 @@ function M:get_keywords_style()
 end
 
 function M:set_keywords_style(style)
-  self.style.keywords = style
+  if style then
+    self.style.keywords = style
+  end
 end
 
 function M:get_functions_style()
@@ -62,7 +70,9 @@ function M:get_functions_style()
 end
 
 function M:set_functions_style(style)
-  self.style.functions = style
+  if style then
+    self.style.functions = style
+  end
 end
 
 return M
