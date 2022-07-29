@@ -32,10 +32,8 @@ function M:get_colors()
   return colors
 end
 
-function M:set_highlights_themes(vim, neovim, vscode)
-  self.highlights.vim = vim(self, self.config)
-  self.highlights.neovim = neovim(self, self.config)
-  self.highlights.vscode = vscode(self, self.config)
+function M:set_highlights_themes(themes)
+  self.highlights[self.config.theme] = themes[self.config.theme](self, self.config)
 end
 
 function M:get_highlights_theme()
