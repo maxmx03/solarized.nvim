@@ -54,18 +54,18 @@ if not success then
   return
 end
 
-local default_config = {
-  mode = 'dark', -- dark/light
-  theme = 'vim', -- vim/neovim/vscode
-  transparent = false, -- false/true
+local config = {
+  mode = 'dark', -- dark(default)/light
+  theme = 'vim', -- vim(default)/neovim/vscode
+  transparent = false, -- false(default)/true
   style = {
-   comments = { italic = true, bold = false },
-   keywords = { italic = true, bold = false },
-   functions = { italic = false, bold = false },
+    comments = { italic = true, bold = false }, -- default values
+    keywords = { italic = true, bold = false }, -- default values
+    functions = { italic = false, bold = false }, -- default values
   },
   -- override colors
   colors = {
-    bg_alt = '#333333'
+    bg_alt = '#333333',
   },
   -- override highlight
   highlights = {
@@ -77,10 +77,11 @@ local default_config = {
     return {
       Normal = { fg = colors.cyan, bg = colors.bg_alt },
       NormalNC = { fg = colors.cyan, bg = colors.bg_alt },
-  }
+    }
+  end,
 }
 
-solarized.setup(default_config)
+solarized.setup(config)
 
 vim.cmd 'colorscheme solarized'
 ```
