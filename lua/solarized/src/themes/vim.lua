@@ -169,7 +169,7 @@ return function(colorscheme, config)
     LspSagaCodeActionTrunCateLine = { link = 'LspSagaCodeActionBorder' },
     LspSagaCodeActionContent = { fg = colors.content, bold = true },
 
-    --{{{ finder
+    -- finder
     LspSagaLspFinderBorder = { fg = colors.primary },
     LspSagaAutoPreview = { fg = colors.primary },
     LspSagaFinderSelection = { fg = colors.yellow, bold = true },
@@ -179,11 +179,12 @@ return function(colorscheme, config)
     Definitions = { fg = colors.primary, bold = true, reverse = true },
     ReferencesIcon = { fg = colors.yellow },
     References = { fg = colors.primary, bold = true, reverse = true },
+
+    --winbar finder
     LSFinderBarSepStart = { fg = colors.bg_alt },
     LSFinderBarSepEnd = { fg = colors.bg_alt },
     LSFinderBarFind = { fg = colors.primary, bg = colors.bg_alt, bold = true },
     LSFinderBarParam = { fg = colors.primary, bg = colors.bg_alt, bold = true },
-    --}}}
 
     -- definition
     LspSagaDefPreviewBorder = { fg = colors.primary },
@@ -196,7 +197,7 @@ return function(colorscheme, config)
     LspSagaRenameBorder = { fg = colors.primary },
     LspSagaRenameMatch = { link = 'Search' },
 
-    --{{{ diagnostic
+    -- diagnostic
     LspSagaDiagnosticError = { link = 'DiagnosticError' },
     LspSagaDiagnosticWarn = { link = 'DiagnosticWarn' },
     LspSagaDiagnosticInfo = { link = 'DiagnosticInfo' },
@@ -205,7 +206,6 @@ return function(colorscheme, config)
     LspSagaWarnTrunCateLine = { link = 'DiagnosticWarn' },
     LspSagaInfoTrunCateLine = { link = 'DiagnosticInfo' },
     LspSagaHintTrunCateLine = { link = 'DiagnosticHint' },
-    --}}}
     --}}}
 
     --{{{ MARKDOWN
