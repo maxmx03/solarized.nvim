@@ -20,23 +20,23 @@ function solarized.setup(user_config)
 
   vim.g.colors_name = 'solarized'
 
-  solarized:set_colors(colors.dark, colors.light)
-
   if user_config then
     solarized.config:set_mode(user_config.mode)
     solarized.config:set_theme(user_config.theme)
     solarized.config:set_transparent(user_config.transparent)
 
-    if user_config.colors then
-      for name, color in pairs(user_config.colors) do
-        solarized.palette[solarized.config.mode][name] = color
-      end
-    end
-
     if user_config.style then
       solarized.config:set_comments_style(user_config.style.comments)
       solarized.config:set_keywords_style(user_config.style.keywords)
       solarized.config:set_functions_style(user_config.style.functions)
+    end
+  end
+
+  solarized:set_colors(colors.dark, colors.light)
+
+  if user_config and user_config.colors then
+    for name, color in pairs(user_config.colors) do
+      solarized.palette[solarized.config.mode][name] = color
     end
   end
 

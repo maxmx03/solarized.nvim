@@ -58,6 +58,9 @@ local default_config = {
   mode = 'dark', -- dark/light
   theme = 'vim', -- vim/neovim/vscode
   transparent = false, -- false/true
+  colors = {
+    bg_alt = '#333333' --override colors
+  },
   style = {
    comments = { italic = true, bold = false },
    keywords = { italic = true, bold = false },
@@ -68,21 +71,4 @@ local default_config = {
 solarized.setup(default_config)
 
 vim.cmd 'colorscheme solarized'
-
--- (alternative)
--- local theme = 'solarized'
--- vim.api.nvim_cmd({ cmd = 'colorscheme', args = { theme } }, { output = false })
-```
-
-## How to customize Solarized
-
-```lua
-local solarized = require 'solarized'
-local colors = solarized:get_colors()
-
-solarized.highlights.vim.Normal = { fg = colors.cyan, bg = colors.bg }
-solarized.highlights.neovim.Normal = { fg = colors.cyan, bg = colors.bg }
-solarized.highlights.vscode.Normal = { fg = colors.cyan, bg = colors.bg }
-
-solarized.setup()
 ```
