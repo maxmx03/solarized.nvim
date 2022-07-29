@@ -46,7 +46,7 @@ return function(colorscheme, config)
     LineNr = { fg = colors.secondary, bg = colors.bg_alt },
     Whitespace = { fg = colors.bg_alt },
     VertSplit = { fg = colors.fg, bg = colors.bg_alt },
-    Visual = { bg = colors.bg_alt },
+    Visual = { fg = colors.cyan, bg = colors.bg_alt },
     VisualNOS = { bg = colors.bg_alt },
     DiffAdd = { fg = colors.added, sp = colors.added },
     DiffChange = { fg = colors.changed, sp = colors.changed },
