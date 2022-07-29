@@ -33,8 +33,14 @@ function solarized.setup(user_config)
       solarized.config:set_functions_style(user_config.style.functions)
     end
 
-    if user_config.colors then
+    if user_config.colors and type(user_config.colors) == 'table' then
       for name, color in pairs(user_config.colors) do
+        solarized.palette[solarized.config.mode][name] = color
+      end
+    elseif user_config.colors and type(user_config.colors) == 'function' then
+      local c = solarized:get_colors()
+
+      for name, color in pairs(user_config.colors(c)) do
         solarized.palette[solarized.config.mode][name] = color
       end
     end

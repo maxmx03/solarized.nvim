@@ -72,7 +72,7 @@ local default_config = {
     Normal = { fg = '#fafafa', bg = '#000000' },
     NormalNC = { fg = '#ff8f81', bg = '#333333' },
   },
-  -- override highlight with callback
+  -- override highlight with function, colors also can be a function
   highlights = function(colors)
     return {
       Normal = { fg = colors.cyan, bg = colors.bg_alt },
