@@ -72,6 +72,12 @@ local default_config = {
     Normal = { fg = '#fafafa', bg = '#000000' },
     NormalNC = { fg = '#ff8f81', bg = '#333333' },
   },
+  -- override highlight with callback
+  highlights = function(colors)
+    return {
+      Normal = { fg = colors.cyan, bg = colors.bg_alt },
+      NormalNC = { fg = colors.cyan, bg = colors.bg_alt },
+  }
 }
 
 solarized.setup(default_config)

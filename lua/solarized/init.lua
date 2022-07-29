@@ -9,6 +9,8 @@ local utils = require 'solarized.src.utils'
 local config = Config:new {}
 local solarized = Colorscheme:new({}, config)
 
+solarized:set_colors(colors.dark, colors.light)
+
 function solarized.setup(user_config)
   if vim.g.colors_name then
     vim.cmd 'hi clear'
@@ -30,29 +32,42 @@ function solarized.setup(user_config)
       solarized.config:set_keywords_style(user_config.style.keywords)
       solarized.config:set_functions_style(user_config.style.functions)
     end
-  end
 
-  solarized:set_colors(colors.dark, colors.light)
-
-  if user_config and user_config.colors then
-    for name, color in pairs(user_config.colors) do
-      solarized.palette[solarized.config.mode][name] = color
+    if user_config.colors then
+      for name, color in pairs(user_config.colors) do
+        solarized.palette[solarized.config.mode][name] = color
+      end
     end
   end
 
   solarized:set_highlights_themes { vim = vim_theme, neovim = neovim_theme, vscode = vscode_theme }
-  local highlight_groups = solarized:get_highlights_theme()
 
   if user_config and user_config.highlights then
     vim.api.nvim_create_autocmd({ 'Colorscheme' }, {
       pattern = '*',
       callback = function()
-        highlight_groups = vim.tbl_deep_extend('keep', user_config.highlights, highlight_groups)
+        local c = solarized:get_colors()
+
+        if user_config and user_config.highlights then
+          if type(user_config.highlights) == 'function' then
+            for group_name, value in pairs(user_config.highlights(c)) do
+              solarized.highlights[solarized.config.theme][group_name] = value
+            end
+          elseif type(user_config.highlights) == 'table' then
+            for group_name, value in pairs(user_config.highlights) do
+              solarized.highlights[solarized.config.theme][group_name] = value
+            end
+          end
+        end
+
+        local highlight_groups = solarized:get_highlights_theme()
 
         utils.set_highlights(highlight_groups)
       end,
     })
   else
+    local highlight_groups = solarized:get_highlights_theme()
+
     utils.set_highlights(highlight_groups)
   end
 end
