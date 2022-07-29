@@ -41,10 +41,20 @@ function solarized.setup(user_config)
   end
 
   solarized:set_highlights_themes { vim = vim_theme, neovim = neovim_theme, vscode = vscode_theme }
-
   local highlight_groups = solarized:get_highlights_theme()
 
-  utils.set_highlights(highlight_groups)
+  if user_config and user_config.highlights then
+    vim.api.nvim_create_autocmd({ 'Colorscheme' }, {
+      pattern = '*',
+      callback = function()
+        highlight_groups = vim.tbl_deep_extend('keep', user_config.highlights, highlight_groups)
+
+        utils.set_highlights(highlight_groups)
+      end,
+    })
+  else
+    utils.set_highlights(highlight_groups)
+  end
 end
 
 return solarized

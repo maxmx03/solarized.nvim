@@ -61,6 +61,10 @@ local default_config = {
   colors = {
     bg_alt = '#333333' --override colors
   },
+  highlights = {
+    Normal = { fg = '#fafafa', bg = '#000000' },
+    NormalNC = { fg = '#ff8f81', bg = '#333333' },
+  },
   style = {
    comments = { italic = true, bold = false },
    keywords = { italic = true, bold = false },
