@@ -58,18 +58,20 @@ local default_config = {
   mode = 'dark', -- dark/light
   theme = 'vim', -- vim/neovim/vscode
   transparent = false, -- false/true
-  colors = {
-    bg_alt = '#333333' --override colors
-  },
-  highlights = {
-    Normal = { fg = '#fafafa', bg = '#000000' },
-    NormalNC = { fg = '#ff8f81', bg = '#333333' },
-  },
   style = {
    comments = { italic = true, bold = false },
    keywords = { italic = true, bold = false },
    functions = { italic = false, bold = false },
-  }
+  },
+  -- override colors
+  colors = {
+    bg_alt = '#333333'
+  },
+  -- override highlight
+  highlights = {
+    Normal = { fg = '#fafafa', bg = '#000000' },
+    NormalNC = { fg = '#ff8f81', bg = '#333333' },
+  },
 }
 
 solarized.setup(default_config)
