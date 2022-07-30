@@ -282,12 +282,11 @@ return function(colorscheme, config)
     GitGutterDelete = { fg = colors.deleted },
     --}}}
 
-    --{{{ WHICH KEY
-    WhichKey = { fg = colors.blue },
-    WhichKeySeperator = { fg = colors.blue },
-    WhichKeyGroup = { fg = colors.orange },
-    WhichKeyDesc = { fg = colors.fg },
-    WhichKeyFloat = { bg = colors.bg_alt },
+    --{{{ HOP
+    HopNextKey = { fg = colors.yellow, bold = true },
+    HopNextKey1 = { fg = colors.yellow, reverse = true },
+    HopNextKey2 = { fg = colors.yellow },
+    HopUnmatched = { fg = colors.secondary },
     --}}}
   }
 end
