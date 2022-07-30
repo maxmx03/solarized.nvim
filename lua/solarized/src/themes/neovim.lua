@@ -330,6 +330,7 @@ return function(colorscheme, config)
     --}}}
 
     --{{{ HOP
+    HopPreview = { fg = colors.yellow, reverse = true },
     HopNextKey = { fg = colors.yellow, bold = true },
     HopNextKey1 = { fg = colors.yellow, reverse = true },
     HopNextKey2 = { fg = colors.yellow },
