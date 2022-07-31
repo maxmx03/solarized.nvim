@@ -209,26 +209,10 @@ return function(colorscheme, config)
     --}}}
 
     --{{{ MARKDOWN
-    markdownH1 = { fg = colors.blue },
-    markdownH2 = { fg = colors.blue },
-    markdownH3 = { fg = colors.blue },
-    markdownH4 = { fg = colors.blue },
-    markdownH5 = { fg = colors.blue },
-    markdownH6 = { fg = colors.blue },
-    markdownHeadingDelimiter = { fg = colors.blue },
-    markdownHeadingRule = { fg = colors.blue },
-    markdownBlockquote = { fg = colors.green },
     markdownBold = { fg = colors.magenta, bold = true },
     markdownItalic = { fg = colors.magenta, italic = true },
-    markdownCode = { fg = colors.violet },
-    markdownCodeBlock = { fg = colors.violet },
-    markdownCodeDelimiter = { fg = colors.blue },
-    markdownLinkDelimiter = { fg = colors.blue },
-    markdownLinkText = { fg = colors.cyan },
-    markdownListMarker = { fg = colors.yellow },
-    markdownOrderedListMarker = { fg = colors.yellow },
-    markdownRule = { fg = colors.yellow },
-    markdownUrl = { fg = colors.blue, underline = true },
+    markdownCode = { fg = colors.content, bold = true },
+    markdownCodeBlock = { fg = colors.content, bold = true },
     --}}}
 
     --{{{ NVIM-TREE
