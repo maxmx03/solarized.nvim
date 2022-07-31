@@ -178,6 +178,12 @@ return function(colorscheme, config)
     DiagnosticUnderlineHint = { undercurl = true, sp = colors.hint },
     --}}}
 
+    --{{{ LSP
+    LspReferenceText = { bg = colors.bg_alt },
+    LspReferenceRead = { bg = colors.bg_alt },
+    LspReferenceWrite = { bg = colors.bg_alt },
+    --}}}
+
     --{{{ LSPSAGA
     -- code action
     LspSagaCodeActionTitle = { fg = colors.primary, bold = true },
