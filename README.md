@@ -54,17 +54,15 @@ if not success then
   return
 end
 
-vim.g.solarized_comments_italic = true
-vim.g.solarized_functions_italic = false
-vim.g.solarized_keywords_italic = true
-vim.g.solarized_comments_bold = false
-vim.g.solarized_keywords_bold = false
-vim.g.solarized_functions_bold = false
-
 local config = {
   mode = 'dark', -- dark(default)/light
   theme = 'vim', -- vim(default)/neovim/vscode
   transparent = false, -- false(default)/true
+  style = {
+    comments = { italic = true, bold = false }, -- default values
+    keywords = { italic = true, bold = false }, -- default values
+    functions = { italic = false, bold = false }, -- default values
+  },
   -- override colors
   colors = {
     bg_alt = '#333333',

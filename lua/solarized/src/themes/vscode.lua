@@ -1,17 +1,12 @@
-return function(colors, config)
-  local function is_transparent(color)
-    local transparent = config.transparent
-
-    if transparent then
-      return 'NONE'
-    end
-
-    return color
-  end
+return function(colorscheme, config)
+  local colors = colorscheme:get_colors()
+  local comment_style = config:get_comments_style()
+  local keywords_style = config:get_keywords_style()
+  local functions_style = config:get_functions_style()
 
   return {
     --{{{ BASE
-    Comment = { fg = colors.comment, italic = vim.g.solarized_comments_italic, bold = vim.g.solarized_comments_bold },
+    Comment = { fg = colors.comment, italic = comment_style.italic, bold = comment_style.bold },
     ColorColumn = { bg = colors.bg_alt },
     Conceal = { fg = colors.blue },
     Cursor = { fg = colors.bg, bg = colors.fg },
@@ -24,8 +19,8 @@ return function(colors, config)
     MatchParen = { fg = colors.red, bg = colors.content, bold = true },
     MatchWordCur = { bold = true },
     MatchParenCur = { bold = true },
-    Normal = { fg = colors.fg, bg = is_transparent(colors.bg) },
-    NormalNC = { fg = colors.content, bg = is_transparent(colors.bg_alt) },
+    Normal = { fg = colors.fg, bg = colorscheme:is_transparent(colors.bg) },
+    NormalNC = { fg = colors.content, bg = colorscheme:is_transparent(colors.bg_alt) },
     NormalFloat = { fg = colors.fg, bg = colors.bg_alt },
     Pmenu = { fg = colors.fg, bg = colors.bg_alt, bold = true },
     PmenuSel = { fg = colors.content, bg = colors.bg_alt_invert, reverse = true, bold = true },
@@ -36,7 +31,7 @@ return function(colors, config)
     TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
     FloatBorder = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
     SignColumn = { fg = colors.fg },
-    MsgArea = { fg = colors.content, bg = is_transparent(colors.bg) },
+    MsgArea = { fg = colors.content, bg = colorscheme:is_transparent(colors.bg) },
     ModeMsg = { fg = colors.blue },
     MsgSeparator = { fg = colors.content, bg = colors.bg_alt },
     MoreMsg = { fg = colors.blue },
@@ -86,13 +81,13 @@ return function(colors, config)
     -- Number = { fg = colors.cyan },
     -- Boolean = { fg = colors.cyan },
     -- Float = { fg = colors.cyan },
-    Identifier = { fg = colors.blue, italic = vim.g.solarized_functions_italic, bold = vim.g.solarized_functions_bold },
+    Identifier = { fg = colors.blue, italic = functions_style.italic, bold = functions_style.bold },
     --       *Identifier      any variable name
     --        Function        function name (also: methods for classes)
     -- Variable = { fg = colors.blue },
     -- Function = { fg = colors.blue },
 
-    Statement = { fg = colors.green, italic = vim.g.solarized_keywords_italic, bold = vim.g.solarized_keywords_bold },
+    Statement = { fg = colors.green, italic = keywords_style.italic, bold = keywords_style.bold },
     --       *Statement       any statement
     --        Conditional     if, then, else, endif, switch, etc.
     --        Repeat          for, do, while, etc.
@@ -154,8 +149,8 @@ return function(colors, config)
     TSVariable = { fg = colors.blue },
     TSNumber = { fg = colors.magenta },
     TSInclude = { fg = colors.green },
-    TSKeyword = { fg = colors.content, italic = vim.g.solarized_keywords_italic, bold = vim.g.solarized_keywords_bold },
-    TSKeywordFunction = { fg = colors.content, italic = vim.g.solarized_keywords_italic, bold = vim.g.solarized_keywords_bold },
+    TSKeyword = { fg = colors.content, italic = keywords_style.italic, bold = keywords_style.bold },
+    TSKeywordFunction = { fg = colors.content, italic = keywords_style.italic, bold = keywords_style.bold },
     TSKeywordReturn = { fg = colors.green },
     TSTag = { fg = colors.blue },
     TSTagDelimiter = { fg = colors.secondary },
