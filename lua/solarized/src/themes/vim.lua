@@ -1,8 +1,17 @@
-return function(colorscheme, config)
-  local colors = colorscheme:get_colors()
-  local comment_style = config:get_comments_style()
-  local keywords_style = config:get_keywords_style()
-  local functions_style = config:get_functions_style()
+return function(colors, config)
+  local comment_style = config.style.comments
+  local keywords_style = config.style.keywords
+  local functions_style = config.style.functions
+
+  local function is_transparent(color)
+    local transparent = config.transparent
+
+    if transparent then
+      return 'NONE'
+    end
+
+    return color
+  end
 
   return {
     --{{{ BASE
@@ -19,8 +28,8 @@ return function(colorscheme, config)
     MatchParen = { fg = colors.red, bg = colors.content, bold = true },
     MatchWordCur = { bold = true },
     MatchParenCur = { bold = true },
-    Normal = { fg = colors.fg, bg = colorscheme:is_transparent(colors.bg) },
-    NormalNC = { fg = colors.content, bg = colorscheme:is_transparent(colors.bg_alt) },
+    Normal = { fg = colors.fg, bg = is_transparent(colors.bg) },
+    NormalNC = { fg = colors.content, bg = is_transparent(colors.bg_alt) },
     NormalFloat = { fg = colors.fg, bg = colors.bg_alt },
     Pmenu = { fg = colors.fg, bg = colors.bg_alt, reverse = true, bold = true },
     PmenuSel = { fg = colors.content, bg = colors.bg_alt_invert, reverse = true, bold = true },
@@ -31,7 +40,7 @@ return function(colorscheme, config)
     TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
     FloatBorder = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
     SignColumn = { fg = colors.fg },
-    MsgArea = { fg = colors.content, bg = colorscheme:is_transparent(colors.bg) },
+    MsgArea = { fg = colors.content, bg = is_transparent(colors.bg) },
     ModeMsg = { fg = colors.blue },
     MsgSeparator = { fg = colors.content, bg = colors.bg_alt },
     MoreMsg = { fg = colors.blue },
