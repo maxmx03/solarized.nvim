@@ -1,8 +1,4 @@
 return function(colors, config)
-  local comment_style = config.style.comments
-  local keywords_style = config.style.keywords
-  local functions_style = config.style.functions
-
   local function is_transparent(color)
     local transparent = config.transparent
 
@@ -15,7 +11,7 @@ return function(colors, config)
 
   return {
     --{{{ BASE
-    Comment = { fg = colors.comment, italic = comment_style.italic, bold = comment_style.bold },
+    Comment = { fg = colors.comment, italic = vim.g.solarized_comments_italic, bold = vim.g.solarized_comments_bold },
     ColorColumn = { bg = colors.bg_alt },
     Conceal = { fg = colors.blue },
     Cursor = { fg = colors.bg, bg = colors.fg },
@@ -90,13 +86,13 @@ return function(colors, config)
     -- Number = { fg = colors.cyan },
     -- Boolean = { fg = colors.cyan },
     -- Float = { fg = colors.cyan },
-    Identifier = { fg = colors.blue, italic = functions_style.italic, bold = functions_style.bold },
+    Identifier = { fg = colors.blue, italic = vim.g.solarized_functions_italic, bold = vim.g.solarized_functions_bold },
     --       *Identifier      any variable name
     --        Function        function name (also: methods for classes)
     -- Variable = { fg = colors.blue },
     -- Function = { fg = colors.blue },
 
-    Statement = { fg = colors.green, italic = keywords_style.italic, bold = keywords_style.bold },
+    Statement = { fg = colors.green, italic = vim.g.solarized_keywords_italic, bold = vim.g.solarized_keywords_bold },
     --       *Statement       any statement
     --        Conditional     if, then, else, endif, switch, etc.
     --        Repeat          for, do, while, etc.
@@ -158,8 +154,8 @@ return function(colors, config)
     TSTag = { fg = colors.blue },
     TSNumber = { fg = colors.violet },
     TSInclude = { fg = colors.violet },
-    TSKeyword = { fg = colors.blue, italic = keywords_style.italic, bold = keywords_style.bold },
-    TSKeywordReturn = { fg = colors.violet, italic = keywords_style.italic, bold = keywords_style.bold },
+    TSKeyword = { fg = colors.blue, italic = vim.g.solarized_keywords_italic, bold = vim.g.solarized_keywords_bold },
+    TSKeywordReturn = { fg = colors.violet, italic = vim.g.solarized_keywords_italic, bold = vim.g.solarized_keywords_bold },
     TSTagDelimiter = { fg = colors.secondary },
     TSTagAttribute = { fg = colors.content },
     TSPunctDelimiter = { fg = colors.content },

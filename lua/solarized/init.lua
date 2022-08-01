@@ -1,3 +1,12 @@
+local utils = require 'solarized.src.utils'
+
+vim.g.solarized_comments_italic = true
+vim.g.solarized_functions_italic = false
+vim.g.solarized_keywords_italic = true
+vim.g.solarized_comments_bold = false
+vim.g.solarized_keywords_bold = false
+vim.g.solarized_functions_bold = false
+
 local M = {}
 M.colors = {}
 
@@ -20,8 +29,12 @@ local function override(value, params, original)
 end
 
 function M.setup(user_config)
-  local config = require 'solarized.src.config'
-  config.style = (user_config or config).style or config.style
+  local config = {
+    mode = 'dark',
+    theme = 'vim',
+    transparent = false,
+  }
+
   config.mode = (user_config or config).mode
   config.theme = (user_config or config).theme
   config.transparent = (user_config or config).transparent
@@ -38,8 +51,6 @@ function M.setup(user_config)
   end
 
   vim.g.colors_name = 'solarized'
-
-  local utils = require 'solarized.src.utils'
 
   if user_config then
     if user_config.colors then
