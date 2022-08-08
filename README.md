@@ -78,7 +78,7 @@ vim.cmd 'colorscheme solarized'
 ## Customization
 
 add or override colors
-```
+```lua
 local solarized = require 'solarized'
 
 local function colors(solarized_colors)
@@ -97,7 +97,7 @@ solarized.setup {
 
 add or override highlights
 
-```
+```lua
 local solarized = require 'solarized'
 
 local function highlights(solarized_colors)
