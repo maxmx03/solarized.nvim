@@ -1,4 +1,4 @@
-## Solarized Colorscheme for Neovim
+# Solarized Colorscheme for Neovim
 
 Designed By [Ethan Schoonover](https://github.com/altercation) <br />
 Developed By [Max](https://github.com/maxmx03)
@@ -44,6 +44,7 @@ via [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
 Plug 'maxmx03/solarized.nvim'
 ```
+
 ## How to Config
 
 example
@@ -54,34 +55,60 @@ if not success then
   return
 end
 
-local config = {
+local default_config = {
   mode = 'dark', -- dark(default)/light
   theme = 'vim', -- vim(default)/neovim/vscode
   transparent = false, -- false(default)/true
-  style = {
-    comments = { italic = true, bold = false }, -- default values
-    keywords = { italic = true, bold = false }, -- default values
-    functions = { italic = false, bold = false }, -- default values
-  },
-  -- override colors
-  colors = {
-    bg_alt = '#333333',
-  },
-  -- override highlight
-  highlights = {
-    Normal = { fg = '#fafafa', bg = '#000000' },
-    NormalNC = { fg = '#ff8f81', bg = '#333333' },
-  },
-  -- override highlight with function, colors also can be a function
-  highlights = function(colors)
-    return {
-      Normal = { fg = colors.cyan, bg = colors.bg_alt },
-      NormalNC = { fg = colors.cyan, bg = colors.bg_alt },
-    }
-  end,
 }
 
-solarized.setup(config)
+solarized.setup(default_config)
 
 vim.cmd 'colorscheme solarized'
+```
+
+## Configuration
+| option | default | description |
+| ------ | ----------- | -------- |
+| mode | `'dark'` | Solarized comes with two mode `dark` and `light` |
+| theme | `'vim'` | The theme comes in three styles, `vim`, `neovim`, `vscode` |
+| transparent | `false` | enable and disable background transparency |
+| colors | `{}` or `function` | You can add new colors or override the default |
+| highlights | `{}` or `function` | You can add new highlights or override the default |
+
+## Customization
+
+add or override colors
+```
+local solarized = require 'solarized'
+
+local function colors(solarized_colors)
+
+  return {
+    white = solarized_colors.fg,
+    black = solarized_colors.bg,
+    purple = '#2A0944',
+  }
+end
+
+solarized.setup {
+  colors = colors
+}
+```
+
+add or override highlights
+
+```
+local solarized = require 'solarized'
+
+local function highlights(solarized_colors)
+  return {
+    CmpItemKindKeyword = { fg = solarized_colors.orange },
+    CmpItemKindFunction = { fg = solarized_colors.cyan },
+    CmpItemKindMethod = { fg = solarized_colors.magenta },
+  } 
+end
+
+solarized.setup {
+  highlights = highlights
+}
 ```
