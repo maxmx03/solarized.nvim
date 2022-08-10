@@ -1,25 +1,10 @@
 # Solarized Colorscheme for Neovim
 
-Designed By [Ethan Schoonover](https://github.com/altercation) <br />
-Developed By [Max](https://github.com/maxmx03)
-
 ## [Visit The Solarized homepage](https://ethanschoonover.com/solarized/)
 
 ## Screenshots
 
 ![solarized dark](https://github.com/altercation/solarized/raw/master/img/solarized-vim.png)
-
-## Themes
-
-### *Vim*
-<img src="./docs/style_vim.png" />
-
-### *Neovim*
-<img src="./docs/style_neovim.png" />
-
-### *Vscode*
-<img src="./docs/style_vscode.png" />
-
 
 ## Installation
 
@@ -112,3 +97,5 @@ solarized.setup {
   highlights = highlights
 }
 ```
+
+Designed By [Ethan Schoonover](https://github.com/altercation) <br />
