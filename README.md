@@ -98,4 +98,4 @@ solarized.setup {
 }
 ```
 
-Designed By [Ethan Schoonover](https://github.com/altercation) <br />
+Colorscheme Designed By [Ethan Schoonover](https://github.com/altercation) <br />
