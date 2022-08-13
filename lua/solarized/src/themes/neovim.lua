@@ -61,7 +61,7 @@ solarized.highlights = {
   -- TermCursorNC = { fg = colors.bg, bg = colors.fg },
   Directory = { fg = colors.blue },
   SpecialKey = { fg = colors.red },
-  Title = { fg = colors.orange, bold = true },
+  Title = { fg = colors.yellow, bold = true },
   Search = { fg = colors.yellow, reverse = true },
   IncSearch = { fg = colors.orange },
   Substitute = { fg = colors.orange, reverse = true },
@@ -145,19 +145,27 @@ solarized.highlights = {
   --}}}
 
   --{{{ TREESITTER - NEOVIM LOOK
-  TSTag = { fg = colors.blue },
-  TSNumber = { fg = colors.violet },
-  TSInclude = { fg = colors.violet },
-  TSKeyword = { fg = colors.blue, italic = true },
-  TSKeywordReturn = { fg = colors.violet, italic = true },
-  TSTagDelimiter = { fg = colors.secondary },
-  TSTagAttribute = { fg = colors.content },
-  TSPunctDelimiter = { fg = colors.content },
-  TSPunctBracket = { fg = colors.content },
-  TSParameter = { fg = colors.orange, italic = true },
-  TSConstructor = { fg = colors.blue },
-  TSVariableBuiltin = { fg = colors.violet, italic = true },
-  TSURI = { fg = colors.cyan, underline = true },
+  TSConstructor = { fg = colors.orange },
+  TSFunction = { link = 'Function' },
+  TSFunctionCall = { link = 'Function' },
+  TSFuncBuiltin = { link = 'Function' },
+  TSParameter = { fg = colors.content, italic = true },
+  TSMethod = { fg = colors.yellow },
+  TSType = { fg = colors.orange },
+  TSTypeBuiltin = { fg = colors.orange },
+  TSConditional = { link = 'Statement' },
+  TSVariableBuiltin = { fg = colors.violet },
+  TSNumber = { link = 'TSVariableBuiltin' },
+  TSBoolean = { link = 'TSVariableBuiltin' },
+  TSConstant = { link = 'TSVariableBuiltin' },
+  TSConstBuiltin = { link = 'TSVariableBuiltin' },
+  TSTitle = { link = 'Title' },
+
+  -- javascript
+  javascriptTSConstructor = { fg = colors.blue },
+
+  -- LUA
+  luaTSConstructor = { link = 'TSPunctBracket' },
   --}}}
 
   --{{{ DIAGNOSTIC
@@ -258,29 +266,6 @@ solarized.highlights = {
   CmpItemKindReference = { fg = colors.fg },
   CmpItemKindOperator = { fg = colors.fg },
   CmpItemKindTypeParameter = { fg = colors.violet },
-  --}}}
-
-  --{{{ MARKDOWN
-  markdownH1 = { fg = colors.blue },
-  markdownH2 = { fg = colors.blue },
-  markdownH3 = { fg = colors.blue },
-  markdownH4 = { fg = colors.blue },
-  markdownH5 = { fg = colors.blue },
-  markdownH6 = { fg = colors.blue },
-  markdownHeadingDelimiter = { fg = colors.blue },
-  markdownHeadingRule = { fg = colors.blue },
-  markdownBlockquote = { fg = colors.green },
-  markdownBold = { fg = colors.magenta, bold = true },
-  markdownItalic = { fg = colors.magenta, italic = true },
-  markdownCode = { fg = colors.violet },
-  markdownCodeBlock = { fg = colors.violet },
-  markdownCodeDelimiter = { fg = colors.blue },
-  markdownLinkDelimiter = { fg = colors.blue },
-  markdownLinkText = { fg = colors.cyan },
-  markdownListMarker = { fg = colors.yellow },
-  markdownOrderedListMarker = { fg = colors.yellow },
-  markdownRule = { fg = colors.yellow },
-  markdownUrl = { fg = colors.blue, underline = true },
   --}}}
 
   --{{{ NVIM-TREE
