@@ -107,7 +107,7 @@ solarized.highlights = {
   --        Define          preprocessor #define
   --        Macro           same as Define
   --        PreCondit       preprocessor #if, #else, #endif, etc.
-  -- Include = { fg = colors.orange },
+  Include = { fg = colors.green },
   -- Define = { fg = colors.orange },
   -- Macro = { fg = colors.orange },
   -- PreCondit = { fg = colors.orange },
@@ -142,30 +142,80 @@ solarized.highlights = {
   Error = { fg = colors.danger, bg = colors.bg_alt, bold = true },
   ErrorMsg = { fg = colors.danger, reverse = true },
   WarningMsg = { fg = colors.warning, bold = true },
+  --}}}za
+
+ --{{{ BASE MARKDOWN VSCODE LOOK
+  markdownH1 = { fg = colors.blue },
+  markdownH2 = { fg = colors.blue },
+  markdownH3 = { fg = colors.blue },
+  markdownH4 = { fg = colors.blue },
+  markdownH5 = { fg = colors.blue },
+  markdownH6 = { fg = colors.blue },
+  markdownHeadingDelimiter = { fg = colors.blue },
+  markdownHeadingRule = { fg = colors.blue },
+  markdownBlockquote = { fg = colors.green },
+  markdownBold = { fg = colors.magenta, bold = true },
+  markdownItalic = { fg = colors.magenta, italic = true },
+  markdownCode = { fg = colors.cyan },
+  markdownCodeBlock = { fg = colors.violet },
+  markdownCodeDelimiter = { fg = colors.blue },
+  markdownLinkDelimiter = { fg = colors.blue },
+  markdownLinkText = { fg = colors.cyan },
+  markdownListMarker = { fg = colors.yellow },
+  markdownOrderedListMarker = { fg = colors.yellow },
+  markdownRule = { fg = colors.yellow },
+  markdownUrl = { fg = colors.yellow, underline = true },
+  htmlTagN = { link = 'TSTag' },
   --}}}
 
   --{{{ TREESITTER - VSCODE LOOK
+  TSFunction = { link = 'Function' },
+  TSFunctionCall = { link = 'Function' },
+  TSFuncBuiltin = { link = 'Function' },
+  TSParameter = { fg = colors.content, bold = true, italic = true },
+  TSType = { fg = colors.orange },
+  TSConstructor = { fg = colors.green },
+  TSKeyWord = { fg = colors.content, bold = true },
+  TSKeyWordFunction = { link = 'TSKeyWord' },
+  TSKeyWordReturn = { link = 'Statement' },
+  TSConditional = { link = 'Statement' },
   TSVariable = { fg = colors.blue },
+  TSVariableBuiltin = { link = 'TSVariable' },
+  TSInclude = { link = 'Include' },
+  TSConstant = { fg = colors.orange },
   TSNumber = { fg = colors.magenta },
-  TSInclude = { fg = colors.green },
-  TSKeyword = { fg = colors.content, bold = true },
-  TSKeywordFunction = { fg = colors.content, bold = true },
-  TSKeywordReturn = { fg = colors.green, italic = true },
+  TSBoolean = { fg = colors.yellow },
   TSTag = { fg = colors.blue },
-  TSTagDelimiter = { fg = colors.secondary },
   TSTagAttribute = { fg = colors.content },
-  TSTitle = { fg = colors.content },
-  TSText = { fg = colors.content },
+  TSTagDelimiter = { fg = colors.secondary },
+  TSPunctBracket = { fg = colors.yellow },
   TSPunctDelimiter = { fg = colors.content },
-  TSPunctBracket = { fg = colors.content },
-  TSParameter = { fg = colors.secondary },
-  TSURI = { fg = colors.cyan, underline = true },
-  TSConstructor = { fg = colors.blue },
-  TSType = { fg = colors.blue },
-  TSTypeBuiltin = { fg = colors.green },
-  TSField = { fg = colors.green },
-  TSProperty = { fg = colors.green },
+  TSOperator = { fg = colors.content },
+  TSProperty = { fg = colors.blue },
+  TSTitle = { link = 'TSText' },
+  TSField = { fg = colors.content },
+
+  -- javascript
+  javascriptTSConstructor = { fg = colors.blue },
+
+  -- CSS / SCSS
+  cssTSProperty = { fg = colors.green },
+  cssTSType = { fg = colors.blue },
+  cssTSString = { fg = colors.green },
+  scssTSProperty = { link = 'cssTSProperty' },
+  scssTSType = { link = 'cssTSType' },
+  scssTSString = { link = 'cssTSString' },
+
+  -- LUA
+  luaTSConstructor = { link = 'TSPunctBracket' },
+  luaTSConstBuiltin = { fg = colors.orange },
   --}}}
+
+--{{{ TREESITTER - MARKDOWN - VSCODE LOOK
+  markdownTSPunctSpecial = { fg = colors.blue },
+  markdownTSTitle = { fg = colors.blue },
+  markdownTSLiteral = { fg = colors.content },
+--}}}
 
   --{{{ DIAGNOSTIC
   DiagnosticError = { fg = colors.danger },
@@ -265,29 +315,6 @@ solarized.highlights = {
   CmpItemKindReference = { fg = colors.fg },
   CmpItemKindOperator = { fg = colors.fg },
   CmpItemKindTypeParameter = { fg = colors.violet },
-  --}}}
-
-  --{{{ MARKDOWN
-  markdownH1 = { fg = colors.blue },
-  markdownH2 = { fg = colors.blue },
-  markdownH3 = { fg = colors.blue },
-  markdownH4 = { fg = colors.blue },
-  markdownH5 = { fg = colors.blue },
-  markdownH6 = { fg = colors.blue },
-  markdownHeadingDelimiter = { fg = colors.blue },
-  markdownHeadingRule = { fg = colors.blue },
-  markdownBlockquote = { fg = colors.green },
-  markdownBold = { fg = colors.magenta, bold = true },
-  markdownItalic = { fg = colors.magenta, italic = true },
-  markdownCode = { fg = colors.violet },
-  markdownCodeBlock = { fg = colors.violet },
-  markdownCodeDelimiter = { fg = colors.blue },
-  markdownLinkDelimiter = { fg = colors.blue },
-  markdownLinkText = { fg = colors.cyan },
-  markdownListMarker = { fg = colors.yellow },
-  markdownOrderedListMarker = { fg = colors.yellow },
-  markdownRule = { fg = colors.yellow },
-  markdownUrl = { fg = colors.blue, underline = true },
   --}}}
 
   --{{{ NVIM-TREE
