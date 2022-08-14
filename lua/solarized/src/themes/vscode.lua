@@ -197,6 +197,7 @@ solarized.highlights = {
 
   -- javascript
   javascriptTSConstructor = { fg = colors.blue },
+  tsxTSConstructor = { link = 'javascriptTSConstructor' },
 
   -- CSS / SCSS
   cssTSProperty = { fg = colors.green },
