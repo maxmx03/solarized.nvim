@@ -142,23 +142,6 @@ solarized.highlights = {
   WarningMsg = { fg = colors.warning, bold = true },
   --}}}
 
-  --{{{ DIAGNOSTIC
-  DiagnosticError = { fg = colors.danger },
-  DiagnosticWarn = { fg = colors.warning },
-  DiagnosticInfo = { fg = colors.info },
-  DiagnosticHint = { fg = colors.info },
-
-  DiagnosticVirtualTextError = { fg = colors.danger },
-  DiagnosticVirtualTextWarn = { fg = colors.warning },
-  DiagnosticVirtualTextInfo = { fg = colors.info },
-  DiagnosticVirtualTextHint = { fg = colors.hint },
-
-  DiagnosticUnderlineError = { undercurl = true, sp = colors.danger },
-  DiagnosticUnderlineWarn = { undercurl = true, sp = colors.warning },
-  DiagnosticUnderlineInfo = { undercurl = true, sp = colors.info },
-  DiagnosticUnderlineHint = { undercurl = true, sp = colors.hint },
-  --}}}
-
   --{{{ LSP
   LspReferenceText = { bg = colors.bg_alt },
   LspReferenceRead = { bg = colors.bg_alt },
@@ -267,13 +250,5 @@ solarized.highlights = {
   GitGutterAdd = { fg = colors.added },
   GitGutterChange = { fg = colors.changed },
   GitGutterDelete = { fg = colors.deleted },
-  --}}}
-
-  --{{{ HOP
-  HopPreview = { fg = colors.yellow, reverse = true },
-  HopNextKey = { fg = colors.yellow, bold = true },
-  HopNextKey1 = { fg = colors.yellow, reverse = true },
-  HopNextKey2 = { fg = colors.yellow },
-  HopUnmatched = { fg = colors.secondary },
   --}}}
 }
