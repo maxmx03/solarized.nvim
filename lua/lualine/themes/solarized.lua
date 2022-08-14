@@ -1,7 +1,7 @@
-local theme = require 'solarized.theme'
-local colors = theme:get_colors()
+local solarized = require 'solarized'
+local colors = solarized.colors
 
-local solarized = {
+local M = {
   normal = {
     a = { fg = colors.bg, bg = colors.primary, 'bold' },
     b = { fg = colors.bg_alt, bg = colors.content },
@@ -21,4 +21,4 @@ local solarized = {
   },
 }
 
-return solarized
+return M
