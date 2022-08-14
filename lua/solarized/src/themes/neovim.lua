@@ -160,6 +160,7 @@ solarized.highlights = {
   TSConstant = { link = 'TSVariableBuiltin' },
   TSConstBuiltin = { link = 'TSVariableBuiltin' },
   TSTitle = { link = 'Title' },
+  TSInclude = { fg = colors.magenta },
 
   -- javascript
   javascriptTSConstructor = { fg = colors.blue },
