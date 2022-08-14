@@ -25,6 +25,14 @@ function M:is_transparent(color)
   return color
 end
 
+function M:is_not_transparent(color)
+  if not self.config.transparent then
+    return 'NONE'
+  end
+
+  return color
+end
+
 local solarized = M:new()
 
 return solarized

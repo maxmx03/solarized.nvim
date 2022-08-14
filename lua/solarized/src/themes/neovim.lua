@@ -329,4 +329,8 @@ solarized.highlights = {
   HopNextKey2 = { fg = colors.yellow },
   HopUnmatched = { fg = colors.secondary },
   --}}}
+
+  --{{{ TWILIGHT
+  Twilight = { fg = solarized:is_not_transparent(colors.secondary) },
+  --}}}
 }

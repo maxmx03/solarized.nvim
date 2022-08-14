@@ -253,4 +253,8 @@ solarized.highlights = {
   GitGutterChange = { fg = colors.changed },
   GitGutterDelete = { fg = colors.deleted },
   --}}}
+
+  --{{{ TWILIGHT
+  Twilight = { fg = solarized:is_not_transparent(colors.secondary) },
+  --}}}
 }
