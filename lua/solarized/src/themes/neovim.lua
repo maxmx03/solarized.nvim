@@ -145,12 +145,12 @@ solarized.highlights = {
   --}}}
 
   --{{{ TREESITTER - NEOVIM LOOK
-  TSConstructor = { fg = colors.orange },
   TSFunction = { link = 'Function' },
   TSFunctionCall = { link = 'Function' },
   TSFuncBuiltin = { link = 'Function' },
   TSParameter = { fg = colors.content, italic = true },
   TSMethod = { fg = colors.yellow },
+  TSConstructor = { fg = colors.red },
   TSType = { fg = colors.orange },
   TSTypeBuiltin = { fg = colors.orange },
   TSConditional = { link = 'Statement' },
