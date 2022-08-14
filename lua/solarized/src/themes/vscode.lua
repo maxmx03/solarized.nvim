@@ -144,7 +144,7 @@ solarized.highlights = {
   WarningMsg = { fg = colors.warning, bold = true },
   --}}}za
 
- --{{{ BASE MARKDOWN VSCODE LOOK
+  --{{{ BASE MARKDOWN VSCODE LOOK
   markdownH1 = { fg = colors.blue },
   markdownH2 = { fg = colors.blue },
   markdownH3 = { fg = colors.blue },
@@ -211,11 +211,11 @@ solarized.highlights = {
   luaTSConstBuiltin = { fg = colors.orange },
   --}}}
 
---{{{ TREESITTER - MARKDOWN - VSCODE LOOK
+  --{{{ TREESITTER - MARKDOWN - VSCODE LOOK
   markdownTSPunctSpecial = { fg = colors.blue },
   markdownTSTitle = { fg = colors.blue },
   markdownTSLiteral = { fg = colors.content },
---}}}
+  --}}}
 
   --{{{ DIAGNOSTIC
   DiagnosticError = { fg = colors.danger },
@@ -284,6 +284,8 @@ solarized.highlights = {
   LspSagaWarnTrunCateLine = { link = 'DiagnosticWarn' },
   LspSagaInfoTrunCateLine = { link = 'DiagnosticInfo' },
   LspSagaHintTrunCateLine = { link = 'DiagnosticHint' },
+  LspSagaDiagnosticHeader = { link = 'Title' },
+  LspSagaDiagnosticBorder = { fg = colors.primary },
   --}}}
 
   --{{{ CMP KIND

@@ -192,6 +192,8 @@ solarized.highlights = {
   LspSagaWarnTrunCateLine = { link = 'DiagnosticWarn' },
   LspSagaInfoTrunCateLine = { link = 'DiagnosticInfo' },
   LspSagaHintTrunCateLine = { link = 'DiagnosticHint' },
+  LspSagaDiagnosticHeader = { link = 'Title' },
+  LspSagaDiagnosticBorder = { fg = colors.primary },
   --}}}
 
   --{{{ MARKDOWN
