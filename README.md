@@ -51,6 +51,22 @@ solarized.setup(default_config)
 vim.cmd 'colorscheme solarized'
 ```
 
+## Lualine
+
+```lua 
+local success, lualine = pcall(require, 'lualine')
+
+if not success then 
+  return 
+end
+
+lualine.setup {
+  options = {
+    theme = 'solarized'
+  }
+}
+```
+
 ## Configuration
 | option | default | description |
 | ------ | ----------- | -------- |
