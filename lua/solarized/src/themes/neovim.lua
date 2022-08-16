@@ -156,6 +156,7 @@ solarized.highlights = {
   TSConditional = { link = 'Statement' },
   TSVariableBuiltin = { fg = colors.violet },
   TSNumber = { link = 'TSVariableBuiltin' },
+  TSFloat = { link = 'TSNumber' },
   TSBoolean = { link = 'TSVariableBuiltin' },
   TSConstant = { link = 'TSVariableBuiltin' },
   TSConstBuiltin = { link = 'TSVariableBuiltin' },

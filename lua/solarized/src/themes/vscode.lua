@@ -184,6 +184,7 @@ solarized.highlights = {
   TSInclude = { link = 'Include' },
   TSConstant = { fg = colors.orange },
   TSNumber = { fg = colors.magenta },
+  TSFloat = { link = 'TSNumber' },
   TSBoolean = { fg = colors.yellow },
   TSTag = { fg = colors.blue },
   TSTagAttribute = { fg = colors.content },
