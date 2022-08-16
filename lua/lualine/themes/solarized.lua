@@ -5,7 +5,7 @@ local M = {
   normal = {
     a = { fg = colors.bg, bg = colors.primary },
     b = { fg = colors.bg_alt, bg = colors.content },
-    c = { fg = colors.fg, bg = solarized:is_transparent(colors.bg) },
+    c = { fg = colors.content, bg = solarized:is_transparent(colors.bg_alt) },
     z = { fg = colors.bg, bg = colors.primary },
   },
   insert = { a = { fg = colors.bg, bg = colors.green } },
