@@ -4,8 +4,8 @@
 
 ## Screenshots
 
-![solarized dark](https://github.com/maxmx03/milianor-dotfiles/blob/main/docs/solarized-dark.png")
-![solarized light](https://github.com/maxmx03/milianor-dotfiles/blob/main/docs/solarized-light.png")
+![solarized dark](https://github.com/maxmx03/milianor-dotfiles/blob/main/docs/solarized-dark.png)
+![solarized light](https://github.com/maxmx03/milianor-dotfiles/blob/main/docs/solarized-light.png)
 
 ## Installation
 
