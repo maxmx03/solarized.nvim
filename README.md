@@ -51,7 +51,7 @@ solarized.setup(default_config)
 vim.cmd 'colorscheme solarized'
 ```
 
-## Lualine
+## [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
 ```lua 
 local success, lualine = pcall(require, 'lualine')
