@@ -4,7 +4,7 @@ local colors = solarized.colors
 local M = {
   normal = {
     a = { fg = colors.bg, bg = colors.primary },
-    b = { fg = colors.content, bg = colors.bg_alt },
+    b = { fg = colors.bg_alt, bg = colors.content },
     c = { fg = colors.fg, bg = solarized:is_transparent(colors.bg) },
     z = { fg = colors.bg, bg = colors.primary },
   },
