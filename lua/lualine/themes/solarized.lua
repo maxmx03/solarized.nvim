@@ -3,22 +3,14 @@ local colors = solarized.colors
 
 local M = {
   normal = {
-    a = { fg = colors.bg, bg = colors.primary, 'bold' },
-    b = { fg = colors.bg_alt, bg = colors.content },
-    c = { fg = colors.fg, bg = colors.bg },
+    a = { fg = colors.bg, bg = colors.primary },
+    b = { fg = colors.fg, bg = solarized:is_transparent(colors.bg_alt) },
+    c = { fg = colors.fg, bg = solarized:is_transparent(colors.bg) },
+    z = { fg = colors.bg, bg = colors.primary },
   },
-  insert = {
-    a = { fg = colors.bg, bg = colors.green, 'bold' },
-  },
-  visual = {
-    a = { fg = colors.bg, bg = colors.violet, 'bold' },
-  },
-  inactive = {
-    a = { fg = colors.bg, bg = colors.secondary, 'bold' },
-  },
-  replace = {
-    a = { fg = colors.bg, bg = colors.orange, 'bold' },
-  },
+  insert = { a = { fg = colors.bg, bg = colors.green } },
+  visual = { a = { fg = colors.bg, bg = colors.magenta } },
+  replace = { a = { fg = colors.bg, bg = colors.yellow } },
 }
 
 return M
