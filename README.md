@@ -108,8 +108,6 @@ if not success then
   return
 end
 
-local ide = require 'ide.config'
-
 solarized.setup {
   transparent = true,
   theme = 'vscode',
