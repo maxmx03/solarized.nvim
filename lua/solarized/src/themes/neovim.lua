@@ -162,9 +162,6 @@ solarized.highlights = {
   TSTitle = { link = 'Title' },
   TSVariableBuiltin = { fg = colors.orange },
 
-  -- javascript
-  javascriptTSConstructor = { fg = colors.blue },
-
   -- LUA
   luaTSConstructor = { link = 'TSPunctBracket' },
   --}}}
