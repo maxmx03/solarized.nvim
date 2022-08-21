@@ -160,9 +160,7 @@ solarized.highlights = {
   TSFloat = { link = 'TSConstant' },
   TSBoolean = { link = 'TSConstant' },
   TSTitle = { link = 'Title' },
-  TSVariableBuiltin = { fg = colors.magenta },
-  TSKeywordOperator = { fg = colors.magenta, bold = true },
-  TSInclude = { link = 'TSVariableBuiltin' },
+  TSVariableBuiltin = { fg = colors.orange },
 
   -- javascript
   javascriptTSConstructor = { fg = colors.blue },
