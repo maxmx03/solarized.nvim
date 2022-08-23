@@ -41,7 +41,7 @@ local function rgb2hex(red, green, blue)
 end
 
 function M.darken(color, amount)
-  amount = amount or 10
+  amount = amount or 5
   local r, g, b = hex2rgb(color)
 
   r = math.floor(r / amount)

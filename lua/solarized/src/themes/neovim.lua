@@ -174,10 +174,10 @@ solarized.highlights = {
   DiagnosticInfo = { fg = colors.info },
   DiagnosticHint = { fg = colors.info },
 
-  DiagnosticVirtualTextError = { fg = colors.danger, bg = darken(colors.danger, 5) },
-  DiagnosticVirtualTextWarn = { fg = colors.warning, bg = darken(colors.warning, 5) },
-  DiagnosticVirtualTextInfo = { fg = colors.info, bg = darken(colors.info, 5) },
-  DiagnosticVirtualTextHint = { fg = colors.hint, bg = darken(colors.hint, 5) },
+  DiagnosticVirtualTextError = { fg = colors.danger, bg = darken(colors.danger) },
+  DiagnosticVirtualTextWarn = { fg = colors.warning, bg = darken(colors.warning) },
+  DiagnosticVirtualTextInfo = { fg = colors.info, bg = darken(colors.info) },
+  DiagnosticVirtualTextHint = { fg = colors.hint, bg = darken(colors.hint) },
 
   DiagnosticUnderlineError = { undercurl = true, sp = colors.danger },
   DiagnosticUnderlineWarn = { undercurl = true, sp = colors.warning },
