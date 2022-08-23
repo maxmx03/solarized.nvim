@@ -10,6 +10,7 @@
 ## Installation
 
 via [Packer](https://github.com/wbthomason/packer.nvim)
+
 ```lua
 use {
   'maxmx03/solarized.nvim',
@@ -34,6 +35,7 @@ Plug 'maxmx03/solarized.nvim'
 ## How to Config
 
 example
+
 ```lua
 local success, solarized = pcall(require, 'solarized')
 
@@ -53,53 +55,18 @@ vim.cmd 'colorscheme solarized'
 ```
 
 ## Configuration
-| option | default | description |
-| ------ | ----------- | -------- |
-| mode | `'dark'` | Solarized comes with two mode `dark` and `light` |
-| theme | `'vim'` | The theme comes in three styles, `vim`, `neovim`, `vscode` |
-| transparent | `false` | enable and disable background transparency |
-| colors | `{}` or `function` | You can add new colors or override the default |
-| highlights | `{}` or `function` | You can add new highlights or override the default |
+
+| option      | default            | description                                                |
+| ----------- | ------------------ | ---------------------------------------------------------- |
+| mode        | `'dark'`           | Solarized comes with two mode `dark` and `light`           |
+| theme       | `'vim'`            | The theme comes in three styles, `vim`, `neovim`, `vscode` |
+| transparent | `false`            | enable and disable background transparency                 |
+| colors      | `{}` or `function` | You can add new colors or override the default             |
+| highlights  | `{}` or `function` | You can add new highlights or override the default         |
 
 ## Customization
 
-add or override colors
-```lua
-local solarized = require 'solarized'
-
-local function colors(solarized_colors)
-
-  return {
-    white = solarized_colors.fg,
-    black = solarized_colors.bg,
-    purple = '#2A0944',
-  }
-end
-
-solarized.setup {
-  colors = colors
-}
-```
-
-add or override highlights
-
-```lua
-local solarized = require 'solarized'
-
-local function highlights(solarized_colors)
-  return {
-    CmpItemKindKeyword = { fg = solarized_colors.orange },
-    CmpItemKindFunction = { fg = solarized_colors.cyan },
-    CmpItemKindMethod = { fg = solarized_colors.magenta },
-  } 
-end
-
-solarized.setup {
-  highlights = highlights
-}
-```
-
-full example
+example
 
 ```lua
 local success, solarized = pcall(require, 'solarized')
@@ -112,16 +79,25 @@ solarized.setup {
   transparent = true,
   theme = 'vscode',
   mode = 'dark',
-  colors = {
-    indigo = '#764AF1',
-  },
-  highlights = function(colors)
-    return {
+  colors = function (c, darken)
+    local colors = {
+      fg = c.cyan, -- override the default foreground color
+      indigo = '#4B0082' -- add new color
+    }
+
+    return colors
+  end,
+  highlights = function(colors, darken)
+    -- :h nvim_set_hl for more info
+    local highlights = {
       CmpItemKindTabnine = { fg = colors.magenta },
       CmpItemKindEmoji = { fg = colors.yellow },
-      CursorLineNr = { fg = colors.indigo, bold = true },
+      -- new color being used
+      CursorLineNr = { fg = colors.indigo, bg = darken(colors.indigo, 5), bold = true },
       LineNr = { bg = solarized:is_transparent(colors.bg_alt) },
     }
+
+    return highlights
   end,
 }
 
@@ -130,11 +106,11 @@ vim.cmd 'colorscheme solarized'
 
 ## [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
-```lua 
+```lua
 local success, lualine = pcall(require, 'lualine')
 
-if not success then 
-  return 
+if not success then
+  return
 end
 
 lualine.setup {
