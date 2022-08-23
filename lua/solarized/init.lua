@@ -1,6 +1,9 @@
 local solarized = require 'solarized.src.colorscheme'
 local utils = require 'solarized.src.utils'
 local colors = require 'solarized.src.colors'
+local colorshelper = require 'solarized.src.colorhelper'
+local darken = colorshelper.darken
+local blend = colorshelper.blend
 
 function solarized.setup(user_config)
   if vim.g.colors_name then
@@ -23,7 +26,7 @@ function solarized.setup(user_config)
   if user_config and type(user_config.colors) == 'table' then
     solarized.colors = vim.tbl_extend('force', solarized.colors, user_config.colors)
   elseif user_config and type(user_config.colors) == 'function' then
-    solarized.colors = vim.tbl_extend('force', solarized.colors, user_config.colors(solarized.colors, utils.darken))
+    solarized.colors = vim.tbl_extend('force', solarized.colors, user_config.colors(solarized.colors, darken, blend))
   end
 
   -- highlights: vim, neovim, vscode
@@ -33,7 +36,7 @@ function solarized.setup(user_config)
   if user_config and type(user_config.highlights) == 'table' then
     solarized.highlights = vim.tbl_extend('force', solarized.highlights, user_config.highlights)
   elseif user_config and type(user_config.highlights) == 'function' then
-    solarized.highlights = vim.tbl_extend('force', solarized.highlights, user_config.highlights(solarized.colors, utils.darken))
+    solarized.highlights = vim.tbl_extend('force', solarized.highlights, user_config.highlights(solarized.colors, darken, blend))
   end
 
   utils.set_highlights(solarized.highlights)

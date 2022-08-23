@@ -61,8 +61,8 @@ vim.cmd 'colorscheme solarized'
 | mode        | `'dark'`           | Solarized comes with two mode `dark` and `light`           |
 | theme       | `'vim'`            | The theme comes in three styles, `vim`, `neovim`, `vscode` |
 | transparent | `false`            | enable and disable background transparency                 |
-| colors      | `{}` or `function` | You can add new colors or override the default             |
-| highlights  | `{}` or `function` | You can add new highlights or override the default         |
+| colors      | `{}` or `callback` | You can add new colors or override the default             |
+| highlights  | `{}` or `callback` | You can add new highlights or override the default         |
 
 ## Customization
 
@@ -79,7 +79,11 @@ solarized.setup {
   transparent = true,
   theme = 'vscode',
   mode = 'dark',
-  colors = function (c, darken)
+  colors = function (c, darken, blend)
+    -- c: solarized palette
+    -- darken accept 2 params, color and amount(between 1 and 10), ex: darken(c.yellow, 2)
+    -- blend accept 3 params, foreground, background and alpha(between 0 and 1), ex: blend('#ffffff', '#000000', 0.1)
+
     local colors = {
       fg = c.cyan, -- override the default foreground color
       indigo = '#4B0082' -- add new color
@@ -87,7 +91,11 @@ solarized.setup {
 
     return colors
   end,
-  highlights = function(colors, darken)
+  highlights = function(colors, darken, blend)
+    -- c: solarized palette
+    -- darken accept 2 params, color and amount(between 1 and 10), ex: darken(colors.yellow, 2)
+    -- blend accept 3 params, foreground, background and alpha(between 0 and 1), ex: blend('#ffffff', '#000000', 0.1)
+
     -- :h nvim_set_hl for more info
     local highlights = {
       CmpItemKindTabnine = { fg = colors.magenta },

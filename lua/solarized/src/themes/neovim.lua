@@ -1,8 +1,8 @@
 local solarized = require 'solarized.src.colorscheme'
-local utils = require 'solarized.src.utils'
+local colorhelper = require 'solarized.src.colorhelper'
 
 local colors = solarized.colors
-local darken = utils.darken
+local darken = colorhelper.darken
 
 solarized.highlights = {
 
@@ -172,7 +172,7 @@ solarized.highlights = {
   DiagnosticError = { fg = colors.danger },
   DiagnosticWarn = { fg = colors.warning },
   DiagnosticInfo = { fg = colors.info },
-  DiagnosticHint = { fg = colors.info },
+  DiagnosticHint = { fg = colors.hint },
 
   DiagnosticVirtualTextError = { fg = colors.danger, bg = darken(colors.danger) },
   DiagnosticVirtualTextWarn = { fg = colors.warning, bg = darken(colors.warning) },
