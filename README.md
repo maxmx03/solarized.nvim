@@ -61,8 +61,8 @@ vim.cmd 'colorscheme solarized'
 | mode        | `'dark'`           | Solarized comes with two mode `dark` and `light`           |
 | theme       | `'vim'`            | The theme comes in three styles, `vim`, `neovim`, `vscode` |
 | transparent | `false`            | enable and disable background transparency                 |
-| colors      | `{}` or `callback` | You can add new colors or override the default             |
-| highlights  | `{}` or `callback` | You can add new highlights or override the default         |
+| colors      | `{}` or `function` | You can add new colors or override the default             |
+| highlights  | `{}` or `function` | You can add new highlights or override the default         |
 
 ## Customization
 
