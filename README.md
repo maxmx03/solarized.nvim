@@ -86,23 +86,30 @@ solarized.setup {
 
     local colors = {
       fg = c.cyan, -- override the default foreground color
-      indigo = '#4B0082' -- add new color
+      indigo = '#4B0082', -- new color
+      white = '#ffffff', -- new color
     }
 
     return colors
   end,
   highlights = function(colors, darken, blend)
     -- c: solarized palette
-    -- darken accept 2 params, color and amount(between 1 and 10), ex: darken(colors.yellow, 2)
-    -- blend accept 3 params, foreground, background and alpha(between 0 and 1), ex: blend('#ffffff', '#000000', 0.1)
 
     -- :h nvim_set_hl for more info
     local highlights = {
       CmpItemKindTabnine = { fg = colors.magenta },
       CmpItemKindEmoji = { fg = colors.yellow },
-      -- new color being used
-      CursorLineNr = { fg = colors.indigo, bg = darken(colors.indigo, 5), bold = true },
       LineNr = { bg = solarized:is_transparent(colors.bg_alt) },
+      -- darken accept 2 params, color and amount(between 1 and 10), ex: darken(colors.yellow, 2)
+      -- ex:
+      CursorLineNr = { fg = colors.indigo, bg = darken(colors.indigo, 5), bold = true },
+
+      -- blend accept 3 params, foreground, background and alpha(between 0 and 1)
+      -- ex:
+      TSFunction = { fg = blend(colors.blue, colors.white, 0.7), bg = blend(colors.blue, colors.bg, 0.05), bold = true },
+      TSFunctionCall = { link = 'TSFunction' },
+      TSKeyword = { fg = blend(colors.green, colors.white, 0.7), bg = blend(colors.green, colors.bg, 0.05), bold = true },
+      TSTag = { link = 'TSKeyword' },
     }
 
     return highlights
