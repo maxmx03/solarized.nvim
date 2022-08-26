@@ -1,9 +1,9 @@
 local solarized = require 'solarized.src.colorscheme'
 local utils = require 'solarized.src.utils'
 local colors = require 'solarized.src.colors'
-local colorshelper = require 'solarized.src.colorhelper'
-local darken = colorshelper.darken
-local blend = colorshelper.blend
+local colortool = require 'solarized.src.colortool'
+local darken = colortool.darken
+local blend = colortool.blend
 
 function solarized.setup(user_config)
   if vim.g.colors_name then
