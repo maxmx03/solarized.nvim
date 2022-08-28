@@ -66,53 +66,80 @@ vim.cmd 'colorscheme solarized'
 
 ## Customization
 
-example
-
 ```lua
-local success, solarized = pcall(require, 'solarized')
-
-if not success then
-  return
-end
+local solarized = require 'solarized'
 
 solarized.setup {
   transparent = true,
-  theme = 'vscode',
+  theme = 'vim',
   mode = 'dark',
-  colors = function (c, darken, blend)
-    -- c: solarized palette
-    -- darken accept 2 params, color and amount(between 1 and 10), ex: darken(c.yellow, 2)
-    -- blend accept 3 params, foreground, background and alpha(between 0 and 1), ex: blend('#ffffff', '#000000', 0.1)
-
+  colors = function (c)
     local colors = {
       fg = c.cyan, -- override the default foreground color
       indigo = '#4B0082', -- new color
-      white = '#ffffff', -- new color
     }
 
     return colors
   end,
-  highlights = function(colors, darken, blend)
-    -- c: solarized palette
-
-    -- :h nvim_set_hl for more info
+  highlights = function(colors)
     local highlights = {
       CmpItemKindTabnine = { fg = colors.magenta },
       CmpItemKindEmoji = { fg = colors.yellow },
-      LineNr = { bg = solarized:is_transparent(colors.bg_alt) },
-      -- darken accept 2 params, color and amount(between 1 and 10), ex: darken(colors.yellow, 2)
-      -- ex:
-      CursorLineNr = { fg = colors.indigo, bg = darken(colors.indigo, 5), bold = true },
-
-      -- blend accept 3 params, foreground, background and alpha(between 0 and 1)
-      -- ex:
-      TSFunction = { fg = blend(colors.blue, colors.white, 0.7), bg = blend(colors.blue, colors.bg, 0.05), bold = true },
-      TSFunctionCall = { link = 'TSFunction' },
-      TSKeyword = { fg = blend(colors.green, colors.white, 0.7), bg = blend(colors.green, colors.bg, 0.05), bold = true },
-      TSTag = { link = 'TSKeyword' },
+      LineNr = { bg = solarized:is_transparent(colors.bg_alt) }, -- bg_alt if solarized is not transparent
+      CursorLineNr = { fg = colors.indigo }, -- new color being used
     }
 
     return highlights
+  end,
+}
+
+vim.cmd 'colorscheme solarized'
+```
+### Customization - Darken Function
+
+Darken hex colors
+
+```lua
+local solarized = require 'solarized'
+
+solarized.setup {
+  transparent = true,
+  theme = 'vim',
+  mode = 'dark',
+  highlights = function(colors, darken)
+    return {
+      DiagnosticVirtualTextError = { fg = colors.danger, bg = darken(colors.danger) },
+      DiagnosticVirtualTextWarn = { fg = colors.warning, bg = darken(colors.warning) },
+      DiagnosticVirtualTextInfo = { fg = colors.info, bg = darken(colors.info) },
+      DiagnosticVirtualTextHint = { fg = colors.hint, bg = darken(colors.hint) },
+    }
+  end,
+}
+
+vim.cmd 'colorscheme solarized'
+```
+
+### Customization - Blend Function
+
+Blend hex colors, based on [colorblender.py](https://github.com/ChristianChiarulli/colorblender)
+
+```lua
+local solarized = require 'solarized'
+
+solarized.setup {
+  transparent = true,
+  theme = 'vim',
+  mode = 'dark',
+  highlights = function(colors, _, blend)
+    local background = colors.bg
+    local alpha = 0.15
+
+    return {
+      Statement = { fg = colors.green, bg = blend(colors.green, background, alpha) },
+      PreProc = { fg = colors.orange, bg = blend(colors.orange, background, alpha) },
+      Type = { fg = colors.yellow, bg = blend(colors.yellow, background, alpha) },
+      Special = { fg = colors.red, bg = blend(colors.red, background, alpha) },
+    }
   end,
 }
 
