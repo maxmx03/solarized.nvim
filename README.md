@@ -127,7 +127,7 @@ Blend hex colors, based on [colorblender.py](https://github.com/ChristianChiarul
 local solarized = require 'solarized'
 
 solarized.setup {
-  transparent = true,
+  transparent = false,
   theme = 'vim',
   mode = 'dark',
   highlights = function(colors, _, blend)
