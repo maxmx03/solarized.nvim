@@ -8,7 +8,7 @@ local M = {
     a = { fg = darken(colors.blue), bg = colors.blue, gui = 'bold' },
     b = { fg = darken(colors.content), bg = colors.content },
     c = { fg = colors.content, bg = solarized:is_transparent(colors.bg_alt) },
-    z = { fg = darken(colors.primary), bg = colors.primary },
+    z = { fg = darken(colors.primary), bg = colors.blue },
   },
   insert = {
     a = { fg = darken(colors.green), bg = colors.green },
