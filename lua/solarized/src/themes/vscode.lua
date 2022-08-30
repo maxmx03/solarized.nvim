@@ -1,6 +1,9 @@
 local solarized = require 'solarized.src.colorscheme'
+local colortool = require 'solarized.src.colortool'
 
 local colors = solarized.colors
+local darken = colortool.darken
+local blend = colortool.blend
 
 solarized.highlights = {
 
@@ -373,11 +376,11 @@ solarized.highlights = {
   --}}}
 
   --{{{ HOP
-  HopPreview = { fg = colors.yellow, reverse = true },
-  HopNextKey = { fg = colors.yellow, bold = true },
-  HopNextKey1 = { fg = colors.yellow, reverse = true },
-  HopNextKey2 = { fg = colors.yellow },
-  HopUnmatched = { fg = colors.secondary },
+  HopPreview = { fg = colors.yellow, bg = blend(colors.yellow, colors.bg, 0.15), bold = true },
+  HopNextKey = { fg = colors.magenta, bg = blend(colors.magenta, colors.bg, 0.15), bold = true },
+  HopNextKey1 = { fg = colors.blue, bg = blend(colors.blue, colors.bg, 0.15), bold = true },
+  HopNextKey2 = { fg = darken(colors.blue, 1.25) },
+  HopUnmatched = { fg = darken(colors.fg, 2) },
   --}}}
 
   --{{{ TWILIGHT
