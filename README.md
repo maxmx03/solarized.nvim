@@ -164,5 +164,5 @@ lualine.setup {
 
 ## Other works
 
-[FluoroMachine](https://github.com/maxmx03/FluoroMachine.nvim)
+[FluoroMachine colorscheme](https://github.com/maxmx03/FluoroMachine.nvim)
 
