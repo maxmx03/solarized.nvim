@@ -1,21 +1,20 @@
 local M = {}
 
--- {{{ solarized colors
--- {{{ dark
+-- Dark
 -- bas03    #002b36 background
 -- base02    #073642 background highlights
 -- base01    #586e75 comments / secondary content
 -- base0     #839496 foreground / body text
 -- base1     #93a1a1 foreground / emphasized content
--- }}}
--- {{{ light
+
+-- Light
 -- base3     #fdf6e3 background
 -- base2     #eee8d5 background highlights
 -- base1     #93a1a1 comments / secondary content
 -- base00    #657b83 foreground / body text
 -- base01    #586e75 foreground / emphasized content
--- }}}
--- {{{ commom colors
+
+-- default
 -- yellow    #b58900
 -- orange    #cb4b16
 -- red       #dc322f
@@ -24,8 +23,6 @@ local M = {}
 -- blue      #268bd2
 -- cyan      #2aa198
 -- green     #859900
--- }}}
--- }}}
 
 M.dark = {
   -- BACKGROUND TONES
@@ -62,9 +59,10 @@ M.dark = {
 
   -- DIAGNOSTICS TONES
   hint = '#2aa198',
-  info = '#b58900',
+  info = '#839496',
   warning = '#cb4b16',
   danger = '#dc3545',
+  other = '#6c71c4',
 
   -- GIT TONES
   added = '#859900',
@@ -108,17 +106,16 @@ M.light = {
 
   -- DIAGNOSTICS TONES
   hint = '#2aa198',
-  info = '#b58900',
+  info = '#fdf6e3',
   warning = '#cb4b16',
   danger = '#dc3545',
+  other = '#6c71c4',
 
   -- GIT TONES
   added = '#859900',
   changed = '#b58900',
   removed = '#cb4b16',
   deleted = '#dc3545',
-
-  -- MENU TONES
 }
 
 return M

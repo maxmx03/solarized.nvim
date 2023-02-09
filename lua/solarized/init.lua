@@ -36,7 +36,8 @@ function solarized.setup(user_config)
   if user_config and type(user_config.highlights) == 'table' then
     solarized.highlights = vim.tbl_extend('force', solarized.highlights, user_config.highlights)
   elseif user_config and type(user_config.highlights) == 'function' then
-    solarized.highlights = vim.tbl_extend('force', solarized.highlights, user_config.highlights(solarized.colors, darken, blend))
+    solarized.highlights =
+      vim.tbl_extend('force', solarized.highlights, user_config.highlights(solarized.colors, darken, blend))
   end
 
   utils.set_highlights(solarized.highlights)

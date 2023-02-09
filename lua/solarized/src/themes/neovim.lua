@@ -7,7 +7,7 @@ local blend = colortool.blend
 
 solarized.highlights = {
 
-  --{{{ BASE
+  -- BASE
   Comment = { fg = colors.comment, italic = true },
   ColorColumn = { bg = colors.bg_alt },
   Conceal = { fg = colors.blue },
