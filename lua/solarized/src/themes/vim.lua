@@ -151,6 +151,9 @@ solarized.highlights = {
   GitGutterChange = { fg = colors.changed },
   GitGutterDelete = { fg = colors.deleted },
 
+  -- Treesitter - Tags
+  ['@tag.attribute'] = { fg = colors.violet },
+
   -- Lsp
   DiagnosticHint = { fg = colors.hint },
   DiagnosticInfo = { fg = colors.info },

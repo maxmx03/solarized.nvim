@@ -236,8 +236,8 @@ solarized.highlights = {
 
   -- Treesitter - Tags
   ['@tag'] = { link = '@keyword' },
-  ['@tag.attribute'] = { fg = colors.violet },
-  ['@tag.delimiter'] = { fg = colors.red, bg = blend(colors.red, colors.bg, 0.15) },
+  ['@tag.attribute'] = { link = '@property' },
+  ['@tag.delimiter'] = { fg = colors.red },
 
   -- Treesitter - Locals
   ['@definition.constant'] = { link = '@constant' },
