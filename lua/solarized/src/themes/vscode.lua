@@ -168,7 +168,7 @@ solarized.highlights = {
 
   -- Treesitter - Literals
   ['@string'] = { link = 'String' },
-  ['@string.regex'] = { fg = colors.magenta },
+  ['@string.regex'] = { fg = colors.orange },
   ['@string.escape'] = { fg = colors.orange },
   ['@string.special'] = { fg = colors.magenta },
   ['@character'] = { link = 'Character' },
