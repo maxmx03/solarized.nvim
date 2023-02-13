@@ -106,7 +106,7 @@ M.light = {
 
   -- DIAGNOSTICS TONES
   hint = '#2aa198',
-  info = '#fdf6e3',
+  info = '#657b83',
   warning = '#cb4b16',
   danger = '#dc3545',
   other = '#6c71c4',
