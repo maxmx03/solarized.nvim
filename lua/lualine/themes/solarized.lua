@@ -6,7 +6,7 @@ local darken = colortool.darken
 local M = {
   normal = {
     a = { fg = darken(colors.blue), bg = colors.blue, gui = 'bold' },
-    b = { fg = darken(colors.content), bg = colors.content },
+    b = { fg = colors.bg_alt, bg = colors.content },
     c = { fg = colors.content, bg = solarized:is_transparent(colors.bg_alt) },
     z = { fg = darken(colors.primary), bg = colors.blue },
   },
