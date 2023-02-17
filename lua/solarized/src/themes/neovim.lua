@@ -38,8 +38,8 @@ solarized.highlights = {
   TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
   Visual = { fg = colors.secondary, bg = colors.bg, reverse = true, bold = true },
   VisualNOS = { reverse = true },
-  Search = { link = 'VisualNOS' },
-  IncSearch = { link = 'Visual' },
+  Search = { fg = colors.yellow, reverse = true },
+  IncSearch = { fg = colors.orange },
   CurSearch = { link = 'IncSearch' },
   Folded = { fg = colors.fg, bg = colors.bg_alt, sp = colors.bg },
   FoldColumn = { fg = colors.fg, bg = colors.bg_alt },
@@ -423,8 +423,8 @@ solarized.highlights = {
   TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
   TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },
   TelescopePromptTitle = { fg = colors.bg, bg = colors.blue },
-  TelescopeSelection = { link = 'Visual' },
-  TelescopeMatching = { link = 'VisualNOS' },
+  TelescopeSelection = { fg = colors.yellow },
+  TelescopeMatching = { fg = colors.yellow, reverse = true },
 
   -- DASHBOARD
   DashboardHeader = { fg = colors.primary },
