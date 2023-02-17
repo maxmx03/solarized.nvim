@@ -224,6 +224,7 @@ solarized.highlights = {
   ['@text.emphasis'] = { fg = colors.magenta },
   ['@text.strike'] = { fg = colors.content },
   ['@text.title'] = { link = 'Title' },
+  ['@text.literal'] = { link = '@text' },
   ['@text.quote'] = { fg = colors.cyan },
   ['@text.uri'] = { fg = colors.violet },
   ['@text.math'] = { fg = colors.magenta },
