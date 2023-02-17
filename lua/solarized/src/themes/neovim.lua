@@ -328,7 +328,7 @@ solarized.highlights = {
   CodeActionNumber = { link = 'Number' },
   -- LSPSAGA - finder
   FinderSelection = { link = 'PmenuSel' },
-  FinderFileName = { fg = colors.white },
+  FinderFileName = { fg = colors.content },
   FinderCount = { link = 'Label' },
   FinderIcon = { fg = colors.cyan },
   FinderType = { fg = colors.violet },
