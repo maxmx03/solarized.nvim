@@ -6,6 +6,8 @@ local darken = colortool.darken
 local blend = colortool.blend
 
 function solarized.setup(user_config)
+  _G.user_config = user_config
+
   if vim.g.colors_name then
     vim.cmd 'hi clear'
   end
@@ -20,19 +22,18 @@ function solarized.setup(user_config)
   solarized.config = vim.tbl_extend('force', solarized.config, user_config or {})
 
   -- colors: dark or light
-  solarized.colors = colors[solarized.config.mode]
+  solarized.colors = colors[vim.o.background]
+  vim.cmd(string.format('set background=%s', vim.o.background))
 
-  -- override or add highlight group
+  -- -- override or add colors
   if user_config and type(user_config.colors) == 'table' then
     solarized.colors = vim.tbl_extend('force', solarized.colors, user_config.colors)
   elseif user_config and type(user_config.colors) == 'function' then
     solarized.colors = vim.tbl_extend('force', solarized.colors, user_config.colors(solarized.colors, darken, blend))
   end
 
-  -- highlights: vim, neovim, vscode
-  require('solarized.src.themes.' .. solarized.config.theme)
+  require('solarized.src.themes.' .. solarized.config.theme)(solarized)
 
-  -- override or add colors
   if user_config and type(user_config.highlights) == 'table' then
     solarized.highlights = vim.tbl_extend('force', solarized.highlights, user_config.highlights)
   elseif user_config and type(user_config.highlights) == 'function' then
@@ -42,5 +43,20 @@ function solarized.setup(user_config)
 
   utils.set_highlights(solarized.highlights)
 end
+
+local solarized_colors = { 'solarized', 'solarized8', 'solarized16' }
+
+local function on_colorscheme_change()
+  if vim.tbl_contains(solarized_colors, vim.g.colors_name) then
+    -- Call your Solarized setup function here
+    vim.api.nvim_command "lua require('solarized').setup(_G.user_config)"
+  end
+end
+
+-- Create the autocmd to listen for the colorscheme event
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = '*',
+  callback = on_colorscheme_change,
+})
 
 return solarized
