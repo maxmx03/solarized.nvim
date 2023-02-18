@@ -1,70 +1,57 @@
----@diagnostic disable: cast-local-type
+	---@diagnostic disable: cast-local-type
 local M = {}
 
-function M.hex_to_rgb(hex)
-  -- Remove the "#" character if present
-  hex = hex:gsub('#', '')
+local function remove_string(str, pattern)
+	return string.gsub(str, pattern, "")
+end
 
-  -- Split the hex code into separate red, green, and blue components
-  local r = tonumber(hex:sub(1, 2), 16)
-  local g = tonumber(hex:sub(3, 4), 16)
-  local b = tonumber(hex:sub(5, 6), 16)
-
-  -- Return the color values as three separate integers
-  return r, g, b
+local function tohexa(str)
+	return tonumber("0x" .. str)
 end
 
 local function hex_to_rgb(hex)
-  -- Remove the "#" character if present
-  hex = hex:gsub('#', '')
+	hex = remove_string(hex, "#")
 
-  -- Split the hex code into separate red, green, and blue components
-  local r = tonumber(hex:sub(1, 2), 16)
-  local g = tonumber(hex:sub(3, 4), 16)
-  local b = tonumber(hex:sub(5, 6), 16)
+	local r = string.sub(hex, 1, 2)
+	local g = string.sub(hex, 3, 4)
+	local b = string.sub(hex, 5, 6)
 
-  -- Return the color values as three separate integers
-  return { r, g, b }
+	r = tohexa(r)
+	g = tohexa(g)
+	b = tohexa(b)
+
+	return { r, g, b }
 end
 
 local function rgb_to_hex(red, green, blue)
-  return string.format('#%02X%02X%02X', red, green, blue)
+	return string.format("#%.2X%.2X%.2X", red, green, blue)
 end
 
-function M.darken(color, percent)
-  local r = tonumber(color:sub(2, 3), 16)
-  local g = tonumber(color:sub(4, 5), 16)
-  local b = tonumber(color:sub(6, 7), 16)
-  r = math.max(0, math.floor(r * (1 - percent / 100)))
-  g = math.max(0, math.floor(g * (1 - percent / 100)))
-  b = math.max(0, math.floor(b * (1 - percent / 100)))
-  return string.format('#%02X%02X%02X', r, g, b)
-end
+function M.darken(color, amount)
+  amount = amount or 5
+  local rgb = hex_to_rgb(color)
 
-function M.lighten(color, percent)
-  local r = tonumber(color:sub(2, 3), 16)
-  local g = tonumber(color:sub(4, 5), 16)
-  local b = tonumber(color:sub(6, 7), 16)
-  r = math.min(255, math.floor(r * (1 + percent / 100)))
-  g = math.min(255, math.floor(g * (1 + percent / 100)))
-  b = math.min(255, math.floor(b * (1 + percent / 100)))
-  return string.format('#%02X%02X%02X', r, g, b)
+  local r = math.floor(rgb[1] / amount)
+  local g = math.floor(rgb[2] / amount)
+  local b = math.floor(rgb[3] / amount)
+
+  return rgb_to_hex(r, g, b)
 end
 
 function M.blend(hex_fg, hex_bg, alpha)
-  local rgb_bg = hex_to_rgb(hex_bg)
-  local rgb_fg = hex_to_rgb(hex_fg)
-  local min = math.min
-  local max = math.max
-  local floor = math.floor
+	local rgb_bg = hex_to_rgb(hex_bg)
+	local rgb_fg = hex_to_rgb(hex_fg)
+	local min = math.min
+	local max = math.max
+	local floor = math.floor
 
-  local function blend_channel(channel)
-    local blended_channel = alpha * rgb_fg[channel] + ((1 - alpha) * rgb_bg[channel])
+	local function blend_channel(channel)
+		local blended_channel = alpha * rgb_fg[channel] + ((1 - alpha) * rgb_bg[channel])
 
-    return floor(min(max(0, blended_channel), 255) + 0.5)
-  end
+		return floor(min(max(0, blended_channel), 255) + 0.5)
+	end
 
-  return rgb_to_hex(blend_channel(1), blend_channel(2), blend_channel(3))
+	return rgb_to_hex(blend_channel(1), blend_channel(2), blend_channel(3))
 end
 
 return M

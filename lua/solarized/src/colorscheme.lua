@@ -1,5 +1,6 @@
 local M = {}
 
+M.highlights = {}
 M.colors = {}
 M.config = {
   mode = 'dark',
