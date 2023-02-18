@@ -1,3 +1,3 @@
 local solarized = require 'solarized'
 
-solarized.setup()
+solarized.setup(_G.user_config)
