@@ -3,12 +3,12 @@ local utils = require 'solarized.utils'
 local chromatic = require 'solarized.utils.chromatic'
 
 function solarized.setup(user_config)
-  vim.g.user_config = user_config or {}
+  vim.g.user_config = user_config
 
   utils.load_colorscheme()
   solarized.colors = require(string.format('solarized.colors.%s', vim.o.background))
   solarized:override_config(user_config)
-  solarized.override_colors(user_config.colors)
+  solarized:override_colors(user_config.colors)
   local hl_theme = require(string.format('solarized.themes.%s_theme', solarized.config.theme))
   solarized.highlights = hl_theme(solarized, chromatic)
   solarized:override_hl(user_config.highlights)

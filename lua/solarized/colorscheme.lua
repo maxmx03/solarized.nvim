@@ -60,4 +60,4 @@ function Colorscheme:is_not_transparent(color)
   return color
 end
 
-return Colorscheme
+return Colorscheme:new()

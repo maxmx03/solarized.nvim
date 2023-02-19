@@ -156,7 +156,7 @@ solarized.setup {
   highlights = function(colors, darken, lighten, blend)
     return {
       Normal       = { fg = colors.fg, bg = colors.bg },
-      Comment      = { fg = colors.comment, bg = darken(colors.base03, 10), italic = true },
+      Comment      = { fg = colors.comment, bg = darken(colors.bg, 10), italic = true },
       Constant     = { fg = colors.cyan },
       Identifier   = { fg = colors.green },
       Statement    = { fg = colors.yellow },
