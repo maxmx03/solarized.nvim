@@ -1,10 +1,9 @@
-local function vscode(solarized)
-  local colortool = require 'solarized.src.colortool'
+local function vscode(solarized, chromatic)
   local colors = solarized.colors
-  local darken = colortool.darken
-  local blend = colortool.blend
+  local darken = chromatic.darken
+  local blend = chromatic.blend
 
-  solarized.highlights = {
+  return {
     -- Editor
     Normal = { fg = colors.fg, bg = solarized:is_transparent(colors.bg) },
     NormalNC = { fg = colors.content, bg = solarized:is_transparent(colors.bg_alt) },

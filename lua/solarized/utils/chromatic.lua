@@ -1,7 +1,6 @@
----@diagnostic disable: cast-local-type
-local M = {}
+local chromatic = {}
 
-function M.hex_to_rgb(hex)
+function chromatic.hex_to_rgb(hex)
   -- Remove the "#" character if present
   hex = hex:gsub('#', '')
 
@@ -31,7 +30,7 @@ local function rgb_to_hex(red, green, blue)
   return string.format('#%02X%02X%02X', red, green, blue)
 end
 
-function M.darken(color, percent)
+function chromatic.darken(color, percent)
   local r = tonumber(color:sub(2, 3), 16)
   local g = tonumber(color:sub(4, 5), 16)
   local b = tonumber(color:sub(6, 7), 16)
@@ -43,7 +42,7 @@ function M.darken(color, percent)
   return string.format('#%02X%02X%02X', r, g, b)
 end
 
-function M.lighten(color, percent)
+function chromatic.lighten(color, percent)
   local r = tonumber(color:sub(2, 3), 16)
   local g = tonumber(color:sub(4, 5), 16)
   local b = tonumber(color:sub(6, 7), 16)
@@ -55,7 +54,7 @@ function M.lighten(color, percent)
   return string.format('#%02X%02X%02X', r, g, b)
 end
 
-function M.blend(hex_fg, hex_bg, alpha)
+function chromatic.blend(hex_fg, hex_bg, alpha)
   local rgb_bg = hex_to_rgb(hex_bg)
   local rgb_fg = hex_to_rgb(hex_fg)
   local min = math.min
@@ -71,4 +70,4 @@ function M.blend(hex_fg, hex_bg, alpha)
   return rgb_to_hex(blend_channel(1), blend_channel(2), blend_channel(3))
 end
 
-return M
+return chromatic

@@ -1,6 +1,6 @@
-local M = {}
+local utils = {}
 
-function M.set_highlights(highlight_groups)
+function utils.apply_colorscheme_highlights(highlight_groups)
   for group_name, group in pairs(highlight_groups) do
     if type(group) == 'table' then
       local val = {}
@@ -20,4 +20,17 @@ function M.set_highlights(highlight_groups)
   end
 end
 
-return M
+function utils.load_colorscheme()
+  if vim.g.colors_name then
+    vim.cmd 'hi clear'
+  end
+
+  if vim.fn.exists 'syntax_on' then
+    vim.cmd 'syntax reset'
+  end
+
+  vim.o.termguicolors = true
+  vim.g.colors_name = 'solarized'
+end
+
+return utils

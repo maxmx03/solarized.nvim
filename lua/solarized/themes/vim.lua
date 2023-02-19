@@ -1,7 +1,7 @@
 function vim(solarized)
   local colors = solarized
 
-  solarized.highlights = {
+  return {
     -- Editor
     Normal = { fg = colors.fg, bg = solarized:is_transparent(colors.bg) },
     NormalNC = { fg = colors.content, bg = solarized:is_transparent(colors.bg_alt) },
@@ -27,7 +27,7 @@ function vim(solarized)
     MsgSeparator = { fg = colors.content, bg = colors.bg_alt },
     MoreMsg = { fg = colors.blue },
     WarningMsg = { fg = colors.warning, bold = true },
-    ErrorMsg = { fg = colors.danger, reverse = true },
+    ErrorMsg = { fg = colors.error, reverse = true },
     MatchParen = { fg = colors.red, bg = colors.content, bold = true },
     TabLine = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
     TabLineSel = { fg = colors.secondary, bg = colors.bg_alt_invert, sp = colors.fg, reverse = true },
@@ -44,7 +44,7 @@ function vim(solarized)
     VertSplit = { fg = colors.fg, bg = colors.bg_alt },
     WinSeparator = { fg = colors.fg, bold = true },
     FloatBorder = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
-    SpellBad = { sp = colors.danger, undercurl = true },
+    SpellBad = { sp = colors.error, undercurl = true },
     SpellCap = { sp = colors.violet, undercurl = true },
     SpellLocal = { sp = colors.warning, undercurl = true },
     SpellRare = { sp = colors.cyan, undercurl = true },
@@ -137,7 +137,7 @@ function vim(solarized)
     Italic = { italic = true },
     Ignore = { fg = colors.cyan, bg = colors.bg_alt, bold = true },
     Todo = { fg = colors.red, bg = colors.bg_alt, bold = true },
-    Error = { fg = colors.danger, bg = colors.bg_alt, bold = true },
+    Error = { fg = colors.error, bg = colors.bg_alt, bold = true },
 
     -- Git
     SignAdd = { fg = colors.added },
@@ -156,7 +156,7 @@ function vim(solarized)
     -- Lsp
     DiagnosticHint = { fg = colors.hint },
     DiagnosticInfo = { fg = colors.info },
-    DiagnosticError = { fg = colors.danger },
+    DiagnosticError = { fg = colors.error },
     DiagnosticOther = { fg = colors.other },
     DiagnosticSignHint = { link = 'DiagnosticHint' },
     DiagnosticSignInfo = { link = 'DiagnosticInfo' },
@@ -171,12 +171,12 @@ function vim(solarized)
     DiagnosticUnderlineHint = { sp = colors.hint, undercurl = true },
     DiagnosticUnderlineInfo = { sp = colors.info, undercurl = true },
     DiagnosticUnderlineWarn = { sp = colors.warning, undercurl = true },
-    DiagnosticUnderlineError = { sp = colors.danger, undercurl = true },
+    DiagnosticUnderlineError = { sp = colors.error, undercurl = true },
     DiagnosticSignInformation = { link = 'DiagnosticInfo' },
     DiagnosticVirtualTextHint = { fg = colors.hint, bg = colors.bg_alt },
     DiagnosticVirtualTextInfo = { fg = colors.info, bg = colors.bg_alt },
     DiagnosticVirtualTextWarn = { fg = colors.warning, bg = colors.bg_alt },
-    DiagnosticVirtualTextError = { fg = colors.danger, bg = colors.bg_alt },
+    DiagnosticVirtualTextError = { fg = colors.error, bg = colors.bg_alt },
     LspDiagnosticsError = { link = 'DiagnosticError' },
     LspDiagnosticsWarning = { link = 'DiagnosticWarn' },
     LspDiagnosticsInfo = { link = 'DiagnosticInfo' },
@@ -285,7 +285,7 @@ function vim(solarized)
     -- NvimTree
     NvimTreeNormalNC = { link = 'NormalNC' },
     NvimTreeVertSplit = { fg = colors.bg },
-    NvimTreeFolderIcon = { fg = colors.blue },
+    NvimTreeFolderIcon = { fg = colors.red },
     NvimTreeFolderName = { fg = colors.fg },
     NvimTreeOpenedFolderName = { fg = colors.blue },
     NvimTreeRootFolder = { fg = colors.blue },

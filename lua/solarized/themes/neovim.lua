@@ -1,11 +1,10 @@
-local function neovim(solarized)
-  local colortool = require 'solarized.src.colortool'
+local function neovim(solarized, chromatic)
   local colors = solarized.colors
 
-  local darken = colortool.darken
-  local blend = colortool.blend
+  local darken = chromatic.darken
+  local blend = chromatic.blend
 
-  solarized.highlights = {
+  return {
     -- Editor
     Normal = { fg = colors.fg, bg = solarized:is_transparent(colors.bg) },
     NormalNC = { fg = colors.content, bg = solarized:is_transparent(colors.bg_alt) },
@@ -407,7 +406,7 @@ local function neovim(solarized)
     -- NVIM-TREE
     NvimTreeNormalNC = { link = 'NormalNC' },
     NvimTreeVertSplit = { fg = colors.bg },
-    NvimTreeFolderIcon = { fg = colors.blue },
+    NvimTreeFolderIcon = { fg = colors.orange },
     NvimTreeFolderName = { fg = colors.fg },
     NvimTreeOpenedFolderName = { fg = colors.blue },
     NvimTreeRootFolder = { fg = colors.blue },

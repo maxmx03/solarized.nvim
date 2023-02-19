@@ -1,7 +1,7 @@
 local solarized = require 'solarized'
+local chromatic = require 'solarized.utils.chromatic'
 local colors = solarized.colors
-local colortool = require 'solarized.src.colortool'
-local darken = colortool.darken
+local darken = chromatic.darken
 
 local M = {
   normal = {
