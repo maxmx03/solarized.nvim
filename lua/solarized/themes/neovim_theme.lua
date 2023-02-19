@@ -1,5 +1,8 @@
-function vim(solarized)
-  local colors = solarized
+local function neovim_theme(solarized, chromatic)
+  local colors = solarized.colors
+
+  local darken = chromatic.darken
+  local blend = chromatic.blend
 
   return {
     -- Editor
@@ -8,19 +11,19 @@ function vim(solarized)
     NormalFloat = { fg = colors.fg, bg = colors.bg_alt },
     Cursor = { fg = colors.bg, bg = colors.fg },
     lCursor = { link = 'Cursor' },
-    CursorIM = { link = 'Cursor' },
-    CursorLine = { bg = colors.bg_alt, sp = colors.content },
+    CursorIM = { fg = colors.bg, bg = colors.fg },
     CursorLineNr = { bg = colors.bg_alt, sp = colors.content },
+    CursorLine = { bg = colors.bg_alt, sp = colors.content },
     TermCursor = { fg = colors.bg, bg = colors.fg },
     TermCursorNC = { fg = colors.bg, bg = colors.fg },
     DiffText = { fg = colors.blue, sp = colors.blue, reverse = true },
     DiffAdd = { fg = colors.added, sp = colors.added, reverse = true },
     DiffChange = { fg = colors.changed, sp = colors.changed, reverse = true },
     DiffDelete = { fg = colors.deleted, reverse = true },
-    Pmenu = { fg = colors.fg, bg = colors.bg_alt, reverse = true, bold = true },
+    Pmenu = { fg = colors.fg, bg = colors.bg_alt, bold = true },
     PmenuSel = { fg = colors.content, bg = colors.bg_alt_invert, reverse = true, bold = true },
     PmenuSbar = { fg = colors.bg_alt_invert, bg = colors.fg, reverse = true, bold = true },
-    PmenuThumb = { fg = colors.fg, bg = colors.bg, reverse = true, bold = true },
+    PmenuThumb = { fg = colors.primary, bg = colors.bg, reverse = true, bold = true },
     WildMenu = { fg = colors.bg_alt_invert, bg = colors.bg_alt, reverse = true, bold = true },
     MsgArea = { fg = colors.content, bg = solarized:is_transparent(colors.bg) },
     ModeMsg = { fg = colors.blue },
@@ -139,7 +142,7 @@ function vim(solarized)
     Todo = { fg = colors.red, bg = colors.bg_alt, bold = true },
     Error = { fg = colors.error, bg = colors.bg_alt, bold = true },
 
-    -- Git
+    -- GIT
     SignAdd = { fg = colors.added },
     SignChange = { fg = colors.changed },
     SignDelete = { fg = colors.deleted },
@@ -150,10 +153,106 @@ function vim(solarized)
     GitGutterChange = { fg = colors.changed },
     GitGutterDelete = { fg = colors.deleted },
 
-    -- Treesitter - Tags
-    ['@tag.attribute'] = { fg = colors.violet },
+    -- Treesitter - Misc
+    ['@comment'] = { link = 'Comment' },
+    ['@error'] = { link = 'Error' },
+    ['@preproc'] = { link = 'PreProc' },
+    ['@define'] = { link = 'Define' },
+    ['@operator'] = { link = 'Operator' },
 
-    -- Lsp
+    -- Treesitter - Punctuation
+    ['@punctuation.delimiter'] = { link = 'Delimiter' },
+    ['@punctuation.bracket'] = { link = 'Delimiter' },
+    ['@punctuation.special'] = { fg = colors.magenta },
+
+    -- Treesitter - Literals
+    ['@string'] = { link = 'String' },
+    ['@string.regex'] = { fg = colors.magenta },
+    ['@string.escape'] = { fg = colors.magenta },
+    ['@string.special'] = { fg = colors.magenta },
+    ['@character'] = { link = 'Character' },
+    ['@character.special'] = { fg = colors.magenta },
+    ['@boolean'] = { fg = colors.violet },
+    ['@number'] = { fg = colors.violet },
+    ['@float'] = { link = '@number' },
+
+    -- Treesitter - Functions
+    ['@function'] = { link = 'Function' },
+    ['@function.call'] = { link = 'Function' },
+    ['@function.builtin'] = { link = 'Function' },
+    ['@method'] = { link = 'Type' },
+    ['@method.call'] = { link = 'Type' },
+    ['@constructor'] = { fg = colors.red },
+    ['@parameter'] = { fg = colors.content, italic = true },
+
+    -- Treesitter - Keywords
+    ['@keyword'] = { link = 'Keyword' },
+    ['@keyword.function'] = { link = '@keyword' },
+    ['@keyword.operator'] = { link = '@keyword' },
+    ['@keyword.return'] = { link = '@keyword' },
+    ['@conditional'] = { link = '@keyword' },
+    ['@conditional.ternary'] = { link = '@keyword' },
+    ['@repeat'] = { link = '@keyword' },
+    ['@debug'] = { fg = colors.magenta },
+    ['@label'] = { link = '@keyword' },
+    ['@include'] = { link = '@keyword' },
+    ['@exception'] = { link = '@keyword' },
+
+    -- Treesitter - Types
+    ['@type'] = { link = 'Type' },
+    ['@type.builtin'] = { fg = colors.green },
+    ['@type.definition'] = { link = '@type.builtin' },
+    ['@type.qualifier'] = { link = '@type.builtin' },
+    ['@storageclass'] = { link = '@type' },
+    ['@attribute'] = { link = '@keyword' },
+    ['@field'] = { fg = colors.blue },
+    ['@property'] = { link = '@field' },
+
+    -- Treesitter - Identifiers
+    ['@variable'] = { link = 'Variable' },
+    ['@variable.builtin'] = { fg = colors.violet },
+    ['@constant'] = { fg = colors.violet },
+    ['@constant.builtin'] = { link = '@constant' },
+    ['@constant.macro'] = { link = '@constant' },
+    ['@namespace'] = { link = '@keyword' },
+    ['@symbol'] = { link = '@keyword' },
+
+    -- Treesitter - Text
+    ['@text'] = { fg = colors.fg },
+    ['@text.strong'] = { fg = colors.magenta },
+    ['@text.emphasis'] = { fg = colors.magenta },
+    ['@text.strike'] = { fg = colors.content },
+    ['@text.title'] = { link = 'Title' },
+    ['@text.literal'] = { link = '@text' },
+    ['@text.quote'] = { fg = colors.cyan },
+    ['@text.uri'] = { fg = colors.violet },
+    ['@text.math'] = { fg = colors.magenta },
+    ['@text.reference'] = { fg = colors.violet },
+    ['@text.todo'] = { link = 'Title' },
+    ['@text.warning'] = { link = 'WarningMsg' },
+    ['@text.danger'] = { link = 'ErrorMsg' },
+    ['@text.diff.add'] = { link = 'DiffAdd' },
+    ['@text.diff.delete'] = { link = 'DiffDelete' },
+
+    -- Treesitter - Tags
+    ['@tag'] = { link = '@keyword' },
+    ['@tag.attribute'] = { link = '@property' },
+    ['@tag.delimiter'] = { fg = colors.red },
+
+    -- Treesitter - Locals
+    ['@definition.constant'] = { link = '@constant' },
+    ['@definition.function'] = { link = '@function' },
+    ['@definition.method'] = { link = '@method' },
+    ['@defition.var'] = { link = '@variable' },
+    ['@defition.parameter'] = { link = '@parameter' },
+    ['@definition.macro'] = { link = '@constant.macro' },
+    ['@definition.type'] = { link = '@type' },
+    ['@definition.field'] = { link = '@field' },
+    ['@defition.enum'] = { link = '@keyword' },
+    ['@defition.namespace'] = { link = '@keyword' },
+    ['@defition.import'] = { link = '@keyword' },
+
+    -- LSP
     DiagnosticHint = { fg = colors.hint },
     DiagnosticInfo = { fg = colors.info },
     DiagnosticError = { fg = colors.error },
@@ -168,15 +267,15 @@ function vim(solarized)
     DiagnosticFloatingInfo = { link = 'DiagnosticInfo' },
     DiagnosticFloatingWarn = { link = 'DiagnosticWarn' },
     DiagnosticFloatingError = { link = 'DiagnosticError' },
-    DiagnosticUnderlineHint = { sp = colors.hint, undercurl = true },
-    DiagnosticUnderlineInfo = { sp = colors.info, undercurl = true },
-    DiagnosticUnderlineWarn = { sp = colors.warning, undercurl = true },
-    DiagnosticUnderlineError = { sp = colors.error, undercurl = true },
+    DiagnosticUnderlineHint = { undercurl = true, sp = colors.hint },
+    DiagnosticUnderlineInfo = { undercurl = true, sp = colors.info },
+    DiagnosticUnderlineWarn = { undercurl = true, sp = colors.warning },
+    DiagnosticUnderlineError = { undercurl = true, sp = colors.error },
     DiagnosticSignInformation = { link = 'DiagnosticInfo' },
-    DiagnosticVirtualTextHint = { fg = colors.hint, bg = colors.bg_alt },
-    DiagnosticVirtualTextInfo = { fg = colors.info, bg = colors.bg_alt },
-    DiagnosticVirtualTextWarn = { fg = colors.warning, bg = colors.bg_alt },
-    DiagnosticVirtualTextError = { fg = colors.error, bg = colors.bg_alt },
+    DiagnosticVirtualTextHint = { fg = colors.hint, bg = blend(colors.hint, colors.bg, 0.15) },
+    DiagnosticVirtualTextInfo = { fg = colors.info, bg = blend(colors.info, colors.bg, 0.15) },
+    DiagnosticVirtualTextWarn = { fg = colors.warning, bg = blend(colors.warning, colors.bg, 0.15) },
+    DiagnosticVirtualTextError = { fg = colors.error, bg = blend(colors.error, colors.bg, 0.15) },
     LspDiagnosticsError = { link = 'DiagnosticError' },
     LspDiagnosticsWarning = { link = 'DiagnosticWarn' },
     LspDiagnosticsInfo = { link = 'DiagnosticInfo' },
@@ -212,19 +311,11 @@ function vim(solarized)
     LspDiagnosticsUnderlineInformation = { link = 'DiagnosticUnderlineInfo' },
     LspDiagnosticsUnderlineInfo = { link = 'DiagnosticUnderlineInfo' },
     LspDiagnosticsUnderlineHint = { link = 'DiagnosticUnderlineHint' },
-    LspReferenceRead = { bg = colors.bg_alt_invert },
-    LspReferenceText = { bg = colors.bg_alt_invert },
-    LspReferenceWrite = { bg = colors.bg_alt_invert },
+    LspReferenceText = { bg = colors.bg_alt },
+    LspReferenceRead = { bg = colors.bg_alt },
+    LspReferenceWrite = { bg = colors.bg_alt },
     LspCodeLens = { fg = colors.commet, italic = true },
     LspCodeLensSeparator = { fg = colors.commet, italic = true },
-
-    -- LSPSAGA - general
-    TitleString = { link = 'Title' },
-    TitleIcon = { fg = colors.red },
-    SagaBorder = { link = 'FloatBorder' },
-    SagaExpand = { fg = colors.red },
-    SagaCollapse = { fg = colors.red },
-    SagaBeacon = { bg = colors.magenta },
 
     -- LSPSAGA - code action
     ActionPreviewNormal = { link = 'SagaNormal' },
@@ -282,10 +373,40 @@ function vim(solarized)
     TerminalBorder = { link = 'SagaBorder' },
     TerminalNormal = { link = 'SagaNormal' },
 
-    -- NvimTree
+    -- CMP KIND
+    CmpItemAbbrDeprecated = { fg = colors.secondary, strikethrough = true },
+    CmpItemAbbrMatch = { fg = colors.yellow, reverse = true },
+    CmpItemAbbrMatchFuzzy = { fg = colors.yellow, reverse = true },
+    CmpItemKindFunction = { link = '@function' },
+    CmpItemKindMethod = { link = '@method' },
+    CmpItemKindConstructor = { link = '@constructor' },
+    CmpItemKindClass = { link = '@type' },
+    CmpItemKindEnum = { link = '@constant' },
+    CmpItemKindEvent = { fg = colors.yellow },
+    CmpItemKindInterface = { link = '@constructor' },
+    CmpItemKindStruct = { link = '@type' },
+    CmpItemKindVariable = { link = '@variable.builtin' },
+    CmpItemKindField = { link = '@field' },
+    CmpItemKindProperty = { link = '@property' },
+    CmpItemKindEnumMember = { link = '@constant.builtin' },
+    CmpItemKindConstant = { link = '@constant.builtin' },
+    CmpItemKindKeyword = { link = '@keyword' },
+    CmpItemKindModule = { link = '@function' },
+    CmpItemKindValue = { fg = colors.fg },
+    CmpItemKindUnit = { link = '@number' },
+    CmpItemKindText = { link = '@string' },
+    CmpItemKindSnippet = { fg = colors.fg },
+    CmpItemKindFile = { fg = colors.fg },
+    CmpItemKindFolder = { fg = colors.fg },
+    CmpItemKindColor = { fg = colors.fg },
+    CmpItemKindReference = { fg = colors.fg },
+    CmpItemKindOperator = { link = '@operator' },
+    CmpItemKindTypeParameter = { fg = colors.violet },
+
+    -- NVIM-TREE
     NvimTreeNormalNC = { link = 'NormalNC' },
     NvimTreeVertSplit = { fg = colors.bg },
-    NvimTreeFolderIcon = { fg = colors.red },
+    NvimTreeFolderIcon = { fg = colors.orange },
     NvimTreeFolderName = { fg = colors.fg },
     NvimTreeOpenedFolderName = { fg = colors.blue },
     NvimTreeRootFolder = { fg = colors.blue },
@@ -293,57 +414,64 @@ function vim(solarized)
     NvimTreeGitNew = { fg = colors.added },
     NvimTreeGitDeleted = { fg = colors.deleted },
 
-    -- NeoTree
+    -- NEO-TREE
     NeoTreeDirectoryName = { fg = colors.fg },
     NeoTreeDirectoryIcon = { fg = colors.blue },
     NeoTreeRootName = { fg = colors.blue },
 
-    -- Telescope
+    -- TELESCOPE
     TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
     TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },
     TelescopePromptTitle = { fg = colors.bg, bg = colors.blue },
     TelescopeSelection = { fg = colors.yellow },
     TelescopeMatching = { fg = colors.yellow, reverse = true },
 
-    -- Dashboard
+    -- DASHBOARD
     DashboardHeader = { fg = colors.primary },
     DashboardCenter = { fg = colors.fg },
     DashboardFooter = { fg = colors.violet },
 
-    -- Twilight
+    -- HOP
+    HopPreview = { fg = colors.yellow, bg = blend(colors.yellow, colors.bg, 0.15), bold = true },
+    HopNextKey = { fg = colors.magenta, bg = blend(colors.magenta, colors.bg, 0.15), bold = true },
+    HopNextKey1 = { fg = colors.blue, bg = blend(colors.blue, colors.bg, 0.15), bold = true },
+    HopNextKey2 = { fg = darken(colors.blue, 10) },
+    HopUnmatched = { fg = darken(colors.fg, 2) },
+
+    -- TWILIGHT
     Twilight = { fg = solarized:is_not_transparent(colors.secondary) },
 
     -- Navic
-    NavicIconsFile = { fg = colors.fg },
-    NavicIconsModule = { fg = colors.cyan },
-    NavicIconsNamespace = { fg = colors.fg },
-    NavicIconsPackage = { fg = colors.fg },
-    NavicIconsClass = { link = 'Type' },
-    NavicIconsMethod = { link = 'Function' },
-    NavicIconsProperty = { fg = colors.blue },
-    NavicIconsField = { fg = colors.blue },
-    NavicIconsConstructor = { link = 'Special' },
-    NavicIconsEnum = { link = 'Constant' },
-    NavicIconsInterface = { link = 'Special' },
-    NavicIconsFunction = { link = 'Function' },
-    NavicIconsVariable = { link = 'Variable' },
-    NavicIconsConstant = { link = 'Constant' },
-    NavicIconsString = { link = 'String' },
-    NavicIconsNumber = { link = 'Number' },
-    NavicIconsBoolean = { link = 'Boolean' },
-    NavicIconsArray = { fg = colors.cyan },
-    NavicIconsObject = { fg = colors.cyan },
-    NavicIconsKey = { link = 'Keyword' },
+    NavicIconsFile = { fg = colors.blue },
+    NavicIconsModule = { link = '@namespace' },
+    NavicIconsNamespace = { link = '@namespace' },
+    NavicIconsPackage = { fg = colors.blue },
+    NavicIconsClass = { link = '@type' },
+    NavicIconsMethod = { link = '@method' },
+    NavicIconsProperty = { link = '@property' },
+    NavicIconsField = { link = '@field' },
+    NavicIconsConstructor = { link = '@constructor' },
+    NavicIconsEnum = { link = '@keyword' },
+    NavicIconsInterface = { link = '@type' },
+    NavicIconsFunction = { link = '@function' },
+    NavicIconsVariable = { link = '@variable' },
+    NavicIconsConstant = { link = '@constant' },
+    NavicIconsString = { link = '@string' },
+    NavicIconsNumber = { link = '@number' },
+    NavicIconsBoolean = { link = '@boolean' },
+    NavicIconsArray = { link = 'punctuation.bracket' },
+    NavicIconsObject = { link = '@property' },
+    NavicIconsKey = { link = '@keyword' },
     NavicIconsKeyword = { link = 'Keyword' },
-    NavicIconsNull = { link = 'Constant' },
-    NavicIconsEnumMember = { link = 'Constant' },
-    NavicIconsStruct = { link = 'Statement' },
-    NavicIconsEvent = { fg = colors.yellow },
-    NavicIconsOperator = { fg = colors.fg },
-    NavicIconsTypeParameter = { fg = colors.red },
-    NavicText = { link = 'String' },
+    NavicIconsNull = { link = '@constant' },
+    NavicIconsEnumMember = { link = '@constant' },
+    NavicIconsStruct = { link = '@keyword' },
+    NavicIconsEvent = { link = 'Special' },
+    NavicIconsOperator = { link = '@operator' },
+    NavicIconsTypeParameter = { link = '@parameter' },
+    NavicText = { link = '@text' },
     NavicSeparator = { fg = colors.context },
   }
 end
 
-return vim
+return neovim_theme

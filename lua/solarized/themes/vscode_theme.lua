@@ -1,6 +1,5 @@
-local function neovim(solarized, chromatic)
+local function vscode_theme(solarized, chromatic)
   local colors = solarized.colors
-
   local darken = chromatic.darken
   local blend = chromatic.blend
 
@@ -35,10 +34,10 @@ local function neovim(solarized, chromatic)
     TabLine = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
     TabLineSel = { fg = colors.secondary, bg = colors.bg_alt_invert, sp = colors.fg, reverse = true },
     TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
-    Visual = { fg = colors.secondary, bg = colors.bg, reverse = true, bold = true },
+    Visual = { fg = colors.cyan, bg = blend(colors.cyan, colors.bg, 0.15) },
     VisualNOS = { reverse = true },
-    Search = { fg = colors.yellow, reverse = true },
-    IncSearch = { fg = colors.orange },
+    Search = { link = 'VisualNOS' },
+    IncSearch = { link = 'Visual' },
     CurSearch = { link = 'IncSearch' },
     Folded = { fg = colors.fg, bg = colors.bg_alt, sp = colors.bg },
     FoldColumn = { fg = colors.fg, bg = colors.bg_alt },
@@ -161,58 +160,58 @@ local function neovim(solarized, chromatic)
     ['@operator'] = { link = 'Operator' },
 
     -- Treesitter - Punctuation
-    ['@punctuation.delimiter'] = { link = 'Delimiter' },
-    ['@punctuation.bracket'] = { link = 'Delimiter' },
-    ['@punctuation.special'] = { fg = colors.magenta },
+    ['@punctuation.delimiter'] = { fg = colors.content },
+    ['@punctuation.bracket'] = { fg = colors.yellow },
+    ['@punctuation.special'] = { fg = colors.blue },
 
     -- Treesitter - Literals
     ['@string'] = { link = 'String' },
-    ['@string.regex'] = { fg = colors.magenta },
-    ['@string.escape'] = { fg = colors.magenta },
+    ['@string.regex'] = { fg = colors.orange },
+    ['@string.escape'] = { fg = colors.orange },
     ['@string.special'] = { fg = colors.magenta },
     ['@character'] = { link = 'Character' },
     ['@character.special'] = { fg = colors.magenta },
-    ['@boolean'] = { fg = colors.violet },
-    ['@number'] = { fg = colors.violet },
+    ['@boolean'] = { fg = colors.yellow },
+    ['@number'] = { fg = colors.magenta },
     ['@float'] = { link = '@number' },
 
     -- Treesitter - Functions
     ['@function'] = { link = 'Function' },
     ['@function.call'] = { link = 'Function' },
     ['@function.builtin'] = { link = 'Function' },
-    ['@method'] = { link = 'Type' },
-    ['@method.call'] = { link = 'Type' },
-    ['@constructor'] = { fg = colors.red },
-    ['@parameter'] = { fg = colors.content, italic = true },
+    ['@method'] = { link = 'Function' },
+    ['@method.call'] = { link = 'Function' },
+    ['@constructor'] = { fg = colors.green },
+    ['@parameter'] = { fg = colors.content, bold = true, italic = true },
 
     -- Treesitter - Keywords
-    ['@keyword'] = { link = 'Keyword' },
+    ['@keyword'] = { fg = colors.content, bold = true },
     ['@keyword.function'] = { link = '@keyword' },
-    ['@keyword.operator'] = { link = '@keyword' },
-    ['@keyword.return'] = { link = '@keyword' },
-    ['@conditional'] = { link = '@keyword' },
-    ['@conditional.ternary'] = { link = '@keyword' },
-    ['@repeat'] = { link = '@keyword' },
+    ['@keyword.operator'] = { fg = colors.green },
+    ['@keyword.return'] = { fg = colors.green },
+    ['@conditional'] = { link = 'Conditional' },
+    ['@conditional.ternary'] = { link = 'Conditional' },
+    ['@repeat'] = { link = 'Repeat' },
     ['@debug'] = { fg = colors.magenta },
     ['@label'] = { link = '@keyword' },
-    ['@include'] = { link = '@keyword' },
-    ['@exception'] = { link = '@keyword' },
+    ['@include'] = { fg = colors.green },
+    ['@exception'] = { link = 'Exception' },
 
     -- Treesitter - Types
-    ['@type'] = { link = 'Type' },
-    ['@type.builtin'] = { fg = colors.green },
+    ['@type'] = { fg = colors.orange },
+    ['@type.builtin'] = { link = '@keyword' },
     ['@type.definition'] = { link = '@type.builtin' },
     ['@type.qualifier'] = { link = '@type.builtin' },
     ['@storageclass'] = { link = '@type' },
     ['@attribute'] = { link = '@keyword' },
-    ['@field'] = { fg = colors.blue },
-    ['@property'] = { link = '@field' },
+    ['@field'] = { fg = colors.content },
+    ['@property'] = { fg = colors.blue },
 
     -- Treesitter - Identifiers
-    ['@variable'] = { link = 'Variable' },
-    ['@variable.builtin'] = { fg = colors.violet },
-    ['@constant'] = { fg = colors.violet },
-    ['@constant.builtin'] = { link = '@constant' },
+    ['@variable'] = { fg = colors.blue },
+    ['@variable.builtin'] = { link = '@variable' },
+    ['@constant'] = { fg = colors.orange },
+    ['@constant.builtin'] = { fg = colors.yellow },
     ['@constant.macro'] = { link = '@constant' },
     ['@namespace'] = { link = '@keyword' },
     ['@symbol'] = { link = '@keyword' },
@@ -235,9 +234,9 @@ local function neovim(solarized, chromatic)
     ['@text.diff.delete'] = { link = 'DiffDelete' },
 
     -- Treesitter - Tags
-    ['@tag'] = { link = '@keyword' },
-    ['@tag.attribute'] = { link = '@property' },
-    ['@tag.delimiter'] = { fg = colors.red },
+    ['@tag'] = { fg = colors.blue },
+    ['@tag.attribute'] = { fg = colors.content },
+    ['@tag.delimiter'] = { fg = colors.secondary },
 
     -- Treesitter - Locals
     ['@definition.constant'] = { link = '@constant' },
@@ -327,7 +326,7 @@ local function neovim(solarized, chromatic)
     CodeActionNumber = { link = 'Number' },
     -- LSPSAGA - finder
     FinderSelection = { link = 'PmenuSel' },
-    FinderFileName = { fg = colors.content },
+    FinderFileName = { fg = colors.white },
     FinderCount = { link = 'Label' },
     FinderIcon = { fg = colors.cyan },
     FinderType = { fg = colors.violet },
@@ -406,7 +405,7 @@ local function neovim(solarized, chromatic)
     -- NVIM-TREE
     NvimTreeNormalNC = { link = 'NormalNC' },
     NvimTreeVertSplit = { fg = colors.bg },
-    NvimTreeFolderIcon = { fg = colors.orange },
+    NvimTreeFolderIcon = { fg = colors.blue },
     NvimTreeFolderName = { fg = colors.fg },
     NvimTreeOpenedFolderName = { fg = colors.blue },
     NvimTreeRootFolder = { fg = colors.blue },
@@ -423,8 +422,8 @@ local function neovim(solarized, chromatic)
     TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
     TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },
     TelescopePromptTitle = { fg = colors.bg, bg = colors.blue },
-    TelescopeSelection = { fg = colors.yellow },
-    TelescopeMatching = { fg = colors.yellow, reverse = true },
+    TelescopeSelection = { link = 'Visual' },
+    TelescopeMatching = { link = 'VisualNOS' },
 
     -- DASHBOARD
     DashboardHeader = { fg = colors.primary },
@@ -435,7 +434,7 @@ local function neovim(solarized, chromatic)
     HopPreview = { fg = colors.yellow, bg = blend(colors.yellow, colors.bg, 0.15), bold = true },
     HopNextKey = { fg = colors.magenta, bg = blend(colors.magenta, colors.bg, 0.15), bold = true },
     HopNextKey1 = { fg = colors.blue, bg = blend(colors.blue, colors.bg, 0.15), bold = true },
-    HopNextKey2 = { fg = darken(colors.blue, 10) },
+    HopNextKey2 = { fg = darken(colors.blue, 1.25) },
     HopUnmatched = { fg = darken(colors.fg, 2) },
 
     -- TWILIGHT
@@ -474,4 +473,4 @@ local function neovim(solarized, chromatic)
   }
 end
 
-return neovim
+return vscode_theme
