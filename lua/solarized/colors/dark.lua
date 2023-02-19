@@ -1,5 +1,5 @@
 local dark = {
-  bg = '#002636',
+  bg = '#002b36',
   bg_alt = '#073642',
   bg_invert = '#fdf6e3',
   bg_alt_invert = '#eee8d5',
