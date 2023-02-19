@@ -1,7 +1,7 @@
 local M = {}
 
 -- Dark
--- bas03    #002b36 background
+-- base03    #002b36 background
 -- base02    #073642 background highlights
 -- base01    #586e75 comments / secondary content
 -- base0     #839496 foreground / body text

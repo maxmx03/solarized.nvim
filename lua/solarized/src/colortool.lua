@@ -35,9 +35,11 @@ function M.darken(color, percent)
   local r = tonumber(color:sub(2, 3), 16)
   local g = tonumber(color:sub(4, 5), 16)
   local b = tonumber(color:sub(6, 7), 16)
+
   r = math.max(0, math.floor(r * (1 - percent / 100)))
   g = math.max(0, math.floor(g * (1 - percent / 100)))
   b = math.max(0, math.floor(b * (1 - percent / 100)))
+
   return string.format('#%02X%02X%02X', r, g, b)
 end
 
@@ -45,9 +47,11 @@ function M.lighten(color, percent)
   local r = tonumber(color:sub(2, 3), 16)
   local g = tonumber(color:sub(4, 5), 16)
   local b = tonumber(color:sub(6, 7), 16)
+
   r = math.min(255, math.floor(r * (1 + percent / 100)))
   g = math.min(255, math.floor(g * (1 + percent / 100)))
   b = math.min(255, math.floor(b * (1 + percent / 100)))
+
   return string.format('#%02X%02X%02X', r, g, b)
 end
 
