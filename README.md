@@ -178,5 +178,33 @@ Here's a brief explanation of the `darken`, `lighten`, and `blend` functions tha
 
 These functions can be useful for generating variations of a given color, or for creating more complex color schemes by blending multiple colors together. The `blend` function in particular can be used to simulate a "glow" effect by blending a color with a brighter version of itself.
 
+## 🚀 Supported Plugins
+
+The Solarized colorscheme supports the following plugins:
+
+- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [lsp](https://neovim.io/doc/user/lsp.html)
+- [lspsaga](https://github.com/glepnir/lspsaga.nvim)
+- [cmpkind](https://github.com/hrsh7th/nvim-cmp)
+- [nvimtree](https://github.com/kyazdani42/nvim-tree.lua)
+- [telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [dashboard](https://github.com/glepnir/dashboard-nvim)
+- [hop](https://github.com/phaazon/hop.nvim)
+- [twilight](https://github.com/folke/twilight.nvim)
+- [navic](https://github.com/voldikss/vim-floaterm)
+
+## 🤝 Contribute
+
+Contributions to the Solarized colorscheme are always welcome! If you have any bug reports, feature requests, or pull requests, feel free to submit them to the [GitHub repository](https://github.com/your-username/solarized-nvim).
+To contribute, follow these steps:
+
+1. Fork the repository
+2. Create a new branch for your changes
+3. Make your changes and commit them
+4. Push your changes to your fork
+5. Submit a pull request to the main repository
+
+When submitting your pull request, please provide a detailed description of your changes, including the motivation and any related issues or pull requests.
+Thank you for your contributions and helping make the Solarized colorscheme better!
 
 The Solarized color palette was created by Ethan Schoonover. For more information, please visit https://ethanschoonover.com/solarized/.
