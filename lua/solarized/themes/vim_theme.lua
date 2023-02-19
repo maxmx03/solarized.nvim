@@ -1,5 +1,5 @@
-function vim_theme(solarized)
-  local colors = solarized
+local function vim_theme(solarized)
+  local colors = solarized.colors
 
   return {
     -- Editor
@@ -215,8 +215,8 @@ function vim_theme(solarized)
     LspReferenceRead = { bg = colors.bg_alt_invert },
     LspReferenceText = { bg = colors.bg_alt_invert },
     LspReferenceWrite = { bg = colors.bg_alt_invert },
-    LspCodeLens = { fg = colors.commet, italic = true },
-    LspCodeLensSeparator = { fg = colors.commet, italic = true },
+    LspCodeLens = { fg = colors.comment, italic = true },
+    LspCodeLensSeparator = { fg = colors.comment, italic = true },
 
     -- LSPSAGA - general
     TitleString = { link = 'Title' },

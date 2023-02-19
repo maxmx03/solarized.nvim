@@ -314,8 +314,8 @@ local function neovim_theme(solarized, chromatic)
     LspReferenceText = { bg = colors.bg_alt },
     LspReferenceRead = { bg = colors.bg_alt },
     LspReferenceWrite = { bg = colors.bg_alt },
-    LspCodeLens = { fg = colors.commet, italic = true },
-    LspCodeLensSeparator = { fg = colors.commet, italic = true },
+    LspCodeLens = { fg = colors.comment, italic = true },
+    LspCodeLensSeparator = { fg = colors.comment, italic = true },
 
     -- LSPSAGA - code action
     ActionPreviewNormal = { link = 'SagaNormal' },
