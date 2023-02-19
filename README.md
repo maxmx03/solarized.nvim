@@ -183,7 +183,7 @@ These functions can be useful for generating variations of a given color, or for
 The Solarized colorscheme supports the following plugins:
 
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [lsp](https://neovim.io/doc/user/lsp.html)
+- [lsp](https://github.com/neovim/nvim-lspconfig)
 - [lspsaga](https://github.com/glepnir/lspsaga.nvim)
 - [cmpkind](https://github.com/hrsh7th/nvim-cmp)
 - [nvimtree](https://github.com/kyazdani42/nvim-tree.lua)
@@ -191,7 +191,7 @@ The Solarized colorscheme supports the following plugins:
 - [dashboard](https://github.com/glepnir/dashboard-nvim)
 - [hop](https://github.com/phaazon/hop.nvim)
 - [twilight](https://github.com/folke/twilight.nvim)
-- [navic](https://github.com/voldikss/vim-floaterm)
+- [navic](https://github.com/SmiteshP/nvim-navic)
 
 ## 🤝 Contribute
 
