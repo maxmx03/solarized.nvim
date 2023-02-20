@@ -7,24 +7,24 @@ It is a carefully crafted set of colors that can be used for both light and dark
 
 This is a reference table of the Solarized color palette, a carefully designed color scheme created by Ethan Schoonover.
 
-| Color  | Solarized Dark | Color  | Solarized Light |
-|--------|---------------|--------|----------------|
-| Base03 | #002b36       | Base3  | #fdf6e3        |
-| Base02 | #073642       | Base2  | #eee8d5        |
-| Base01 | #586e75       | Base1  | #93a1a1        |
-| Base00 | #657b83       | Base0  | #839496        |
-| Base0  | #839496       | Base00 | #657b83        |
-| Base1  | #93a1a1       | Base01 | #586e75        |
-| Base2  | #eee8d5       | Base02 | #073642        |
-| Base3  | #fdf6e3       | Base03 | #002b36        |
-| Yellow | #b58900       | Yellow | #b58900        |
-| Orange | #cb4b16       | Orange | #cb4b16        |
-| Red    | #dc322f       | Red    | #dc322f        |
-| Magenta| #d33682       | Magenta| #d33682        |
-| Violet | #6c71c4       | Violet | #6c71c4        |
-| Blue   | #268bd2       | Blue   | #268bd2        |
-| Cyan   | #2aa198       | Cyan   | #2aa198        |
-| Green  | #859900       | Green  | #859900        |
+| Solarized Dark | Description                   | Color                | Solarized Light  | Description                    | Color                 |
+|----------------|-------------------------------|----------------------|------------------|--------------------------------|-----------------------|
+| Base03         | Background                    | #002b36              | Base3            | Background                     | #fdf6e3               |
+| Base02         | Background highlights         | #073642              | Base2            | Background highlights          | #eee8d5               |
+| Base01         | Comments, secondary text      | #586e75              | Base1            | Comments, secondary text       | #93a1a1               |
+| Base00         | General text (body)           | #657b83              | Base0            | General text (body)            | #839496               |
+| Base0          | General text (body)           | #839496              | Base00           | General text (body)            | #657b83               |
+| Base1          | Comments, secondary text      | #93a1a1              | Base01           | Comments, secondary text       | #586e75               |
+| Base2          | Background highlights         | #eee8d5              | Base02           | Background highlights          | #073642               |
+| Base3          | Background                    | #fdf6e3              | Base03           | Background                     | #002b36               |
+| Yellow         | N/A                           | #b58900              | Yellow           | N/A                            | #b58900               |
+| Orange         | N/A                           | #cb4b16              | Orange           | N/A                            | #cb4b16               |
+| Red            | N/A                           | #dc322f              | Red              | N/A                            | #dc322f               |
+| Magenta        | N/A                           | #d33682              | Magenta          | N/A                            | #d33682               |
+| Violet         | N/A                           | #6c71c4              | Violet           | N/A                            | #6c71c4               |
+| Blue           | N/A                           | #268bd2              | Blue             | N/A                            | #268bd2               |
+| Cyan           | N/A                           | #2aa198              | Cyan             | N/A                            | #2aa198               |
+| Green          | N/A                           | #859900              | Green            | N/A                            | #859900               |
 
 ## Why use Solarized.nvim?
 
