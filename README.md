@@ -53,14 +53,6 @@ use {
 }
 ```
 
-Extra steps
-
-`~/.config/nvim/lua/options.lua`
-```
-vim.o.termguicolors = true
-vim.cmd 'solarized'
-```
-
 ## Switching between Dark and Light Mode
 
 By default, the Solarized color scheme is set to use the dark mode variant. However, if you prefer a lighter background, you can easily switch to the light mode variant.
