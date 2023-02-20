@@ -426,6 +426,9 @@ local function vscode_theme(solarized, chromatic)
     NeoTreeDirectoryIcon = { fg = colors.blue },
     NeoTreeRootName = { fg = colors.blue },
 
+    -- Lir
+    LirDir = { fg = colors.blue },
+
     -- TELESCOPE
     TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
     TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },

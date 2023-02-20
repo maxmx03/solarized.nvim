@@ -295,8 +295,11 @@ local function vim_theme(solar)
 
     -- NeoTree
     NeoTreeDirectoryName = { fg = colors.fg },
-    NeoTreeDirectoryIcon = { fg = colors.blue },
+    NeoTreeDirectoryIcon = { fg = colors.red },
     NeoTreeRootName = { fg = colors.blue },
+
+    -- Lir
+    LirDir = { fg = colors.red },
 
     -- Telescope
     TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },

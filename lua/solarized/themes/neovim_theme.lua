@@ -424,8 +424,11 @@ local function neovim_theme(solarized, chromatic)
 
     -- NEO-TREE
     NeoTreeDirectoryName = { fg = colors.fg },
-    NeoTreeDirectoryIcon = { fg = colors.blue },
+    NeoTreeDirectoryIcon = { fg = colors.orange },
     NeoTreeRootName = { fg = colors.blue },
+
+    -- Lir
+    LirDir = { fg = colors.orange },
 
     -- TELESCOPE
     TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
@@ -479,6 +482,28 @@ local function neovim_theme(solarized, chromatic)
     NavicIconsTypeParameter = { link = '@parameter' },
     NavicText = { link = '@text' },
     NavicSeparator = { fg = colors.context },
+
+    -- BarBar
+    BufferCurrent = { fg = colors.fg, bg = colors.bg_alt },
+    BufferCurrentIndex = { fg = colors.blue, bg = colors.bg_alt },
+    BufferCurrentMod = { fg = colors.yellow, bg = colors.bg_alt },
+    BufferCurrentSign = { fg = colors.blue, bg = colors.bg_alt },
+    BufferCurrentTarget = { fg = colors.red, bg = colors.bg_alt, bold = true },
+    BufferVisible = { fg = colors.fg, bg = colors.bg },
+    BufferVisibleIndex = { fg = colors.blue, bg = colors.bg },
+    BufferVisibleMod = { fg = colors.yellow, bg = colors.bg },
+    BufferVisibleSign = { fg = colors.blue, bg = colors.bg },
+    BufferVisibleTarget = { fg = colors.red, bg = colors.bg, bold = true },
+    BufferInactive = { fg = colors.comment, bg = colors.bg },
+    BufferInactiveIndex = { fg = colors.comment, bg = colors.bg },
+    BufferInactiveMod = { fg = colors.orange, bg = colors.bg },
+    BufferInactiveSign = { fg = colors.bg_alt, bg = colors.bg },
+    BufferInactiveTarget = { fg = colors.red, bg = colors.bg, bold = true },
+    BufferTabpage = { fg = colors.bg_alt, bg = colors.bg },
+    BufferTabpages = { bg = colors.bg },
+
+    -- Bufferline
+    BufferLineIndicatorSelected = { fg = colors.changed },
   }
 end
 
