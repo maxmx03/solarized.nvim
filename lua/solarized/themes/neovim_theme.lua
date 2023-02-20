@@ -550,8 +550,8 @@ local function neovim_theme(solarized, chromatic)
     packerStatusSuccess = { fg = colors.blue },
 
     -- Lazy
-    LazyButton = { fg = darken(colors.orange, 80), bg = colors.orange },
-    LazyButtonActive = { fg = darken(colors.orange, 80), bg = darken(colors.orange, 40) },
+    LazyButton = { fg = colors.green, bg = darken(colors.green, 50) },
+    LazyButtonActive = { fg = colors.green, bg = darken(colors.green, 70) },
     LazyDir = { link = 'Directory' },
     LazyH1 = { fg = colors.yellow },
     LazyH2 = { fg = colors.orange },
@@ -568,7 +568,7 @@ local function neovim_theme(solarized, chromatic)
     LazyReasonRuntime = { fg = colors.blue },
     LazyReasonSource = { fg = colors.violet },
     LazyReasonStart = { fg = colors.cyan },
-    LazySpecial = { fg = darken(colors.orange, 80) },
+    LazySpecial = { fg = colors.green },
     LazyTaskError = { fg = colors.red },
     LazyTaskOutput = { fg = colors.green },
     LazyUrl = { fg = colors.cyan },
