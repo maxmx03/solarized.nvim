@@ -413,8 +413,8 @@ local function vscode_theme(solarized, chromatic)
     -- NvimTree
     NvimTreeFolderIcon = { link = 'Directory' },
     NvimTreeIndentMarker = { fg = colors.fg },
-    NvimTreeNormal = { fg = colors.fg, bg = colors.bg },
-    NvimTreeNormalNC = { link = 'NormalNC' },
+    NvimTreeNormal = { fg = colors.fg, bg = darken(colors.bg, 20) },
+    NvimTreeNormalNC = { link = 'NvimTreeNormal' },
     NvimTreeVertSplit = { fg = colors.fg, bg = colors.bg },
     NvimTreeWinSeparator = { fg = colors.bg, bg = colors.bg },
     NvimTreeFolderName = { fg = colors.fg },
