@@ -1,7 +1,5 @@
-local function vim_theme(solar, chromatic)
+local function vim_theme(solar)
   local colors = solar.colors
-
-  local darken = chromatic.darken
 
   return {
     -- Editor
@@ -287,8 +285,8 @@ local function vim_theme(solar, chromatic)
     -- NvimTree
     NvimTreeFolderIcon = { link = 'Directory' },
     NvimTreeIndentMarker = { fg = colors.fg },
-    NvimTreeNormal = { fg = colors.fg, bg = darken(colors.bg, 20) },
-    NvimTreeNormalNC = { link = 'NvimTreeNormal' },
+    NvimTreeNormal = { fg = colors.fg, bg = colors.bg },
+    NvimTreeNormalNC = { link = 'NormalNC' },
     NvimTreeVertSplit = { fg = colors.fg, bg = colors.bg },
     NvimTreeWinSeparator = { fg = colors.bg, bg = colors.bg },
     NvimTreeFolderName = { fg = colors.fg },
