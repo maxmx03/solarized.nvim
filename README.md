@@ -7,24 +7,24 @@ It is a carefully crafted set of colors that can be used for both light and dark
 
 This is a reference table of the Solarized color palette, a carefully designed color scheme created by Ethan Schoonover.
 
-| Color      | Light Mode Value | Dark Mode Value |
-| ---------- | ---------------- | --------------- |
-| Base03     | `#002b36`        | `#042029`       |
-| Base02     | `#073642`        | `#586e75`       |
-| Base01     | `#586e75`        | `#657b83`       |
-| Base00     | `#657b83`        | `#839496`       |
-| Base0      | `#839496`        | `#93a1a1`       |
-| Base1      | `#93a1a1`        | `#eee8d5`       |
-| Base2      | `#eee8d5`        | `#fdf6e3`       |
-| Base3      | `#fdf6e3`        | `#fdf6e3`       |
-| Yellow     | `#b58900`        | `#b58900`       |
-| Orange     | `#cb4b16`        | `#cb4b16`       |
-| Red        | `#dc322f`        | `#dc322f`       |
-| Magenta    | `#d33682`        | `#d33682`       |
-| Violet     | `#6c71c4`        | `#6c71c4`       |
-| Blue       | `#268bd2`        | `#268bd2`       |
-| Cyan       | `#2aa198`        | `#2aa198`       |
-| Green      | `#859900`        | `#859900`       |
+| Color  | Solarized Dark | Color  | Solarized Light |
+|--------|---------------|--------|----------------|
+| Base03 | #002b36       | Base3  | #fdf6e3        |
+| Base02 | #073642       | Base2  | #eee8d5        |
+| Base01 | #586e75       | Base1  | #93a1a1        |
+| Base00 | #657b83       | Base0  | #839496        |
+| Base0  | #839496       | Base00 | #657b83        |
+| Base1  | #93a1a1       | Base01 | #586e75        |
+| Base2  | #eee8d5       | Base02 | #073642        |
+| Base3  | #fdf6e3       | Base03 | #002b36        |
+| Yellow | #b58900       | Yellow | #b58900        |
+| Orange | #cb4b16       | Orange | #cb4b16        |
+| Red    | #dc322f       | Red    | #dc322f        |
+| Magenta| #d33682       | Magenta| #d33682        |
+| Violet | #6c71c4       | Violet | #6c71c4        |
+| Blue   | #268bd2       | Blue   | #268bd2        |
+| Cyan   | #2aa198       | Cyan   | #2aa198        |
+| Green  | #859900       | Green  | #859900        |
 
 ## Why use Solarized.nvim?
 
