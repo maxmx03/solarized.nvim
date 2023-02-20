@@ -208,6 +208,7 @@ The Solarized colorscheme supports the following plugins:
 - [navic](https://github.com/SmiteshP/nvim-navic)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ## 🤝 Contribute
 

@@ -571,8 +571,6 @@ local function neovim_theme(solarized, chromatic)
     LazySpecial = { fg = colors.green },
     LazyTaskError = { fg = colors.red },
     LazyTaskOutput = { fg = colors.green },
-    LazyUrl = { fg = colors.cyan },
-    LazyValue = { fg = colors.cyan },
   }
 end
 

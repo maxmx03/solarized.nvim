@@ -1,5 +1,6 @@
-local function vim_theme(solar)
+local function vim_theme(solar, chromatic)
   local colors = solar.colors
+  local darken = chromatic.darken
 
   return {
     -- Editor
@@ -412,6 +413,29 @@ local function vim_theme(solar)
     packerRelDate = { fg = colors.fg },
     packerSuccess = { fg = colors.green },
     packerStatusSuccess = { fg = colors.blue },
+
+    -- Lazy
+    LazyButton = { fg = colors.green, bg = darken(colors.green, 50) },
+    LazyButtonActive = { fg = colors.green, bg = darken(colors.green, 70) },
+    LazyDir = { link = 'Directory' },
+    LazyH1 = { fg = colors.yellow },
+    LazyH2 = { fg = colors.orange },
+    LazyNoCond = { fg = colors.yellow },
+    LazyProgressDone = { fg = colors.green },
+    LazyProgressTodo = { fg = colors.content },
+    LazyProp = { fg = colors.blue },
+    LazyReasonCmd = { fg = colors.orange },
+    LazyReasonEvent = { fg = colors.yellow },
+    LazyReasonFt = { fg = colors.violet },
+    LazyReasonImport = { fg = colors.blue },
+    LazyReasonKeys = { fg = colors.blue },
+    LazyReasonPlugin = { fg = colors.blue },
+    LazyReasonRuntime = { fg = colors.blue },
+    LazyReasonSource = { fg = colors.violet },
+    LazyReasonStart = { fg = colors.cyan },
+    LazySpecial = { fg = colors.green },
+    LazyTaskError = { fg = colors.red },
+    LazyTaskOutput = { fg = colors.green },
   }
 end
 
