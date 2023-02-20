@@ -7,24 +7,44 @@ It is a carefully crafted set of colors that can be used for both light and dark
 
 This is a reference table of the Solarized color palette, a carefully designed color scheme created by Ethan Schoonover.
 
-| Color      | Light Mode Value | Dark Mode Value |
-| ---------- | ---------------- | --------------- |
-| Base03     | `#002b36`        | `#042029`       |
-| Base02     | `#073642`        | `#586e75`       |
-| Base01     | `#586e75`        | `#657b83`       |
-| Base00     | `#657b83`        | `#839496`       |
-| Base0      | `#839496`        | `#93a1a1`       |
-| Base1      | `#93a1a1`        | `#eee8d5`       |
-| Base2      | `#eee8d5`        | `#fdf6e3`       |
-| Base3      | `#fdf6e3`        | `#fdf6e3`       |
-| Yellow     | `#b58900`        | `#b58900`       |
-| Orange     | `#cb4b16`        | `#cb4b16`       |
-| Red        | `#dc322f`        | `#dc322f`       |
-| Magenta    | `#d33682`        | `#d33682`       |
-| Violet     | `#6c71c4`        | `#6c71c4`       |
-| Blue       | `#268bd2`        | `#268bd2`       |
-| Cyan       | `#2aa198`        | `#2aa198`       |
-| Green      | `#859900`        | `#859900`       |
+| Solarized Dark | Description                   | Color                | Solarized Light  | Description                    | Color                 |
+|----------------|-------------------------------|----------------------|------------------|--------------------------------|-----------------------|
+| Base03         | Background                    | #002b36              | Base3            | Background                     | #fdf6e3               |
+| Base02         | Background highlights         | #073642              | Base2            | Background highlights          | #eee8d5               |
+| Base01         | Comments, secondary text      | #586e75              | Base1            | Comments, secondary text       | #93a1a1               |
+| Base00         | General text (body)           | #657b83              | Base0            | General text (body)            | #839496               |
+| Base0          | General text (body)           | #839496              | Base00           | General text (body)            | #657b83               |
+| Base1          | Comments, secondary text      | #93a1a1              | Base01           | Comments, secondary text       | #586e75               |
+| Base2          | Background highlights         | #eee8d5              | Base02           | Background highlights          | #073642               |
+| Base3          | Background                    | #fdf6e3              | Base03           | Background                     | #002b36               |
+| Yellow         | N/A                           | #b58900              | Yellow           | N/A                            | #b58900               |
+| Orange         | N/A                           | #cb4b16              | Orange           | N/A                            | #cb4b16               |
+| Red            | N/A                           | #dc322f              | Red              | N/A                            | #dc322f               |
+| Magenta        | N/A                           | #d33682              | Magenta          | N/A                            | #d33682               |
+| Violet         | N/A                           | #6c71c4              | Violet           | N/A                            | #6c71c4               |
+| Blue           | N/A                           | #268bd2              | Blue             | N/A                            | #268bd2               |
+| Cyan           | N/A                           | #2aa198              | Cyan             | N/A                            | #2aa198               |
+| Green          | N/A                           | #859900              | Green            | N/A                            | #859900               |
+
+## Why use Solarized.nvim?
+
+Solarized is a highly customizable color scheme for Neovim that offers both dark and light modes. With Solarized, you can choose the perfect color scheme for your coding needs, whether you prefer a light or dark background.
+
+Some of the key features of Solarized include:
+
+- Customizable: You can easily adjust the colors to your liking, giving you the perfect color scheme for your coding style.
+
+- Dark and Light: Solarized offers both dark and light modes, so you can choose the background that works best for you.
+
+- Continuously Improved: We are always working to improve Solarized, so you can be confident that you are using a high-quality color scheme that is optimized for Neovim.
+
+Whether you're a seasoned developer or just getting started with Neovim, Solarized is the perfect color scheme for your coding needs. Give it a try today and see the difference for yourself!
+
+## Requirements 🛠️
+
+Before using Solarized Colorscheme, please ensure that you have the following requirements installed:
+
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ## Installation
 
@@ -178,12 +198,17 @@ The Solarized colorscheme supports the following plugins:
 - [lsp](https://github.com/neovim/nvim-lspconfig)
 - [lspsaga](https://github.com/glepnir/lspsaga.nvim)
 - [cmpkind](https://github.com/hrsh7th/nvim-cmp)
-- [nvimtree](https://github.com/kyazdani42/nvim-tree.lua)
+- [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua)
+- [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [lir](https://github.com/tamago324/lir.nvim)
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [dashboard](https://github.com/glepnir/dashboard-nvim)
 - [hop](https://github.com/phaazon/hop.nvim)
 - [twilight](https://github.com/folke/twilight.nvim)
 - [navic](https://github.com/SmiteshP/nvim-navic)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [packer.nvim](https://github.com/wbthomason/packer.nvim)
+- [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ## 🤝 Contribute
 

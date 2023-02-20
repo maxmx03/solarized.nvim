@@ -1,20 +1,18 @@
 local light = {
-  -- BACKGROUND TONES
+  -- BACKGROUND
   bg = '#fdf6e3',
   bg_alt = '#eee8d5',
 
-  -- BACKGROUND DARK TONES
+  -- BACKGROUND DARK
   bg_invert = '#002636',
   bg_alt_invert = '#073642',
 
-  -- CONTENT TONES
+  -- CONTENT
   fg = '#657b83',
   content = '#586e75',
   comment = '#93a1a1',
-  primary = '#d33682',
-  secondary = '#93a1a1',
 
-  -- ACCENT COLORS
+  -- ACCENT
   blue = '#268bd2',
   violet = '#6c71c4',
   magenta = '#d33682',
@@ -24,14 +22,14 @@ local light = {
   green = '#859900',
   cyan = '#2aa198',
 
-  -- DIAGNOSTICS TONES
+  -- DIAGNOSTICS
   error = '#dc322f',
   info = '#268bd2',
   hint = '#859900',
   warning = '#b58900',
   other = '#93a1a1',
 
-  -- GIT TONES
+  -- GIT
   added = '#859900',
   changed = '#b58900',
   removed = '#dc322f',

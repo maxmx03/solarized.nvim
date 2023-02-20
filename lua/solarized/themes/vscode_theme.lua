@@ -316,6 +316,14 @@ local function vscode_theme(solarized, chromatic)
     LspCodeLens = { fg = colors.comment, italic = true },
     LspCodeLensSeparator = { fg = colors.comment, italic = true },
 
+    -- LSPSAGA - general
+    TitleString = { link = 'Title' },
+    TitleIcon = { fg = colors.red },
+    SagaBorder = { link = 'FloatBorder' },
+    SagaExpand = { fg = colors.red },
+    SagaCollapse = { fg = colors.red },
+    SagaBeacon = { bg = colors.magenta },
+
     -- LSPSAGA - code action
     ActionPreviewNormal = { link = 'SagaNormal' },
     ActionPreviewBorder = { link = 'SagaBorder' },
@@ -402,21 +410,38 @@ local function vscode_theme(solarized, chromatic)
     CmpItemKindOperator = { link = '@operator' },
     CmpItemKindTypeParameter = { fg = colors.violet },
 
-    -- NVIM-TREE
+    -- NvimTree
+    NvimTreeFolderIcon = { link = 'Directory' },
+    NvimTreeIndentMarker = { fg = colors.fg },
+    NvimTreeNormal = { fg = colors.fg, bg = colors.bg },
     NvimTreeNormalNC = { link = 'NormalNC' },
-    NvimTreeVertSplit = { fg = colors.bg },
-    NvimTreeFolderIcon = { fg = colors.blue },
+    NvimTreeVertSplit = { fg = colors.fg, bg = colors.bg },
+    NvimTreeWinSeparator = { fg = colors.bg, bg = colors.bg },
     NvimTreeFolderName = { fg = colors.fg },
-    NvimTreeOpenedFolderName = { fg = colors.blue },
-    NvimTreeRootFolder = { fg = colors.blue },
+    NvimTreeOpenedFolderName = { fg = colors.fg, bold = true, italic = true },
+    NvimTreeEmptyFolderName = { link = 'Comment' },
+    NvimTreeOpenedFile = { bg = colors.bg_alt },
+    NvimTreeGitIgnored = { link = 'Comment' },
+    NvimTreeImageFile = { fg = colors.fg },
+    NvimTreeSpecialFile = { fg = colors.violet, underline = true },
+    NvimTreeEndOfBuffer = { fg = colors.bg },
+    NvimTreeCursorLine = { link = 'CursorLine' },
     NvimTreeGitStaged = { fg = colors.added },
     NvimTreeGitNew = { fg = colors.added },
+    NvimTreeGitRenamed = { fg = colors.added },
     NvimTreeGitDeleted = { fg = colors.deleted },
+    NvimTreeGitMerge = { fg = colors.changed },
+    NvimTreeGitDirty = { fg = colors.changed },
+    NvimTreeSymlink = { fg = colors.cyan },
+    NvimTreeRootFolder = { fg = colors.blue, bold = true },
 
-    -- NEO-TREE
+    -- NeoTree
     NeoTreeDirectoryName = { fg = colors.fg },
-    NeoTreeDirectoryIcon = { fg = colors.blue },
+    NeoTreeDirectoryIcon = { link = 'Directory' },
     NeoTreeRootName = { fg = colors.blue },
+
+    -- Lir
+    LirDir = { fg = colors.blue },
 
     -- TELESCOPE
     TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
@@ -469,7 +494,82 @@ local function vscode_theme(solarized, chromatic)
     NavicIconsOperator = { link = '@operator' },
     NavicIconsTypeParameter = { link = '@parameter' },
     NavicText = { link = '@text' },
-    NavicSeparator = { fg = colors.context },
+    NavicSeparator = { fg = colors.content },
+
+    -- BarBar
+    BufferCurrent = { fg = colors.fg, bg = colors.bg_alt },
+    BufferCurrentIndex = { fg = colors.blue, bg = colors.bg_alt },
+    BufferCurrentMod = { fg = colors.yellow, bg = colors.bg_alt },
+    BufferCurrentSign = { fg = colors.blue, bg = colors.bg_alt },
+    BufferCurrentTarget = { fg = colors.red, bg = colors.bg_alt, bold = true },
+    BufferVisible = { fg = colors.fg, bg = colors.bg },
+    BufferVisibleIndex = { fg = colors.blue, bg = colors.bg },
+    BufferVisibleMod = { fg = colors.yellow, bg = colors.bg },
+    BufferVisibleSign = { fg = colors.blue, bg = colors.bg },
+    BufferVisibleTarget = { fg = colors.red, bg = colors.bg, bold = true },
+    BufferInactive = { fg = colors.comment, bg = colors.bg },
+    BufferInactiveIndex = { fg = colors.comment, bg = colors.bg },
+    BufferInactiveMod = { fg = colors.orange, bg = colors.bg },
+    BufferInactiveSign = { fg = colors.bg_alt, bg = colors.bg },
+    BufferInactiveTarget = { fg = colors.red, bg = colors.bg, bold = true },
+    BufferTabpage = { fg = colors.bg_alt, bg = colors.bg },
+    BufferTabpages = { bg = colors.bg },
+
+    -- Bufferline
+    BufferLineIndicatorSelected = { fg = colors.changed },
+
+    -- Notify
+    NotifyERRORBorder = { fg = colors.error },
+    NotifyWARNBorder = { fg = colors.warning },
+    NotifyINFOBorder = { fg = colors.info },
+    NotifyDEBUGBorder = { fg = colors.comment },
+    NotifyTRACEBorder = { fg = colors.purple },
+    NotifyERRORIcon = { fg = colors.error },
+    NotifyWARNIcon = { fg = colors.warning },
+    NotifyINFOIcon = { fg = colors.info },
+    NotifyDEBUGIcon = { fg = colors.comment },
+    NotifyTRACEIcon = { fg = colors.purple },
+    NotifyERRORTitle = { fg = colors.error },
+    NotifyWARNTitle = { fg = colors.warning },
+    NotifyINFOTitle = { fg = colors.info },
+    NotifyDEBUGTitle = { fg = colors.comment },
+    NotifyTRACETitle = { fg = colors.purple },
+    NotifyERRORBody = { fg = colors.fg, bg = colors.bg },
+    NotifyWARNBody = { fg = colors.fg, bg = colors.bg },
+    NotifyINFOBody = { fg = colors.fg, bg = colors.bg },
+    NotifyDEBUGBody = { fg = colors.fg, bg = colors.bg },
+    NotifyTRACEBody = { fg = colors.fg, bg = colors.bg },
+
+    -- Packer
+    packerString = { fg = colors.cyan },
+    packerHash = { fg = colors.orange },
+    packerOutput = { fg = colors.violet },
+    packerRelDate = { fg = colors.fg },
+    packerSuccess = { fg = colors.green },
+    packerStatusSuccess = { fg = colors.blue },
+
+    -- Lazy
+    LazyButton = { fg = colors.green, bg = darken(colors.green, 50) },
+    LazyButtonActive = { fg = colors.green, bg = darken(colors.green, 70) },
+    LazyDir = { link = 'Directory' },
+    LazyH1 = { fg = colors.yellow },
+    LazyH2 = { fg = colors.orange },
+    LazyNoCond = { fg = colors.yellow },
+    LazyProgressDone = { fg = colors.green },
+    LazyProgressTodo = { fg = colors.content },
+    LazyProp = { fg = colors.blue },
+    LazyReasonCmd = { fg = colors.orange },
+    LazyReasonEvent = { fg = colors.yellow },
+    LazyReasonFt = { fg = colors.violet },
+    LazyReasonImport = { fg = colors.blue },
+    LazyReasonKeys = { fg = colors.blue },
+    LazyReasonPlugin = { fg = colors.blue },
+    LazyReasonRuntime = { fg = colors.blue },
+    LazyReasonSource = { fg = colors.violet },
+    LazyReasonStart = { fg = colors.cyan },
+    LazySpecial = { fg = colors.green },
+    LazyTaskError = { fg = colors.red },
+    LazyTaskOutput = { fg = colors.green },
   }
 end
 

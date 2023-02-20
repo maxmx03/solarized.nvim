@@ -1,24 +1,18 @@
 local dark = {
+  -- BACKGROUND
   bg = '#002b36',
   bg_alt = '#073642',
+
+  -- BACKGROUND LIGHT
   bg_invert = '#fdf6e3',
   bg_alt_invert = '#eee8d5',
 
-  -- CONTENT TONES
+  -- CONTENT
   fg = '#839496',
   content = '#93a1a1',
   comment = '#586e75',
-  primary = '#268bd2',
-  secondary = '#586e75',
 
-  -- CONTENT INVERT TONES
-  fg_invert = '#657b83',
-  content_invert = '#586e75',
-  comment_invert = '#93a1a1',
-  primary_invert = '#d33682',
-  secondary_invert = '#93a1a1',
-
-  -- ACCENT COLORS
+  -- ACCENT
   blue = '#268bd2',
   violet = '#6c71c4',
   magenta = '#d33682',
