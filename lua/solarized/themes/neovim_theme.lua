@@ -487,7 +487,7 @@ local function neovim_theme(solarized, chromatic)
     BufferCurrent = { fg = colors.fg, bg = colors.bg_alt },
     BufferCurrentIndex = { fg = colors.blue, bg = colors.bg_alt },
     BufferCurrentMod = { fg = colors.yellow, bg = colors.bg_alt },
-    BufferCurrentSign = { fg = colors.blue, bg = colors.bg_alt },
+    BufferCurrentSign = { fg = colors.orange, bg = colors.bg_alt },
     BufferCurrentTarget = { fg = colors.red, bg = colors.bg_alt, bold = true },
     BufferVisible = { fg = colors.fg, bg = colors.bg },
     BufferVisibleIndex = { fg = colors.blue, bg = colors.bg },
