@@ -38,9 +38,13 @@ function Colorscheme:override_hl(hl)
   end
 end
 
-function Colorscheme:override_config(config)
-  if config and type(config) == 'table' then
-    self.config = vim.tbl_extend('force', self.config, config)
+function Colorscheme:set_config(config)
+  if config and type(config.transparent) == 'boolean' then
+    self.config.transparent = config.transparent
+  end
+
+  if config and type(config.theme) then
+    self.config.theme = config.theme
   end
 end
 
