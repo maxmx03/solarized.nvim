@@ -415,7 +415,7 @@ local function neovim_theme(solarized, chromatic)
     NvimTreeFolderIcon = { link = 'Directory' },
     NvimTreeIndentMarker = { fg = colors.fg },
     NvimTreeNormal = { fg = colors.fg, bg = colors.bg },
-    NvimTreeNormalNC = { fg = colors.fg, bg = colors.bg },
+    NvimTreeNormalNC = { link = 'NormalNC' },
     NvimTreeVertSplit = { fg = colors.fg, bg = colors.bg },
     NvimTreeWinSeparator = { fg = colors.bg, bg = colors.bg },
     NvimTreeFolderName = { fg = colors.fg },
