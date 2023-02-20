@@ -359,7 +359,7 @@ local function vim_theme(solar)
     NavicIconsOperator = { fg = colors.fg },
     NavicIconsTypeParameter = { fg = colors.red },
     NavicText = { link = 'String' },
-    NavicSeparator = { fg = colors.context },
+    NavicSeparator = { fg = colors.content },
 
     -- BarBar
     BufferCurrent = { fg = colors.fg, bg = colors.bg_alt },

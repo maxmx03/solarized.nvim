@@ -494,7 +494,7 @@ local function vscode_theme(solarized, chromatic)
     NavicIconsOperator = { link = '@operator' },
     NavicIconsTypeParameter = { link = '@parameter' },
     NavicText = { link = '@text' },
-    NavicSeparator = { fg = colors.context },
+    NavicSeparator = { fg = colors.content },
 
     -- BarBar
     BufferCurrent = { fg = colors.fg, bg = colors.bg_alt },
