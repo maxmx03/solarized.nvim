@@ -23,7 +23,7 @@ local function neovim_theme(solarized, chromatic)
     Pmenu = { fg = colors.fg, bg = colors.bg_alt, bold = true },
     PmenuSel = { fg = colors.content, bg = colors.bg_alt_invert, reverse = true, bold = true },
     PmenuSbar = { fg = colors.bg_alt_invert, bg = colors.fg, reverse = true, bold = true },
-    PmenuThumb = { fg = colors.primary, bg = colors.bg, reverse = true, bold = true },
+    PmenuThumb = { fg = colors.orange, bg = colors.bg, reverse = true, bold = true },
     WildMenu = { fg = colors.bg_alt_invert, bg = colors.bg_alt, reverse = true, bold = true },
     MsgArea = { fg = colors.content, bg = solarized:is_transparent(colors.bg) },
     ModeMsg = { fg = colors.blue },
@@ -33,9 +33,9 @@ local function neovim_theme(solarized, chromatic)
     ErrorMsg = { fg = colors.error, reverse = true },
     MatchParen = { fg = colors.red, bg = colors.content, bold = true },
     TabLine = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
-    TabLineSel = { fg = colors.secondary, bg = colors.bg_alt_invert, sp = colors.fg, reverse = true },
+    TabLineSel = { fg = colors.comment, bg = colors.bg_alt_invert, sp = colors.fg, reverse = true },
     TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
-    Visual = { fg = colors.secondary, bg = colors.bg, reverse = true, bold = true },
+    Visual = { fg = colors.comment, bg = colors.bg, reverse = true, bold = true },
     VisualNOS = { reverse = true },
     Search = { fg = colors.yellow, reverse = true },
     IncSearch = { fg = colors.orange },
@@ -67,11 +67,11 @@ local function neovim_theme(solarized, chromatic)
     MatchWord = { bold = true },
     MatchWordCur = { bold = true },
     MatchParenCur = { bold = true },
-    LineNr = { fg = colors.secondary, bg = colors.bg_alt },
+    LineNr = { fg = colors.comment, bg = colors.bg_alt },
     DiffAdded = { fg = colors.added, reverse = true },
     DiffChanged = { fg = colors.changed, reverse = true },
     DiffRemoved = { fg = colors.removed, reverse = true },
-    DiffFile = { fg = colors.secondary },
+    DiffFile = { fg = colors.comment },
     DiffIndexLine = { fg = colors.violet },
     Title = { fg = colors.orange, bold = true },
     Constant = { fg = colors.cyan },
@@ -317,6 +317,14 @@ local function neovim_theme(solarized, chromatic)
     LspCodeLens = { fg = colors.comment, italic = true },
     LspCodeLensSeparator = { fg = colors.comment, italic = true },
 
+    -- LSPSAGA - general
+    TitleString = { link = 'Title' },
+    TitleIcon = { fg = colors.red },
+    SagaBorder = { link = 'FloatBorder' },
+    SagaExpand = { fg = colors.red },
+    SagaCollapse = { fg = colors.red },
+    SagaBeacon = { bg = colors.magenta },
+
     -- LSPSAGA - code action
     ActionPreviewNormal = { link = 'SagaNormal' },
     ActionPreviewBorder = { link = 'SagaBorder' },
@@ -374,7 +382,7 @@ local function neovim_theme(solarized, chromatic)
     TerminalNormal = { link = 'SagaNormal' },
 
     -- CMP KIND
-    CmpItemAbbrDeprecated = { fg = colors.secondary, strikethrough = true },
+    CmpItemAbbrDeprecated = { fg = colors.comment, strikethrough = true },
     CmpItemAbbrMatch = { fg = colors.yellow, reverse = true },
     CmpItemAbbrMatchFuzzy = { fg = colors.yellow, reverse = true },
     CmpItemKindFunction = { link = '@function' },
@@ -427,7 +435,7 @@ local function neovim_theme(solarized, chromatic)
     TelescopeMatching = { fg = colors.yellow, reverse = true },
 
     -- DASHBOARD
-    DashboardHeader = { fg = colors.primary },
+    DashboardHeader = { fg = colors.orange },
     DashboardCenter = { fg = colors.fg },
     DashboardFooter = { fg = colors.violet },
 
@@ -439,7 +447,7 @@ local function neovim_theme(solarized, chromatic)
     HopUnmatched = { fg = darken(colors.fg, 2) },
 
     -- TWILIGHT
-    Twilight = { fg = solarized:is_not_transparent(colors.secondary) },
+    Twilight = { fg = solarized:is_not_transparent(colors.comment) },
 
     -- Navic
     NavicIconsFile = { fg = colors.blue },

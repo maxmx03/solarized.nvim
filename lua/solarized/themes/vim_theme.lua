@@ -1,10 +1,10 @@
-local function vim_theme(solarized)
-  local colors = solarized.colors
+local function vim_theme(solar)
+  local colors = solar.colors
 
   return {
     -- Editor
-    Normal = { fg = colors.fg, bg = solarized:is_transparent(colors.bg) },
-    NormalNC = { fg = colors.content, bg = solarized:is_transparent(colors.bg_alt) },
+    Normal = { fg = colors.fg, bg = solar:is_transparent(colors.bg) },
+    NormalNC = { fg = colors.content, bg = solar:is_transparent(colors.bg_alt) },
     NormalFloat = { fg = colors.fg, bg = colors.bg_alt },
     Cursor = { fg = colors.bg, bg = colors.fg },
     lCursor = { link = 'Cursor' },
@@ -22,7 +22,7 @@ local function vim_theme(solarized)
     PmenuSbar = { fg = colors.bg_alt_invert, bg = colors.fg, reverse = true, bold = true },
     PmenuThumb = { fg = colors.fg, bg = colors.bg, reverse = true, bold = true },
     WildMenu = { fg = colors.bg_alt_invert, bg = colors.bg_alt, reverse = true, bold = true },
-    MsgArea = { fg = colors.content, bg = solarized:is_transparent(colors.bg) },
+    MsgArea = { fg = colors.content, bg = solar:is_transparent(colors.bg) },
     ModeMsg = { fg = colors.blue },
     MsgSeparator = { fg = colors.content, bg = colors.bg_alt },
     MoreMsg = { fg = colors.blue },
@@ -30,9 +30,9 @@ local function vim_theme(solarized)
     ErrorMsg = { fg = colors.error, reverse = true },
     MatchParen = { fg = colors.red, bg = colors.content, bold = true },
     TabLine = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
-    TabLineSel = { fg = colors.secondary, bg = colors.bg_alt_invert, sp = colors.fg, reverse = true },
+    TabLineSel = { fg = colors.comment, bg = colors.bg_alt_invert, sp = colors.fg, reverse = true },
     TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
-    Visual = { fg = colors.secondary, bg = colors.bg, reverse = true, bold = true },
+    Visual = { fg = colors.comment, bg = colors.bg, reverse = true, bold = true },
     VisualNOS = { reverse = true },
     Search = { fg = colors.yellow, reverse = true },
     IncSearch = { fg = colors.orange },
@@ -64,11 +64,11 @@ local function vim_theme(solarized)
     MatchWord = { bold = true },
     MatchWordCur = { bold = true },
     MatchParenCur = { bold = true },
-    LineNr = { fg = colors.secondary, bg = colors.bg_alt },
+    LineNr = { fg = colors.comment, bg = colors.bg_alt },
     DiffAdded = { fg = colors.added, reverse = true },
     DiffChanged = { fg = colors.changed, reverse = true },
     DiffRemoved = { fg = colors.removed, reverse = true },
-    DiffFile = { fg = colors.secondary },
+    DiffFile = { fg = colors.comment },
     DiffIndexLine = { fg = colors.violet },
     Title = { fg = colors.orange, bold = true },
     Constant = { fg = colors.cyan },
@@ -306,12 +306,12 @@ local function vim_theme(solarized)
     TelescopeMatching = { fg = colors.yellow, reverse = true },
 
     -- Dashboard
-    DashboardHeader = { fg = colors.primary },
+    DashboardHeader = { fg = colors.red },
     DashboardCenter = { fg = colors.fg },
     DashboardFooter = { fg = colors.violet },
 
     -- Twilight
-    Twilight = { fg = solarized:is_not_transparent(colors.secondary) },
+    Twilight = { fg = solar:is_not_transparent(colors.comment) },
 
     -- Navic
     NavicIconsFile = { fg = colors.fg },

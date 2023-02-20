@@ -316,6 +316,14 @@ local function vscode_theme(solarized, chromatic)
     LspCodeLens = { fg = colors.comment, italic = true },
     LspCodeLensSeparator = { fg = colors.comment, italic = true },
 
+    -- LSPSAGA - general
+    TitleString = { link = 'Title' },
+    TitleIcon = { fg = colors.red },
+    SagaBorder = { link = 'FloatBorder' },
+    SagaExpand = { fg = colors.red },
+    SagaCollapse = { fg = colors.red },
+    SagaBeacon = { bg = colors.magenta },
+
     -- LSPSAGA - code action
     ActionPreviewNormal = { link = 'SagaNormal' },
     ActionPreviewBorder = { link = 'SagaBorder' },
