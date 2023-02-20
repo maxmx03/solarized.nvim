@@ -539,6 +539,14 @@ local function vscode_theme(solarized, chromatic)
     NotifyINFOBody = { fg = colors.fg, bg = colors.bg },
     NotifyDEBUGBody = { fg = colors.fg, bg = colors.bg },
     NotifyTRACEBody = { fg = colors.fg, bg = colors.bg },
+
+    -- Packer
+    packerString = { fg = colors.cyan },
+    packerHash = { fg = colors.orange },
+    packerOutput = { fg = colors.violet },
+    packerRelDate = { fg = colors.fg },
+    packerSuccess = { fg = colors.green },
+    packerStatusSuccess = { fg = colors.blue },
   }
 end
 

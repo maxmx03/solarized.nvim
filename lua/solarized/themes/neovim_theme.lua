@@ -540,6 +540,40 @@ local function neovim_theme(solarized, chromatic)
     NotifyINFOBody = { fg = colors.fg, bg = colors.bg },
     NotifyDEBUGBody = { fg = colors.fg, bg = colors.bg },
     NotifyTRACEBody = { fg = colors.fg, bg = colors.bg },
+
+    -- Packer
+    packerString = { fg = colors.cyan },
+    packerHash = { fg = colors.orange },
+    packerOutput = { fg = colors.violet },
+    packerRelDate = { fg = colors.fg },
+    packerSuccess = { fg = colors.green },
+    packerStatusSuccess = { fg = colors.blue },
+
+    -- Lazy
+    LazyButton = { fg = darken(colors.orange, 80), bg = colors.orange },
+    LazyButtonActive = { fg = darken(colors.orange, 80), bg = darken(colors.orange, 20) },
+    LazyDir = { link = 'Directory' },
+    -- LazyH1 = { fg = '#b58900', bg = '#073642' },
+    -- LazyH2 = { fg = '#cb4b16', bg = '#073642' },
+    -- LazyNoCond = { fg = '#b58900' },
+    -- LazyNormal = { fg = '#839496', bg = 'NONE' },
+    -- LazyProgressDone = { fg = '#859900', bg = '#073642' },
+    -- LazyProgressTodo = { fg = '#839496', bg = '#073642' },
+    -- LazyProp = { fg = '#268bd2' },
+    -- LazyReasonCmd = { fg = '#cb4b16' },
+    -- LazyReasonEvent = { fg = '#b58900' },
+    -- LazyReasonFt = { fg = '#6c71c4' },
+    -- LazyReasonImport = { fg = '#268bd2' },
+    -- LazyReasonKeys = { fg = '#268bd2' },
+    -- LazyReasonPlugin = { fg = '#268bd2' },
+    -- LazyReasonRuntime = { fg = '#268bd2' },
+    -- LazyReasonSource = { fg = '#6c71c4' },
+    -- LazyReasonStart = { fg = '#2aa198' },
+    -- LazySpecial = { fg = '#cb4b16' },
+    -- LazyTaskError = { fg = '#dc322f', bg = '#073642' },
+    -- LazyTaskOutput = { fg = '#859900', bg = '#073642' },
+    -- LazyUrl = { fg = '#2aa198' },
+    -- LazyValue = { fg = '#2aa198' },
   }
 end
 
