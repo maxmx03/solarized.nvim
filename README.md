@@ -26,6 +26,26 @@ This is a reference table of the Solarized color palette, a carefully designed c
 | Cyan       | `#2aa198`        | `#2aa198`       |
 | Green      | `#859900`        | `#859900`       |
 
+## Why use Solarized.nvim?
+
+Solarized is a highly customizable color scheme for Neovim that offers both dark and light modes. With Solarized, you can choose the perfect color scheme for your coding needs, whether you prefer a light or dark background.
+
+Some of the key features of Solarized include:
+
+- Customizable: You can easily adjust the colors to your liking, giving you the perfect color scheme for your coding style.
+
+- Dark and Light: Solarized offers both dark and light modes, so you can choose the background that works best for you.
+
+- Continuously Improved: We are always working to improve Solarized, so you can be confident that you are using a high-quality color scheme that is optimized for Neovim.
+
+Whether you're a seasoned developer or just getting started with Neovim, Solarized is the perfect color scheme for your coding needs. Give it a try today and see the difference for yourself!
+
+## Requirements 🛠️
+
+Before using Solarized Colorscheme, please ensure that you have the following requirements installed:
+
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+
 ## Installation
 
 To use the Solarized color scheme in your code editor or terminal, 
