@@ -368,6 +368,28 @@ local function vim_theme(solar)
 
     -- Bufferline
     BufferLineIndicatorSelected = { fg = colors.changed },
+
+    -- Notify
+    NotifyERRORBorder = { fg = colors.error },
+    NotifyWARNBorder = { fg = colors.warning },
+    NotifyINFOBorder = { fg = colors.info },
+    NotifyDEBUGBorder = { fg = colors.comment },
+    NotifyTRACEBorder = { fg = colors.purple },
+    NotifyERRORIcon = { fg = colors.error },
+    NotifyWARNIcon = { fg = colors.warning },
+    NotifyINFOIcon = { fg = colors.info },
+    NotifyDEBUGIcon = { fg = colors.comment },
+    NotifyTRACEIcon = { fg = colors.purple },
+    NotifyERRORTitle = { fg = colors.error },
+    NotifyWARNTitle = { fg = colors.warning },
+    NotifyINFOTitle = { fg = colors.info },
+    NotifyDEBUGTitle = { fg = colors.comment },
+    NotifyTRACETitle = { fg = colors.purple },
+    NotifyERRORBody = { fg = colors.fg, bg = colors.bg },
+    NotifyWARNBody = { fg = colors.fg, bg = colors.bg },
+    NotifyINFOBody = { fg = colors.fg, bg = colors.bg },
+    NotifyDEBUGBody = { fg = colors.fg, bg = colors.bg },
+    NotifyTRACEBody = { fg = colors.fg, bg = colors.bg },
   }
 end
 

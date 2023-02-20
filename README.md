@@ -206,6 +206,7 @@ The Solarized colorscheme supports the following plugins:
 - [hop](https://github.com/phaazon/hop.nvim)
 - [twilight](https://github.com/folke/twilight.nvim)
 - [navic](https://github.com/SmiteshP/nvim-navic)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
 
 ## 🤝 Contribute
 
