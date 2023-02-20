@@ -1,3 +1,4 @@
+require 'solarized.utils.events'
 local solarized = require 'solarized'
 
-solarized.setup()
+solarized.setup(vim.g.user_config)

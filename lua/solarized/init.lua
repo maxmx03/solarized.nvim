@@ -1,46 +1,18 @@
-local solarized = require 'solarized.src.colorscheme'
-local utils = require 'solarized.src.utils'
-local colors = require 'solarized.src.colors'
-local colortool = require 'solarized.src.colortool'
-local darken = colortool.darken
-local blend = colortool.blend
+local solarized = require 'solarized.colorscheme'
+local utils = require 'solarized.utils'
+local chromatic = require 'solarized.utils.chromatic'
 
 function solarized.setup(user_config)
-  if vim.g.colors_name then
-    vim.cmd 'hi clear'
-  end
+  vim.g.user_config = user_config
 
-  if vim.fn.exists 'syntax_on' then
-    vim.cmd 'syntax reset'
-  end
-
-  vim.g.colors_name = 'solarized'
-
-  -- user config
-  solarized.config = vim.tbl_extend('force', solarized.config, user_config or {})
-
-  -- colors: dark or light
-  solarized.colors = colors[solarized.config.mode]
-
-  -- override or add highlight group
-  if user_config and type(user_config.colors) == 'table' then
-    solarized.colors = vim.tbl_extend('force', solarized.colors, user_config.colors)
-  elseif user_config and type(user_config.colors) == 'function' then
-    solarized.colors = vim.tbl_extend('force', solarized.colors, user_config.colors(solarized.colors, darken, blend))
-  end
-
-  -- highlights: vim, neovim, vscode
-  require('solarized.src.themes.' .. solarized.config.theme)
-
-  -- override or add colors
-  if user_config and type(user_config.highlights) == 'table' then
-    solarized.highlights = vim.tbl_extend('force', solarized.highlights, user_config.highlights)
-  elseif user_config and type(user_config.highlights) == 'function' then
-    solarized.highlights =
-      vim.tbl_extend('force', solarized.highlights, user_config.highlights(solarized.colors, darken, blend))
-  end
-
-  utils.set_highlights(solarized.highlights)
+  utils.load_colorscheme()
+  solarized.colors = require(string.format('solarized.colors.%s', vim.o.background))
+  solarized:set_config(user_config)
+  solarized:override_colors(user_config.colors)
+  local hl_theme = require(string.format('solarized.themes.%s_theme', solarized.config.theme))
+  solarized.highlights = hl_theme(solarized, chromatic)
+  solarized:override_hl(user_config.highlights)
+  utils.apply_colorscheme_highlights(solarized.highlights)
 end
 
 return solarized
