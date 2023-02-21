@@ -209,11 +209,14 @@ The Solarized colorscheme supports the following plugins:
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [dashboard](https://github.com/glepnir/dashboard-nvim)
 - [hop](https://github.com/phaazon/hop.nvim)
+- [vim-sneak](https://github.com/justinmk/vim-sneak)
 - [twilight](https://github.com/folke/twilight.nvim)
 - [navic](https://github.com/SmiteshP/nvim-navic)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
+- [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- [gitgutter](https://github.com/airblade/vim-gitgutter)
 
 ## 🤝 Contribute
 

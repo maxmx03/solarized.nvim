@@ -34,7 +34,7 @@ local function vscode_theme(solarized, chromatic)
     TabLine = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
     TabLineSel = { fg = colors.secondary, bg = colors.bg_alt_invert, sp = colors.fg, reverse = true },
     TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
-    Visual = { fg = colors.cyan, bg = blend(colors.cyan, colors.bg, 0.15) },
+    Visual = { fg = colors.blue, bg = blend(colors.blue, colors.bg, 0.15) },
     VisualNOS = { reverse = true },
     Search = { link = 'VisualNOS' },
     IncSearch = { link = 'Visual' },
@@ -413,7 +413,7 @@ local function vscode_theme(solarized, chromatic)
     -- NvimTree
     NvimTreeFolderIcon = { link = 'Directory' },
     NvimTreeIndentMarker = { fg = colors.fg },
-    NvimTreeNormal = { fg = colors.fg, bg = colors.bg },
+    NvimTreeNormal = { link = 'Normal' },
     NvimTreeNormalNC = { link = 'NormalNC' },
     NvimTreeVertSplit = { fg = colors.fg, bg = colors.bg },
     NvimTreeWinSeparator = { fg = colors.bg, bg = colors.bg },
@@ -436,9 +436,32 @@ local function vscode_theme(solarized, chromatic)
     NvimTreeRootFolder = { fg = colors.blue, bold = true },
 
     -- NeoTree
-    NeoTreeDirectoryName = { fg = colors.fg },
-    NeoTreeDirectoryIcon = { link = 'Directory' },
-    NeoTreeRootName = { fg = colors.blue },
+    NeoTreeNormal = { link = 'NvimTreeNormal' },
+    NeoTreeDirectoryIcon = { link = 'NvimTreeFolderIcon' },
+    NeoTreeIndentMarker = { link = 'NvimTreeIndentMarker' },
+    NeoTreeNormalNC = { link = 'NvimTreeNormalNC' },
+    NeoTreeVertSplit = { link = 'NvimTreeVertSplit' },
+    NeoTreeWinSeparator = { link = 'NvimTreeWinSeparator' },
+    NeoTreeDirectoryName = { link = 'NvimTreeFolderName' },
+    NeoTreeOpenedDirectoryName = { link = 'NvimTreeOpenedFolderName' },
+    NeoTreeOpenedFile = { link = 'NvimTreeOpenedFile' },
+    NeoTreeGitIgnored = { link = 'NvimTreeGitIgnored' },
+    NeoTreeImageFile = { link = 'NvimTreeImageFile' },
+    NeoTreeSpecialFile = { link = 'NvimTreeSpecialFile' },
+    NeoTreeEndOfBuffer = { link = 'NvimTreeEndOfBuffer' },
+    NeoTreeCursorLine = { link = 'NvimTreeCursorLine' },
+    NeoTreeGitAdded = { link = 'NvimTreeGitStaged' },
+    NeoTreeGitConflict = { fg = colors.red },
+    NeoTreeGitDeleted = { link = 'NvimTreeGitDeleted' },
+    NeoTreeGitModified = { link = 'NvimTreeGitDirty' },
+    NeoTreeGitUnstaged = { link = 'NvimTreeGitUnstaged' },
+    NeoTreeGitUntracked = { link = 'NvimTreeGitNew' },
+    NeoTreeHiddenByName = { link = 'NvimTreeEmptyFolderName' },
+    NeoTreeExpander = { fg = colors.fg },
+    NeoTreeStatusLine = { link = 'NvimTreeCursorLine' },
+    NeoTreeStatusLineNC = { link = 'NvimTreeStatusLineNC' },
+    NeoTreeSymbolicLinkTarget = { link = 'NvimTreeSymlink' },
+    NeoTreeRootName = { link = 'NvimTreeRootFolder' },
 
     -- Lir
     LirDir = { fg = colors.blue },
@@ -461,6 +484,9 @@ local function vscode_theme(solarized, chromatic)
     HopNextKey1 = { fg = colors.blue, bg = blend(colors.blue, colors.bg, 0.15), bold = true },
     HopNextKey2 = { fg = darken(colors.blue, 1.25) },
     HopUnmatched = { fg = darken(colors.fg, 2) },
+
+    -- Sneak
+    Sneak = { link = 'HopNextKey' },
 
     -- TWILIGHT
     Twilight = { fg = solarized:is_not_transparent(colors.secondary) },
