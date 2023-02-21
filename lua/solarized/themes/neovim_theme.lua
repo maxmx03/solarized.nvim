@@ -486,6 +486,11 @@ local function neovim_theme(solarized, chromatic)
     HopNextKey2 = { fg = darken(colors.blue, 10) },
     HopUnmatched = { fg = darken(colors.fg, 2) },
 
+    -- Sneak
+    Sneak = { link = 'HopPreview' },
+    SneakScope = { link = 'HopNextKey1' },
+    SneakLabel = { link = 'HopNextKey' },
+
     -- TWILIGHT
     Twilight = { fg = solarized:is_not_transparent(colors.comment) },
 

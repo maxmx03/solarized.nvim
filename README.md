@@ -214,6 +214,8 @@ The Solarized colorscheme supports the following plugins:
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
+- [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- [gitgutter](https://github.com/airblade/vim-gitgutter)
 
 ## 🤝 Contribute
 
