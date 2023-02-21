@@ -1,4 +1,9 @@
-# Solarized Dark and Light Themes for Neovim
+
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/50273941/220346427-b9feee05-490d-442f-bae2-42822fe69ad5.svg" alt="solarized-yinyang" width="350" />
+  <h1>Solarized Dark and Light Themes for Neovim</h1>
+</div>
 
 Solarized is a color palette created by Ethan Schoonover in 2011, which is designed to reduce eye strain and enhance readability. 
 It is a carefully crafted set of colors that can be used for both light and dark backgrounds, and is popular among developers and designers.
