@@ -337,8 +337,6 @@ local function vim_theme(solar, chromatic)
     NeoTreeRootName = { link = 'NvimTreeRootFolder' },
 
     -- Lir
-
-    -- Lir
     LirDir = { fg = colors.red },
 
     -- Telescope

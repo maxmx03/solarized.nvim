@@ -485,6 +485,9 @@ local function vscode_theme(solarized, chromatic)
     HopNextKey2 = { fg = darken(colors.blue, 1.25) },
     HopUnmatched = { fg = darken(colors.fg, 2) },
 
+    -- Sneak
+    Sneak = { link = 'HopNextKey' },
+
     -- TWILIGHT
     Twilight = { fg = solarized:is_not_transparent(colors.secondary) },
 
