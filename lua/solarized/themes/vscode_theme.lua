@@ -467,11 +467,18 @@ local function vscode_theme(solarized, chromatic)
     LirDir = { fg = colors.blue },
 
     -- TELESCOPE
-    TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
-    TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },
-    TelescopePromptTitle = { fg = colors.bg, bg = colors.blue },
-    TelescopeSelection = { link = 'Visual' },
-    TelescopeMatching = { link = 'VisualNOS' },
+    TelescopeNormal = { default = true, link = 'Normal' },
+    TelescopePreviewNormal = { default = true, link = 'TelescopeNormal' },
+    TelescopePromptNormal = { default = true, link = 'TelescopeNormal' },
+    TelescopeResultsNormal = { default = true, link = 'TelescopeNormal' },
+    TelescopeBorder = { link = 'VertSplit' },
+    TelescopePromptBorder = { default = true, link = 'TelescopeBorder' },
+    TelescopeResultsBorder = { default = true, link = 'TelescopeBorder' },
+    TelescopePreviewBorder = { default = true, link = 'TelescopeBorder' },
+    TelescopeTitle = { default = true, fg = colors.green, reverse = true },
+    TelescopePromptTitle = { default = true, link = 'TelescopeTitle' },
+    TelescopeResultsTitle = { default = true, link = 'TelescopeTitle' },
+    TelescopePreviewTitle = { default = true, link = 'TelescopeTitle' },
 
     -- DASHBOARD
     DashboardHeader = { fg = colors.primary },
