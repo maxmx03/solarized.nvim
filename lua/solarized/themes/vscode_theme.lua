@@ -36,8 +36,8 @@ local function vscode_theme(solarized, chromatic)
     TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
     Visual = { fg = colors.green, bg = blend(colors.green, colors.bg, 0.15) },
     VisualNOS = { reverse = true },
-    Search = { link = 'VisualNOS' },
-    IncSearch = { link = 'Visual' },
+    Search = { fg = colors.green, bg = blend(colors.green, colors.bg, 0.15) },
+    IncSearch = { fg = colors.green, bg = blend(colors.green, colors.bg, 0.15), italic = true, bold = true },
     CurSearch = { link = 'IncSearch' },
     Folded = { fg = colors.fg, bg = colors.bg_alt, sp = colors.bg },
     FoldColumn = { fg = colors.fg, bg = colors.bg_alt },
@@ -479,6 +479,8 @@ local function vscode_theme(solarized, chromatic)
     TelescopePromptTitle = { default = true, link = 'TelescopeTitle' },
     TelescopeResultsTitle = { default = true, link = 'TelescopeTitle' },
     TelescopePreviewTitle = { default = true, link = 'TelescopeTitle' },
+    TelescopeSelection = { link = 'Visual' },
+    TelescopeMatching = { link = 'IncSearch' },
 
     -- DASHBOARD
     DashboardHeader = { fg = colors.primary },
