@@ -1,18 +1,5 @@
 local chromatic = {}
 
-function chromatic.hex_to_rgb(hex)
-  -- Remove the "#" character if present
-  hex = hex:gsub('#', '')
-
-  -- Split the hex code into separate red, green, and blue components
-  local r = tonumber(hex:sub(1, 2), 16)
-  local g = tonumber(hex:sub(3, 4), 16)
-  local b = tonumber(hex:sub(5, 6), 16)
-
-  -- Return the color values as three separate integers
-  return r, g, b
-end
-
 local function hex_to_rgb(hex)
   -- Remove the "#" character if present
   hex = hex:gsub('#', '')
