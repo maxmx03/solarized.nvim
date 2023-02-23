@@ -187,9 +187,9 @@ solarized.setup {
 ```
 Here's a brief explanation of the `darken`, `lighten`, and `blend` functions that you can use in your Lua code:
 
-- `darken(color, amount)`: Returns a darker version of the input `color` by reducing the value (i.e., brightness) component of the color by `amount` (a value between 0 and 1). For example, `darken('#FF0000', 0.5)` would return a darker shade of red.
+- `darken(color, amount)`: Returns a darker version of the input `color` by reducing the value (i.e., brightness) component of the color by `amount` (a value between 1 and 100). For example, `darken('#FF0000', 20)` would return a darker shade of red.
 
-- `lighten(color, amount)`: Returns a lighter version of the input `color` by increasing the value (i.e., brightness) component of the color by `amount` (a value between 0 and 1). For example, `lighten('#FF0000', 0.5)` would return a lighter shade of red.
+- `lighten(color, amount)`: Returns a lighter version of the input `color` by increasing the value (i.e., brightness) component of the color by `amount` (a value between 1 and 100). For example, `lighten('#FF0000', 20)` would return a lighter shade of red.
 
 - `blend(color, blend_color, amount)`: Returns a blended version of the input `color` and `blend_color`, where `amount` specifies the strength of the blend (a value between 0 and 1). A value of 0 would result in the original `color`, and a value of 1 would result in `blend_color`. For example, `blend('#FF0000', '#00FF00', 0.5)` would result in a blend of red and green, which is yellow.
 
