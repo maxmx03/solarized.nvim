@@ -32,7 +32,7 @@ local function vscode_theme(solarized, chromatic)
     ErrorMsg = { fg = colors.error, reverse = true },
     MatchParen = { fg = colors.red, bg = colors.content, bold = true },
     TabLine = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
-    TabLineSel = { fg = colors.secondary, bg = colors.bg_alt_invert, sp = colors.fg, reverse = true },
+    TabLineSel = { fg = colors.comment, bg = colors.bg_alt_invert, sp = colors.fg, reverse = true },
     TabLineFill = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
     Visual = { fg = colors.cyan, bg = blend(colors.cyan, colors.bg, 0.15) },
     VisualNOS = { reverse = true },
@@ -66,11 +66,11 @@ local function vscode_theme(solarized, chromatic)
     MatchWord = { bold = true },
     MatchWordCur = { bold = true },
     MatchParenCur = { bold = true },
-    LineNr = { fg = colors.secondary, bg = colors.bg_alt },
+    LineNr = { fg = colors.comment, bg = colors.bg_alt },
     DiffAdded = { fg = colors.added, reverse = true },
     DiffChanged = { fg = colors.changed, reverse = true },
     DiffRemoved = { fg = colors.removed, reverse = true },
-    DiffFile = { fg = colors.secondary },
+    DiffFile = { fg = colors.comment },
     DiffIndexLine = { fg = colors.violet },
     Title = { fg = colors.orange, bold = true },
     Constant = { fg = colors.cyan },
@@ -236,7 +236,7 @@ local function vscode_theme(solarized, chromatic)
     -- Treesitter - Tags
     ['@tag'] = { fg = colors.blue },
     ['@tag.attribute'] = { fg = colors.content },
-    ['@tag.delimiter'] = { fg = colors.secondary },
+    ['@tag.delimiter'] = { fg = colors.comment },
 
     -- Treesitter - Locals
     ['@definition.constant'] = { link = '@constant' },
@@ -381,7 +381,7 @@ local function vscode_theme(solarized, chromatic)
     TerminalNormal = { link = 'SagaNormal' },
 
     -- CMP KIND
-    CmpItemAbbrDeprecated = { fg = colors.secondary, strikethrough = true },
+    CmpItemAbbrDeprecated = { fg = colors.comment, strikethrough = true },
     CmpItemAbbrMatch = { fg = colors.yellow, reverse = true },
     CmpItemAbbrMatchFuzzy = { fg = colors.yellow, reverse = true },
     CmpItemKindFunction = { link = '@function' },
@@ -496,7 +496,7 @@ local function vscode_theme(solarized, chromatic)
     Sneak = { link = 'HopNextKey' },
 
     -- TWILIGHT
-    Twilight = { fg = solarized:is_not_transparent(colors.secondary) },
+    Twilight = { fg = solarized:is_not_transparent(colors.comment) },
 
     -- Navic
     NavicIconsFile = { fg = colors.blue },
