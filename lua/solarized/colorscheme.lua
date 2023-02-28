@@ -102,11 +102,9 @@ function Colorscheme:setup(t)
     self:override_colors(user_config.colors)
   end
 
-  if vim.tbl_isempty(self.highlights) then
-    local hl_theme = require(string.format('solarized.themes.%s_theme', self.config.theme))
-    self.highlights = hl_theme(self, chromatic)
-    self:override_hl(user_config.highlights)
-  end
+  local hl_theme = require(string.format('solarized.themes.%s_theme', self.config.theme))
+  self.highlights = hl_theme(self, chromatic)
+  self:override_hl(user_config.highlights)
 
   self:apply_colorscheme_highlights()
 end
