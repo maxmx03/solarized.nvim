@@ -60,7 +60,6 @@ local function neovim_theme(solarized, chromatic)
     Substitute = { fg = colors.orange, reverse = true },
     EndOfBuffer = { fg = colors.bg },
     NonText = { fg = colors.fg },
-
     -- Code
     Comment = { fg = colors.comment, italic = true },
     CursorColumn = { bg = colors.bg_alt },
@@ -141,7 +140,6 @@ local function neovim_theme(solarized, chromatic)
     Ignore = { fg = colors.cyan, bg = colors.bg_alt, bold = true },
     Todo = { fg = colors.red, bg = colors.bg_alt, bold = true },
     Error = { fg = colors.error, bg = colors.bg_alt, bold = true },
-
     -- GIT
     SignAdd = { fg = colors.added },
     SignChange = { fg = colors.changed },
@@ -152,19 +150,16 @@ local function neovim_theme(solarized, chromatic)
     GitGutterAdd = { fg = colors.added },
     GitGutterChange = { fg = colors.changed },
     GitGutterDelete = { fg = colors.deleted },
-
     -- Treesitter - Misc
     ['@comment'] = { link = 'Comment' },
     ['@error'] = { link = 'Error' },
     ['@preproc'] = { link = 'PreProc' },
     ['@define'] = { link = 'Define' },
     ['@operator'] = { link = 'Operator' },
-
     -- Treesitter - Punctuation
     ['@punctuation.delimiter'] = { link = 'Delimiter' },
     ['@punctuation.bracket'] = { link = 'Delimiter' },
     ['@punctuation.special'] = { fg = colors.magenta },
-
     -- Treesitter - Literals
     ['@string'] = { link = 'String' },
     ['@string.regex'] = { fg = colors.magenta },
@@ -175,7 +170,6 @@ local function neovim_theme(solarized, chromatic)
     ['@boolean'] = { fg = colors.violet },
     ['@number'] = { fg = colors.violet },
     ['@float'] = { link = '@number' },
-
     -- Treesitter - Functions
     ['@function'] = { link = 'Function' },
     ['@function.call'] = { link = 'Function' },
@@ -184,7 +178,6 @@ local function neovim_theme(solarized, chromatic)
     ['@method.call'] = { link = 'Type' },
     ['@constructor'] = { fg = colors.red },
     ['@parameter'] = { fg = colors.content, italic = true },
-
     -- Treesitter - Keywords
     ['@keyword'] = { link = 'Keyword' },
     ['@keyword.function'] = { link = '@keyword' },
@@ -197,7 +190,6 @@ local function neovim_theme(solarized, chromatic)
     ['@label'] = { link = '@keyword' },
     ['@include'] = { link = '@keyword' },
     ['@exception'] = { link = '@keyword' },
-
     -- Treesitter - Types
     ['@type'] = { link = 'Type' },
     ['@type.builtin'] = { fg = colors.green },
@@ -207,7 +199,6 @@ local function neovim_theme(solarized, chromatic)
     ['@attribute'] = { link = '@keyword' },
     ['@field'] = { fg = colors.blue },
     ['@property'] = { link = '@field' },
-
     -- Treesitter - Identifiers
     ['@variable'] = { link = 'Variable' },
     ['@variable.builtin'] = { fg = colors.violet },
@@ -216,7 +207,6 @@ local function neovim_theme(solarized, chromatic)
     ['@constant.macro'] = { link = '@constant' },
     ['@namespace'] = { link = '@keyword' },
     ['@symbol'] = { link = '@keyword' },
-
     -- Treesitter - Text
     ['@text'] = { fg = colors.fg },
     ['@text.strong'] = { fg = colors.magenta },
@@ -233,12 +223,10 @@ local function neovim_theme(solarized, chromatic)
     ['@text.danger'] = { link = 'ErrorMsg' },
     ['@text.diff.add'] = { link = 'DiffAdd' },
     ['@text.diff.delete'] = { link = 'DiffDelete' },
-
     -- Treesitter - Tags
     ['@tag'] = { link = '@keyword' },
     ['@tag.attribute'] = { link = '@property' },
     ['@tag.delimiter'] = { fg = colors.red },
-
     -- Treesitter - Locals
     ['@definition.constant'] = { link = '@constant' },
     ['@definition.function'] = { link = '@function' },
@@ -251,7 +239,6 @@ local function neovim_theme(solarized, chromatic)
     ['@defition.enum'] = { link = '@keyword' },
     ['@defition.namespace'] = { link = '@keyword' },
     ['@defition.import'] = { link = '@keyword' },
-
     -- LSP
     DiagnosticHint = { fg = colors.hint },
     DiagnosticInfo = { fg = colors.info },
@@ -316,7 +303,6 @@ local function neovim_theme(solarized, chromatic)
     LspReferenceWrite = { bg = colors.bg_alt },
     LspCodeLens = { fg = colors.comment, italic = true },
     LspCodeLensSeparator = { fg = colors.comment, italic = true },
-
     -- LSPSAGA - general
     TitleString = { link = 'Title' },
     TitleIcon = { fg = colors.red },
@@ -324,7 +310,6 @@ local function neovim_theme(solarized, chromatic)
     SagaExpand = { fg = colors.red },
     SagaCollapse = { fg = colors.red },
     SagaBeacon = { bg = colors.magenta },
-
     -- LSPSAGA - code action
     ActionPreviewNormal = { link = 'SagaNormal' },
     ActionPreviewBorder = { link = 'SagaBorder' },
@@ -380,7 +365,6 @@ local function neovim_theme(solarized, chromatic)
     -- LSPSAGA - Float term
     TerminalBorder = { link = 'SagaBorder' },
     TerminalNormal = { link = 'SagaNormal' },
-
     -- CMP KIND
     CmpItemAbbrDeprecated = { fg = colors.comment, strikethrough = true },
     CmpItemAbbrMatch = { fg = colors.yellow, reverse = true },
@@ -410,7 +394,6 @@ local function neovim_theme(solarized, chromatic)
     CmpItemKindReference = { fg = colors.fg },
     CmpItemKindOperator = { link = '@operator' },
     CmpItemKindTypeParameter = { fg = colors.violet },
-
     -- NvimTree
     NvimTreeFolderIcon = { link = 'Directory' },
     NvimTreeIndentMarker = { fg = colors.fg },
@@ -435,7 +418,6 @@ local function neovim_theme(solarized, chromatic)
     NvimTreeGitDirty = { fg = colors.changed },
     NvimTreeSymlink = { fg = colors.cyan },
     NvimTreeRootFolder = { fg = colors.blue, bold = true },
-
     -- NeoTree
     NeoTreeNormal = { link = 'NvimTreeNormal' },
     NeoTreeDirectoryIcon = { link = 'NvimTreeFolderIcon' },
@@ -463,35 +445,28 @@ local function neovim_theme(solarized, chromatic)
     NeoTreeStatusLineNC = { link = 'NvimTreeStatusLineNC' },
     NeoTreeSymbolicLinkTarget = { link = 'NvimTreeSymlink' },
     NeoTreeRootName = { link = 'NvimTreeRootFolder' },
-
     -- Lir
     LirDir = { fg = colors.orange },
-
     -- TELESCOPE
     TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
     TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },
     TelescopePromptTitle = { fg = colors.bg, bg = colors.blue },
     TelescopeSelection = { fg = colors.yellow },
     TelescopeMatching = { fg = colors.yellow, reverse = true },
-
     -- DASHBOARD
     DashboardHeader = { fg = colors.orange },
     DashboardCenter = { fg = colors.fg },
     DashboardFooter = { fg = colors.violet },
-
     -- HOP
     HopPreview = { fg = colors.yellow, bg = blend(colors.yellow, colors.bg, 0.15), bold = true },
     HopNextKey = { fg = colors.magenta, bg = blend(colors.magenta, colors.bg, 0.15), bold = true },
     HopNextKey1 = { fg = colors.blue, bg = blend(colors.blue, colors.bg, 0.15), bold = true },
     HopNextKey2 = { fg = darken(colors.blue, 10) },
     HopUnmatched = { fg = darken(colors.fg, 2) },
-
     -- Sneak
     Sneak = { link = 'HopNextKey' },
-
     -- TWILIGHT
     Twilight = { fg = solarized:is_not_transparent(colors.comment) },
-
     -- Navic
     NavicIconsFile = { fg = colors.blue },
     NavicIconsModule = { link = '@namespace' },
@@ -522,7 +497,6 @@ local function neovim_theme(solarized, chromatic)
     NavicIconsTypeParameter = { link = '@parameter' },
     NavicText = { link = '@text' },
     NavicSeparator = { fg = colors.content },
-
     -- BarBar
     BufferCurrent = { fg = colors.fg, bg = colors.bg_alt },
     BufferCurrentIndex = { fg = colors.blue, bg = colors.bg_alt },
@@ -541,10 +515,8 @@ local function neovim_theme(solarized, chromatic)
     BufferInactiveTarget = { fg = colors.red, bg = colors.bg, bold = true },
     BufferTabpage = { fg = colors.bg_alt, bg = colors.bg },
     BufferTabpages = { bg = colors.bg },
-
     -- Bufferline
     BufferLineIndicatorSelected = { fg = colors.changed },
-
     -- Notify
     NotifyERRORBorder = { fg = colors.error },
     NotifyWARNBorder = { fg = colors.warning },
@@ -566,7 +538,6 @@ local function neovim_theme(solarized, chromatic)
     NotifyINFOBody = { fg = colors.fg, bg = colors.bg },
     NotifyDEBUGBody = { fg = colors.fg, bg = colors.bg },
     NotifyTRACEBody = { fg = colors.fg, bg = colors.bg },
-
     -- Packer
     packerString = { fg = colors.cyan },
     packerHash = { fg = colors.orange },
@@ -574,7 +545,6 @@ local function neovim_theme(solarized, chromatic)
     packerRelDate = { fg = colors.fg },
     packerSuccess = { fg = colors.green },
     packerStatusSuccess = { fg = colors.blue },
-
     -- Lazy
     LazyButton = { fg = colors.green, bg = darken(colors.green, 50) },
     LazyButtonActive = { fg = colors.green, bg = darken(colors.green, 70) },
@@ -597,6 +567,44 @@ local function neovim_theme(solarized, chromatic)
     LazySpecial = { fg = colors.green },
     LazyTaskError = { fg = colors.red },
     LazyTaskOutput = { fg = colors.green },
+    -- Neorg
+    ['@neorg.headings.1.title'] = { fg = colors.orange },
+    ['@neorg.headings.2.title'] = { fg = colors.blue },
+    ['@neorg.headings.3.title'] = { fg = colors.yellow },
+    ['@neorg.headings.4.title'] = { fg = colors.violet },
+    ['@neorg.headings.5.title'] = { fg = colors.red },
+    ['@neorg.headings.6.title'] = { fg = colors.cyan },
+    ['@neorg.headings.1.prefix'] = { link = '@neorg.headings.1.title' },
+    ['@neorg.headings.2.prefix'] = { link = '@neorg.headings.2.title' },
+    ['@neorg.headings.3.prefix'] = { link = '@neorg.headings.3.title' },
+    ['@neorg.headings.4.prefix'] = { link = '@neorg.headings.4.title' },
+    ['@neorg.headings.5.prefix'] = { link = '@neorg.headings.5.title' },
+    ['@neorg.headings.6.prefix'] = { link = '@neorg.headings.6.title' },
+    ['@neorg.lists.ordered.1.prefix'] = { link = '@neorg.headings.1.title' },
+    ['@neorg.lists.ordered.2.prefix'] = { link = '@neorg.headings.2.title' },
+    ['@neorg.lists.ordered.3.prefix'] = { link = '@neorg.headings.3.title' },
+    ['@neorg.lists.ordered.4.prefix'] = { link = '@neorg.headings.4.title' },
+    ['@neorg.lists.ordered.5.prefix'] = { link = '@neorg.headings.5.title' },
+    ['@neorg.lists.ordered.6.prefix'] = { link = '@neorg.headings.5.title' },
+    ['@neorg.lists.ordered.1.content'] = { link = '@neorg.lists.ordered.1.prefix' },
+    ['@neorg.lists.ordered.2.content'] = { link = '@neorg.lists.ordered.2.prefix' },
+    ['@neorg.lists.ordered.3.content'] = { link = '@neorg.lists.ordered.3.prefix' },
+    ['@neorg.lists.ordered.4.content'] = { link = '@neorg.lists.ordered.4.prefix' },
+    ['@neorg.lists.ordered.5.content'] = { link = '@neorg.lists.ordered.5.prefix' },
+    ['@neorg.lists.ordered.6.content'] = { link = '@neorg.lists.ordered.6.prefix' },
+    ['@neorg.lists.unordered.1.prefix'] = { link = '@neorg.lists.ordered.1.prefix' },
+    ['@neorg.lists.unordered.2.prefix'] = { link = '@neorg.lists.ordered.2.prefix' },
+    ['@neorg.lists.unordered.3.prefix'] = { link = '@neorg.lists.ordered.3.prefix' },
+    ['@neorg.lists.unordered.4.prefix'] = { link = '@neorg.lists.ordered.4.prefix' },
+    ['@neorg.lists.unordered.5.prefix'] = { link = '@neorg.lists.ordered.5.prefix' },
+    ['@neorg.lists.unordered.6.prefix'] = { link = '@neorg.lists.ordered.6.prefix' },
+    ['@neorg.lists.unordered.1.content'] = { link = '@neorg.lists.ordered.1.content' },
+    ['@neorg.lists.unordered.2.content'] = { link = '@neorg.lists.ordered.2.content' },
+    ['@neorg.lists.unordered.3.content'] = { link = '@neorg.lists.ordered.3.content' },
+    ['@neorg.lists.unordered.4.content'] = { link = '@neorg.lists.ordered.4.content' },
+    ['@neorg.lists.unordered.5.content'] = { link = '@neorg.lists.ordered.5.content' },
+    ['@neorg.lists.unordered.6.content'] = { link = '@neorg.lists.ordered.6.content' },
+    ['@neorg.links.file'] = { link = '@text.uri' },
   }
 end
 

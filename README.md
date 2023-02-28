@@ -222,6 +222,7 @@ The Solarized colorscheme supports the following plugins:
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - [gitgutter](https://github.com/airblade/vim-gitgutter)
+- [neorg](https://github.com/nvim-neorg/neorg)
 
 ## 🤝 Contribute
 
