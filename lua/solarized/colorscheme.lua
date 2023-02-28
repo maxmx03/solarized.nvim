@@ -2,6 +2,7 @@ local chromatic = require 'solarized.utils.chromatic'
 
 local Colorscheme = {}
 
+Colorscheme.user_config = {}
 Colorscheme.colors = {}
 Colorscheme.highlights = {}
 Colorscheme.config = {
@@ -18,7 +19,7 @@ function Colorscheme:new()
   return t
 end
 
-function Colorscheme:override_colors(c)
+function Colorscheme:set_colors(c)
   if c and type(c) == 'function' then
     local colors = c(self.colors, chromatic.darken, chromatic.lighten, chromatic.blend)
 
@@ -28,7 +29,7 @@ function Colorscheme:override_colors(c)
   end
 end
 
-function Colorscheme:override_hl(hl)
+function Colorscheme:set_hl(hl)
   if hl and type(hl) == 'function' then
     local highlights = hl(self.colors, chromatic.darken, chromatic.lighten, chromatic.blend)
 
@@ -95,16 +96,23 @@ function Colorscheme:setup(t)
   self.load()
   self.colors = require(string.format('solarized.colors.%s', vim.o.background))
 
-  local user_config = t or {}
+  if t and not vim.tbl_isempty(t) then
+    self.user_config = t
+  end
 
-  if not vim.tbl_isempty(user_config) then
-    self:set_config(user_config.config)
-    self:override_colors(user_config.colors)
+  if self.user_config and not vim.tbl_isempty(self.user_config) then
+    if self.user_config.config and not vim.tbl_isempty(self.user_config.config) then
+      self:set_config(self.user_config.config)
+    end
+
+    if self.user_config.colors and not vim.tbl_isempty(self.user_config.colors) then
+      self:set_colors(self.user_config.colors)
+    end
   end
 
   local hl_theme = require(string.format('solarized.themes.%s_theme', self.config.theme))
   self.highlights = hl_theme(self, chromatic)
-  self:override_hl(user_config.highlights)
+  self:set_hl(self.user_config.highlights)
 
   self:apply_colorscheme_highlights()
 end
