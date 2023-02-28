@@ -39,13 +39,7 @@ function Colorscheme:override_hl(hl)
 end
 
 function Colorscheme:set_config(config)
-  if config and type(config.transparent) == 'boolean' then
-    self.config.transparent = config.transparent
-  end
-
-  if config and type(config.theme) then
-    self.config.theme = config.theme
-  end
+  self.config = vim.tbl_extend('force', self.config, config)
 end
 
 function Colorscheme:is_transparent(color)
@@ -62,6 +56,59 @@ function Colorscheme:is_not_transparent(color)
   end
 
   return color
+end
+
+function Colorscheme:apply_colorscheme_highlights()
+  for group_name, group in pairs(self.highlights) do
+    if type(group) == 'table' then
+      local val = {}
+
+      if group.fg ~= nil then
+        val.fg = group.fg
+      end
+
+      if group.bg ~= nil then
+        val.bg = group.bg
+      end
+
+      val = vim.tbl_deep_extend('force', val, group)
+
+      vim.api.nvim_set_hl(0, group_name, val)
+    end
+  end
+end
+
+function Colorscheme.load()
+  if vim.g.colors_name then
+    vim.cmd 'hi clear'
+  end
+
+  if vim.fn.exists 'syntax_on' then
+    vim.cmd 'syntax reset'
+  end
+
+  vim.o.termguicolors = true
+  vim.g.colors_name = 'solarized'
+end
+
+function Colorscheme:setup(t)
+  self.load()
+  self.colors = require(string.format('solarized.colors.%s', vim.o.background))
+
+  local user_config = t or {}
+
+  if not vim.tbl_isempty(user_config) then
+    self:set_config(user_config.config)
+    self:override_colors(user_config.colors)
+  end
+
+  if vim.tbl_isempty(self.highlights) then
+    local hl_theme = require(string.format('solarized.themes.%s_theme', self.config.theme))
+    self.highlights = hl_theme(self, chromatic)
+    self:override_hl(user_config.highlights)
+  end
+
+  self:apply_colorscheme_highlights()
 end
 
 return Colorscheme:new()
