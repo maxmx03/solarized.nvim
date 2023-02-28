@@ -107,7 +107,7 @@ The Solarized color scheme provides several configuration options that you can u
 The theme option allows you to choose between the three available theme styles: vim, neovim, and vscode. The vim theme uses a slightly different color palette than the neovim and vscode themes. By default, the neovim theme is used. To change the theme, add the following line to your Neovim or Vim configuration file:
 
 ```lua
-solarized.setup {
+solarized:setup {
  config = {
   theme = 'vim' -- or 'neovim' or 'vscode'
  }
@@ -119,7 +119,7 @@ solarized.setup {
 The transparent option allows you to enable or disable background transparency. By default, transparency is disabled. To enable transparency, add the following line to your Neovim or Vim configuration file:
 
 ```lua
-solarized.setup {
+solarized:setup {
  config = {
   transparent = true
  }
