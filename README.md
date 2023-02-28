@@ -1,35 +1,33 @@
-
-
 <div align="center">
   <img src="https://user-images.githubusercontent.com/50273941/220346427-b9feee05-490d-442f-bae2-42822fe69ad5.svg" alt="solarized-yinyang" width="350" />
   <h1>Solarized Dark and Light Themes for Neovim</h1>
 </div>
 
-Solarized is a color palette created by Ethan Schoonover in 2011, which is designed to reduce eye strain and enhance readability. 
+Solarized is a color palette created by Ethan Schoonover in 2011, which is designed to reduce eye strain and enhance readability.
 It is a carefully crafted set of colors that can be used for both light and dark backgrounds, and is popular among developers and designers.
 
 ## Solarized Color Palette
 
 This is a reference table of the Solarized color palette, a carefully designed color scheme created by Ethan Schoonover.
 
-| Solarized Dark | Description                   | Color                | Solarized Light  | Description                    | Color                 |
-|----------------|-------------------------------|----------------------|------------------|--------------------------------|-----------------------|
-| Base03         | Background                    | #002b36              | Base3            | Background                     | #fdf6e3               |
-| Base02         | Background highlights         | #073642              | Base2            | Background highlights          | #eee8d5               |
-| Base01         | Comments, secondary text      | #586e75              | Base1            | Comments, secondary text       | #93a1a1               |
-| Base00         | General text (body)           | #657b83              | Base0            | General text (body)            | #839496               |
-| Base0          | General text (body)           | #839496              | Base00           | General text (body)            | #657b83               |
-| Base1          | Comments, secondary text      | #93a1a1              | Base01           | Comments, secondary text       | #586e75               |
-| Base2          | Background highlights         | #eee8d5              | Base02           | Background highlights          | #073642               |
-| Base3          | Background                    | #fdf6e3              | Base03           | Background                     | #002b36               |
-| Yellow         | N/A                           | #b58900              | Yellow           | N/A                            | #b58900               |
-| Orange         | N/A                           | #cb4b16              | Orange           | N/A                            | #cb4b16               |
-| Red            | N/A                           | #dc322f              | Red              | N/A                            | #dc322f               |
-| Magenta        | N/A                           | #d33682              | Magenta          | N/A                            | #d33682               |
-| Violet         | N/A                           | #6c71c4              | Violet           | N/A                            | #6c71c4               |
-| Blue           | N/A                           | #268bd2              | Blue             | N/A                            | #268bd2               |
-| Cyan           | N/A                           | #2aa198              | Cyan             | N/A                            | #2aa198               |
-| Green          | N/A                           | #859900              | Green            | N/A                            | #859900               |
+| Solarized Dark | Description              | Color   | Solarized Light | Description              | Color   |
+| -------------- | ------------------------ | ------- | --------------- | ------------------------ | ------- |
+| Base03         | Background               | #002b36 | Base3           | Background               | #fdf6e3 |
+| Base02         | Background highlights    | #073642 | Base2           | Background highlights    | #eee8d5 |
+| Base01         | Comments, secondary text | #586e75 | Base1           | Comments, secondary text | #93a1a1 |
+| Base00         | General text (body)      | #657b83 | Base0           | General text (body)      | #839496 |
+| Base0          | General text (body)      | #839496 | Base00          | General text (body)      | #657b83 |
+| Base1          | Comments, secondary text | #93a1a1 | Base01          | Comments, secondary text | #586e75 |
+| Base2          | Background highlights    | #eee8d5 | Base02          | Background highlights    | #073642 |
+| Base3          | Background               | #fdf6e3 | Base03          | Background               | #002b36 |
+| Yellow         | N/A                      | #b58900 | Yellow          | N/A                      | #b58900 |
+| Orange         | N/A                      | #cb4b16 | Orange          | N/A                      | #cb4b16 |
+| Red            | N/A                      | #dc322f | Red             | N/A                      | #dc322f |
+| Magenta        | N/A                      | #d33682 | Magenta         | N/A                      | #d33682 |
+| Violet         | N/A                      | #6c71c4 | Violet          | N/A                      | #6c71c4 |
+| Blue           | N/A                      | #268bd2 | Blue            | N/A                      | #268bd2 |
+| Cyan           | N/A                      | #2aa198 | Cyan            | N/A                      | #2aa198 |
+| Green          | N/A                      | #859900 | Green           | N/A                      | #859900 |
 
 ## Why use Solarized.nvim?
 
@@ -53,13 +51,14 @@ Before using Solarized Colorscheme, please ensure that you have the following re
 
 ## Installation
 
-To use the Solarized color scheme in your code editor or terminal, 
-you can install the Solarized colorscheme plugin using the Packer plugin manager. 
+To use the Solarized color scheme in your code editor or terminal,
+you can install the Solarized colorscheme plugin using the Packer plugin manager.
 Packer is a popular plugin manager for Neovim and Vim, and it allows you to easily install and manage plugins for your editor.
 
 To install the Solarized colorscheme plugin via Packer, you can follow the steps below.
 
 `~/.config/nvim/lua/plugins.lua`
+
 ```lua
 use {
   'maxmx03/solarized.nvim',
@@ -68,9 +67,11 @@ use {
 
     vim.o.background = 'dark'
 
-    solarized.setup {
-      theme = 'neovim',
-      transparent = false
+    solarized:setup {
+      config = {
+        theme = 'neovim',
+        transparent = false
+      }
     }
 
     vim.cmd 'colorscheme solarized'
@@ -90,18 +91,16 @@ If you prefer the dark mode variant, you can set the background color to a darke
 
 `vim.o.background = 'dark'`
 
-
 ## Configuration Options
 
 The Solarized color scheme provides several configuration options that you can use to customize the look and feel of the colors. Here is a list of the available options and their default values:
 
-| Option       | Default            | Description                                                |
-| ------------ | ------------------ | ---------------------------------------------------------- |
-| `theme`      | `'vim'`            | The theme comes in three styles: `vim`, `neovim`, `vscode` |
-| `transparent`| `false`            | Enable and disable background transparency                 |
-| `colors`     | `{}` or `function` | You can add new colors or override the defaults            |
-| `highlights` | `{}` or `function` | You can add new highlights or override the defaults        |
-
+| Option        | Default            | Description                                                |
+| ------------- | ------------------ | ---------------------------------------------------------- |
+| `theme`       | `'vim'`            | The theme comes in three styles: `vim`, `neovim`, `vscode` |
+| `transparent` | `false`            | Enable and disable background transparency                 |
+| `colors`      | `{}` or `function` | You can add new colors or override the defaults            |
+| `highlights`  | `{}` or `function` | You can add new highlights or override the defaults        |
 
 ## Theme
 
@@ -109,7 +108,9 @@ The theme option allows you to choose between the three available theme styles: 
 
 ```lua
 solarized.setup {
+ config = {
   theme = 'vim' -- or 'neovim' or 'vscode'
+ }
 }
 ```
 
@@ -119,16 +120,18 @@ The transparent option allows you to enable or disable background transparency. 
 
 ```lua
 solarized.setup {
+ config = {
   transparent = true
+ }
 }
 ```
 
 ## Colors
 
 The colors option allows you to add new colors or override the default color palette. This option accepts a table or a function that returns a table. The table should contain color definitions using hexadecimal RGB values. By default, this option is set to an empty table. Here is an example of how to set the colors option to a table:
- 
+
 ```lua
-require("solarized").setup({
+require("solarized"):setup({
   colors = {
     bg      = "#282a36",
     bg_alt  = "#44475a",
@@ -147,6 +150,7 @@ require("solarized").setup({
   }
 })
 ```
+
 In this example, we're using the Dracula color scheme by setting the colors table to a list of color values that match the Dracula color palette. You can replace these values with your own custom colors if you prefer.
 
 ## Highlights
@@ -154,7 +158,7 @@ In this example, we're using the Dracula color scheme by setting the colors tabl
 The highlights option allows you to add new highlight groups or override the default highlight groups. This option accepts a table or a function that returns a table. The table should contain highlight group definitions that use the color names defined in the colors table. By default, this option is set to an empty table. Here is an example of how to set the highlights option to a table:
 
 ```lua
-solarized.setup {
+solarized:setup {
   colors = {
     bg      = "#282a36",
     bg_alt  = "#44475a",
@@ -185,6 +189,7 @@ solarized.setup {
   end
 }
 ```
+
 Here's a brief explanation of the `darken`, `lighten`, and `blend` functions that you can use in your Lua code:
 
 - `darken(color, amount)`: Returns a darker version of the input `color` by reducing the value (i.e., brightness) component of the color by `amount` (a value between 1 and 100). For example, `darken('#FF0000', 20)` would return a darker shade of red.
@@ -217,6 +222,7 @@ The Solarized colorscheme supports the following plugins:
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - [gitgutter](https://github.com/airblade/vim-gitgutter)
+- [neorg](https://github.com/nvim-neorg/neorg)
 
 ## 🤝 Contribute
 

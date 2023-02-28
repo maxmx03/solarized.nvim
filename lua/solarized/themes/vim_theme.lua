@@ -58,7 +58,6 @@ local function vim_theme(solar, chromatic)
     Substitute = { fg = colors.orange, reverse = true },
     EndOfBuffer = { fg = colors.bg },
     NonText = { fg = colors.fg },
-
     -- Code
     Comment = { fg = colors.comment, italic = true },
     CursorColumn = { bg = colors.bg_alt },
@@ -139,7 +138,6 @@ local function vim_theme(solar, chromatic)
     Ignore = { fg = colors.cyan, bg = colors.bg_alt, bold = true },
     Todo = { fg = colors.red, bg = colors.bg_alt, bold = true },
     Error = { fg = colors.error, bg = colors.bg_alt, bold = true },
-
     -- Git
     SignAdd = { fg = colors.added },
     SignChange = { fg = colors.changed },
@@ -150,10 +148,8 @@ local function vim_theme(solar, chromatic)
     GitGutterAdd = { fg = colors.added },
     GitGutterChange = { fg = colors.changed },
     GitGutterDelete = { fg = colors.deleted },
-
     -- Treesitter - Tags
     ['@tag.attribute'] = { fg = colors.violet },
-
     -- Lsp
     DiagnosticHint = { fg = colors.hint },
     DiagnosticInfo = { fg = colors.info },
@@ -218,7 +214,6 @@ local function vim_theme(solar, chromatic)
     LspReferenceWrite = { bg = colors.bg_alt_invert },
     LspCodeLens = { fg = colors.comment, italic = true },
     LspCodeLensSeparator = { fg = colors.comment, italic = true },
-
     -- LSPSAGA - general
     TitleString = { link = 'Title' },
     TitleIcon = { fg = colors.red },
@@ -226,7 +221,6 @@ local function vim_theme(solar, chromatic)
     SagaExpand = { fg = colors.red },
     SagaCollapse = { fg = colors.red },
     SagaBeacon = { bg = colors.magenta },
-
     -- LSPSAGA - code action
     ActionPreviewNormal = { link = 'SagaNormal' },
     ActionPreviewBorder = { link = 'SagaBorder' },
@@ -282,7 +276,6 @@ local function vim_theme(solar, chromatic)
     -- LSPSAGA - Float term
     TerminalBorder = { link = 'SagaBorder' },
     TerminalNormal = { link = 'SagaNormal' },
-
     -- NvimTree
     NvimTreeFolderIcon = { link = 'Directory' },
     NvimTreeIndentMarker = { fg = colors.fg },
@@ -307,7 +300,6 @@ local function vim_theme(solar, chromatic)
     NvimTreeGitDirty = { fg = colors.changed },
     NvimTreeSymlink = { fg = colors.cyan },
     NvimTreeRootFolder = { fg = colors.blue, bold = true },
-
     -- NeoTree
     NeoTreeNormal = { link = 'NvimTreeNormal' },
     NeoTreeDirectoryIcon = { link = 'NvimTreeFolderIcon' },
@@ -335,25 +327,20 @@ local function vim_theme(solar, chromatic)
     NeoTreeStatusLineNC = { link = 'NvimTreeStatusLineNC' },
     NeoTreeSymbolicLinkTarget = { link = 'NvimTreeSymlink' },
     NeoTreeRootName = { link = 'NvimTreeRootFolder' },
-
     -- Lir
     LirDir = { fg = colors.red },
-
     -- Telescope
     TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
     TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },
     TelescopePromptTitle = { fg = colors.bg, bg = colors.blue },
     TelescopeSelection = { fg = colors.yellow },
     TelescopeMatching = { fg = colors.yellow, reverse = true },
-
     -- Dashboard
     DashboardHeader = { fg = colors.red },
     DashboardCenter = { fg = colors.fg },
     DashboardFooter = { fg = colors.violet },
-
     -- Twilight
     Twilight = { fg = solar:is_not_transparent(colors.comment) },
-
     -- Navic
     NavicIconsFile = { fg = colors.fg },
     NavicIconsModule = { fg = colors.cyan },
@@ -384,7 +371,6 @@ local function vim_theme(solar, chromatic)
     NavicIconsTypeParameter = { fg = colors.red },
     NavicText = { link = 'String' },
     NavicSeparator = { fg = colors.content },
-
     -- BarBar
     BufferCurrent = { fg = colors.fg, bg = colors.bg_alt },
     BufferCurrentIndex = { fg = colors.blue, bg = colors.bg_alt },
@@ -403,10 +389,8 @@ local function vim_theme(solar, chromatic)
     BufferInactiveTarget = { fg = colors.red, bg = colors.bg, bold = true },
     BufferTabpage = { fg = colors.bg_alt, bg = colors.bg },
     BufferTabpages = { bg = colors.bg },
-
     -- Bufferline
     BufferLineIndicatorSelected = { fg = colors.changed },
-
     -- Notify
     NotifyERRORBorder = { fg = colors.error },
     NotifyWARNBorder = { fg = colors.warning },
@@ -428,7 +412,6 @@ local function vim_theme(solar, chromatic)
     NotifyINFOBody = { fg = colors.fg, bg = colors.bg },
     NotifyDEBUGBody = { fg = colors.fg, bg = colors.bg },
     NotifyTRACEBody = { fg = colors.fg, bg = colors.bg },
-
     -- Packer
     packerString = { fg = colors.cyan },
     packerHash = { fg = colors.orange },
@@ -436,7 +419,6 @@ local function vim_theme(solar, chromatic)
     packerRelDate = { fg = colors.fg },
     packerSuccess = { fg = colors.green },
     packerStatusSuccess = { fg = colors.blue },
-
     -- Lazy
     LazyButton = { fg = colors.green, bg = darken(colors.green, 50) },
     LazyButtonActive = { fg = colors.green, bg = darken(colors.green, 70) },
@@ -459,6 +441,44 @@ local function vim_theme(solar, chromatic)
     LazySpecial = { fg = colors.green },
     LazyTaskError = { fg = colors.red },
     LazyTaskOutput = { fg = colors.green },
+    -- Neorg
+    ['@neorg.headings.1.title'] = { fg = colors.orange },
+    ['@neorg.headings.2.title'] = { fg = colors.blue },
+    ['@neorg.headings.3.title'] = { fg = colors.yellow },
+    ['@neorg.headings.4.title'] = { fg = colors.violet },
+    ['@neorg.headings.5.title'] = { fg = colors.red },
+    ['@neorg.headings.6.title'] = { fg = colors.cyan },
+    ['@neorg.headings.1.prefix'] = { link = '@neorg.headings.1.title' },
+    ['@neorg.headings.2.prefix'] = { link = '@neorg.headings.2.title' },
+    ['@neorg.headings.3.prefix'] = { link = '@neorg.headings.3.title' },
+    ['@neorg.headings.4.prefix'] = { link = '@neorg.headings.4.title' },
+    ['@neorg.headings.5.prefix'] = { link = '@neorg.headings.5.title' },
+    ['@neorg.headings.6.prefix'] = { link = '@neorg.headings.6.title' },
+    ['@neorg.lists.ordered.1.prefix'] = { link = '@neorg.headings.1.title' },
+    ['@neorg.lists.ordered.2.prefix'] = { link = '@neorg.headings.2.title' },
+    ['@neorg.lists.ordered.3.prefix'] = { link = '@neorg.headings.3.title' },
+    ['@neorg.lists.ordered.4.prefix'] = { link = '@neorg.headings.4.title' },
+    ['@neorg.lists.ordered.5.prefix'] = { link = '@neorg.headings.5.title' },
+    ['@neorg.lists.ordered.6.prefix'] = { link = '@neorg.headings.5.title' },
+    ['@neorg.lists.ordered.1.content'] = { link = '@neorg.lists.ordered.1.prefix' },
+    ['@neorg.lists.ordered.2.content'] = { link = '@neorg.lists.ordered.2.prefix' },
+    ['@neorg.lists.ordered.3.content'] = { link = '@neorg.lists.ordered.3.prefix' },
+    ['@neorg.lists.ordered.4.content'] = { link = '@neorg.lists.ordered.4.prefix' },
+    ['@neorg.lists.ordered.5.content'] = { link = '@neorg.lists.ordered.5.prefix' },
+    ['@neorg.lists.ordered.6.content'] = { link = '@neorg.lists.ordered.6.prefix' },
+    ['@neorg.lists.unordered.1.prefix'] = { link = '@neorg.lists.ordered.1.prefix' },
+    ['@neorg.lists.unordered.2.prefix'] = { link = '@neorg.lists.ordered.2.prefix' },
+    ['@neorg.lists.unordered.3.prefix'] = { link = '@neorg.lists.ordered.3.prefix' },
+    ['@neorg.lists.unordered.4.prefix'] = { link = '@neorg.lists.ordered.4.prefix' },
+    ['@neorg.lists.unordered.5.prefix'] = { link = '@neorg.lists.ordered.5.prefix' },
+    ['@neorg.lists.unordered.6.prefix'] = { link = '@neorg.lists.ordered.6.prefix' },
+    ['@neorg.lists.unordered.1.content'] = { link = '@neorg.lists.ordered.1.content' },
+    ['@neorg.lists.unordered.2.content'] = { link = '@neorg.lists.ordered.2.content' },
+    ['@neorg.lists.unordered.3.content'] = { link = '@neorg.lists.ordered.3.content' },
+    ['@neorg.lists.unordered.4.content'] = { link = '@neorg.lists.ordered.4.content' },
+    ['@neorg.lists.unordered.5.content'] = { link = '@neorg.lists.ordered.5.content' },
+    ['@neorg.lists.unordered.6.content'] = { link = '@neorg.lists.ordered.6.content' },
+    ['@neorg.links.file'] = { link = '@text.uri' },
   }
 end
 
