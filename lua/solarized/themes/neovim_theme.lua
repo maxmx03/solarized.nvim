@@ -205,7 +205,7 @@ local function neovim_theme(solarized, chromatic)
     ['@constant'] = { fg = colors.violet },
     ['@constant.builtin'] = { link = '@constant' },
     ['@constant.macro'] = { link = '@constant' },
-    ['@namespace'] = { link = '@keyword' },
+    ['@namespace'] = { link = '@type' },
     ['@symbol'] = { link = '@keyword' },
     -- Treesitter - Text
     ['@text'] = { fg = colors.fg },
