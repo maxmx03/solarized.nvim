@@ -192,7 +192,7 @@ local function vscode_theme(solarized, chromatic)
     -- Treesitter - Types
     ['@type'] = { fg = colors.orange },
     ['@type.builtin'] = { link = '@keyword' },
-    ['@type.definition'] = { link = '@type.builtin' },
+    ['@type.definition'] = { link = '@type' },
     ['@type.qualifier'] = { link = '@type.builtin' },
     ['@storageclass'] = { link = '@type' },
     ['@attribute'] = { link = '@keyword' },

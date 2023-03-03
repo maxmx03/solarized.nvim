@@ -193,7 +193,7 @@ local function neovim_theme(solarized, chromatic)
     -- Treesitter - Types
     ['@type'] = { link = 'Type' },
     ['@type.builtin'] = { fg = colors.green },
-    ['@type.definition'] = { link = '@type.builtin' },
+    ['@type.definition'] = { link = '@type' },
     ['@type.qualifier'] = { link = '@type.builtin' },
     ['@storageclass'] = { link = '@type' },
     ['@attribute'] = { link = '@keyword' },
