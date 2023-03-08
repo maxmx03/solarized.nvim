@@ -392,6 +392,7 @@ local function vim_theme(solar, chromatic)
     -- Bufferline
     BufferLineIndicatorSelected = { fg = colors.changed },
     -- Notify
+    NotifyBackground = { link = 'NormalFloat' },
     NotifyERRORBorder = { fg = colors.error },
     NotifyWARNBorder = { fg = colors.warning },
     NotifyINFOBorder = { fg = colors.info },

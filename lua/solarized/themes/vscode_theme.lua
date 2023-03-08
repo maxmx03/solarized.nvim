@@ -524,6 +524,7 @@ local function vscode_theme(solarized, chromatic)
     -- Bufferline
     BufferLineIndicatorSelected = { fg = colors.changed },
     -- Notify
+    NotifyBackground = { link = 'NormalFloat' },
     NotifyERRORBorder = { fg = colors.error },
     NotifyWARNBorder = { fg = colors.warning },
     NotifyINFOBorder = { fg = colors.info },
