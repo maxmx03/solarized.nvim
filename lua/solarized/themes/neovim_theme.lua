@@ -7,7 +7,7 @@ local function neovim_theme(solarized, chromatic)
   return {
     -- Editor
     Normal = { fg = colors.fg, bg = solarized:is_transparent(colors.bg) },
-    NormalNC = { fg = colors.content, bg = solarized:is_transparent(colors.bg_alt) },
+    NormalNC = { link = 'Normal' },
     NormalFloat = { fg = colors.fg, bg = colors.bg_alt },
     Cursor = { fg = colors.bg, bg = colors.fg },
     lCursor = { link = 'Cursor' },
