@@ -191,7 +191,7 @@ local function vscode_theme(solarized, chromatic)
     ['@exception'] = { link = 'Exception' },
     -- Treesitter - Types
     ['@type'] = { link = 'Type' },
-    ['@type.builtin'] = { link = '@keyword' },
+    ['@type.builtin'] = { fg = colors.green },
     ['@type.definition'] = { link = 'Type' },
     ['@type.qualifier'] = { link = '@type.builtin' },
     ['@storageclass'] = { link = '@type' },
