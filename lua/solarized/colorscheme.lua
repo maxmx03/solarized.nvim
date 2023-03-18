@@ -105,7 +105,7 @@ function Colorscheme:apply_semantic_hl()
       return
     end
 
-    vim.lsp.semantic_tokens.highlight_token(token, args.buf, args.data.client_id, 'Error')
+    vim.lsp.semantic_tokens.highlight_token(token, args.buf, args.data.client_id, '@constant')
   end
 
   local set_hl = function(name, val)
