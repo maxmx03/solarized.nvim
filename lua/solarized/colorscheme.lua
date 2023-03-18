@@ -149,7 +149,7 @@ function Colorscheme:setup(t)
 
   self:apply_colorscheme_highlights()
 
-  if self.config.theme ~= 'vim' then
+  if self.config.theme ~= 'vim' and vim.fn.has('nvim-0.8.3') then
     self:apply_semantic_hl()
   end
 end
