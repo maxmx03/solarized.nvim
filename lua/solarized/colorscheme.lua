@@ -115,6 +115,12 @@ function Colorscheme:setup(t)
   self:set_hl(self.user_config.highlights)
 
   self:apply_colorscheme_highlights()
+
+  if self.config.theme ~= 'vim' then
+    local semantic = require 'solarized.semantic'
+
+    semantic:load(self)
+  end
 end
 
 return Colorscheme:new()
