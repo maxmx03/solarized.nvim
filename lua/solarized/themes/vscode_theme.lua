@@ -113,7 +113,7 @@ local function vscode_theme(solarized, chromatic)
     -- Define = { fg = colors.orange },
     -- Macro = { fg = colors.orange },
     -- PreCondit = { fg = colors.orange },
-    Type = { fg = colors.yellow },
+    Type = { fg = colors.orange },
     --       *Type            int, long, char, etc.
     --        StorageClass    static, register, volatile, etc.
     --        Structure       struct, union, enum, etc.
@@ -190,9 +190,9 @@ local function vscode_theme(solarized, chromatic)
     ['@include'] = { fg = colors.green },
     ['@exception'] = { link = 'Exception' },
     -- Treesitter - Types
-    ['@type'] = { fg = colors.orange },
+    ['@type'] = { link = 'Type' },
     ['@type.builtin'] = { link = '@keyword' },
-    ['@type.definition'] = { link = '@type' },
+    ['@type.definition'] = { link = 'Type' },
     ['@type.qualifier'] = { link = '@type.builtin' },
     ['@storageclass'] = { link = '@type' },
     ['@attribute'] = { link = '@keyword' },
