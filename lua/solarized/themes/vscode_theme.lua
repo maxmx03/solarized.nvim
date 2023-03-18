@@ -193,7 +193,7 @@ local function vscode_theme(solarized, chromatic)
     ['@type'] = { link = 'Type' },
     ['@type.builtin'] = { fg = colors.green },
     ['@type.definition'] = { link = 'Type' },
-    ['@type.qualifier'] = { link = '@type.builtin' },
+    ['@type.qualifier'] = { link = '@keyword' },
     ['@storageclass'] = { link = '@type' },
     ['@attribute'] = { link = '@keyword' },
     ['@field'] = { fg = colors.content },
