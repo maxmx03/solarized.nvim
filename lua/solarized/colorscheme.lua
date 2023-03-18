@@ -101,6 +101,7 @@ function Colorscheme.apply_semantic_hl()
     callback = function()
       set_hl('@lsp.type.parameter', { link = '@parameter' })
       set_hl('@lsp.typemod.parameter.readyonly', { italic = true })
+      set_hl('@lsp.typemod.variable.readonly', { link = '@variable.builtin' })
     end,
   })
 end
