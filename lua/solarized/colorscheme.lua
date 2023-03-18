@@ -92,7 +92,7 @@ function Colorscheme.load()
   vim.g.colors_name = 'solarized'
 end
 
-function Colorscheme.apply_semantic_hl()
+function Colorscheme:apply_semantic_hl()
   local set_hl = function(name, val)
     vim.api.nvim_set_hl(0, name, val)
   end
@@ -103,6 +103,8 @@ function Colorscheme.apply_semantic_hl()
       set_hl('@lsp.typemod.parameter.readyonly', { italic = true })
       set_hl('@lsp.typemod.variable.readonly', { link = '@variable.builtin' })
       set_hl('@lsp.typemod.variable.defaultLibrary.typescript', { link = '@variable.builtin' })
+      set_hl('@lsp.typemod.variable.declaration', { fg = self.colors.comment })
+      -- set_hl('@lsp.typemod.variable.local', { fg = self.colors.blue })
     end,
   })
 end
@@ -132,7 +134,7 @@ function Colorscheme:setup(t)
   self:apply_colorscheme_highlights()
 
   if self.config.theme ~= 'vim' then
-    self.apply_semantic_hl()
+    self:apply_semantic_hl()
   end
 end
 
