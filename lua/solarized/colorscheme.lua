@@ -6,7 +6,7 @@ Colorscheme.user_config = {}
 Colorscheme.colors = {}
 Colorscheme.highlights = {}
 Colorscheme.config = {
-  theme = 'vim',
+  theme = 'neovim',
   transparent = false,
 }
 
