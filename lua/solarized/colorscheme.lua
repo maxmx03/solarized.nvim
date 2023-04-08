@@ -93,19 +93,6 @@ function Colorscheme.load()
 end
 
 function Colorscheme:apply_semantic_hl()
-  vim.api.nvim_create_autocmd('Colorscheme', {
-    callback = function()
-      local set_hl = function(name, val)
-        vim.api.nvim_set_hl(0, name, val)
-      end
-
-      set_hl('@lsp.type.parameter', { link = '@parameter' })
-      set_hl('@lsp.typemod.parameter.readyonly', { italic = true })
-      set_hl('@lsp.typemod.variable.readonly', { link = '@variable.builtin' })
-      set_hl('@lsp.typemod.variable.defaultLibrary', { link = '@variable.builtin' })
-    end,
-  })
-
   if vim.fn.has 'nvim-0.9.0' == 1 then
     vim.api.nvim_create_autocmd('LspTokenUpdate', {
       callback = function(args)

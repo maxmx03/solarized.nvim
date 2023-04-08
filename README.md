@@ -3,12 +3,15 @@
   <h1>Solarized Dark and Light Themes for Neovim</h1>
 </div>
 
-Solarized is a color palette created by Ethan Schoonover in 2011, which is designed to reduce eye strain and enhance readability.
-It is a carefully crafted set of colors that can be used for both light and dark backgrounds, and is popular among developers and designers.
+Solarized is a color palette created by Ethan Schoonover in 2011, which is designed to reduce eye 
+strain and enhance readability.
+It is a carefully crafted set of colors that can be used for both light and dark backgrounds, and 
+is popular among developers and designers.
 
 ## Solarized Color Palette
 
-This is a reference table of the Solarized color palette, a carefully designed color scheme created by Ethan Schoonover.
+This is a reference table of the Solarized color palette, a carefully designed color scheme created 
+by Ethan Schoonover.
 
 | Solarized Dark | Description              | Color   | Solarized Light | Description              | Color   |
 | -------------- | ------------------------ | ------- | --------------- | ------------------------ | ------- |
@@ -31,17 +34,23 @@ This is a reference table of the Solarized color palette, a carefully designed c
 
 ## Why use Solarized.nvim?
 
-Solarized is a highly customizable color scheme for Neovim that offers both dark and light modes. With Solarized, you can choose the perfect color scheme for your coding needs, whether you prefer a light or dark background.
+Solarized is a highly customizable color scheme for Neovim that offers both dark and light modes. 
+With Solarized, you can choose the perfect color scheme for your coding needs, whether you prefer 
+a light or dark background.
 
 Some of the key features of Solarized include:
 
-- Customizable: You can easily adjust the colors to your liking, giving you the perfect color scheme for your coding style.
+- Customizable: You can easily adjust the colors to your liking, giving you the perfect color 
+scheme for your coding style.
 
-- Dark and Light: Solarized offers both dark and light modes, so you can choose the background that works best for you.
+- Dark and Light: Solarized offers both dark and light modes, so you can choose the background 
+that works best for you.
 
-- Continuously Improved: We are always working to improve Solarized, so you can be confident that you are using a high-quality color scheme that is optimized for Neovim.
+- Continuously Improved: We are always working to improve Solarized, so you can be confident that 
+you are using a high-quality color scheme that is optimized for Neovim.
 
-Whether you're a seasoned developer or just getting started with Neovim, Solarized is the perfect color scheme for your coding needs. Give it a try today and see the difference for yourself!
+Whether you're a seasoned developer or just getting started with Neovim, Solarized is the perfect 
+color scheme for your coding needs. Give it a try today and see the difference for yourself!
 
 ## Requirements 🛠️
 
@@ -81,19 +90,22 @@ use {
 
 ## Switching between Dark and Light Mode
 
-By default, the Solarized color scheme is set to use the dark mode variant. However, if you prefer a lighter background, you can easily switch to the light mode variant.
-To switch to the light mode variant, you can add the following line to your Neovim or Vim configuration file:
+By default, the Solarized color scheme is set to use the dark mode variant. However, if you prefer 
+a lighter background, you can easily switch to the light mode variant. To switch to the light mode 
+variant, you can add the following line to your Neovim or Vim configuration file:
 
 `vim.o.background = 'light'`
 
-This will set the background color to a light gray color, allowing you to use the Solarized light mode color palette.
-If you prefer the dark mode variant, you can set the background color to a darker color by adding the following line to your configuration file instead:
+This will set the background color to a light gray color, allowing you to use the Solarized light 
+mode color palette. If you prefer the dark mode variant, you can set the background color to a 
+darker color by adding the following line to your configuration file instead:
 
 `vim.o.background = 'dark'`
 
 ## Configuration Options
 
-The Solarized color scheme provides several configuration options that you can use to customize the look and feel of the colors. Here is a list of the available options and their default values:
+The Solarized color scheme provides several configuration options that you can use to customize the 
+look and feel of the colors. Here is a list of the available options and their default values:
 
 | Option        | Default            | Description                                                |
 | ------------- | ------------------ | ---------------------------------------------------------- |
@@ -104,19 +116,23 @@ The Solarized color scheme provides several configuration options that you can u
 
 ## Theme
 
-The theme option allows you to choose between the three available theme styles: vim, neovim, and vscode. The vim theme uses a slightly different color palette than the neovim and vscode themes. By default, the neovim theme is used. To change the theme, add the following line to your Neovim or Vim configuration file:
+The theme option allows you to choose between the three available theme styles: vim, neovim, and vscode. 
+The vim theme uses a slightly different color palette than the neovim and vscode themes. By 
+default, the vim theme is used. To change the theme, add the following line to your 
+Neovim or Vim configuration file:
 
 ```lua
 solarized:setup {
  config = {
-  theme = 'vim' -- or 'neovim' or 'vscode'
+  theme = 'neovim' -- or 'neovim' or 'vscode'
  }
 }
 ```
 
 ## Transparent
 
-The transparent option allows you to enable or disable background transparency. By default, transparency is disabled. To enable transparency, add the following line to your Neovim or Vim configuration file:
+The transparent option allows you to enable or disable background transparency. By default, 
+transparency is disabled. To enable transparency, add the following line to your Neovim or Vim configuration file:
 
 ```lua
 solarized:setup {
@@ -128,7 +144,10 @@ solarized:setup {
 
 ## Colors
 
-The colors option allows you to add new colors or override the default color palette. This option accepts a table or a function that returns a table. The table should contain color definitions using hexadecimal RGB values. By default, this option is set to an empty table. Here is an example of how to set the colors option to a table:
+The colors option allows you to add new colors or override the default color palette. This 
+option accepts a table or a function that returns a table. The table should contain color 
+definitions using hexadecimal RGB values. By default, this option is set to an empty table. 
+Here is an example of how to set the colors option to a table:
 
 ```lua
 require("solarized"):setup({
@@ -151,11 +170,16 @@ require("solarized"):setup({
 })
 ```
 
-In this example, we're using the Dracula color scheme by setting the colors table to a list of color values that match the Dracula color palette. You can replace these values with your own custom colors if you prefer.
+In this example, we're using the Dracula color scheme by setting the colors table to a list of 
+color values that match the Dracula color palette. You can replace these values with your own 
+custom colors if you prefer.
 
 ## Highlights
 
-The highlights option allows you to add new highlight groups or override the default highlight groups. This option accepts a table or a function that returns a table. The table should contain highlight group definitions that use the color names defined in the colors table. By default, this option is set to an empty table. Here is an example of how to set the highlights option to a table:
+The highlights option allows you to add new highlight groups or override the default highlight 
+groups. This option accepts a table or a function that returns a table. The table should contain 
+highlight group definitions that use the color names defined in the colors table. By default, this 
+option is set to an empty table. Here is an example of how to set the highlights option to a table:
 
 ```lua
 solarized:setup {
@@ -190,15 +214,25 @@ solarized:setup {
 }
 ```
 
-Here's a brief explanation of the `darken`, `lighten`, and `blend` functions that you can use in your Lua code:
+Here's a brief explanation of the `darken`, `lighten`, and `blend` functions that you can use in 
+your Lua code:
 
-- `darken(color, amount)`: Returns a darker version of the input `color` by reducing the value (i.e., brightness) component of the color by `amount` (a value between 1 and 100). For example, `darken('#FF0000', 20)` would return a darker shade of red.
+- `darken(color, amount)`: Returns a darker version of the input `color` by reducing the value 
+(i.e., brightness) component of the color by `amount` (a value between 1 and 100). For example, 
+`darken('#FF0000', 20)` would return a darker shade of red.
 
-- `lighten(color, amount)`: Returns a lighter version of the input `color` by increasing the value (i.e., brightness) component of the color by `amount` (a value between 1 and 100). For example, `lighten('#FF0000', 20)` would return a lighter shade of red.
+- `lighten(color, amount)`: Returns a lighter version of the input `color` by increasing the value 
+(i.e., brightness) component of the color by `amount` (a value between 1 and 100). For example, 
+`lighten('#FF0000', 20)` would return a lighter shade of red.
 
-- `blend(color, blend_color, amount)`: Returns a blended version of the input `color` and `blend_color`, where `amount` specifies the strength of the blend (a value between 0 and 1). A value of 0 would result in the original `color`, and a value of 1 would result in `blend_color`. For example, `blend('#FF0000', '#00FF00', 0.5)` would result in a blend of red and green, which is yellow.
+- `blend(color, blend_color, amount)`: Returns a blended version of the input `color` and 
+`blend_color`, where `amount` specifies the strength of the blend (a value between 0 and 1). 
+A value of 0 would result in the original `color`, and a value of 1 would result in `blend_color`. 
+For example, `blend('#FF0000', '#00FF00', 0.5)` would result in a blend of red and green, which is yellow.
 
-These functions can be useful for generating variations of a given color, or for creating more complex color schemes by blending multiple colors together. The `blend` function in particular can be used to simulate a "glow" effect by blending a color with a brighter version of itself.
+These functions can be useful for generating variations of a given color, or for creating more 
+complex color schemes by blending multiple colors together. The `blend` function in particular can 
+be used to simulate a "glow" effect by blending a color with a brighter version of itself.
 
 ## 🚀 Supported Plugins
 
@@ -226,8 +260,9 @@ The Solarized colorscheme supports the following plugins:
 
 ## 🤝 Contribute
 
-Contributions to the Solarized colorscheme are always welcome! If you have any bug reports, feature requests, or pull requests, feel free to submit them to the [GitHub repository](https://github.com/your-username/solarized-nvim).
-To contribute, follow these steps:
+Contributions to the Solarized colorscheme are always welcome! If you have any bug reports, feature 
+requests, or pull requests, feel free to submit them to the 
+[GitHub repository](https://github.com/your-username/solarized-nvim). To contribute, follow these steps:
 
 1. Fork the repository
 2. Create a new branch for your changes
