@@ -3,6 +3,8 @@
   <h1>Solarized Dark and Light Themes for Neovim</h1>
 </div>
 
+[ASC ART](https://github.com/maxmx03/solarized.nvim/discussions/26)
+
 Solarized is a color palette created by Ethan Schoonover in 2011, which is designed to reduce eye 
 strain and enhance readability.
 It is a carefully crafted set of colors that can be used for both light and dark backgrounds, and 
