@@ -43,7 +43,7 @@ local function neovim_theme(solarized, chromatic)
     Folded = { fg = colors.fg, bg = colors.bg_alt, sp = colors.bg },
     FoldColumn = { fg = colors.fg, bg = colors.bg_alt },
     ColorColumn = { bg = colors.bg_alt },
-    SignColumn = { fg = colors.bg },
+    SignColumn = { bg = colors.bg },
     VertSplit = { fg = colors.fg, bg = colors.bg_alt },
     WinSeparator = { fg = colors.fg, bold = true },
     FloatBorder = { fg = colors.fg, bg = colors.bg_alt, sp = colors.fg },
