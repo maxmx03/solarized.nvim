@@ -511,6 +511,7 @@ local function neovim_theme(solarized, chromatic)
     -- Lir
     LirDir = { fg = colors.orange },
     -- TELESCOPE
+    TelescopeNormal = { link = 'NormalFloat' },
     TelescopePreviewTitle = { fg = colors.bg, bg = colors.blue },
     TelescopeResultsTitle = { fg = colors.bg, bg = colors.blue },
     TelescopePromptTitle = { fg = colors.bg, bg = colors.blue },
