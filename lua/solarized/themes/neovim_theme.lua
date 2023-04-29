@@ -20,7 +20,7 @@ local function neovim_theme(solarized, chromatic)
     DiffAdd = { fg = colors.added, sp = colors.added, reverse = true },
     DiffChange = { fg = colors.changed, sp = colors.changed, reverse = true },
     DiffDelete = { fg = colors.deleted, reverse = true },
-    Pmenu = { fg = colors.fg, bg = colors.bg_alt, bold = true },
+    Pmenu = { link = 'NormalFloat' },
     PmenuSel = { fg = colors.content, bg = colors.bg_alt_invert, reverse = true, bold = true },
     PmenuSbar = { fg = colors.bg_alt_invert, bg = colors.fg, reverse = true, bold = true },
     PmenuThumb = { fg = colors.orange, bg = colors.bg, reverse = true, bold = true },
