@@ -8,7 +8,7 @@ local function neovim_theme(solarized, chromatic)
     -- Editor
     Normal = { fg = colors.fg, bg = solarized:is_transparent(colors.bg) },
     NormalNC = { link = 'Normal' },
-    NormalFloat = { fg = colors.fg, bg = colors.bg_alt },
+    NormalFloat = { fg = colors.fg, bg = darken(colors.bg, 10) },
     Cursor = { fg = colors.bg, bg = colors.fg },
     lCursor = { link = 'Cursor' },
     CursorIM = { fg = colors.bg, bg = colors.fg },
@@ -460,10 +460,10 @@ local function neovim_theme(solarized, chromatic)
     -- NvimTree
     NvimTreeFolderIcon = { link = 'Directory' },
     NvimTreeIndentMarker = { fg = colors.fg },
-    NvimTreeNormal = { link = 'Normal' },
-    NvimTreeNormalNC = { link = 'NormalNC' },
-    NvimTreeVertSplit = { fg = colors.fg, bg = colors.bg },
-    NvimTreeWinSeparator = { fg = colors.bg, bg = colors.bg },
+    NvimTreeNormal = { link = 'NormalFloat' },
+    NvimTreeNormalNC = { link = 'NormalFloat' },
+    NvimTreeWinSeparator = { fg = darken(colors.bg, 10), bg = darken(colors.bg, 10) },
+    NvimTreeVertSplit = { link = 'NvimTreeWinSeparator' },
     NvimTreeFolderName = { fg = colors.fg },
     NvimTreeOpenedFolderName = { fg = colors.fg, bold = true, italic = true },
     NvimTreeEmptyFolderName = { link = 'Comment' },
