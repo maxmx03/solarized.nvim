@@ -1,5 +1,5 @@
 lua << EOF
-local solarized = require 'solarized'
+local solarized = require('solarized')
 
-solarized:setup()
+solarized.setup()
 EOF

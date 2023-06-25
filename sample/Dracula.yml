@@ -1,0 +1,27 @@
+name: Dracula
+spec:  # https://spec.draculatheme.com
+  # Base https://draculatheme.com/contribute#color-palette
+  background:     &BACKGROUND     '#282A36'
+  foreground:     &FOREGROUND     '#F8F8F2' # 07
+  selection:      &SELECTION      '#44475A'
+  comment:        &COMMENT        '#6272A4'
+  cyan:           &CYAN           '#8BE9FD' # 06
+  green:          &GREEN          '#50FA7B' # 02
+  orange:         &ORANGE         '#FFB86C'
+  pink:           &PINK           '#FF79C6'
+  purple:         &PURPLE         '#BD93F9'
+  red:            &RED            '#F55'    # 01
+  yellow:         &YELLOW         '#F1FA8C' # 03
+
+  # ANSI 0–15 https://spec.draculatheme.com#sec-ANSI
+  black:          &BLACK          '#21222C' # 00
+  blue:           &BLUE           '#BD93F9' # 04
+  magenta:        &MAGENTA        '#FF79C6' # 05
+  bright_black:   &BRIGHT_BLACK   '#6272A4' # 08
+  bright_red:     &BRIGHT_RED     '#FF6E6E' # 09
+  bright_green:   &BRIGHT_GREEN   '#69FF94' # 10
+  bright_yellow:  &BRIGHT_YELLOW  '#FFFFA5' # 11
+  bright_blue:    &BRIGHT_BLUE    '#D6ACFF' # 12
+  bright_magenta: &BRIGHT_MAGENTA '#FF92DF' # 13
+  bright_cyan:    &BRIGHT_CYAN    '#A4FFFF' # 14
+  bright_white:   &BRIGHT_WHITE   '#FFF'    # 15
