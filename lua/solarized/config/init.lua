@@ -18,6 +18,7 @@ local function default_config()
       cmp = true,
       diagnostic = true,
       editor = true,
+      gitsign = true,
       indentblankline = true,
       lsp = true,
       lspsaga = true,
