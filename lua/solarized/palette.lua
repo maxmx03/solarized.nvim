@@ -9,8 +9,8 @@ function M.get_colors()
     base00 = '#657b83', -- content tone (winseparator)
     base0 = '#839496', -- content tone (foreground)
     base1 = '#93a1a1', -- content tone (statusline/tabline)
-    base2 = '#eee8d5', -- background tone light (main)
-    base3 = '#fdf6e3', -- background tone lighter (highlight)
+    base2 = '#eee8d5', -- background tone light (highlight)
+    base3 = '#fdf6e3', -- background tone lighter (main)
     -- accent
     yellow = '#b58900',
     orange = '#cb4b16',

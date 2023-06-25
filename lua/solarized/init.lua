@@ -36,14 +36,17 @@ function M.setup(user_config)
 
   if not M.is_configured then
     local default_config = solarized_config()
-    M.config = vim.tbl_deep_extend('force', default_config, user_config)
+    M.config = vim.tbl_deep_extend('force', default_config, user_config or {})
     M.is_configured = true
   end
 
   local colors = solarized_palette.get_colors()
 
-  if not vim.tbl_isempty(M.config.colors) then
+  if type(M.config.colors) == 'table' and not vim.tbl_isempty(M.config.colors) then
     colors = solarized_palette.extend_colors(colors, M.config.colors)
+  elseif type(M.config.colors) == 'function' then
+    local colorhelper = require('solarized.utils.colors')
+    colors = solarized_palette.extend_colors(colors, M.config.colors(colors, colorhelper))
   end
 
   solarized_highlights(colors, M.config)

@@ -6,10 +6,13 @@ describe('User', function()
   end
 
   solarized.setup({
-    colors = {
-      fg = '#c7e8f3',
-      bg = '#000',
-    },
+    colors = function(c, helper)
+      return {
+        fg = '#c7e8f3',
+        bg = '#000',
+        yellow2 = helper.darken(c.yellow, 20),
+      }
+    end,
     styles = {
       comments = { italic = false, bold = true, underline = true },
     },
@@ -17,15 +20,19 @@ describe('User', function()
       return {
         Normal = { fg = c.fg, bg = c.bg },
         Function = { italic = false },
+        Type = { fg = c.yellow2 },
       }
     end,
   })
 
   it('should be able to customize hl groups with colors defined by the user', function()
-    local output = vim.api.nvim_get_hl(0, { name = 'Normal' })
+    local colors = solarized_palette.get_colors()
+    local output1 = vim.api.nvim_get_hl(0, { name = 'Normal' })
+    local output2 = vim.api.nvim_get_hl(0, { name = 'Function' })
 
-    assert.equals('#c7e8f3', tohex(output.fg))
-    assert.equals('#000000', tohex(output.bg))
+    assert.equals('#c7e8f3', tohex(output1.fg))
+    assert.equals('#000000', tohex(output1.bg))
+    assert.are_not.same(colors.yellow, tohex(output2.fg))
   end)
 
   it('should be able to change hl group styles', function()

@@ -2,7 +2,13 @@ return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
-  set_hl('ColorColumn', { fg = c.base04, bg = c.base04 }) -- used for columns
+  if config.transparent then
+    set_hl('ColorColumn', { fg = c.base02, bg = c.base02 }) -- used for columns
+  else
+    set_hl('ColorColumn', { fg = c.base04, bg = c.base04 }) -- used for columns
+  end
+
+  -- set_hl('ColorColumn', { fg = c.base04, bg = c.base04 }) -- used for columns
   set_hl('Conceal', { fg = c.blue }) -- placeholder characters
   set_hl('CurSearch', { fg = c.base2, bg = c.base02 }) -- highlight under cursor
   set_hl('Cursor', { fg = c.base03, bg = c.cyan }) -- character under cursor
