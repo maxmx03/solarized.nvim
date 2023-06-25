@@ -4,7 +4,7 @@ describe('Solarized', function()
 
     solarized.setup({})
 
-    vim.cmd.colorscheme 'solarized'
+    vim.cmd.colorscheme('solarized')
 
     assert.equal('solarized', vim.g.colors_name)
     assert.is_true(vim.o.termguicolors)

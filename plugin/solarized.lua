@@ -28,12 +28,7 @@ vim.api.nvim_create_user_command('SolarizedColors', function()
   for color, hex in pairs(colors) do
     if color ~= 'none' and color ~= 'name' and color ~= 'background' then
       vim.api.nvim_buf_set_lines(buf, line, (line + 1), false, {
-        color
-          .. string.rep('.', max_length - #color)
-          .. ' = "'
-          .. tostring(hex)
-          .. '" '
-          .. color_desc(color),
+        color .. string.rep('.', max_length - #color) .. ' = "' .. tostring(hex) .. '" ' .. color_desc(color),
       })
       line = line + 1
     end

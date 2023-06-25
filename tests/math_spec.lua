@@ -7,12 +7,9 @@ describe('Math', function()
     assert.equals(1, Math.round(1.3))
   end)
 
-  it(
-    'should return the value of the first parameter and the sign of the second parameter',
-    function()
-      assert.equals(-4.0, Math.copysign(4, -1))
-      assert.equals(8, Math.copysign(-8, 97.21))
-      assert.equals(-43.0, Math.copysign(43, -76))
-    end
-  )
+  it('should return the value of the first parameter and the sign of the second parameter', function()
+    assert.equals(-4.0, Math.copysign(4, -1))
+    assert.equals(8, Math.copysign(-8, 97.21))
+    assert.equals(-43.0, Math.copysign(43, -76))
+  end)
 end)

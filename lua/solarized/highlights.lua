@@ -23,11 +23,7 @@ return function(colors, config)
 
     if config.highlights and type(config.highlights) == 'function' then
       custom_hl(config.highlights(colors))
-    elseif
-      config.highlights
-      and type(config.highlights) == 'table'
-      and not vim.tbl_isempty(config.highlights)
-    then
+    elseif config.highlights and type(config.highlights) == 'table' and not vim.tbl_isempty(config.highlights) then
       custom_hl(config.highlights)
     end
   end

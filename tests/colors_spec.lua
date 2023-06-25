@@ -60,5 +60,5 @@ describe('Colors', function()
     local expect = '#e7ff4d'
 
     assert.equals(expect, string.lower(output))
-    end)
+  end)
 end)
