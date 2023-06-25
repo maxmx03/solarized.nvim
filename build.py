@@ -3,6 +3,7 @@
 import os
 import shutil
 
+
 def copy_folders():
     folders_to_copy = ['after', 'colors', 'doc', 'lua', 'plugin']
     destination_folder = 'build'
@@ -14,7 +15,8 @@ def copy_folders():
 
     for folder in folders_to_copy:
         source_path = os.path.join(os.getcwd(), folder)
-        destination_path = os.path.join(os.getcwd(), destination_folder, folder)
+        destination_path = os.path.join(
+            os.getcwd(), destination_folder, folder)
 
         if os.path.exists(source_path):
             shutil.copytree(source_path, destination_path)

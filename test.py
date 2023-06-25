@@ -3,10 +3,12 @@
 import subprocess
 import sys
 
+
 def run_commands(commands):
     for command in commands:
         process = subprocess.Popen(command, shell=True)
         process.wait()
+
 
 if __name__ == '__main__':
     install_dependencies = False
@@ -15,9 +17,11 @@ if __name__ == '__main__':
 
     commands = []
     if install_dependencies:
+        commands.append('cargo install stylua')
         commands.append('sudo luarocks install luacheck')
         commands.append('sudo luarocks install vusted')
-    
+
+    commands.append('stylua . -f ./stylua.toml')
     commands.append('vusted ./tests')
-    
+
     run_commands(commands)
