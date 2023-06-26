@@ -44,7 +44,7 @@ return function(c, config)
   set_hl('MoreMsg', { fg = c.cyan }) -- more-prompt
   set_hl('NonText', { fg = c.base00 }) -- '@' at the end of the window
   set_hl('Normal', { fg = c.base0, bg = c.base03 }, { transparent = config.transparent }) -- Normal text
-  set_hl('NormalFloat', { fg = c.base0, bg = c.base04 }, { transparent = not config.transparent }) -- Normal text in floating windows
+  set_hl('NormalFloat', { fg = c.base0, bg = c.base04 }) -- Normal text in floating windows
   set_hl('FloatBorder', { fg = c.cyan, bg = c.base04 }) -- Border of floating windows.
   set_hl('FloatTitle', { fg = c.orange }) -- Title of float windows.
   set_hl('NormalNC', { link = 'Normal' }) -- Normal text in non-current windows.
