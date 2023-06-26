@@ -11,6 +11,8 @@ Solarized is a sixteen color palette (eight monotones, eight accent colors)
 designed for use with terminal and gui applications.
 [click here to learn more](https://ethanschoonover.com/solarized/)
 
+![solarized](https://github.com/maxmx03/solarized.nvim/assets/50273941/3c2ffda7-9efb-46f4-ad82-7dfd257dda39)
+
 ## Features
 
 - Support for Treesitter
