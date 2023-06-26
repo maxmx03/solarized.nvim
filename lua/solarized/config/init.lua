@@ -22,7 +22,7 @@ local function default_config()
       gitsign = true,
       indentblankline = true,
       lsp = true,
-      -- lspsaga = true,
+      lspsaga = true,
       navic = true,
       semantic = true,
       syntax = true,
