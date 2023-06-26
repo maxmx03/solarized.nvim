@@ -17,7 +17,7 @@ local function default_config()
       bufferline = true,
       cmp = true,
       diagnostic = true,
-      -- dashboard = true,
+      dashboard = true,
       editor = true,
       gitsign = true,
       -- indentblankline = true,

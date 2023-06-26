@@ -3,8 +3,8 @@ return function(c)
   local set_hl = utils.set_hl
 
   -- general
-  set_hl('DashboardHeader', { fg = c.red })
-  set_hl('DashboardFooter', { fg = c.violet })
+  set_hl('DashboardHeader', { fg = c.base00 })
+  set_hl('DashboardFooter', { fg = c.base00 })
 
   -- Hyper
   set_hl('DashboardProjectTitle', { fg = c.blue })
@@ -16,7 +16,7 @@ return function(c)
   set_hl('DashboardShotCutIcon', { fg = c.magenta })
 
   -- Doom theme
-  set_hl('DashboardDesc', { fg = c.base00 })
+  set_hl('DashboardDesc', { fg = c.base0 })
   set_hl('DashboardKey', { fg = c.magenta })
   set_hl('DashboardIcon', { link = 'Directory' })
   set_hl('DashboardShotCut', { fg = c.base00 })
