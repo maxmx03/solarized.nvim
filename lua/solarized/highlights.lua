@@ -11,20 +11,26 @@ local function custom_hl(highlights)
   end
 end
 
+local function load_highlights(colors, config)
+  for highlight, enabled in pairs(config.enables) do
+    if enabled then
+      local highlights = require(string.format('solarized.themes.%s.%s', config.theme, highlight))
+
+      highlights(colors, config)
+    end
+  end
+end
+
 return function(colors, config)
-  if string.match(config.theme, '[neo]+') == 'neo' then
-    for highlight, enabled in pairs(config.enables) do
-      if enabled then
-        local highlights = require('solarized.themes.neo.' .. highlight)
+  if string.match(config.theme, 'neo$') or string.match(config.theme, 'neosolarized$') then
+    load_highlights(colors, config)
+  else
+    load_highlights(colors, config)
+  end
 
-        highlights(colors, config)
-      end
-    end
-
-    if type(config.highlights) == 'table' and not vim.tbl_isempty(config.highlights) then
-      custom_hl(config.highlights)
-    elseif type(config.highlights) == 'function' then
-      custom_hl(config.highlights(colors))
-    end
+  if type(config.highlights) == 'table' and not vim.tbl_isempty(config.highlights) then
+    custom_hl(config.highlights)
+  elseif type(config.highlights) == 'function' then
+    custom_hl(config.highlights(colors))
   end
 end

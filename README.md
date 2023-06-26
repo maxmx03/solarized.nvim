@@ -104,7 +104,7 @@ require('solarized').setup({
     },
     highlights = {},
     colors = {},
-    theme = 'neo', -- code | neo
+    theme = 'default', -- or 'neosolarized' or 'neo' for short
 })
 
 vim.cmd.colorscheme = 'solarized'
