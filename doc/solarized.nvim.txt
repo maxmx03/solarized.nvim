@@ -1,4 +1,4 @@
-*solarized.nvim.txt*         For NVIM v0.8.0         Last change: 2023 June 25
+*solarized.nvim.txt*         For NVIM v0.8.0         Last change: 2023 June 26
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -117,7 +117,7 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
         },
         highlights = {},
         colors = {},
-        theme = 'neo', -- code | neo
+        theme = 'default', -- or 'neosolarized' or 'neo' for short
     })
     
     vim.cmd.colorscheme = 'solarized'
