@@ -30,6 +30,7 @@ local function default_config()
       telescope = true,
       tree = true,
       treesitter = true,
+      whichkey = true,
     },
     highlights = {},
     colors = {},

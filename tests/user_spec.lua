@@ -6,6 +6,7 @@ describe('User', function()
   end
 
   solarized.setup({
+    theme = 'neo',
     colors = function(c, helper)
       return {
         fg = '#c7e8f3',
