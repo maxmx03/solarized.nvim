@@ -4,8 +4,8 @@ return function(c)
 
   -- set_hl('CmpItemAbbr') -- Highlight group for unmatched characters of each completion field.
   set_hl('CmpItemAbbrDeprecated', { fg = c.base1, strikethrough = true }) -- Highlight group for unmatched characters of each deprecated completion field.
-  set_hl('CmpItemAbbrMatch', { link = 'IncSearch' }) -- Highlight group for matched characters of each completion field.
-  set_hl('CmpItemAbbrMatchFuzzy', { link = 'IncSearch' }) -- Highlight group for fuzzy-matched characters of each completion field.
+  set_hl('CmpItemAbbrMatch', { fg = c.yellow }) -- Highlight group for matched characters of each completion field.
+  set_hl('CmpItemAbbrMatchFuzzy', { fg = c.yellow }) -- Highlight group for fuzzy-matched characters of each completion field.
   -- set_hl('CmpItemKind') -- Highlight group for the kind of the field.
   -- set_hl('CmpItemMenu') -- The menu field's highlight group.
 

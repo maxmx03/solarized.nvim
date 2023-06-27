@@ -19,7 +19,7 @@ return function(c, config)
   set_hl('TermCursor', { link = 'Cursor' }) -- Cursor in a focused terminal
   set_hl('TermCursorNC', { fg = c.base03, bg = c.base0 }) -- Cursor in an unfocused terminal
   set_hl('ErrorMsg', { fg = c.error, reverse = true }) -- Error messages on the command line
-  set_hl('WinSeparator', { fg = c.base00, bg = c.base02 }) -- Separators between window splits
+  set_hl('WinSeparator', { fg = c.base00, bg = c.base02 }, { transparent = config.transparent }) -- Separators between window splits
   set_hl('Folded', { fg = c.base0, bg = c.base02, underline = true, bold = true }) -- Line used for closed folds
   set_hl('FoldColumn', { fg = c.base0, bg = c.base02, bold = true }) -- 'foldcolumn'
   set_hl('SignColumn', { fg = c.base0, bg = c.base02 }, { transparent = config.transparent }) -- Column were signs are displayed

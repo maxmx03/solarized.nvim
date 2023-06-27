@@ -21,6 +21,7 @@ M.config = {}
 ---           - conditionals (table): Specifies if conditionals should be styled.
 ---       - highlights (table): A table specifying custom highlight values.
 ---       - colors (table): A table specifying custom color values.
+---       - enables (table): A table specifying plugins to be anabled or disabled
 ---       - theme (string): Specifies the theme to be used.
 function M.setup(user_config)
   if vim.g.colors_name then

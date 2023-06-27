@@ -7,7 +7,7 @@ return function(c, config)
   set_hl('String', { fg = c.cyan }) -- a string constant: "this is a string"
   set_hl('Character', { link = 'String' }) -- a character constant: 'c', '\n'
   set_hl('Number', { fg = c.magenta }, { styles = config.styles.numbers }) -- a number constant: 234, 0xff
-  set_hl('Boolean', { link = 'Constant' }) -- a boolean constant: TRUE, false
+  set_hl('Boolean', { df = c.violet }) -- a boolean constant: TRUE, false
   set_hl('Float', { link = 'Number' }) -- a floating point constant: 2.3e10
   set_hl('Identifier', { fg = c.base0, italic = true }, { styles = config.styles.variables }) -- any variable name
   set_hl('Function', { fg = c.blue, italic = true }, { styles = config.styles.functions }) -- function name (also: methods for classes)
@@ -28,7 +28,7 @@ return function(c, config)
   set_hl('Structure', { link = 'Keyword' }) -- struct, union, enum, etc.
   set_hl('Typedef', { link = 'Keyword' }) -- A typedef
   set_hl('Special', { fg = c.magenta }) -- special symbol
-  set_hl('SpecialChar', { link = 'Constant' }) -- special character in a constant
+  set_hl('SpecialChar', { fg = c.violet }) -- special character in a constant
   set_hl('Tag', { link = 'Special' }) -- you can use CTRL-] on this
   set_hl('Delimiter', { fg = c.yellow }) -- character that needs attention
   set_hl('SpecialComment', { link = 'Keyword' }) -- special things inside a comment
@@ -36,5 +36,5 @@ return function(c, config)
   set_hl('Underlined', { fg = c.violet, underline = true }) --text that stands out, HTML links
   set_hl('Ignore') --left blank, hidden  |hl-Ignore|
   set_hl('Error', { fg = c.error }) --any erroneous construct
-  set_hl('Todo', { link = 'Constant' }) --anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+  set_hl('Todo', { fg = c.violet }) --anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 end

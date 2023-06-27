@@ -1,4 +1,4 @@
-return function(c)
+return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
@@ -22,11 +22,11 @@ return function(c)
   -- set_hl('DiagnosticFloatingInfo') -- Used to color "Info" diagnostic messages in diagnostics float.
   -- set_hl('DiagnosticFloatingHint') -- Used to color "Hint" diagnostic messages in diagnostics float.
   -- set_hl('DiagnosticFloatingOk') -- Used to color "Ok" diagnostic messages in diagnostics float.
-  set_hl('DiagnosticSignError', { fg = c.error, bg = c.base02 }) -- Used for "Error" signs in sign column.
-  set_hl('DiagnosticSignWarn', { fg = c.warning, bg = c.base02 }) -- Used for "Warn" signs in sign column.
-  set_hl('DiagnosticSignInfo', { fg = c.info, bg = c.base02 }) -- Used for "Info" signs in sign column.
-  set_hl('DiagnosticSignHint', { fg = c.hint, bg = c.base02 }) -- Used for "Hint" signs in sign column.
-  set_hl('DiagnosticSignOk', { fg = c.cyan, bg = c.base02 }) -- Used for "Ok" signs in sign column.
+  set_hl('DiagnosticSignError', { fg = c.error, bg = c.base02 }, { transparent = config.transparent }) -- Used for "Error" signs in sign column.
+  set_hl('DiagnosticSignWarn', { fg = c.warning, bg = c.base02 }, { transparent = config.transparent }) -- Used for "Warn" signs in sign column.
+  set_hl('DiagnosticSignInfo', { fg = c.info, bg = c.base02 }, { transparent = config.transparent }) -- Used for "Info" signs in sign column.
+  set_hl('DiagnosticSignHint', { fg = c.hint, bg = c.base02 }, { transparent = config.transparent }) -- Used for "Hint" signs in sign column.
+  set_hl('DiagnosticSignOk', { fg = c.cyan, bg = c.base02 }, { transparent = config.transparent }) -- Used for "Ok" signs in sign column.
   -- set_hl('DiagnosticDeprecated') -- Used for deprecated or obsolete code.
   -- set_hl('DiagnosticUnnecessary') -- Used for unnecessary or unused code.
 end

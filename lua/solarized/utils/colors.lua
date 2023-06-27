@@ -1,6 +1,12 @@
 local Math = require('solarized.utils.Math')
 local M = {}
 
+--- Convert a hexadecimal color code to RGB color values
+---
+--- @param hex string     The hexadecimal color code (e.g., "#RRGGBB" or "RRGGBB")
+--- @return number red    The red component of the RGB color (0-255)
+--- @return number green  The green component of the RGB color (0-255)
+--- @return number blue   The blue component of the RGB color (0-255)
 function M.hex_to_rgb(hex)
   local red = tonumber(hex:sub(2, 3), 16)
   local green = tonumber(hex:sub(4, 5), 16)
@@ -9,10 +15,24 @@ function M.hex_to_rgb(hex)
   return red, green, blue
 end
 
+--- Convert rgb to hex
+---
+---@param red number
+---@param green number
+---@param blue number
+---@return string color
 function M.rgb_to_hex(red, green, blue)
   return string.format('#%02X%02X%02X', red, green, blue)
 end
 
+--- Convert RGB color values to HSL color space
+---
+--- @param red number    The red component of the RGB color (0-255)
+--- @param green number  The green component of the RGB color (0-255)
+--- @param blue number   The blue component of the RGB color (0-255)
+--- @return number h     The hue value in the HSL color space (0-360)
+--- @return number s     The saturation value in the HSL color space (0-1)
+--- @return number l     The lightness value in the HSL color space (0-1)
 function M.rgb_to_hsl(red, green, blue)
   red = red / 255
   green = green / 255
@@ -55,6 +75,14 @@ function M.rgb_to_hsl(red, green, blue)
   return h, s, l
 end
 
+--- Convert HSL color values to RGB color space
+---
+--- @param h number       The hue value in the HSL color space (0-360)
+--- @param s number       The saturation value in the HSL color space (0-1)
+--- @param l number       The lightness value in the HSL color space (0-1)
+--- @return number r      The red component of the RGB color (0-255)
+--- @return number g      The green component of the RGB color (0-255)
+--- @return number b      The blue component of the RGB color (0-255)
 function M.hsl_to_rgb(h, s, l)
   s = s / 100
   l = l / 100
@@ -85,6 +113,11 @@ function M.hsl_to_rgb(h, s, l)
   return r, g, b
 end
 
+--- Darken a color by a given percentage
+---
+--- @param color string   The color to be darkened in any valid color format
+--- @param percent number The percentage by which the color should be darkened (between 0 and 100)
+--- @return string color  The resulting darkened color in the same format as the input color
 function M.darken(color, percent)
   local r, g, b = M.hex_to_rgb(color)
   local h, s, l = M.rgb_to_hsl(r, g, b)
@@ -96,6 +129,11 @@ function M.darken(color, percent)
   return M.rgb_to_hex(red, green, blue)
 end
 
+--- Lighten a color by a given percentage
+---
+--- @param color string   The color to be lightened in any valid color format
+--- @param percent number The percentage by which the color should be lightened (between 0 and 100)
+--- @return string color  The resulting lightened color in the same format as the input color
 function M.lighten(color, percent)
   local r, g, b = M.hex_to_rgb(color)
   local h, s, l = M.rgb_to_hsl(r, g, b)
@@ -107,6 +145,12 @@ function M.lighten(color, percent)
   return M.rgb_to_hex(red, green, blue)
 end
 
+--- Blend two colors with a given alpha value
+---
+--- @param hex_fg string The foreground color in hexadecimal format (e.g., "#RRGGBB")
+--- @param hex_bg string The background color in hexadecimal format (e.g., "#RRGGBB")
+--- @param alpha number The alpha value between 0 and 1, indicating the blending ratio
+--- @return string color The resulting blended color in hexadecimal format
 function M.blend(hex_fg, hex_bg, alpha)
   local red_bg, green_bg, blue_bg = M.hex_to_rgb(hex_bg)
   local red_fg, green_fg, blue_fg = M.hex_to_rgb(hex_fg)

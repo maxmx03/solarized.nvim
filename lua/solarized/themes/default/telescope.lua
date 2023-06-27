@@ -32,7 +32,7 @@ return function(c, config)
   set_hl('TelescopePromptCounter', { link = 'NonText' })
 
   -- Used for highlighting characters that you match.
-  set_hl('TelescopeMatching', { link = 'IncSearch' })
+  set_hl('TelescopeMatching', { fg = c.yellow })
 
   -- Used for the prompt prefix
   set_hl('TelescopePromptPrefix', { fg = c.magenta })

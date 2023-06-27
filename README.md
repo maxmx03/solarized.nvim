@@ -228,7 +228,44 @@ require('solarized').setup {
 
 `:SolarizedColors` - Display the Solarized palette in a new buffer
 
-## Solarized was Designed by
+## Lualine
+
+```lua
+require('lualine').setup {
+  options = {
+    theme = 'solarized',
+    disabled_filetypes = {
+        'NvimTree',
+    },
+  },
+}
+```
+
+## Contributing
+
+Thank you for your interest in contributing to this project!
+To ensure a smooth collaboration, please follow the guidelines below:
+
+1. Open a discussion to propose and discuss the changes you
+   intend to make. This step allows for valuable input and
+   feedback from the project maintainers and the community.
+2. Ensure you have the latest changes from the `dev` branch by pulling the
+   latest updates.
+3. Make your changes on the `dev` branch. Avoid making direct changes to
+   the `main` branch.
+4. Before submitting a pull request, run the `./test.py` script to ensure that
+   your changes pass all the necessary tests. This step helps maintain the
+   quality and stability of the project.
+5. When submitting a pull request, make sure to select the `dev`
+   branch as the target branch. This ensures that your changes will be merged
+   into the `dev` branch for further review and integration.
+6. Provide a clear and descriptive title and description for your pull request,
+   explaining the purpose and scope of your changes.
+7. Wait for the maintainer to review your pull request.
+8. Once your changes have been reviewed and approved, the project maintainer
+   will handle merging your changes into the `main` branch.
+
+## Designed by
 
 [![Ethan Schoonover](https://github.com/altercation.png?size=100)](https://github.com/altercation)
 
@@ -236,8 +273,8 @@ Ethan Schoonover
 
 ## Special thanks to
 
-For showing me how to test Neovim plugins and providing the GitHub
-code action for testing and generating documentation
+To demonstrate how to test Neovim plugins and provide the GitHub code action
+for testing and generating documentation
 
 [![Glepnir](https://github.com/glepnir.png?size=100)](https://github.com/altercation)
 

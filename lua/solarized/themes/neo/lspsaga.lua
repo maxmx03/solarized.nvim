@@ -3,7 +3,7 @@ return function(c)
   local set_hl = utils.set_hl
 
   -- review later
-  set_hl('SagaNormal', { link = 'NormalFloat' })
+  set_hl('SagaNormal', { link = 'Pmenu' })
   set_hl('SagaWinbarModule', { link = '@namespace' })
   set_hl('SagaWinbarInterface', { link = 'Type' })
   set_hl('SagaWinbarConstructor', { link = '@constructor' })

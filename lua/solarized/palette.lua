@@ -1,5 +1,8 @@
 local M = {}
 
+--- Get the solarized colors based on the current Vim background setting
+---
+--- @return table colors   A table containing the solarized colors
 function M.get_colors()
   local dark = {
     base04 = '#00222b', -- background tone darker (column/nvim-tree)

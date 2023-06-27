@@ -1,3 +1,6 @@
+--- Update or override highlights defined by the user
+---
+--- @param highlights table   A table containing highlight names as keys and their updated values as values
 local function custom_hl(highlights)
   local utils = require('solarized.utils')
   local get_hl = utils.get_hl
@@ -11,6 +14,10 @@ local function custom_hl(highlights)
   end
 end
 
+--- Load and apply highlights based on the enabled highlights specified in the configuration
+---
+--- @param colors table   A table containing color values
+--- @param config table   A table containing configuration options, including the enabled highlights and theme
 local function load_highlights(colors, config)
   for highlight, enabled in pairs(config.enables) do
     if enabled then
@@ -21,6 +28,10 @@ local function load_highlights(colors, config)
   end
 end
 
+--- Set highlights based on the provided colors and configuration
+---
+--- @param colors table   A table containing color values
+--- @param config table   A table containing configuration options
 return function(colors, config)
   if string.match(config.theme, 'neo$') or string.match(config.theme, 'neosolarized$') then
     load_highlights(colors, config)
