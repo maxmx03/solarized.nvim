@@ -32,6 +32,7 @@ local function default_config()
       tree = true,
       treesitter = true,
       whichkey = true,
+      mini = true,
     },
     highlights = {},
     colors = {},
