@@ -4,8 +4,8 @@ local colors = solarized_palette.get_colors()
 local M = {
   normal = {
     a = { fg = colors.base03, bg = colors.blue, gui = 'bold' },
-    b = { fg = colors.base02, bg = colors.base00 },
-    c = { fg = colors.base00, bg = colors.base02 },
+    b = { fg = colors.base02, bg = colors.base1 },
+    c = { fg = colors.base1, bg = colors.base02 },
     z = { fg = colors.base03, bg = colors.blue },
   },
   insert = {
