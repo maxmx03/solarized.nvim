@@ -71,6 +71,10 @@ To manually install Solarized, follow these steps:
    `lua`, `plugin`.
 4. Copy these folders to the `~/.config/nvim` directory.
 
+## Get some help
+
+Use `:h solarized.nvim.txt` to get some help
+
 ## Default Config
 
 ```lua
@@ -110,6 +114,17 @@ require('solarized').setup({
 })
 
 vim.cmd.colorscheme = 'solarized'
+```
+
+## Themes
+
+Solarized offers two themes: the default Solarized theme and Neosolarized.
+These themes provide different visual styles to enhance your experience.
+
+```lua
+require('solarized').setup({
+    theme = 'neo' -- or comment to use solarized default theme.
+})
 ```
 
 ## Styles
@@ -213,8 +228,17 @@ require('solarized').setup {
 
 `:SolarizedColors` - Display the Solarized palette in a new buffer
 
-## Designed by
+## Solarized was Designed by
 
 [![Ethan Schoonover](https://github.com/altercation.png?size=100)](https://github.com/altercation)
 
 Ethan Schoonover
+
+## Special thanks to
+
+For showing me how to test Neovim plugins and providing the GitHub
+code action for testing and generating documentation
+
+[![Glepnir](https://github.com/glepnir.png?size=100)](https://github.com/altercation)
+
+Raphael
