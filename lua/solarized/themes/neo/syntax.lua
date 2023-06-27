@@ -7,7 +7,7 @@ return function(c, config)
   set_hl('String', { fg = c.cyan }) -- a string constant: "this is a string"
   set_hl('Character', { link = 'String' }) -- a character constant: 'c', '\n'
   set_hl('Number', { fg = c.magenta }, { styles = config.styles.numbers }) -- a number constant: 234, 0xff
-  set_hl('Boolean', { df = c.violet }) -- a boolean constant: TRUE, false
+  set_hl('Boolean', { fg = c.violet }) -- a boolean constant: TRUE, false
   set_hl('Float', { link = 'Number' }) -- a floating point constant: 2.3e10
   set_hl('Identifier', { fg = c.base0, italic = true }, { styles = config.styles.variables }) -- any variable name
   set_hl('Function', { fg = c.blue, italic = true }, { styles = config.styles.functions }) -- function name (also: methods for classes)
