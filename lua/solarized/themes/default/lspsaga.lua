@@ -1,9 +1,15 @@
-return function(c)
+return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
-  -- review later
+  -- Float window
   set_hl('SagaNormal', { link = 'Pmenu' })
+  set_hl('TitleString', { fg = c.orange, bold = true, bg = c.base02 }, { transparent = config.transparent })
+
+  -- Outline
+  set_hl('OutlineIndent', { fg = c.green })
+
+  -- Icons
   set_hl('SagaWinbarModule', { link = '@namespace' })
   set_hl('SagaWinbarInterface', { link = 'Type' })
   set_hl('SagaWinbarConstructor', { link = '@constructor' })
