@@ -271,11 +271,11 @@ To ensure a smooth collaboration, please follow the guidelines below:
 
 Ethan Schoonover
 
-## Special thanks to
+## Credits and Reference 🎉
 
-To demonstrate how to test Neovim plugins and provide the GitHub code action
-for testing and generating documentation
-
-[![Glepnir](https://github.com/glepnir.png?size=100)](https://github.com/altercation)
+[![Raphael](https://github.com/glepnir.png?size=100)](https://github.com/glepnir)
 
 Raphael
+
+- [onedarkpro](https://github.com/olimorris/onedarkpro.nvim)
+- [solarized-vim](https://github.com/altercation/vim-colors-solarized)
