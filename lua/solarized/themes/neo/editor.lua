@@ -75,6 +75,6 @@ return function(c, config)
   set_hl('WarningMsg', { fg = c.warning }) -- Warning messages.
   set_hl('Whitespace', { bg = c.base02 }) -- "nbsp", "space", "tab", "multispace", "lead" and "trail" in 'listchars'.
   set_hl('WildMenu', { bg = c.base02 }) -- Current match in 'wildmenu' completion.
-  set_hl('WinBar', { fg = c.base0, bg = c.base04 }) -- Window bar of current window.
+  set_hl('WinBar', { link = 'Pmenu' }) -- Window bar of current window.
   set_hl('WinBarNC', { link = 'WinBar' }) -- Window bar of not-current windows.
 end
