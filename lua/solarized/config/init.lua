@@ -24,6 +24,7 @@ local function default_config()
       lsp = true,
       lspsaga = true,
       navic = true,
+      neotree = true,
       notify = true,
       semantic = true,
       syntax = true,
