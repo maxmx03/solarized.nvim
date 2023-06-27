@@ -1,4 +1,4 @@
-return function(c)
+return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
