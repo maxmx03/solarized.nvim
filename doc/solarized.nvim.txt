@@ -1,4 +1,4 @@
-*solarized.nvim.txt*         For NVIM v0.8.0         Last change: 2023 June 27
+*solarized.nvim.txt*         For NVIM v0.8.0         Last change: 2023 June 28
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -8,13 +8,13 @@ Table of Contents                           *solarized.nvim-table-of-contents*
   - Install from package manager |solarized.nvim-install-from-package-manager|
   - Manual Installation                   |solarized.nvim-manual-installation|
   - Get some help                               |solarized.nvim-get-some-help|
+  - Commands                                         |solarized.nvim-commands|
   - Default Config                             |solarized.nvim-default-config|
   - Themes                                             |solarized.nvim-themes|
   - Styles                                             |solarized.nvim-styles|
   - Highlights                                     |solarized.nvim-highlights|
   - Colors                                             |solarized.nvim-colors|
   - Enables                                           |solarized.nvim-enables|
-  - Commands                                         |solarized.nvim-commands|
   - Lualine                                           |solarized.nvim-lualine|
   - Contributing                                 |solarized.nvim-contributing|
   - Designed by                                   |solarized.nvim-designed-by|
@@ -92,6 +92,11 @@ GET SOME HELP                                   *solarized.nvim-get-some-help*
 Use `:h solarized.nvim.txt` to get some help
 
 
+COMMANDS                                             *solarized.nvim-commands*
+
+`:SolarizedColors` - Display the Solarized palette in a new buffer
+
+
 DEFAULT CONFIG                                 *solarized.nvim-default-config*
 
 >lua
@@ -114,16 +119,22 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
           bufferline = true,
           cmp = true,
           diagnostic = true,
+          dashboard = true,
           editor = true,
+          gitsign = true,
           indentblankline = true,
           lsp = true,
           lspsaga = true,
           navic = true,
+          neotree = true,
+          notify = true,
           semantic = true,
           syntax = true,
           telescope = true,
           tree = true,
           treesitter = true,
+          whichkey = true,
+          mini = true,
         },
         highlights = {},
         colors = {},
@@ -169,7 +180,11 @@ example:
 
 >lua
     require('solarized').setup {
-        highlights = function (colors)
+        highlights = function (colors, colorhelper)
+            local darken = colorhelper.darken
+            local lighten = colorhelper.lighten
+            local blend = colorhelper.blend
+    
             return {
                 LineNr = { fg = c.base1, bg = c.base02 },
                 CursorLineNr = { bg = c.base02 },
@@ -244,11 +259,6 @@ example:
         }
     }
 <
-
-
-COMMANDS                                             *solarized.nvim-commands*
-
-`:SolarizedColors` - Display the Solarized palette in a new buffer
 
 
 LUALINE                                               *solarized.nvim-lualine*
