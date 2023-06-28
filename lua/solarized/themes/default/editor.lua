@@ -28,7 +28,7 @@ return function(c, config)
   set_hl('LineNr', { fg = c.base01, bg = c.base02 }, { transparent = config.transparent }) -- Line number for ":number" and ":#" commands
   set_hl('LineNrAbove', { link = 'LineNr' }) -- Line number, above the cursor line
   set_hl('LineNrBelow', { link = 'LineNr' }) -- Line number, below the cursor
-  set_hl('CursorLineNr', { fg = c.base01, bg = c.base02, bold = true }, { transparent = config.transparent }) -- Like LineNr when 'cursorline' is set
+  set_hl('CursorLineNr', { fg = c.base1, bg = c.base02, bold = true }, { transparent = config.transparent }) -- Like LineNr when 'cursorline' is set
   set_hl('CursorLineFold', { link = 'FoldColumn' }) -- Like FoldColumn when 'cursorline' is set
   set_hl('CursorLineSign', { link = 'SignColumn' }) -- Like SignColumn when 'cursorline' is set
   set_hl('MatchParen', { fg = c.red, bg = c.base01, bold = true }) -- Character under the cursor or just before it

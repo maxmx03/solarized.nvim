@@ -25,7 +25,7 @@ return function(c, config)
   set_hl('PreCondit', { link = 'Keyword' }) -- preprocessor #if, #else, #endif, etc.
   set_hl('Type', { fg = c.yellow }, { styles = config.styles.types }) -- int, long, char, etc.
   set_hl('StorageClass', { link = 'Keyword' }) -- static, register, volatile, etc.
-  set_hl('Structure', { link = 'Keyword' }) -- struct, union, enum, etc.
+  set_hl('Structure', { fg = c.yellow }) -- struct, union, enum, etc.
   set_hl('Typedef', { link = 'Keyword' }) -- A typedef
   set_hl('Special', { fg = c.magenta }) -- special symbol
   set_hl('SpecialChar', { fg = c.violet }) -- special character in a constant

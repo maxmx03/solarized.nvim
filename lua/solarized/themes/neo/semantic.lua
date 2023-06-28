@@ -14,7 +14,7 @@ return function(c, config)
   set_hl('@lsp.type.namespace', { link = 'Constant' }) -- Constant
   set_hl('@lsp.type.parameter', { fg = c.orange, italic = true }, { styles = config.styles.parameters })
   set_hl('@lsp.type.property', { fg = c.blue }) -- Property
-  set_hl('@lsp.type.struct', { link = 'Keyword' }) -- Keyword
+  set_hl('@lsp.type.struct', { link = 'Structure' }) -- Structure
   set_hl('@lsp.type.type', { link = 'Type' }) -- Type
   set_hl('@lsp.type.typeParameter', { link = 'Type' }) -- Type
   set_hl('@lsp.type.variable', { link = 'Identifier' }) -- Identifier
