@@ -126,7 +126,7 @@ require('solarized').setup({
 vim.cmd.colorscheme = 'solarized'
 ```
 
-## Themes
+## Config Themes
 
 Solarized offers two themes: the default Solarized theme and Neosolarized.
 These themes provide different visual styles to enhance your experience.
@@ -137,7 +137,7 @@ require('solarized').setup({
 })
 ```
 
-## Styles
+## Config Styles
 
 The `styles` config allows you to customize the style of a highlight
 group.
@@ -152,7 +152,7 @@ require('solarized').setup({
 })
 ```
 
-## Highlights
+## Config Highlights
 
 The `highlights` config allows you to customize the highlights groups.
 
@@ -177,7 +177,7 @@ require('solarized').setup {
 }
 ```
 
-## Colors
+## Config Colors
 
 The `colors` config allows you to extend or modify the color palette used by
 solarized.
@@ -204,7 +204,7 @@ require('solarized').setup {
 }
 ```
 
-## Enables
+## Config Enables
 
 The enables config allows you to enable or disable solarized support for
 spefic plugins or neovim's default highlights
@@ -249,6 +249,41 @@ require('lualine').setup {
     },
   },
 }
+```
+
+## Api
+
+You can use useful functions to use to customize your neovim plugins.
+
+### Get Colors
+
+```lua
+local solarized_palette = require('solarized.palette')
+local colors = solarized_palette.get_colors()
+```
+
+### Colorhelper
+
+```lua
+local colorhelper = require('solarized.utils.colors')
+
+-- Convert a hex color code to RGB
+colorhelper.hex_to_rgb('#ffffff')
+
+-- Convert RGB values to HSL
+colorhelper.rgb_to_hsl(255, 255, 255)
+
+-- Convert HSL values to RGB
+colorhelper.hsl_to_rgb(0, 0, 100)
+
+-- Darken a color by a specified percentage
+colorhelper.darken('#ffffff', 100)
+
+-- Lighten a color by a specified percentage
+colorhelper.lighten('#000000', 100)
+
+-- Blend two colors with a specified ratio
+colorhelper.blend('#ffffff', '#000000', 0.15)
 ```
 
 ## Contributing
