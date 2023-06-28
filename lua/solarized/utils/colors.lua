@@ -85,7 +85,7 @@ function M.rgb_to_hsl(r, g, b)
 end
 
 --- Converts HSL (Hue, Saturation, Lightness) color values to RGB (Red, Green, Blue) color values.
---- 
+---
 --- @param h number      The hue value in degrees (0-360).
 --- @param s number      The saturation value as a percentage (0-100).
 --- @param l number      The lightness value as a percentage (0-100).
