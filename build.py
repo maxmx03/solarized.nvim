@@ -6,6 +6,7 @@ import shutil
 
 def copy_folders():
     folders_to_copy = ['after', 'colors', 'doc', 'lua', 'plugin']
+    files_to_copy = ['README.md']
     destination_folder = 'build'
 
     if os.path.exists(destination_folder):
@@ -23,6 +24,17 @@ def copy_folders():
             print(f"Successfully copied '{folder}' to '{destination_folder}'")
         else:
             print(f"Source folder '{folder}' does not exist. Skipping...")
+
+    for file in files_to_copy:
+        source_file = os.path.join(os.getcwd(), file)
+        destination_file = os.path.join(
+            os.getcwd(), destination_folder, file)
+
+        if os.path.exists(source_file):
+            shutil.copy2(source_file, destination_file)
+            print(f"Successfully copied '{file}' to '{destination_folder}'")
+        else:
+            print(f"Source file '{file}' does not exist. Skipping...")
 
 
 if __name__ == '__main__':

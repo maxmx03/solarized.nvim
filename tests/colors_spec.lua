@@ -50,7 +50,7 @@ describe('Colors', function()
     local output = colorhelper.darken(colors.green, 50)
     local expect = '#424d00'
 
-    assert.equals(expect, string.lower(output))
+    assert.equals(expect, output)
   end)
 
   -- may differ on different websites, it's hard to tell, but it's working.
@@ -59,6 +59,6 @@ describe('Colors', function()
     local output = colorhelper.lighten(colors.green, 50)
     local expect = '#e7ff4d'
 
-    assert.equals(expect, string.lower(output))
+    assert.equals(expect, output)
   end)
 end)

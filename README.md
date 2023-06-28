@@ -75,6 +75,10 @@ To manually install Solarized, follow these steps:
 
 Use `:h solarized.nvim.txt` to get some help
 
+## Commands
+
+`:SolarizedColors` - Display the Solarized palette in a new buffer
+
 ## Default Config
 
 ```lua
@@ -97,16 +101,22 @@ require('solarized').setup({
       bufferline = true,
       cmp = true,
       diagnostic = true,
+      dashboard = true,
       editor = true,
+      gitsign = true,
       indentblankline = true,
       lsp = true,
       lspsaga = true,
       navic = true,
+      neotree = true,
+      notify = true,
       semantic = true,
       syntax = true,
       telescope = true,
       tree = true,
       treesitter = true,
+      whichkey = true,
+      mini = true,
     },
     highlights = {},
     colors = {},
@@ -150,7 +160,11 @@ example:
 
 ```lua
 require('solarized').setup {
-    highlights = function (colors)
+    highlights = function (colors, colorhelper)
+        local darken = colorhelper.darken
+        local lighten = colorhelper.lighten
+        local blend = colorhelper.blend
+
         return {
             LineNr = { fg = c.base1, bg = c.base02 },
             CursorLineNr = { bg = c.base02 },
@@ -223,10 +237,6 @@ require('solarized').setup {
     }
 }
 ```
-
-## Commands
-
-`:SolarizedColors` - Display the Solarized palette in a new buffer
 
 ## Lualine
 

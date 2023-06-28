@@ -42,6 +42,7 @@ return function(colors, config)
   if type(config.highlights) == 'table' and not vim.tbl_isempty(config.highlights) then
     custom_hl(config.highlights)
   elseif type(config.highlights) == 'function' then
-    custom_hl(config.highlights(colors))
+    local colorhelper = require('solarized.utils.colors')
+    custom_hl(config.highlights(colors, colorhelper))
   end
 end

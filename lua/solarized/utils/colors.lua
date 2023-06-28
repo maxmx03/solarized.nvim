@@ -17,100 +17,118 @@ end
 
 --- Convert rgb to hex
 ---
----@param red number
----@param green number
----@param blue number
----@return string color
+--- @param red number
+--- @param green number
+--- @param blue number
+--- @return string color
 function M.rgb_to_hex(red, green, blue)
-  return string.format('#%02X%02X%02X', red, green, blue)
+  return string.format('#%02x%02x%02x', red, green, blue)
 end
 
---- Convert RGB color values to HSL color space
+--- Converts RGB (Red, Green, Blue) color values to HSL (Hue, Saturation, Lightness) color values.
 ---
---- @param red number    The red component of the RGB color (0-255)
---- @param green number  The green component of the RGB color (0-255)
---- @param blue number   The blue component of the RGB color (0-255)
---- @return number h     The hue value in the HSL color space (0-360)
---- @return number s     The saturation value in the HSL color space (0-1)
---- @return number l     The lightness value in the HSL color space (0-1)
-function M.rgb_to_hsl(red, green, blue)
-  red = red / 255
-  green = green / 255
-  blue = blue / 255
-  local cmin = math.min(red, green, blue)
-  local cmax = math.max(red, green, blue)
-  local delta = cmax - cmin
-  local h, s, l = 0, 0, 0
+--- @param r number      The red component of the RGB color (0-255).
+--- @param g number      The green component of the RGB color (0-255).
+--- @param b number      The blue component of the RGB color (0-255).
+--- @return number h     The hue value in degrees (0-360).
+--- @return number s     The saturation value as a percentage (0-100).
+--- @return number l     The lightness value as a percentage (0-100).
+function M.rgb_to_hsl(r, g, b)
+  -- Convert RGB values to the range 0-1
+  r = r / 255
+  g = g / 255
+  b = b / 255
 
-  if delta == 0 then
-    h = 0
-  elseif cmax == red then
-    h = ((green - blue) / delta) % 6
-  elseif cmax == green then
-    h = (blue - red) / delta + 2
-  else
-    h = (red - green) / delta + 4
-  end
+  -- Find the minimum and maximum values
+  local min = math.min(r, g, b)
+  local max = math.max(r, g, b)
 
-  h = Math.round(h * 60)
+  -- Calculate luminance (L)
+  local l = (max + min) / 2
 
-  if h < 0 then
-    h = h + 360
-  end
-
-  -- Calculate lightness
-  l = (cmax + cmin) / 2
-
-  -- Calculate saturation
-  if delta == 0 then
+  -- Check if there is saturation
+  local s
+  if min == max then
+    -- If min and max are equal, there is no saturation
     s = 0
   else
-    s = delta / (1 - math.abs(2 * l - 1))
+    if l <= 0.5 then
+      s = (max - min) / (max + min)
+    else
+      s = (max - min) / (2 - max - min)
+    end
   end
 
-  -- Multiply l and s by 100
-  s = Math.round(s * 100)
-  l = Math.round(l * 100)
+  -- Calculate hue (H)
+  local h
+  if max == min then
+    -- If max and min are equal, it's a shade of gray (H is undefined)
+    h = 0
+  else
+    if max == r then
+      h = (g - b) / (max - min)
+    elseif max == g then
+      h = 2 + (b - r) / (max - min)
+    else
+      h = 4 + (r - g) / (max - min)
+    end
+    h = h / 6 -- Convert to range 0-1
+    if h < 0 then
+      h = h + 1
+    end -- Add 1 if negative
+  end
 
-  return h, s, l
+  -- Convert hue to degrees
+  h = h * 360
+
+  return Math.round(h), Math.round(s * 100), Math.round(l * 100)
 end
 
---- Convert HSL color values to RGB color space
----
---- @param h number       The hue value in the HSL color space (0-360)
---- @param s number       The saturation value in the HSL color space (0-1)
---- @param l number       The lightness value in the HSL color space (0-1)
---- @return number r      The red component of the RGB color (0-255)
---- @return number g      The green component of the RGB color (0-255)
---- @return number b      The blue component of the RGB color (0-255)
+--- Converts HSL (Hue, Saturation, Lightness) color values to RGB (Red, Green, Blue) color values.
+--- 
+--- @param h number      The hue value in degrees (0-360).
+--- @param s number      The saturation value as a percentage (0-100).
+--- @param l number      The lightness value as a percentage (0-100).
+--- @return number red   The red component of the RGB color (0-255).
+--- @return number green The green component of the RGB color (0-255).
+--- @return number blue  The blue component of the RGB color (0-255).
 function M.hsl_to_rgb(h, s, l)
+  h = h / 360
   s = s / 100
   l = l / 100
 
-  local c = (1 - math.abs(2 * l - 1)) * s
-  local x = c * (1 - math.abs((h / 60) % 2 - 1))
-  local m = l - c / 2
-  local r, g, b = 0, 0, 0
-
-  if 0 <= h and h < 60 then
-    r, g, b = c, x, 0
-  elseif 60 <= h and h < 120 then
-    r, g, b = x, c, 0
-  elseif 120 <= h and h < 180 then
-    r, g, b = 0, c, x
-  elseif 180 <= h and h < 240 then
-    r, g, b = 0, x, c
-  elseif 240 <= h and h < 300 then
-    r, g, b = x, 0, c
-  elseif 300 <= h and h < 360 then
-    r, g, b = c, 0, x
+  local function hueToRgb(p, q, t)
+    if t < 0 then
+      t = t + 1
+    end
+    if t > 1 then
+      t = t - 1
+    end
+    if t < 1 / 6 then
+      return p + (q - p) * 6 * t
+    end
+    if t < 1 / 2 then
+      return q
+    end
+    if t < 2 / 3 then
+      return p + (q - p) * (2 / 3 - t) * 6
+    end
+    return p
   end
 
-  r = Math.round((r + m) * 255)
-  g = Math.round((g + m) * 255)
-  b = Math.round((b + m) * 255)
+  if s == 0 then
+    local gray = Math.round(l * 255)
+    return gray, gray, gray
+  else
+    local q = l < 0.5 and l * (1 + s) or l + s - l * s
+    local p = 2 * l - q
 
-  return r, g, b
+    local red = Math.round(hueToRgb(p, q, h + 1 / 3) * 255)
+    local green = Math.round(hueToRgb(p, q, h) * 255)
+    local blue = Math.round(hueToRgb(p, q, h - 1 / 3) * 255)
+
+    return red, green, blue
+  end
 end
 
 --- Darken a color by a given percentage
@@ -122,11 +140,10 @@ function M.darken(color, percent)
   local r, g, b = M.hex_to_rgb(color)
   local h, s, l = M.rgb_to_hsl(r, g, b)
 
-  l = (l / 100) * percent
+  l = l * (1 - percent / 100)
 
-  local red, green, blue = M.hsl_to_rgb(h, s, l)
-
-  return M.rgb_to_hex(red, green, blue)
+  local new_r, new_g, new_b = M.hsl_to_rgb(h, s, l)
+  return M.rgb_to_hex(new_r, new_g, new_b)
 end
 
 --- Lighten a color by a given percentage
@@ -140,9 +157,8 @@ function M.lighten(color, percent)
 
   l = l + (100 - l) * (percent / 100)
 
-  local red, green, blue = M.hsl_to_rgb(h, s, l)
-
-  return M.rgb_to_hex(red, green, blue)
+  local new_r, new_g, new_b = M.hsl_to_rgb(h, s, l)
+  return M.rgb_to_hex(new_r, new_g, new_b)
 end
 
 --- Blend two colors with a given alpha value
