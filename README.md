@@ -253,7 +253,7 @@ require('lualine').setup {
 
 ## Api
 
-You can use useful functions to use to customize your neovim plugins.
+You can utilize useful functions to customize your Neovim plugins.
 
 ### Get Colors
 
