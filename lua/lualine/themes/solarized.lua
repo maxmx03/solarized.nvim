@@ -1,26 +1,24 @@
-local solarized = require 'solarized'
-local chromatic = require 'solarized.utils.chromatic'
-local colors = solarized.colors
-local darken = chromatic.darken
+local solarized_palette = require('solarized.palette')
+local colors = solarized_palette.get_colors()
 
 local M = {
   normal = {
-    a = { fg = darken(colors.blue, 50), bg = colors.blue, gui = 'bold' },
-    b = { fg = colors.bg_alt, bg = colors.content },
-    c = { fg = colors.content, bg = solarized:is_transparent(colors.bg_alt) },
-    z = { fg = darken(colors.blue, 50), bg = colors.blue },
+    a = { fg = colors.base03, bg = colors.blue, gui = 'bold' },
+    b = { fg = colors.base02, bg = colors.base1 },
+    c = { fg = colors.base1, bg = colors.base02 },
+    z = { fg = colors.base03, bg = colors.blue },
   },
   insert = {
-    a = { fg = darken(colors.green, 50), bg = colors.green },
+    a = { fg = colors.base03, bg = colors.green },
   },
   visual = {
-    a = { fg = darken(colors.magenta, 50), bg = colors.magenta },
+    a = { fg = colors.base03, bg = colors.magenta },
   },
   replace = {
-    a = { fg = darken(colors.red, 50), bg = colors.red },
+    a = { fg = colors.base03, bg = colors.red },
   },
   command = {
-    a = { fg = colors.blue, bg = darken(colors.blue, 50) },
+    a = { fg = colors.base03, bg = colors.orange },
   },
 }
 
