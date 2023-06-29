@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/maxmx03/solarized.nvim/compare/v1.0.0...v1.0.1) (2023-06-29)
+
+
+### Bug Fixes
+
+* indentblankline, whitespace, treesitter text hl ([76de882](https://github.com/maxmx03/solarized.nvim/commit/76de8824aa2d64b4bce5041f06ef8ebe1848d9a4))
+
 ## 1.0.0 (2023-06-29)
 
 
