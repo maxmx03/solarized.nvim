@@ -87,7 +87,7 @@ return function(c, config)
   set_hl('@text.reference', { link = 'Underlined' }) -- text references, footnotes, citations, etc.
 
   set_hl('@text.literal', { link = '@text' }) -- literal or verbatim text (e.g., inline code)
-  set_hl('@text.literal.block', { link = '@text.environment.name' }) -- literal or verbatim text as a stand-alone block
+  set_hl('@text.literal.block', { link = '@text' }) -- literal or verbatim text as a stand-alone block
 
   set_hl('@text.todo', { link = 'Todo' }) -- todo notes
   set_hl('@text.note', { fg = c.info }) -- info notes

@@ -104,6 +104,7 @@ require('solarized').setup({
       dashboard = true,
       editor = true,
       gitsign = true,
+      hop = true,
       indentblankline = true,
       lsp = true,
       lspsaga = true,

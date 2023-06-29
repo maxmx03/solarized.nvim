@@ -2,10 +2,18 @@ return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
-  set_hl('IndentBlanklineChar', { fg = c.base01, bg = c.base03 }, { transparent = config.transparent }) -- Highlight of indent character.
-  set_hl('IndentBlanklineSpaceChar', { fg = c.base01, bg = c.base03 }, { transparent = config.transparent }) -- Highlight of space character.
-  -- set_hl('IndentBlanklineSpaceCharBlankline') -- Highlight of space character on blank lines.
-  set_hl('IndentBlanklineContextChar', { link = 'Keyword' }) -- Highlight of indent character when base of current context.
-  set_hl('IndentBlanklineContextSpaceChar', { link = 'Keyword' }) -- Highlight of space characters one indent level of the current context.
-  -- set_hl('IndentBlanklineContextStart') -- Highlight of the first line of the current context.
+  if vim.o.background == 'dark' then
+    set_hl('IndentBlanklineChar', { fg = '#424d00' }) -- Highlight of indent character. Default: Whitespace
+    set_hl('IndentBlanklineSpaceChar', { link = 'IndentBlanklineChar' }) -- Highlight of space character. Default: Whitespace
+    set_hl('IndentBlanklineContextChar', { fg = '#5d6b00' }) -- Highlight of indent character when base of current context. Default: Label
+    set_hl('IndentBlanklineContextSpaceChar', { link = 'IndentBlanklineContextChar' }) -- Highlight of space characters one indent level of the current context. Default: Label
+  else
+    set_hl('IndentBlanklineChar', { fg = '#bddcf3' }) -- Highlight of indent character. Default: Whitespace
+    set_hl('IndentBlanklineSpaceChar', { link = 'IndentBlanklineChar' }) -- Highlight of space character. Default: Whitespace
+    set_hl('IndentBlanklineContextChar', { fg = '#91c5eb' }) -- Highlight of indent character when base of current context. Default: Label
+    set_hl('IndentBlanklineContextSpaceChar', { link = 'IndentBlanklineContextChar' }) -- Highlight of space characters one indent level of the current context. Default: Label
+  end
+
+  -- set_hl('IndentBlanklineSpaceCharBlankline', {}) -- Highlight of space character on blank lines. Default: Whitespace
+  -- set_hl('IndentBlanklineContextStart', {}) -- Highlight of the first line of the current context. Default: Label
 end
