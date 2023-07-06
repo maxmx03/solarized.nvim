@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/maxmx03/solarized.nvim/compare/v1.0.3...v1.0.4) (2023-07-06)
+
+
+### Bug Fixes
+
+* LspInlayHint foreground color on light mode ([54a7b79](https://github.com/maxmx03/solarized.nvim/commit/54a7b797b1148b6ccab7538112e00d05db01c2c0))
+
 ## [1.0.3](https://github.com/maxmx03/solarized.nvim/compare/v1.0.2...v1.0.3) (2023-07-06)
 
 
