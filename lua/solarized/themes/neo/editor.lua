@@ -8,7 +8,6 @@ return function(c, config)
     set_hl('ColorColumn', { bg = c.base04 }) -- used for columns
   end
 
-  -- set_hl('ColorColumn', { fg = c.base04, bg = c.base04 }) -- used for columns
   set_hl('Conceal', { fg = c.blue }) -- placeholder characters
   set_hl('CurSearch', { fg = c.base2, bg = c.base02 }) -- highlight under cursor
   set_hl('Cursor', { fg = c.base03, bg = c.cyan }) -- character under cursor
