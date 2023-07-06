@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/maxmx03/solarized.nvim/compare/v1.0.2...v1.0.3) (2023-07-06)
+
+
+### Bug Fixes
+
+* colorcolumn, incsearch, floatborder ([7b0181d](https://github.com/maxmx03/solarized.nvim/commit/7b0181d72f9f1ebc5647592c0a04e31976b2b86b))
+
 ## [1.0.2](https://github.com/maxmx03/solarized.nvim/compare/v1.0.1...v1.0.2) (2023-07-01)
 
 
