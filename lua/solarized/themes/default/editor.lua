@@ -2,13 +2,13 @@ return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
-  set_hl('ColorColumn', { fg = c.base02, bg = c.base02 }) -- used for columns
+  set_hl('ColorColumn', { bg = c.base02 }) -- used for columns
   set_hl('Conceal', { fg = c.blue }) -- placeholder characters
   set_hl('CurSearch', { fg = c.base2, bg = c.base02 }) -- highlight under cursor
   set_hl('Cursor', { fg = c.base03, bg = c.base0 }) -- character under cursor
   set_hl('lCursor', { link = 'Cursor' }) -- character under the cursor
   set_hl('CursorIM', { link = 'Cursor' }) -- like cursor, but IME mode
-  set_hl('CursorColumn', { bg = c.base02 }) -- screen-column at the cursor
+  set_hl('CursorColumn', { link = 'ColorColumn' }) -- screen-column at the cursor
   set_hl('CursorLine', { bg = c.base02, sp = c.base1 }) -- screen-line at the cursor
   set_hl('Directory', { fg = c.blue }) -- directory names
   set_hl('DiffAdd', { fg = c.add, reverse = true }) -- Added line

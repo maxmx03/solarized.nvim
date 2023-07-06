@@ -3,9 +3,9 @@ return function(c, config)
   local set_hl = utils.set_hl
 
   if config.transparent then
-    set_hl('ColorColumn', { fg = c.base02, bg = c.base02 }) -- used for columns
+    set_hl('ColorColumn', { bg = c.base02 }) -- used for columns
   else
-    set_hl('ColorColumn', { fg = c.base04, bg = c.base04 }) -- used for columns
+    set_hl('ColorColumn', { bg = c.base04 }) -- used for columns
   end
 
   -- set_hl('ColorColumn', { fg = c.base04, bg = c.base04 }) -- used for columns
@@ -14,7 +14,7 @@ return function(c, config)
   set_hl('Cursor', { fg = c.base03, bg = c.cyan }) -- character under cursor
   set_hl('lCursor', { link = 'Cursor' }) -- character under the cursor
   set_hl('CursorIM', { link = 'Cursor' }) -- like cursor, but IME mode
-  set_hl('CursorColumn', { bg = c.base04 }) -- screen-column at the cursor
+  set_hl('CursorColumn', { link = 'ColorColumn' }) -- screen-column at the cursor
   set_hl('CursorLine') -- screen-line at the cursor
   set_hl('Directory', { fg = c.orange }) -- directory names
   set_hl('DiffAdd', { fg = c.add }) -- Added line
@@ -29,7 +29,7 @@ return function(c, config)
   set_hl('Folded', { fg = c.base0, bg = c.base02 }) -- Line used for closed folds
   set_hl('FoldColumn', { fg = c.base0, bg = c.base04 }) -- 'foldcolumn'
   set_hl('SignColumn', { fg = c.base0, bg = c.base03 }, { transparent = config.transparent }) -- Column were signs are displayed
-  set_hl('IncSearch', { fg = c.base3, bg = c.base04 }) -- 'incsearch' highlighting, also for the text replaced
+  set_hl('IncSearch', { fg = c.base3, bg = c.base04 }, { transparent = config.transparent }) -- 'incsearch' highlighting, also for the text replaced
   set_hl('Substitute', { fg = c.orange, reverse = true }) -- :substitute replacement text highlight
   set_hl('LineNr', { fg = c.base01, bg = c.base03 }, { transparent = config.transparent }) -- Line number for ":number" and ":#" commands
   set_hl('LineNrAbove', { link = 'LineNr' }) -- Line number, above the cursor line
@@ -45,7 +45,7 @@ return function(c, config)
   set_hl('NonText', { fg = c.base00 }) -- '@' at the end of the window
   set_hl('Normal', { fg = c.base0, bg = c.base03 }, { transparent = config.transparent }) -- Normal text
   set_hl('NormalFloat', { fg = c.base0, bg = c.base04 }) -- Normal text in floating windows
-  set_hl('FloatBorder', { fg = c.cyan, bg = c.base04 }) -- Border of floating windows.
+  set_hl('FloatBorder', { link = 'WinSeparator' }) -- Border of floating windows.
   set_hl('FloatTitle', { fg = c.orange }) -- Title of float windows.
   set_hl('NormalNC', { link = 'Normal' }) -- Normal text in non-current windows.
   set_hl('Pmenu', { fg = c.base0, bg = c.base04 }, { transparent = config.transparent }) -- Popup menu: Normal item
