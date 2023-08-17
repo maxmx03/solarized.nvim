@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/maxmx03/solarized.nvim/compare/v1.0.4...v1.0.5) (2023-08-17)
+
+
+### Bug Fixes
+
+* treesitter parameter style was not being overridden by config ([2f59f9d](https://github.com/maxmx03/solarized.nvim/commit/2f59f9d152a0d7f89c65c70105a5ae5803e28023))
+
 ## [1.0.4](https://github.com/maxmx03/solarized.nvim/compare/v1.0.3...v1.0.4) (2023-07-06)
 
 
