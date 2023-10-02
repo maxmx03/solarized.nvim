@@ -1,4 +1,4 @@
-*solarized.nvim.txt*         For NVIM v0.9.1         Last change: 2023 July 06
+*solarized.nvim.txt*        For NVIM v0.9.1       Last change: 2023 October 02
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -90,7 +90,7 @@ To manually install Solarized, follow these steps:
 
 GET SOME HELP                                   *solarized.nvim-get-some-help*
 
-Use `:h solarized.nvim.txt` to get some help
+Use |solarized.nvim.txt| to get some help
 
 
 COMMANDS                                             *solarized.nvim-commands*

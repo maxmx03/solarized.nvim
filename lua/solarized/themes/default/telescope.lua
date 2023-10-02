@@ -2,7 +2,7 @@ return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
-  set_hl('TelescopeSelection', { fg = c.base2, bg = c.base01 })
+  set_hl('TelescopeSelection', { link = 'Visual' })
   set_hl('TelescopeSelectionCaret', { link = 'TelescopeSelection' })
   set_hl('TelescopeMultiSelection', { link = 'Type' })
   set_hl('TelescopeMultiIcon', { fg = c.cyan })
