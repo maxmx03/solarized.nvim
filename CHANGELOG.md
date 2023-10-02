@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/maxmx03/solarized.nvim/compare/v1.0.5...v1.0.6) (2023-10-02)
+
+
+### Bug Fixes
+
+* telescope selection ([85ac187](https://github.com/maxmx03/solarized.nvim/commit/85ac187a2339b058e76d89828803fccb416de16d))
+
 ## [1.0.5](https://github.com/maxmx03/solarized.nvim/compare/v1.0.4...v1.0.5) (2023-08-17)
 
 
