@@ -28,7 +28,7 @@ return function(c, config)
   set_hl('Folded', { fg = c.base0, bg = c.base02 }) -- Line used for closed folds
   set_hl('FoldColumn', { fg = c.base0, bg = c.base04 }) -- 'foldcolumn'
   set_hl('SignColumn', { fg = c.base0, bg = c.base03 }, { transparent = config.transparent }) -- Column were signs are displayed
-  set_hl('IncSearch', { fg = c.base3, bg = c.base04 }, { transparent = config.transparent }) -- 'incsearch' highlighting, also for the text replaced
+  set_hl('IncSearch', { fg = c.base3, bg = c.base04, bold = true }, { transparent = config.transparent }) -- 'incsearch' highlighting, also for the text replaced
   set_hl('Substitute', { fg = c.orange, reverse = true }) -- :substitute replacement text highlight
   set_hl('LineNr', { fg = c.base01, bg = c.base03 }, { transparent = config.transparent }) -- Line number for ":number" and ":#" commands
   set_hl('LineNrAbove', { link = 'LineNr' }) -- Line number, above the cursor line
