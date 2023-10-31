@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/maxmx03/solarized.nvim/compare/v1.0.6...v1.0.7) (2023-10-31)
+
+
+### Bug Fixes
+
+* jsx tags,  methods being italized, incsearch low contrast ([888695f](https://github.com/maxmx03/solarized.nvim/commit/888695fbcbb35a38e3522945cf1f217adfa3fea2))
+
 ## [1.0.6](https://github.com/maxmx03/solarized.nvim/compare/v1.0.5...v1.0.6) (2023-10-02)
 
 
