@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/maxmx03/solarized.nvim/compare/v1.0.7...v1.1.0) (2023-11-26)
+
+
+### Features
+
+* neogit ([8318f74](https://github.com/maxmx03/solarized.nvim/commit/8318f74dc4e896e184d5c23b97de47eb6eca3faa))
+
 ## [1.0.7](https://github.com/maxmx03/solarized.nvim/compare/v1.0.6...v1.0.7) (2023-10-31)
 
 
