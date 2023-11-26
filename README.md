@@ -109,6 +109,7 @@ require('solarized').setup({
       lsp = true,
       lspsaga = true,
       navic = true,
+      neogit = true,
       neotree = true,
       notify = true,
       semantic = true,

@@ -1,4 +1,4 @@
-*solarized.nvim.txt*        For NVIM v0.9.1       Last change: 2023 October 23
+*solarized.nvim.txt*       For NVIM v0.9.1       Last change: 2023 November 26
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -128,6 +128,7 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
           lsp = true,
           lspsaga = true,
           navic = true,
+          neogit = true,
           neotree = true,
           notify = true,
           semantic = true,
