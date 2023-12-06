@@ -33,9 +33,10 @@ end
 --- @param colors table   A table containing color values
 --- @param config table   A table containing configuration options
 return function(colors, config)
-  if string.match(config.theme, 'neo$') or string.match(config.theme, 'neosolarized$') then
+  if config.theme == 'neo' or config.theme == 'default' then
     load_highlights(colors, config)
   else
+    config.theme = 'default'
     load_highlights(colors, config)
   end
 
