@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/maxmx03/solarized.nvim/compare/v1.1.0...v1.1.1) (2023-12-06)
+
+
+### Bug Fixes
+
+* solarized setup ([595bd9a](https://github.com/maxmx03/solarized.nvim/commit/595bd9a233cc23c387924769dfc3550f294d0ac8))
+
 ## [1.1.0](https://github.com/maxmx03/solarized.nvim/compare/v1.0.7...v1.1.0) (2023-11-26)
 
 
