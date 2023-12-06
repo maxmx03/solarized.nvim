@@ -3,6 +3,7 @@ local solarized_palette = require('solarized.palette')
 local solarized_highlights = require('solarized.highlights')
 
 local M = {}
+M.is_configured = false
 M.has_set_highlights = false
 M.config = {}
 
@@ -23,8 +24,6 @@ M.config = {}
 ---       - enables (table): A table specifying plugins to be enabled or disabled
 ---       - theme (string): Specifies the theme to be used.
 function M.setup(opts)
-  opts = opts or {}
-
   if vim.g.colors_name then
     vim.cmd('hi clear')
   end
@@ -36,8 +35,11 @@ function M.setup(opts)
   vim.o.termguicolors = true
   vim.g.colors_name = 'solarized'
 
-  local default_config = solarized_config()
-  M.config = vim.tbl_deep_extend('force', default_config, opts)
+  if not M.is_configured then
+    local default_config = solarized_config()
+    M.config = vim.tbl_deep_extend('force', default_config, opts or {})
+    M.is_configured = true
+  end
 
   local colors = solarized_palette.get_colors()
 
