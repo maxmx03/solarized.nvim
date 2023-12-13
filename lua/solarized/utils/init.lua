@@ -1,8 +1,8 @@
 local M = {}
 
----Sets a highlight group
----@param name string
----@param val? table
+--- Sets a highlight group
+--- @param name string
+--- @param val? table
 --- @param opts? table The opts object..
 ---       - opts.transparent: (boolean) Specifies whether transparency is enabled.
 ---       - opts.styles: (table) A table of custom styles for various elements.
@@ -28,9 +28,9 @@ function M.set_hl(name, val, opts)
   vim.api.nvim_set_hl(0, name, val)
 end
 
----get highlight group
----@param highlight_name string
----@return table highlight
+--- get highlight group
+--- @param highlight_name string
+--- @return table highlight
 function M.get_hl(highlight_name)
   local highlight = vim.api.nvim_get_hl(0, { name = highlight_name, link = true })
 
@@ -39,6 +39,18 @@ function M.get_hl(highlight_name)
   end
 
   return highlight
+end
+
+--- @param opts table The user-specified custom configuration
+---       - fnc (function): callback type configuration
+---       - tbl (function): table type configuration
+--- @param config (table|function): config to be used
+function M.on_config(opts, config)
+  if type(config) == 'table' and not vim.tbl_isempty(config) then
+    opts.tbl()
+  elseif type(config) == 'function' then
+    opts.fnc()
+  end
 end
 
 return M

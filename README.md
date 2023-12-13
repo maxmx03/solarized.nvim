@@ -71,13 +71,13 @@ To manually install Solarized, follow these steps:
    `lua`, `plugin`.
 4. Copy these folders to the `~/.config/nvim` directory.
 
-## Get some help
+## Help
 
 Use `:h solarized.nvim.txt` to get some help
 
 ## Commands
 
-`:SolarizedColors` - Display the Solarized palette in a new buffer
+`:Solarized colors` - Display the Solarized palette in a new buffer
 
 ## Default Config
 
@@ -130,7 +130,7 @@ vim.cmd.colorscheme = 'solarized'
 
 ## Config Themes
 
-Solarized offers two themes: the default Solarized theme and Neosolarized.
+Solarized offers two themes: the default Solarized theme and Neo.
 These themes provide different visual styles to enhance your experience.
 
 ```lua
@@ -253,6 +253,18 @@ require('lualine').setup {
 }
 ```
 
+Alternatively, to utilize Lualine's Solarized theme:
+
+```lua
+require('lualine').setup {
+    options = {
+      theme = require('lualine.themes.solarized')
+    }
+}
+```
+
+To use the Solarized theme showcased in the screenshot for Lualine [click here](https://github.com/maxmx03/solarized.nvim/discussions/50)
+
 ## Api
 
 You can utilize useful functions to customize your Neovim plugins.
@@ -290,27 +302,65 @@ colorhelper.blend('#ffffff', '#000000', 0.15)
 
 ## Contributing
 
-Thank you for your interest in contributing to this project!
-To ensure a smooth collaboration, please follow the guidelines below:
+Thank you for your interest in contributing to this project! To ensure a smooth
+collaboration, please follow the guidelines below:
 
-1. Open a discussion to propose and discuss the changes you
-   intend to make. This step allows for valuable input and
-   feedback from the project maintainers and the community.
-2. Ensure you have the latest changes from the `dev` branch by pulling the
-   latest updates.
-3. Make your changes on the `dev` branch. Avoid making direct changes to
-   the `main` branch.
-4. Before submitting a pull request, run the `./test.py` script to ensure that
-   your changes pass all the necessary tests. This step helps maintain the
-   quality and stability of the project.
-5. When submitting a pull request, make sure to select the `dev`
-   branch as the target branch. This ensures that your changes will be merged
-   into the `dev` branch for further review and integration.
-6. Provide a clear and descriptive title and description for your pull request,
-   explaining the purpose and scope of your changes.
-7. Wait for the maintainer to review your pull request.
-8. Once your changes have been reviewed and approved, the project maintainer
-   will handle merging your changes into the `main` branch.
+1. **Branching**: Make your changes on the `dev` branch. Avoid making direct
+   changes to the `main` branch.
+2. **Testing**: Before submitting a pull request, run the `./test.py` script
+   to ensure that your changes pass all necessary tests. This step helps maintain
+   the quality and stability of the project. Ensure that the following dependencies
+   are installed for running tests:
+
+   ```bash
+   sudo apt install luarocks
+   sudo luarocks install luacheck
+   sudo luarocks install vusted
+   cargo install stylua
+   ```
+
+   ```bash
+   ./test.py
+   ```
+
+   ```bash
+   ok 1 - Color Conversions Convert hex to RGB
+   ok 2 - Color Conversions Convert RGB to hex
+   ok 3 - Color Conversions Convert RGB to HSL
+   ok 4 - Color Conversions Convert HSL to RGB
+   ok 5 - Color Conversions Darken the color by percentage
+   ok 6 - Color Conversions Lighten the color by percentage
+   ok 7 - Color Conversions Blend colors
+   ok 8 - Configuration Default configuration
+   ok 9 - Configuration Unique configuration table instances
+   ok 10 - Configuration Extend default configuration
+   ok 11 - Initialization Loads without encountering any errors
+   ok 12 - Initialization Background is set to light
+   ok 13 - Math Round to the nearest integer
+   ok 14 - Math Return the value of the first parameter and the sign of the second parameter
+   ok 15 - Palette Extend solarized color palette
+   ok 16 - Palette Correct any invalid colors when extending the solarized palette
+   ok 17 - Setup Customizing Highlight Groups
+   ok 18 - Setup Changing Comment Style
+   ok 19 - Setup Changing  Function Style
+   ok 20 - Setup Customizable Highlight Groups Without Losing Previous Configuration
+   ok 21 - Setup Ability to Change the Default Theme
+
+    # Success: 21
+   ```
+
+3. **Pull Request**: When submitting a pull request, select the `dev` branch
+   as the target branch. This ensures that your changes will be merged into the
+   `dev` branch for further review and integration.
+
+4. **Provide Details**: Provide a clear and descriptive title and description
+   for your pull request, explaining the purpose and scope of your changes.
+
+5. **Review Process**: Wait for the maintainer to review your pull request.
+   The maintainers will review your changes before merging.
+
+6. **Final Approval**: Once your changes have been reviewed and approved, the
+   project maintainer will handle merging your changes into the `main` branch.
 
 ## Designed by
 
@@ -320,9 +370,8 @@ Ethan Schoonover
 
 ## Credits and Reference 🎉
 
-[![Raphael](https://github.com/glepnir.png?size=100)](https://github.com/glepnir)
-
-Raphael
-
 - [onedarkpro](https://github.com/olimorris/onedarkpro.nvim)
 - [solarized-vim](https://github.com/altercation/vim-colors-solarized)
+- [tokyonight](https://github.com/folke/tokyonight.nvim)
+
+[![Raphael](https://github.com/glepnir.png?size=100)](https://github.com/glepnir)

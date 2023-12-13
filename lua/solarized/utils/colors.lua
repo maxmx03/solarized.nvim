@@ -176,9 +176,9 @@ function M.blend(hex_fg, hex_bg, alpha)
   local floor = math.floor
 
   local function blend_channel(fg, bg)
-    local blended_channel = alpha * fg + ((1 - alpha) * bg)
+    local ret = alpha * fg + ((1 - alpha) * bg)
 
-    return floor(min(max(0, blended_channel), 255) + 0.5)
+    return floor(min(max(0, ret), 255) + 0.5)
   end
 
   return M.rgb_to_hex(blend_channel(red_fg, red_bg), blend_channel(green_fg, green_bg), blend_channel(blue_fg, blue_bg))

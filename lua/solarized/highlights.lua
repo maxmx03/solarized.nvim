@@ -1,8 +1,12 @@
+local utils = require('solarized.utils')
+local colorhelper = require('solarized.utils.colors')
+
+local M = {}
+
 --- Update or override highlights defined by the user
 ---
 --- @param highlights table   A table containing highlight names as keys and their updated values as values
-local function custom_hl(highlights)
-  local utils = require('solarized.utils')
+function M.custom_hl(highlights)
   local get_hl = utils.get_hl
 
   for highlight_name, highlight_value in pairs(highlights) do
@@ -18,12 +22,12 @@ end
 ---
 --- @param colors table   A table containing color values
 --- @param config table   A table containing configuration options, including the enabled highlights and theme
-local function load_highlights(colors, config)
-  for highlight, enabled in pairs(config.enables) do
+function M.load_plugins(colors, config)
+  for plugin, enabled in pairs(config.enables) do
     if enabled then
-      local highlights = require(string.format('solarized.themes.%s.%s', config.theme, highlight))
+      local highlight_groups = require(string.format('solarized.themes.%s.%s', config.theme, plugin))
 
-      highlights(colors, config)
+      highlight_groups(colors, config)
     end
   end
 end
@@ -32,18 +36,22 @@ end
 ---
 --- @param colors table   A table containing color values
 --- @param config table   A table containing configuration options
-return function(colors, config)
+function M.highlights(colors, config)
   if config.theme == 'neo' or config.theme == 'default' then
-    load_highlights(colors, config)
+    M.load_plugins(colors, config)
   else
     config.theme = 'default'
-    load_highlights(colors, config)
+    M.load_plugins(colors, config)
   end
 
-  if type(config.highlights) == 'table' and not vim.tbl_isempty(config.highlights) then
-    custom_hl(config.highlights)
-  elseif type(config.highlights) == 'function' then
-    local colorhelper = require('solarized.utils.colors')
-    custom_hl(config.highlights(colors, colorhelper))
-  end
+  utils.on_config({
+    tbl = function()
+      M.custom_hl(config.highlights)
+    end,
+    fnc = function()
+      M.custom_hl(config.highlights(colors, colorhelper))
+    end,
+  }, config.highlights)
 end
+
+return M

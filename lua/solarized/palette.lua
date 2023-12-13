@@ -4,71 +4,68 @@ local M = {}
 ---
 --- @return table colors   A table containing the solarized colors
 function M.get_colors()
-  local dark = {
-    base04 = '#00222b', -- background tone darker (column/nvim-tree)
-    base03 = '#002b36', -- background tone dark (main)
-    base02 = '#073642', -- background tone (highlight/menu/LineNr)
-    base01 = '#586e75', -- content tone (comment)
-    base00 = '#657b83', -- content tone (winseparator)
-    base0 = '#839496', -- content tone (foreground)
-    base1 = '#93a1a1', -- content tone (statusline/tabline)
-    base2 = '#eee8d5', -- background tone light (highlight)
-    base3 = '#fdf6e3', -- background tone lighter (main)
-    -- accent
-    yellow = '#b58900',
-    orange = '#cb4b16',
-    red = '#dc322f',
-    magenta = '#d33682',
-    violet = '#6c71c4',
-    blue = '#268bd2',
-    cyan = '#2aa198',
-    green = '#859900',
-    -- git
-    add = '#859900',
-    change = '#b58900',
-    delete = '#dc322f',
-    -- diagnostic
-    info = '#268bd2',
-    hint = '#859900',
-    warning = '#b58900',
-    error = '#dc322f',
+  local colors = {
+    dark = {
+      base04 = '#00222b', -- background tone darker (column/nvim-tree)
+      base03 = '#002b36', -- background tone dark (main)
+      base02 = '#073642', -- background tone (highlight/menu/LineNr)
+      base01 = '#586e75', -- content tone (comment)
+      base00 = '#657b83', -- content tone (winseparator)
+      base0 = '#839496', -- content tone (foreground)
+      base1 = '#93a1a1', -- content tone (statusline/tabline)
+      base2 = '#eee8d5', -- background tone light (highlight)
+      base3 = '#fdf6e3', -- background tone lighter (main)
+      -- accent
+      yellow = '#b58900',
+      orange = '#cb4b16',
+      red = '#dc322f',
+      magenta = '#d33682',
+      violet = '#6c71c4',
+      blue = '#268bd2',
+      cyan = '#2aa198',
+      green = '#859900',
+      -- git
+      add = '#859900',
+      change = '#b58900',
+      delete = '#dc322f',
+      -- diagnostic
+      info = '#268bd2',
+      hint = '#859900',
+      warning = '#b58900',
+      error = '#dc322f',
+    },
+    light = {
+      base3 = '#002b36', -- background tone darker (main)
+      base2 = '#073642', -- background tone dark (highlight)
+      base1 = '#586e75', -- content tone (statusline/tabline)
+      base0 = '#657b83', -- content tone (foreground)
+      base00 = '#839496', -- content tone (winseparator)
+      base01 = '#93a1a1', -- content tone (comment)
+      base02 = '#eee8d5', -- background tone (highlight/menu/LineNr)
+      base03 = '#fdf6e3', -- background tone lighter (main)
+      base04 = '#fcf2d8', -- background tone (column/nvim-tree)
+      -- accent
+      yellow = '#b58900',
+      orange = '#cb4b16',
+      red = '#dc322f',
+      magenta = '#d33682',
+      violet = '#6c71c4',
+      blue = '#268bd2',
+      cyan = '#2aa198',
+      green = '#859900',
+      -- git
+      add = '#859900',
+      change = '#b58900',
+      delete = '#dc322f',
+      -- diagnostic
+      info = '#268bd2',
+      hint = '#859900',
+      warning = '#b58900',
+      error = '#dc322f',
+    },
   }
 
-  local light = {
-    base3 = '#002b36', -- background tone darker (main)
-    base2 = '#073642', -- background tone dark (highlight)
-    base1 = '#586e75', -- content tone (statusline/tabline)
-    base0 = '#657b83', -- content tone (foreground)
-    base00 = '#839496', -- content tone (winseparator)
-    base01 = '#93a1a1', -- content tone (comment)
-    base02 = '#eee8d5', -- background tone (highlight/menu/LineNr)
-    base03 = '#fdf6e3', -- background tone lighter (main)
-    base04 = '#fcf2d8', -- background tone (column/nvim-tree)
-    -- accent
-    yellow = '#b58900',
-    orange = '#cb4b16',
-    red = '#dc322f',
-    magenta = '#d33682',
-    violet = '#6c71c4',
-    blue = '#268bd2',
-    cyan = '#2aa198',
-    green = '#859900',
-    -- git
-    add = '#859900',
-    change = '#b58900',
-    delete = '#dc322f',
-    -- diagnostic
-    info = '#268bd2',
-    hint = '#859900',
-    warning = '#b58900',
-    error = '#dc322f',
-  }
-
-  if vim.o.background == 'dark' then
-    return dark
-  end
-
-  return light
+  return colors[vim.o.background]
 end
 
 --- Filter colors by selecting valid hexadecimal color values.

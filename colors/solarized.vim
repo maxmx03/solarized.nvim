@@ -1,5 +1,3 @@
 lua << EOF
-local solarized = require('solarized')
-
-solarized.setup()
+require('solarized.config').load()
 EOF
