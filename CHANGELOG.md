@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/maxmx03/solarized.nvim/compare/v1.1.1...v1.2.0) (2023-12-15)
+
+
+### Features
+
+* barbecue ([5ad821f](https://github.com/maxmx03/solarized.nvim/commit/5ad821f366bb9d4e519ea9f3d1be95bed6cbd736))
+
+
+### Bug Fixes
+
+* inlay-hint ([fe803f1](https://github.com/maxmx03/solarized.nvim/commit/fe803f15e0b58246e557d80fc1cfa09dd3203e3e))
+
 ## [1.1.1](https://github.com/maxmx03/solarized.nvim/compare/v1.1.0...v1.1.1) (2023-12-06)
 
 
