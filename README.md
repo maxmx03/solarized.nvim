@@ -265,6 +265,14 @@ require('lualine').setup {
 
 To use the Solarized theme showcased in the screenshot for Lualine [click here](https://github.com/maxmx03/solarized.nvim/discussions/50)
 
+## Barbecue
+
+```lua
+require('barbecue').setup {
+  theme = 'solarized',
+}
+```
+
 ## Api
 
 You can utilize useful functions to customize your Neovim plugins.

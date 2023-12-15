@@ -1,4 +1,4 @@
-*solarized.nvim.txt*       For NVIM v0.9.1       Last change: 2023 December 09
+*solarized.nvim.txt*       For NVIM v0.9.1       Last change: 2023 December 15
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -16,6 +16,7 @@ Table of Contents                           *solarized.nvim-table-of-contents*
   - Config Colors                               |solarized.nvim-config-colors|
   - Config Enables                             |solarized.nvim-config-enables|
   - Lualine                                           |solarized.nvim-lualine|
+  - Barbecue                                         |solarized.nvim-barbecue|
   - Api                                                   |solarized.nvim-api|
   - Contributing                                 |solarized.nvim-contributing|
   - Designed by                                   |solarized.nvim-designed-by|
@@ -289,6 +290,15 @@ Alternatively, to utilize Lualine’s Solarized theme:
 
 To use the Solarized theme showcased in the screenshot for Lualine click here
 <https://github.com/maxmx03/solarized.nvim/discussions/50>
+
+
+BARBECUE                                             *solarized.nvim-barbecue*
+
+>lua
+    require('barbecue').setup {
+      theme = 'solarized',
+    }
+<
 
 
 API                                                       *solarized.nvim-api*
