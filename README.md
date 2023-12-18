@@ -117,6 +117,7 @@ require('solarized').setup({
       telescope = true,
       tree = true,
       treesitter = true,
+      todo = true,
       whichkey = true,
       mini = true,
     },

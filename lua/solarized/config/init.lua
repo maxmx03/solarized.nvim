@@ -43,6 +43,7 @@ function M.default_config()
       telescope = true,
       tree = true,
       treesitter = true,
+      todo = true,
       whichkey = true,
       mini = true,
     },
