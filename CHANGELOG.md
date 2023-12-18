@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/maxmx03/solarized.nvim/compare/v1.2.0...v1.3.0) (2023-12-18)
+
+
+### Features
+
+* highlights for todo.nvim ([3d1e225](https://github.com/maxmx03/solarized.nvim/commit/3d1e225bc14a7257381d838d5ba75c5eb17844ae))
+
 ## [1.2.0](https://github.com/maxmx03/solarized.nvim/compare/v1.1.1...v1.2.0) (2023-12-15)
 
 
