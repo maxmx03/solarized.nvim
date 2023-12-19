@@ -53,8 +53,7 @@ function M.default_config()
   }
 end
 
-function M.load(background)
-  background = background or 'dark'
+function M.load()
   if vim.g.colors_name then
     vim.cmd('hi clear')
   end

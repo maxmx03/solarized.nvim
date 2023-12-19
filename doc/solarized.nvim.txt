@@ -96,7 +96,8 @@ Use |solarized.nvim.txt| to get some help
 
 COMMANDS                                             *solarized.nvim-commands*
 
-`:Solarized colors` - Display the Solarized palette in a new buffer
+- `:Solarized colors` - Display the Solarized palette in a new buffer
+- `:Solarized zen`- Removes highlight colors, emphasizing important code segments.
 
 
 DEFAULT CONFIG                                 *solarized.nvim-default-config*

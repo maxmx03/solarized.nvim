@@ -1,4 +1,6 @@
-local command = {}
+local command = {
+  zen_mode = false,
+}
 
 local subcommands = {
   colors = function(arg)
@@ -49,6 +51,35 @@ local subcommands = {
     vim.api.nvim_set_option_value('filetype', 'Solarized', { buf = buf })
     vim.api.nvim_buf_set_name(buf, 'Solarized Colors')
     vim.api.nvim_win_set_buf(0, buf)
+  end,
+  zen = function()
+    local colors = require('solarized.palette').get_colors()
+    local solarized = require('solarized.highlights')
+
+    if not command.zen_mode then
+      local highlights = {
+        Keyword = { fg = colors.base01 },
+        ['@keyword.return'] = { fg = colors.base01 },
+        Statement = { fg = colors.base01 },
+        ['@field'] = { fg = colors.base01 },
+        ['@property'] = { fg = colors.base01 },
+        ['@lsp.type.property'] = { fg = colors.base01 },
+        Delimiter = { fg = colors.base01 },
+        ['@constructor'] = { fg = colors.base01 },
+        ['@tag'] = { fg = colors.base01 },
+        ['@tag.attribute'] = { fg = colors.base01 },
+        ['Type'] = { fg = colors.base01 },
+        ['@type'] = { fg = colors.base01 },
+        ['@include'] = { fg = colors.base01 },
+      }
+
+      solarized.custom_hl(highlights)
+      command.zen_mode = true
+    else
+      local config = require('solarized.config')
+      solarized.highlights(colors, config.config or config.default_config())
+      command.zen_mode = false
+    end
   end,
 }
 
