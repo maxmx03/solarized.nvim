@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/maxmx03/solarized.nvim/compare/v1.3.0...v1.4.0) (2023-12-19)
+
+
+### Features
+
+* zen-mode ([3465c6c](https://github.com/maxmx03/solarized.nvim/commit/3465c6c07581d3b286dbee2c38e4038a0e09324c))
+
 ## [1.3.0](https://github.com/maxmx03/solarized.nvim/compare/v1.2.0...v1.3.0) (2023-12-18)
 
 
