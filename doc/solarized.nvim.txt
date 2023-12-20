@@ -1,4 +1,4 @@
-*solarized.nvim.txt*       For NVIM v0.9.1       Last change: 2023 December 18
+*solarized.nvim.txt*       For NVIM v0.9.1       Last change: 2023 December 20
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
