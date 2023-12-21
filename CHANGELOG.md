@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/maxmx03/solarized.nvim/compare/v1.4.0...v1.5.0) (2023-12-21)
+
+
+### Features
+
+* utils.math removed, colors hsl func removed, improv darken,lighten ([d618ab9](https://github.com/maxmx03/solarized.nvim/commit/d618ab9ea1a8ddbfa45dac1903f495311aa02b65))
+
 ## [1.4.0](https://github.com/maxmx03/solarized.nvim/compare/v1.3.0...v1.4.0) (2023-12-19)
 
 
