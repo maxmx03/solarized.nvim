@@ -417,10 +417,6 @@ CREDITS AND REFERENCE 🎉         *solarized.nvim-credits-and-reference-🎉*
 
 <https://github.com/glepnir>
 
->
-    
-<
-
 ==============================================================================
 1. Links                                                *solarized.nvim-links*
 
