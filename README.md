@@ -375,7 +375,3 @@ Ethan Schoonover
 - [tokyonight](https://github.com/folke/tokyonight.nvim)
 
 [![Raphael](https://github.com/glepnir.png?size=100)](https://github.com/glepnir)
-
-```
-
-```
