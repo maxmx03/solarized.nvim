@@ -294,12 +294,6 @@ local colorhelper = require('solarized.utils.colors')
 -- Convert a hex color code to RGB
 colorhelper.hex_to_rgb('#ffffff')
 
--- Convert RGB values to HSL
-colorhelper.rgb_to_hsl(255, 255, 255)
-
--- Convert HSL values to RGB
-colorhelper.hsl_to_rgb(0, 0, 100)
-
 -- Darken a color by a specified percentage
 colorhelper.darken('#ffffff', 100)
 
@@ -334,29 +328,25 @@ collaboration, please follow the guidelines below:
    ```
 
    ```bash
-   ok 1 - Color Conversions Convert hex to RGB
-   ok 2 - Color Conversions Convert RGB to hex
-   ok 3 - Color Conversions Convert RGB to HSL
-   ok 4 - Color Conversions Convert HSL to RGB
-   ok 5 - Color Conversions Darken the color by percentage
-   ok 6 - Color Conversions Lighten the color by percentage
-   ok 7 - Color Conversions Blend colors
-   ok 8 - Configuration Default configuration
-   ok 9 - Configuration Unique configuration table instances
-   ok 10 - Configuration Extend default configuration
-   ok 11 - Initialization Loads without encountering any errors
-   ok 12 - Initialization Background is set to light
-   ok 13 - Math Round to the nearest integer
-   ok 14 - Math Return the value of the first parameter and the sign of the second parameter
-   ok 15 - Palette Extend solarized color palette
-   ok 16 - Palette Correct any invalid colors when extending the solarized palette
-   ok 17 - Setup Customizing Highlight Groups
-   ok 18 - Setup Changing Comment Style
-   ok 19 - Setup Changing  Function Style
-   ok 20 - Setup Customizable Highlight Groups Without Losing Previous Configuration
-   ok 21 - Setup Ability to Change the Default Theme
-
-    # Success: 21
+    ok 1 - Color Conversions Convert hex to RGB
+    ok 2 - Color Conversions Convert RGB to hex
+    ok 3 - Color Conversions Darken the color by percentage
+    ok 4 - Color Conversions Lighten the color by percentage
+    ok 5 - Color Conversions Blend colors
+    ok 6 - Configuration Default configuration
+    ok 7 - Configuration Unique configuration table instances
+    ok 8 - Configuration Extend default configuration
+    ok 9 - Initialization Loads without encountering any errors
+    ok 10 - Initialization Background is set to light
+    ok 11 - Palette Extend solarized color palette
+    ok 12 - Palette Correct any invalid colors when extending the solarized palette
+    ok 13 - Setup Customizing Highlight Groups
+    ok 14 - Setup Changing Comment Style
+    ok 15 - Setup Changing  Function Style
+    ok 16 - Setup Customizable Highlight Groups Without Losing Previous Configuration
+    ok 17 - Setup Ability to Change the Default Theme
+    1..17
+    # Success: 17
    ```
 
 3. **Pull Request**: When submitting a pull request, select the `dev` branch
@@ -385,3 +375,7 @@ Ethan Schoonover
 - [tokyonight](https://github.com/folke/tokyonight.nvim)
 
 [![Raphael](https://github.com/glepnir.png?size=100)](https://github.com/glepnir)
+
+```
+
+```
