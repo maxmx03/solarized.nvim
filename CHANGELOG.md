@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/maxmx03/solarized.nvim/compare/v1.5.0...v1.6.0) (2023-12-21)
+
+
+### Features
+
+* extras highlight token ([c389ad2](https://github.com/maxmx03/solarized.nvim/commit/c389ad25069c8f2d89ff034b4cbbc7b20ef5bddd))
+
 ## [1.5.0](https://github.com/maxmx03/solarized.nvim/compare/v1.4.0...v1.5.0) (2023-12-21)
 
 
