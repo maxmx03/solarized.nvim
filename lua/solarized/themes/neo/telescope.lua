@@ -8,7 +8,11 @@ return function(c, config)
   set_hl('TelescopeMultiIcon', { fg = c.cyan })
 
   -- "Normal" in the floating windows created by telescope.
-  set_hl('TelescopeNormal', { fg = c.base0, bg = c.base04 }, { transparent = config.transparent })
+  set_hl(
+    'TelescopeNormal',
+    { fg = c.base0, bg = c.base04 },
+    { transparent = config.transparent }
+  )
   set_hl('TelescopePreviewNormal', { link = 'TelescopeNormal' })
   set_hl('TelescopePromptNormal', { link = 'TelescopeNormal' })
   set_hl('TelescopeResultsNormal', { link = 'TelescopeNormal' })

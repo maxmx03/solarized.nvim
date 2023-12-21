@@ -36,7 +36,11 @@ return function(c, config)
   set_hl('@method.call', { link = 'Function' }) -- method calls
 
   set_hl('@constructor', { link = 'Function' }) -- constructor calls and definitions
-  set_hl('@parameter', { fg = c.base0, italic = true }, { styles = config.styles.parameters }) -- parameters of a function
+  set_hl(
+    '@parameter',
+    { fg = c.base0, italic = true },
+    { styles = config.styles.parameters }
+  ) -- parameters of a function
 
   set_hl('@keyword', { link = 'Keyword' }) -- various keywords
   set_hl('@keyword.coroutine', { link = 'Statement' }) -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)

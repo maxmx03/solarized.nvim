@@ -4,7 +4,11 @@ return function(c, config)
 
   -- Float window
   set_hl('SagaNormal', { link = 'Pmenu' })
-  set_hl('TitleString', { fg = c.orange, bold = true, bg = c.base02 }, { transparent = config.transparent })
+  set_hl(
+    'TitleString',
+    { fg = c.orange, bold = true, bg = c.base02 },
+    { transparent = config.transparent }
+  )
 
   -- Outline
   set_hl('OutlineIndent', { fg = c.green })

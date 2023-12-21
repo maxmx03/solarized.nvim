@@ -11,18 +11,12 @@ function M.set_hl(name, val, opts)
   local default_val = { fg = 'NONE', bg = 'NONE' }
   val = val or {}
 
-  if not val.link then
-    val = vim.tbl_extend('force', default_val, val)
-  end
+  if not val.link then val = vim.tbl_extend('force', default_val, val) end
 
   if opts then
-    if opts.styles then
-      val = vim.tbl_extend('force', val, opts.styles)
-    end
+    if opts.styles then val = vim.tbl_extend('force', val, opts.styles) end
 
-    if opts.transparent then
-      val.bg = 'NONE'
-    end
+    if opts.transparent then val.bg = 'NONE' end
   end
 
   vim.api.nvim_set_hl(0, name, val)
@@ -32,11 +26,10 @@ end
 --- @param highlight_name string
 --- @return table highlight
 function M.get_hl(highlight_name)
-  local highlight = vim.api.nvim_get_hl(0, { name = highlight_name, link = true })
+  local highlight =
+    vim.api.nvim_get_hl(0, { name = highlight_name, link = true })
 
-  if highlight.link then
-    return M.get_hl(highlight.link)
-  end
+  if highlight.link then return M.get_hl(highlight.link) end
 
   return highlight
 end

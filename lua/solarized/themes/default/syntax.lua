@@ -2,7 +2,11 @@ return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
-  set_hl('Comment', { fg = c.base01, italic = true }, { styles = config.styles.comments }) -- any comment
+  set_hl(
+    'Comment',
+    { fg = c.base01, italic = true },
+    { styles = config.styles.comments }
+  ) -- any comment
   set_hl('Constant', { fg = c.cyan }, { styles = config.styles.constants }) -- any constant
   set_hl('String', { fg = c.cyan }) -- a string constant: "this is a string"
   set_hl('Character', { link = 'String' }) -- a character constant: 'c', '\n'
@@ -16,7 +20,11 @@ return function(c, config)
   set_hl('Repeat', { link = 'Statement' }) -- for, do, while, etc.
   set_hl('Label', { link = 'Statement' }) -- case, default, etc.
   set_hl('Operator', { link = 'Statement' }) -- "sizeof", "+", "*", etc.
-  set_hl('Keyword', { fg = c.base1, bold = true }, { styles = config.styles.keywords }) -- any other keyword
+  set_hl(
+    'Keyword',
+    { fg = c.base1, bold = true },
+    { styles = config.styles.keywords }
+  ) -- any other keyword
   set_hl('Exception', { link = 'Statement' }) -- try, catch, throw
   set_hl('PreProc', { fg = c.orange }) -- generic Preprocessor
   set_hl('Include', { link = 'PreProc' }) -- preprocessor #include

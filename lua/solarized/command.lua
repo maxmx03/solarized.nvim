@@ -22,16 +22,16 @@ local subcommands = {
       }
       local desc = colors_desc[color]
 
-      if not desc then
-        return ''
-      end
+      if not desc then return '' end
 
       return desc
     end
 
     local function set_lines(color, hex, line)
       vim.api.nvim_buf_set_lines(buf, line, (line + 1), false, {
-        color .. string.rep('.', max_length - #color) .. ' = "' .. tostring(hex) .. '" ' .. color_desc(color),
+        color .. string.rep('.', max_length - #color) .. ' = "' .. tostring(
+          hex
+        ) .. '" ' .. color_desc(color),
       })
       return line + 1
     end

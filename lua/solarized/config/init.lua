@@ -26,6 +26,7 @@ function M.default_config()
     enables = {
       bufferline = true,
       cmp = true,
+      custom = true,
       diagnostic = true,
       dashboard = true,
       editor = true,
@@ -50,17 +51,16 @@ function M.default_config()
     highlights = {},
     colors = {},
     theme = 'default',
+    extras = {
+      highlight_token = false,
+    },
   }
 end
 
 function M.load()
-  if vim.g.colors_name then
-    vim.cmd('hi clear')
-  end
+  if vim.g.colors_name then vim.cmd('hi clear') end
 
-  if vim.fn.exists('syntax_on') then
-    vim.cmd('syntax reset')
-  end
+  if vim.fn.exists('syntax_on') then vim.cmd('syntax reset') end
 
   vim.o.termguicolors = true
   vim.g.colors_name = 'solarized'
@@ -94,7 +94,8 @@ function M.setup(opts)
       M.colors = palette.extend_colors(colors, M.config.colors)
     end,
     fnc = function()
-      M.colors = palette.extend_colors(colors, M.config.colors(colors, colorhelper))
+      M.colors =
+        palette.extend_colors(colors, M.config.colors(colors, colorhelper))
     end,
   }, M.config.colors)
 end

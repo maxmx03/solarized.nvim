@@ -2,7 +2,11 @@ return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
-  set_hl('Comment', { fg = c.base01, italic = true }, { styles = config.styles.comments }) -- any comment
+  set_hl(
+    'Comment',
+    { fg = c.base01, italic = true },
+    { styles = config.styles.comments }
+  ) -- any comment
   set_hl('Constant', { fg = c.violet }, { styles = config.styles.constants }) -- any constant
   set_hl('String', { fg = c.cyan }) -- a string constant: "this is a string"
   set_hl('Character', { link = 'String' }) -- a character constant: 'c', '\n'

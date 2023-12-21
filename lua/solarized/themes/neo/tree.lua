@@ -31,13 +31,21 @@ return function(c, config)
   set_hl('NvimTreeGitDeleted', { fg = c.delete })
   -- set_hl('NvimTreeGitIgnored') -- (Comment)
   -- set_hl('NvimTreeWindowPicker')
-  set_hl('NvimTreeNormal', { fg = c.base0, bg = c.base04 }, { transparent = config.transparent })
+  set_hl(
+    'NvimTreeNormal',
+    { fg = c.base0, bg = c.base04 },
+    { transparent = config.transparent }
+  )
   set_hl('NvimTreeNormalFloat', { link = 'NvimTreeNormal' })
   set_hl('NvimTreeEndOfBuffer', { fg = c.base04 }) -- (NonText)
   -- set_hl('NvimTreeCursorLine') -- (CursorLine)
   -- set_hl('NvimTreeCursorLineNr') -- (CursorLineNr)
   -- set_hl('NvimTreeLineNr') -- (LineNr)
-  set_hl('NvimTreeWinSeparator', { fg = c.base04, bg = c.base04 }, { transparent = config.transparent }) -- (WinSeparator)
+  set_hl(
+    'NvimTreeWinSeparator',
+    { fg = c.base04, bg = c.base04 },
+    { transparent = config.transparent }
+  ) -- (WinSeparator)
   -- set_hl('NvimTreeCursorColumn') -- (CursorColumn)
   --
   -- There are also links for file highlight with git properties, linked to their

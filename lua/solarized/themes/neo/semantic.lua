@@ -12,7 +12,11 @@ return function(c, config)
   set_hl('@lsp.type.macro', { link = 'Keyword' }) -- Keyword
   set_hl('@lsp.type.method', { link = 'Function' }) -- Function
   set_hl('@lsp.type.namespace', { link = 'Constant' }) -- Constant
-  set_hl('@lsp.type.parameter', { fg = c.orange, italic = true }, { styles = config.styles.parameters })
+  set_hl(
+    '@lsp.type.parameter',
+    { fg = c.orange, italic = true },
+    { styles = config.styles.parameters }
+  )
   set_hl('@lsp.type.property', { fg = c.blue }) -- Property
   set_hl('@lsp.type.struct', { link = 'Structure' }) -- Structure
   set_hl('@lsp.type.type', { link = 'Type' }) -- Type

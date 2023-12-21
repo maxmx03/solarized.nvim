@@ -24,16 +24,36 @@ return function(c, config)
   set_hl('TermCursor', { link = 'Cursor' }) -- Cursor in a focused terminal
   set_hl('TermCursorNC', { fg = c.base03, bg = c.base0 }) -- Cursor in an unfocused terminal
   set_hl('ErrorMsg', { fg = c.error }) -- Error messages on the command line
-  set_hl('WinSeparator', { fg = c.cyan, bg = c.base04 }, { transparent = config.transparent }) -- Separators between window splits
+  set_hl(
+    'WinSeparator',
+    { fg = c.cyan, bg = c.base04 },
+    { transparent = config.transparent }
+  ) -- Separators between window splits
   set_hl('Folded', { fg = c.base0, bg = c.base02 }) -- Line used for closed folds
   set_hl('FoldColumn', { fg = c.base0, bg = c.base04 }) -- 'foldcolumn'
-  set_hl('SignColumn', { fg = c.base0, bg = c.base03 }, { transparent = config.transparent }) -- Column were signs are displayed
-  set_hl('IncSearch', { fg = c.base3, bg = c.base04, bold = true }, { transparent = config.transparent }) -- 'incsearch' highlighting, also for the text replaced
+  set_hl(
+    'SignColumn',
+    { fg = c.base0, bg = c.base03 },
+    { transparent = config.transparent }
+  ) -- Column were signs are displayed
+  set_hl(
+    'IncSearch',
+    { fg = c.base3, bg = c.base04, bold = true },
+    { transparent = config.transparent }
+  ) -- 'incsearch' highlighting, also for the text replaced
   set_hl('Substitute', { fg = c.orange, reverse = true }) -- :substitute replacement text highlight
-  set_hl('LineNr', { fg = c.base01, bg = c.base03 }, { transparent = config.transparent }) -- Line number for ":number" and ":#" commands
+  set_hl(
+    'LineNr',
+    { fg = c.base01, bg = c.base03 },
+    { transparent = config.transparent }
+  ) -- Line number for ":number" and ":#" commands
   set_hl('LineNrAbove', { link = 'LineNr' }) -- Line number, above the cursor line
   set_hl('LineNrBelow', { link = 'LineNr' }) -- Line number, below the cursor
-  set_hl('CursorLineNr', { fg = c.base2, bg = c.base03 }, { transparent = config.transparent }) -- Like LineNr when 'cursorline' is set
+  set_hl(
+    'CursorLineNr',
+    { fg = c.base2, bg = c.base03 },
+    { transparent = config.transparent }
+  ) -- Like LineNr when 'cursorline' is set
   set_hl('CursorLineFold', { link = 'FoldColumn' }) -- Like FoldColumn when 'cursorline' is set
   set_hl('CursorLineSign', { link = 'SignColumn' }) -- Like SignColumn when 'cursorline' is set
   set_hl('MatchParen', { fg = c.base2 }) -- Character under the cursor or just before it
@@ -42,12 +62,20 @@ return function(c, config)
   set_hl('MsgSeparator', { link = 'Normal' }) -- Separator for scrolled messages msgsep.
   set_hl('MoreMsg', { fg = c.cyan }) -- more-prompt
   set_hl('NonText', { fg = c.base00 }) -- '@' at the end of the window
-  set_hl('Normal', { fg = c.base0, bg = c.base03 }, { transparent = config.transparent }) -- Normal text
+  set_hl(
+    'Normal',
+    { fg = c.base0, bg = c.base03 },
+    { transparent = config.transparent }
+  ) -- Normal text
   set_hl('NormalFloat', { fg = c.base0, bg = c.base04 }) -- Normal text in floating windows
   set_hl('FloatBorder', { link = 'WinSeparator' }) -- Border of floating windows.
   set_hl('FloatTitle', { fg = c.orange }) -- Title of float windows.
   set_hl('NormalNC', { link = 'Normal' }) -- Normal text in non-current windows.
-  set_hl('Pmenu', { fg = c.base0, bg = c.base04 }, { transparent = config.transparent }) -- Popup menu: Normal item
+  set_hl(
+    'Pmenu',
+    { fg = c.base0, bg = c.base04 },
+    { transparent = config.transparent }
+  ) -- Popup menu: Normal item
   set_hl('PmenuSel', { fg = c.base2 }) -- Popup menu: Selected item
   set_hl('PmenuKind', { link = 'Pmenu' }) -- Popup menu: Normal item kind
   set_hl('PmenuKindSel', { link = 'PmenuSel' }) -- Popup menu: Selected item kind

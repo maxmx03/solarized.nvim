@@ -25,7 +25,8 @@ end
 function M.load_plugins(colors, config)
   for plugin, enabled in pairs(config.enables) do
     if enabled then
-      local highlight_groups = require(string.format('solarized.themes.%s.%s', config.theme, plugin))
+      local highlight_groups =
+        require(string.format('solarized.themes.%s.%s', config.theme, plugin))
 
       highlight_groups(colors, config)
     end
@@ -42,6 +43,10 @@ function M.highlights(colors, config)
   else
     config.theme = 'default'
     M.load_plugins(colors, config)
+  end
+
+  if vim.fn.has('nvim-0.9.4') and config.extras.highlight_token then
+    require('solarized.autocmd')
   end
 
   utils.on_config({

@@ -101,6 +101,7 @@ require('solarized').setup({
     enables = {
       bufferline = true,
       cmp = true,
+      custom = true, -- solarized's custom highlights
       diagnostic = true,
       dashboard = true,
       editor = true,
@@ -124,7 +125,10 @@ require('solarized').setup({
     },
     highlights = {},
     colors = {},
-    theme = 'default', -- or 'neosolarized' or 'neo' for short
+    theme = 'default', -- or 'neo'
+    extras = {
+      highlight_token = false,
+    },
 })
 
 vim.cmd.colorscheme = 'solarized'

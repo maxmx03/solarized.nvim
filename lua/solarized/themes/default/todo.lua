@@ -35,9 +35,15 @@ return function(c)
   set_hl('TodoSignFIX', { fg = c.error })
 
   set_hl('TodoBgTODO', { fg = c.info, bg = colorFunc(c.info, percentage) })
-  set_hl('TodoBgWARN', { fg = c.warning, bg = colorFunc(c.warning, percentage) })
+  set_hl(
+    'TodoBgWARN',
+    { fg = c.warning, bg = colorFunc(c.warning, percentage) }
+  )
   set_hl('TodoBgTEST', { fg = c.violet, bg = colorFunc(c.violet, percentage) })
-  set_hl('TodoBgPERF', { fg = c.magenta, bg = colorFunc(c.magenta, percentage) })
+  set_hl(
+    'TodoBgPERF',
+    { fg = c.magenta, bg = colorFunc(c.magenta, percentage) }
+  )
   set_hl('TodoBgNOTE', { fg = c.hint, bg = colorFunc(c.hint, percentage) })
   set_hl('TodoBgHACK', { fg = c.cyan, bg = colorFunc(c.cyan, percentage) })
   set_hl('TodoBgFIX', { fg = c.error, bg = colorFunc(c.error, percentage) })

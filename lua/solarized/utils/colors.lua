@@ -78,7 +78,11 @@ function M.blend(hex_fg, hex_bg, alpha)
     return floor(min(max(0, ret), 255) + 0.5)
   end
 
-  return M.rgb_to_hex(blend_channel(red_fg, red_bg), blend_channel(green_fg, green_bg), blend_channel(blue_fg, blue_bg))
+  return M.rgb_to_hex(
+    blend_channel(red_fg, red_bg),
+    blend_channel(green_fg, green_bg),
+    blend_channel(blue_fg, blue_bg)
+  )
 end
 
 return M

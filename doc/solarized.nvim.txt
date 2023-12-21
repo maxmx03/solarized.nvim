@@ -121,6 +121,7 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
         enables = {
           bufferline = true,
           cmp = true,
+          custom = true, -- solarized's custom highlights
           diagnostic = true,
           dashboard = true,
           editor = true,
@@ -144,7 +145,10 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
         },
         highlights = {},
         colors = {},
-        theme = 'default', -- or 'neosolarized' or 'neo' for short
+        theme = 'default', -- or 'neo'
+        extras = {
+          highlight_token = false,
+        },
     })
     
     vim.cmd.colorscheme = 'solarized'
