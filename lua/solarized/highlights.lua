@@ -45,8 +45,10 @@ function M.highlights(colors, config)
     M.load_plugins(colors, config)
   end
 
-  if vim.fn.has('nvim-0.9.4') and config.extras.highlight_token then
-    require('solarized.autocmd')
+  if vim.fn.has('nvim-0.9.4') and config.autocmd then
+    local extras = require('solarized.autocmd')
+    extras.load_autocmd()
+    extras.load_autocmd_highlights(colors)
   end
 
   utils.on_config({

@@ -26,7 +26,6 @@ function M.default_config()
     enables = {
       bufferline = true,
       cmp = true,
-      custom = true,
       diagnostic = true,
       dashboard = true,
       editor = true,
@@ -51,9 +50,7 @@ function M.default_config()
     highlights = {},
     colors = {},
     theme = 'default',
-    extras = {
-      highlight_token = false,
-    },
+    autocmd = true,
   }
 end
 
