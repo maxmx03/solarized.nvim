@@ -13,6 +13,7 @@ M.colors = nil
 function M.default_config()
   return {
     transparent = false,
+    palette = 'solarized', -- selenized
     styles = {
       comments = {},
       functions = {},
@@ -62,7 +63,9 @@ function M.load()
   vim.o.termguicolors = true
   vim.g.colors_name = 'solarized'
 
-  local colors = palette.get_colors()
+  local colors = {}
+
+  colors = palette.get_colors()
   solarized.highlights(M.colors or colors, M.config or M.default_config())
 end
 

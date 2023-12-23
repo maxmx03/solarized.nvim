@@ -27,6 +27,30 @@ Solarized is a sixteen color palette (eight monotones, eight accent colors)
 designed for use with terminal and gui applications. click here to learn more
 <https://ethanschoonover.com/solarized/>
 
+- |solarized.nvim-features|
+- |solarized.nvim-requirements|
+- |solarized.nvim-install-from-package-manager|
+- |solarized.nvim-manual-installation|
+- |solarized.nvim-help|
+- |solarized.nvim-commands|
+- |solarized.nvim-default-config|
+- |solarized.nvim-config-themes|
+- |solarized.nvim-config-styles|
+- |solarized.nvim-config-highlights|
+- |solarized.nvim-config-colors|
+- |solarized.nvim-config-enables|
+- |solarized.nvim-config-autocmd|
+- |solarized.nvim-lualine|
+- |solarized.nvim-barbecue|
+- |solarized.nvim-api|
+    - |solarized.nvim-get-colors|
+    - |solarized.nvim-color-utils|
+    - |solarized.nvim-how-to-get-color-shades|
+    - |solarized.nvim-how-to-get-color-tints|
+- |solarized.nvim-contributing|
+- |solarized.nvim-designed-by|
+- |solarized.nvim-credits-and-reference-🎉|
+
 
 FEATURES                                             *solarized.nvim-features*
 
@@ -35,6 +59,7 @@ FEATURES                                             *solarized.nvim-features*
 - Customizability: styles, colors and highlights can all be modified
 - Plugin compatibility
 - Provides users with the option to enable or disable highlight groups
+- Selenized color palette
 
 
 REQUIREMENTS                                     *solarized.nvim-requirements*
@@ -109,6 +134,7 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
     -- default config
     require('solarized').setup({
         transparent = false, -- enable transparent background
+        palette = 'solarized', -- or selenized
         styles = {
           comments = {},
           functions = {},
@@ -149,7 +175,7 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
         autocmd = true,
     })
     
-    vim.cmd.colorscheme = 'solarized'
+    vim.cmd.colorscheme = 'solarized' -- or selenized
 <
 
 
@@ -199,7 +225,6 @@ example:
                 CursorLine = { bg = c.base02 },
                 Function = { italic = false },
                 Visual = { bg = c.cyan },
-                CmpKindBorder = { fg = c.base01, bg = c.base04 }
             }
         end
     }
@@ -222,7 +247,7 @@ example:
     
             return {
                 fg = '#fff', -- output: #ffffff
-                bg = darken(colors.base03, 10)
+                bg = darken(colors.base03, 100)
             }
         end,
         highlights = function(colors)
@@ -318,27 +343,53 @@ You can utilize useful functions to customize your Neovim plugins.
 GET COLORS ~
 
 >lua
-    local solarized_palette = require('solarized.palette')
-    local colors = solarized_palette.get_colors()
+    local palette = require('solarized.palette')
+    local colors = palette.get_colors()
 <
 
 
-COLORHELPER ~
+COLOR UTILS ~
 
 >lua
-    local colorhelper = require('solarized.utils.colors')
+    local color = require('solarized.utils.colors')
     
     -- Convert a hex color code to RGB
-    colorhelper.hex_to_rgb('#ffffff')
+    color.hex_to_rgb('#ffffff')
     
     -- Darken a color by a specified percentage
-    colorhelper.darken('#ffffff', 100)
+    color.darken('#ffffff', 100)
     
     -- Lighten a color by a specified percentage
-    colorhelper.lighten('#000000', 100)
+    color.lighten('#000000', 100)
     
     -- Blend two colors with a specified ratio
-    colorhelper.blend('#ffffff', '#000000', 0.15)
+    color.blend('#ffffff', '#000000', 0.15)
+<
+
+
+HOW TO GET COLOR SHADES ~
+
+>lua
+    local darken = require('solarized.utils.colors').darken
+    local colors = require('solarized.palette').get_colors()
+    for i = 1, 10, 1 do
+      local shade = darken(colors.blue, i * 10)
+    
+      print(shade)
+    end
+<
+
+
+HOW TO GET COLOR TINTS ~
+
+>lua
+    local lighten = require('solarized.utils.colors').lighten
+    
+    for i = 1, 10, 1 do
+      local tints = lighten(colors.blue, i * 10)
+    
+      print(tints)
+    end
 <
 
 

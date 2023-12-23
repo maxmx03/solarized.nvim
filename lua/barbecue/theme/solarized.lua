@@ -1,4 +1,5 @@
-local c = require('solarized.palette').get_colors()
+local palette = require('solarized.palette')
+local c = palette.get_colors()
 
 local M = {
   normal = {},

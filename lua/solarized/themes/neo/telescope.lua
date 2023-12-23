@@ -1,5 +1,7 @@
 return function(c, config)
   local utils = require('solarized.utils')
+  local darken = require('solarized.utils.colors').darken
+  local base04 = darken(c.base03, 10)
   local set_hl = utils.set_hl
 
   set_hl('TelescopeSelection', { link = 'CursorLine' })
@@ -10,7 +12,7 @@ return function(c, config)
   -- "Normal" in the floating windows created by telescope.
   set_hl(
     'TelescopeNormal',
-    { fg = c.base0, bg = c.base04 },
+    { fg = c.base0, bg = base04 },
     { transparent = config.transparent }
   )
   set_hl('TelescopePreviewNormal', { link = 'TelescopeNormal' })

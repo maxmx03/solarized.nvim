@@ -4,13 +4,14 @@ local command = {
 
 local subcommands = {
   colors = function(arg)
-    local colors = require('solarized.palette').get_colors()
+    local palette = require('solarized.palette')
+    local colors = palette.get_colors()
+
     local buf = vim.api.nvim_create_buf(true, true)
     local max_length = vim.tbl_count(colors)
 
     local function color_desc(color)
       local colors_desc = {
-        base04 = 'background tone (column/nvim-tree)',
         base03 = 'background tone (main)',
         base02 = 'background tone (highlight/menu/LineNr)',
         base01 = 'content tone (comment)',

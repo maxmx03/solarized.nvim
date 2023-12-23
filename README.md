@@ -13,6 +13,33 @@ designed for use with terminal and gui applications.
 
 ![solarized](https://github.com/maxmx03/solarized.nvim/assets/50273941/3c2ffda7-9efb-46f4-ad82-7dfd257dda39)
 
+<!--toc:start-->
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Install from package manager](#install-from-package-manager)
+- [Manual Installation](#manual-installation)
+- [Help](#help)
+- [Commands](#commands)
+- [Default Config](#default-config)
+- [Config Themes](#config-themes)
+- [Config Styles](#config-styles)
+- [Config Highlights](#config-highlights)
+- [Config Colors](#config-colors)
+- [Config Enables](#config-enables)
+- [Config Autocmd](#config-autocmd)
+- [Lualine](#lualine)
+- [Barbecue](#barbecue)
+- [Api](#api)
+  - [Get Colors](#get-colors)
+  - [Color utils](#color-utils)
+  - [How to get color shades](#how-to-get-color-shades)
+  - [How to get color tints](#how-to-get-color-tints)
+- [Contributing](#contributing)
+- [Designed by](#designed-by)
+- [Credits and Reference 🎉](#credits-and-reference-🎉)
+<!--toc:end-->
+
 ## Features
 
 - Support for Treesitter
@@ -20,6 +47,7 @@ designed for use with terminal and gui applications.
 - Customizability: styles, colors and highlights can all be modified
 - Plugin compatibility
 - Provides users with the option to enable or disable highlight groups
+- Selenized color palette
 
 ## Requirements
 
@@ -88,6 +116,7 @@ vim.o.background = 'dark'
 -- default config
 require('solarized').setup({
     transparent = false, -- enable transparent background
+    palette = 'solarized', -- or selenized
     styles = {
       comments = {},
       functions = {},
@@ -128,7 +157,7 @@ require('solarized').setup({
     autocmd = true,
 })
 
-vim.cmd.colorscheme = 'solarized'
+vim.cmd.colorscheme = 'solarized' -- or selenized
 ```
 
 ## Config Themes
@@ -176,7 +205,6 @@ require('solarized').setup {
             CursorLine = { bg = c.base02 },
             Function = { italic = false },
             Visual = { bg = c.cyan },
-            CmpKindBorder = { fg = c.base01, bg = c.base04 }
         }
     end
 }
@@ -198,7 +226,7 @@ require('solarized').setup {
 
         return {
             fg = '#fff', -- output: #ffffff
-            bg = darken(colors.base03, 10)
+            bg = darken(colors.base03, 100)
         }
     end,
     highlights = function(colors)
@@ -287,26 +315,50 @@ You can utilize useful functions to customize your Neovim plugins.
 ### Get Colors
 
 ```lua
-local solarized_palette = require('solarized.palette')
-local colors = solarized_palette.get_colors()
+local palette = require('solarized.palette')
+local colors = palette.get_colors()
 ```
 
-### Colorhelper
+### Color utils
 
 ```lua
-local colorhelper = require('solarized.utils.colors')
+local color = require('solarized.utils.colors')
 
 -- Convert a hex color code to RGB
-colorhelper.hex_to_rgb('#ffffff')
+color.hex_to_rgb('#ffffff')
 
 -- Darken a color by a specified percentage
-colorhelper.darken('#ffffff', 100)
+color.darken('#ffffff', 100)
 
 -- Lighten a color by a specified percentage
-colorhelper.lighten('#000000', 100)
+color.lighten('#000000', 100)
 
 -- Blend two colors with a specified ratio
-colorhelper.blend('#ffffff', '#000000', 0.15)
+color.blend('#ffffff', '#000000', 0.15)
+```
+
+### How to get color shades
+
+```lua
+local darken = require('solarized.utils.colors').darken
+local colors = require('solarized.palette').get_colors()
+for i = 1, 10, 1 do
+  local shade = darken(colors.blue, i * 10)
+
+  print(shade)
+end
+```
+
+### How to get color tints
+
+```lua
+local lighten = require('solarized.utils.colors').lighten
+
+for i = 1, 10, 1 do
+  local tints = lighten(colors.blue, i * 10)
+
+  print(tints)
+end
 ```
 
 ## Contributing

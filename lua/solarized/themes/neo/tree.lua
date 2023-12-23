@@ -1,5 +1,7 @@
 return function(c, config)
   local utils = require('solarized.utils')
+  local darken = require('solarized.utils.colors').darken
+  local base04 = darken(c.base03, 10)
   local set_hl = utils.set_hl
 
   set_hl('NvimTreeSymlink', { link = 'Underlined' })
@@ -33,17 +35,17 @@ return function(c, config)
   -- set_hl('NvimTreeWindowPicker')
   set_hl(
     'NvimTreeNormal',
-    { fg = c.base0, bg = c.base04 },
+    { fg = c.base0, bg = base04 },
     { transparent = config.transparent }
   )
   set_hl('NvimTreeNormalFloat', { link = 'NvimTreeNormal' })
-  set_hl('NvimTreeEndOfBuffer', { fg = c.base04 }) -- (NonText)
+  set_hl('NvimTreeEndOfBuffer', { fg = base04 }) -- (NonText)
   -- set_hl('NvimTreeCursorLine') -- (CursorLine)
   -- set_hl('NvimTreeCursorLineNr') -- (CursorLineNr)
   -- set_hl('NvimTreeLineNr') -- (LineNr)
   set_hl(
     'NvimTreeWinSeparator',
-    { fg = c.base04, bg = c.base04 },
+    { fg = base04, bg = base04 },
     { transparent = config.transparent }
   ) -- (WinSeparator)
   -- set_hl('NvimTreeCursorColumn') -- (CursorColumn)
