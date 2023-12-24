@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.0](https://github.com/maxmx03/solarized.nvim/compare/v1.6.0...v2.0.0) (2023-12-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **palette:** Removal of base04
+    - Integrated Selenized color palette into the project.
+
+### Features
+
+* **palette:** Add support for Selenized color palette ([3338aa4](https://github.com/maxmx03/solarized.nvim/commit/3338aa4d9b391d803b46a15eeadc31d4e341f313))
+
 ## [1.6.0](https://github.com/maxmx03/solarized.nvim/compare/v1.5.0...v1.6.0) (2023-12-21)
 
 
