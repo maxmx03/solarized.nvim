@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/maxmx03/solarized.nvim/compare/v2.0.0...v2.1.0) (2023-12-24)
+
+
+### Features
+
+* hl for noice-progress ([55506b1](https://github.com/maxmx03/solarized.nvim/commit/55506b1ebbb87425ab407e7aef24d123fc6cb4ae))
+
 ## [2.0.0](https://github.com/maxmx03/solarized.nvim/compare/v1.6.0...v2.0.0) (2023-12-23)
 
 
