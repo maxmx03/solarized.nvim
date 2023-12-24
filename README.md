@@ -142,6 +142,7 @@ require('solarized').setup({
       neogit = true,
       neotree = true,
       notify = true,
+      noice = true,
       semantic = true,
       syntax = true,
       telescope = true,

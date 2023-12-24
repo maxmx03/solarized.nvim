@@ -39,6 +39,7 @@ function M.default_config()
       neogit = true,
       neotree = true,
       notify = true,
+      noice = true,
       semantic = true,
       syntax = true,
       telescope = true,
