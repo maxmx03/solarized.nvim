@@ -364,46 +364,7 @@ end
 
 ## Contributing
 
-Thank you for your interest in contributing to this project! To ensure a smooth
-collaboration, please follow the guidelines below:
-
-- **Testing**: Before submitting a pull request, run the `./test.py` script
-   to ensure that your changes pass all necessary tests. This step helps maintain
-   the quality and stability of the project. Ensure that the following dependencies
-   are installed for running tests:
-
-   ```bash
-   sudo apt install luarocks
-   sudo luarocks install luacheck
-   sudo luarocks install vusted
-   cargo install stylua
-   ```
-
-   ```bash
-   ./test.py
-   ```
-
-   ```bash
-    ok 1 - Color Conversions Convert hex to RGB
-    ok 2 - Color Conversions Convert RGB to hex
-    ok 3 - Color Conversions Darken the color by percentage
-    ok 4 - Color Conversions Lighten the color by percentage
-    ok 5 - Color Conversions Blend colors
-    ok 6 - Configuration Default configuration
-    ok 7 - Configuration Unique configuration table instances
-    ok 8 - Configuration Extend default configuration
-    ok 9 - Initialization Loads without encountering any errors
-    ok 10 - Initialization Background is set to light
-    ok 11 - Palette Extend solarized color palette
-    ok 12 - Palette Correct any invalid colors when extending the solarized palette
-    ok 13 - Setup Customizing Highlight Groups
-    ok 14 - Setup Changing Comment Style
-    ok 15 - Setup Changing  Function Style
-    ok 16 - Setup Customizable Highlight Groups Without Losing Previous Configuration
-    ok 17 - Setup Ability to Change the Default Theme
-    1..17
-    # Success: 17
-   ```
+Pull requests are welcome and appreciated.
 
 ## Designed by
 
