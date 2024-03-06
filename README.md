@@ -367,9 +367,7 @@ end
 Thank you for your interest in contributing to this project! To ensure a smooth
 collaboration, please follow the guidelines below:
 
-1. **Branching**: Make your changes on the `dev` branch. Avoid making direct
-   changes to the `main` branch.
-2. **Testing**: Before submitting a pull request, run the `./test.py` script
+- **Testing**: Before submitting a pull request, run the `./test.py` script
    to ensure that your changes pass all necessary tests. This step helps maintain
    the quality and stability of the project. Ensure that the following dependencies
    are installed for running tests:
@@ -406,19 +404,6 @@ collaboration, please follow the guidelines below:
     1..17
     # Success: 17
    ```
-
-3. **Pull Request**: When submitting a pull request, select the `dev` branch
-   as the target branch. This ensures that your changes will be merged into the
-   `dev` branch for further review and integration.
-
-4. **Provide Details**: Provide a clear and descriptive title and description
-   for your pull request, explaining the purpose and scope of your changes.
-
-5. **Review Process**: Wait for the maintainer to review your pull request.
-   The maintainers will review your changes before merging.
-
-6. **Final Approval**: Once your changes have been reviewed and approved, the
-   project maintainer will handle merging your changes into the `main` branch.
 
 ## Designed by
 
