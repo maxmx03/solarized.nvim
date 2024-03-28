@@ -2,7 +2,8 @@ return function(c, config)
   local utils = require('solarized.utils')
   local set_hl = utils.set_hl
 
-  --[[ Highlight capture names as of nvim-treesitter commit `6806d7a` ]]--
+  --[[ Highlight capture names as of nvim-treesitter commit `6806d7a` ]]
+  --
 
   -- Identifiers
   set_hl('@variable', { link = 'Identifier' }) -- various variable names
@@ -28,7 +29,7 @@ return function(c, config)
   set_hl('@string.special', { link = 'SpecialChar' }) -- other special strings (e.g. dates)
   set_hl('@string.special.symbol', { fg = c.violet }) -- symbols or atoms
   set_hl('@string.special.url', { link = 'Underlined' }) -- URIs (e.g. hyperlinks)
-  set_hl('@string.special.path', { link = 'Underlined'}) -- filenames
+  set_hl('@string.special.path', { link = 'Underlined' }) -- filenames
   set_hl('@character', { link = 'String' }) -- character literals
   set_hl('@character.special', { link = '@string.special' }) -- special characters (e.g. wildcards)
   set_hl('@boolean', { link = 'Boolean' }) -- boolean literals
