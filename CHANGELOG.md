@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.0](https://github.com/maxmx03/solarized.nvim/compare/v2.1.0...v2.2.0) (2024-03-28)
+
+
+### Features
+
+* .gitignore removed ([058a75e](https://github.com/maxmx03/solarized.nvim/commit/058a75eec8047a7631a1d3df61e86551def4715a))
+* github workflows, vusted, stylua ([a630aa5](https://github.com/maxmx03/solarized.nvim/commit/a630aa5593719f9e133dd8eb7a83460c5bec2e25))
+
+
+### Bug Fixes
+
+* Configuring highlight of type "variable" [#69](https://github.com/maxmx03/solarized.nvim/issues/69) ([a630aa5](https://github.com/maxmx03/solarized.nvim/commit/a630aa5593719f9e133dd8eb7a83460c5bec2e25))
+* tests ([058a75e](https://github.com/maxmx03/solarized.nvim/commit/058a75eec8047a7631a1d3df61e86551def4715a))
+
 ## [2.3.0](https://github.com/maxmx03/solarized.nvim/compare/v2.2.0...v2.3.0) (2024-03-28)
 
 
