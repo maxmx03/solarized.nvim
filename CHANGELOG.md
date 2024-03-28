@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.3.0](https://github.com/maxmx03/solarized.nvim/compare/v2.2.0...v2.3.0) (2024-03-28)
+
+
+### Features
+
+* .gitignore removed ([54bac30](https://github.com/maxmx03/solarized.nvim/commit/54bac309d17eb29a04555ab7b0140090afa407ae))
+
+
+### Bug Fixes
+
+* tests ([54bac30](https://github.com/maxmx03/solarized.nvim/commit/54bac309d17eb29a04555ab7b0140090afa407ae))
+
 ## [2.2.0](https://github.com/maxmx03/solarized.nvim/compare/v2.1.0...v2.2.0) (2024-03-28)
 
 
