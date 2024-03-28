@@ -11,8 +11,13 @@ function M.custom_hl(highlights)
 
   for highlight_name, highlight_value in pairs(highlights) do
     local highlight = get_hl(highlight_name)
+    local val = {}
 
-    local val = vim.tbl_extend('force', highlight, highlight_value)
+    if highlight_value.link then
+      val = highlight_value
+    else
+      val = vim.tbl_extend('force', highlight, highlight_value)
+    end
 
     vim.api.nvim_set_hl(0, highlight_name, val)
   end
