@@ -72,7 +72,7 @@ function M.get_colors()
         base00 = '#72898f', -- content tone (winseparator)
         base0 = '#adbcbc', -- content tone (foreground)
         base1 = '#cad8d9', -- content tone (statusline/tabline)
-        base2 = '#cfcebe', -- background tone light (highlight)
+        base2 = '#ece3cc', -- background tone light (highlight)
         base3 = '#fbf3db', -- background tone lighter (main)
         -- accent
         yellow = '#dbb32d',
@@ -100,14 +100,14 @@ function M.get_colors()
         base0 = '#53676d', -- content tone (foreground)
         base00 = '#909995', -- content tone (winseparator)
         base01 = '#909995', -- content tone (comment)
-        base02 = '#e9e4d0', -- background tone (highlight/menu/LineNr)
+        base02 = '#ece3cc', -- background tone (highlight/menu/LineNr)
         base03 = '#fbf3db', -- background tone lighter (main)
         -- accent
         yellow = '#ad8900',
-        orange = '#ed8649',
-        red = '#dc322f',
+        orange = '#c25d1e',
+        red = '#d2212d',
         magenta = '#ca4898',
-        violet = '#af88eb',
+        violet = '#8762c6',
         blue = '#0072d4',
         cyan = '#009c8f',
         green = '#489100',
