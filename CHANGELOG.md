@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.2.0](https://github.com/maxmx03/solarized.nvim/compare/v2.1.0...v2.2.0) (2024-03-28)
+
+
+### Features
+
+* github workflows, vusted, stylua ([6a34504](https://github.com/maxmx03/solarized.nvim/commit/6a34504272cef236da45ba12ca8ef2c1b7417b36))
+
+
+### Bug Fixes
+
+* Configuring highlight of type "[@variable](https://github.com/variable)" [#69](https://github.com/maxmx03/solarized.nvim/issues/69) ([6a34504](https://github.com/maxmx03/solarized.nvim/commit/6a34504272cef236da45ba12ca8ef2c1b7417b36))
+
 ## [2.1.0](https://github.com/maxmx03/solarized.nvim/compare/v2.0.0...v2.1.0) (2023-12-24)
 
 
