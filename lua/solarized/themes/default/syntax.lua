@@ -31,6 +31,7 @@ return function(c, config)
   set_hl('Define', { link = 'PreProc' }) -- preprocessor #define
   set_hl('Macro', { link = 'PreProc' }) -- same as Define
   set_hl('PreCondit', { link = 'PreProc' }) -- preprocessor #if, #else, #endif, etc.
+  set_hl('Parameter', { fg = c.base0, italic = true }, { styles = config.styles.parameters }) -- lsp parameter
   set_hl('Type', { fg = c.yellow }, { styles = config.styles.types }) -- int, long, char, etc.
   set_hl('StorageClass', { fg = c.yellow }) -- static, register, volatile, etc.
   set_hl('Structure', { fg = c.yellow }) -- struct, union, enum, etc.
