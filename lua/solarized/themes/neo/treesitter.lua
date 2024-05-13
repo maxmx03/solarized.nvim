@@ -32,6 +32,7 @@ return function(c, config)
   set_hl('@string.special.path', { link = 'Underlined' }) -- filenames
   set_hl('@character', { link = 'String' }) -- character literals
   set_hl('@character.special', { link = 'Constant' }) -- special characters (e.g. wildcards)
+  set_hl('@character.printf', { fg = c.violet }) -- special characters (e.g. wildcards)
   set_hl('@boolean', { link = 'Constant' }) -- boolean literals
   set_hl('@number', { link = 'Number' }) -- numeric literals
   set_hl('@number.float', { link = 'Number' }) -- floating-point number literals
