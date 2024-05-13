@@ -1,8 +1,11 @@
-return function(c)
+return function(c, config)
   local utils = require('solarized.utils')
+  local darken = require('solarized.utils.colors').darken
   local set_hl = utils.set_hl
 
-  set_hl('NeoTreeNormal', { fg = c.base0, bg = c.base02 })
+  set_hl('NeoTreeNormal', {
+    fg = c.base0,
+  }, { transparent = config.transparent })
   set_hl('NeoTreeNormalNC', { link = 'NeoTreeNormal' })
   set_hl('NeoTreeEndOfBuffer', { fg = c.base02 })
   set_hl('NeoTreeRootName', { link = 'Directory' })
@@ -19,4 +22,7 @@ return function(c)
   set_hl('NeoTreeGitUntracked', { fg = c.change })
   set_hl('NeoTreeGitStaged', { fg = c.add })
   set_hl('NeoTreeIndentMarker', { fg = c.base01 })
+  set_hl('NeoTreeDotfile', { fg = c.base01 })
+  set_hl('NeoTreeFileStats', { fg = c.base01 })
+  set_hl('NeoTreeTitleBar', { fg = darken(c.cyan, 50), bg = c.cyan })
 end
