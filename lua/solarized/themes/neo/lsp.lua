@@ -10,9 +10,9 @@ return function(c)
   set_hl('LspReferenceWrite', { link = 'Visual' }) -- used for highlighting "write" references
 
   if vim.o.background == 'dark' then
-    set_hl('LspInlayHint', { fg = darken(c.yellow, 20) }) -- used for highlighting inlay hints
+    set_hl('LspInlayHint', { fg = darken(c.base01, 30) }) -- used for highlighting inlay hints
   else
-    set_hl('LspInlayHint', { fg = lighten(c.yellow, 20) })
+    set_hl('LspInlayHint', { fg = lighten(c.base01, 30) })
   end
 
   -- if you want to me to enable the highlight groups bellow, please send a screenshot for me to see how
