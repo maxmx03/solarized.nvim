@@ -10,7 +10,7 @@ return function(c)
   set_hl('LspReferenceWrite', { link = 'Visual' }) -- used for highlighting "write" references
 
   if vim.o.background == 'dark' then
-    set_hl('LspInlayHint', { fg = darken(c.base01, 30) }) -- used for highlighting inlay hints
+    set_hl('LspInlayHint', { fg = c.base01 }) -- used for highlighting inlay hints
   else
     set_hl('LspInlayHint', { fg = lighten(c.base01, 30) })
   end
