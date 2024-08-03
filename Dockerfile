@@ -1,5 +1,5 @@
 FROM archlinux
-WORKDIR /dracula
+WORKDIR /solarized
 COPY . .
 RUN pacman -Syu --noconfirm
 RUN pacman -S luarocks neovim gcc lua51 --noconfirm
