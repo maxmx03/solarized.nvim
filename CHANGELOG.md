@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/maxmx03/solarized.nvim/compare/v3.0.0...v3.1.0) (2024-08-03)
+
+
+### Features
+
+* docker-compose ([3a19787](https://github.com/maxmx03/solarized.nvim/commit/3a197875c76803e4a64d4b1491c6dd0d22b161cd))
+
 ## [3.0.0](https://github.com/maxmx03/solarized.nvim/compare/v2.2.0...v3.0.0) (2024-05-13)
 
 
