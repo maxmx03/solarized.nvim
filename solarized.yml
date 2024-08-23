@@ -58,10 +58,11 @@ config:
   on_highlights: ~
   plugins: ~
 palette:
-  base04: "#00222b" # sidebar background/ float window
+  base04: "#001e26" # sidebar background/ float window
   base03: "#002b36" # background
   base02: "#073642" # background highlight
   base01: "#586e75" # comment
+  base00: "#657b83" # none
   base0: "#839496" # foreground
   base1: "#93a1a1" # emphasized
   yellow: "#b58900"
@@ -74,7 +75,7 @@ palette:
   green: "#859900"
   git_add: "#859900"
   git_modify: "#b58900"
-  git_delete: "#d33682"
+  git_delete: "#268bd2"
   diag_info: "#6c71c4"
   diag_hint: "#6c71c4"
   diag_warning: "#b58900"
