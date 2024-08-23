@@ -1,6 +1,6 @@
 if vim.o.background == 'dark' then
   local palette = require 'solarized.palette'
-  local c = palette.solarized
+  local c = palette.selenized
   return {
     normal = {
       a = { fg = c.base03, bg = c.blue, gui = 'bold' },
@@ -23,7 +23,7 @@ if vim.o.background == 'dark' then
   }
 else
   local palette = require 'solarized.palette'
-  local c = palette.solarized
+  local c = palette.selenized
   return {
     normal = {
       a = { fg = c.base3, bg = c.blue, gui = 'bold' },
@@ -45,5 +45,3 @@ else
     },
   }
 end
-
-return theme

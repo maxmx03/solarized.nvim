@@ -3,36 +3,42 @@ local command = {
 }
 
 local subcommands = {
-  colors = function(arg)
-    local palette = require('solarized.palette')
-    local colors = palette.get_colors()
+  colors = function(_)
+    local config = require 'solarized.config'
+    local palette = require 'solarized.palette'
+    local colors = palette[config.palette]
 
     local buf = vim.api.nvim_create_buf(true, true)
     local max_length = vim.tbl_count(colors)
 
     local function color_desc(color)
       local colors_desc = {
-        base03 = 'background tone (main)',
-        base02 = 'background tone (highlight/menu/LineNr)',
-        base01 = 'content tone (comment)',
-        base00 = 'content tone (winseparator)',
-        base0 = 'content tone (foreground)',
-        base1 = 'content tone (statusline/tabline)',
-        base2 = 'background tone (highlight)',
-        base3 = 'background tone (main)',
+        base03 = 'background (dark)',
+        base02 = 'background highlight (dark)',
+        base01 = 'comments (dark)',
+        base00 = 'foreground (light)',
+        base0 = 'foreground (dark)',
+        base1 = 'comments (light)',
+        base2 = ' background highlight (light)',
+        base3 = 'background (light)',
       }
       local desc = colors_desc[color]
 
-      if not desc then return '' end
+      if not desc then
+        return ''
+      end
 
       return desc
     end
 
     local function set_lines(color, hex, line)
       vim.api.nvim_buf_set_lines(buf, line, (line + 1), false, {
-        color .. string.rep('.', max_length - #color) .. ' = "' .. tostring(
-          hex
-        ) .. '" ' .. color_desc(color),
+        color
+        .. string.rep('.', max_length - #color)
+        .. ' = "'
+        .. tostring(hex)
+        .. '" '
+        .. color_desc(color),
       })
       return line + 1
     end
@@ -52,31 +58,6 @@ local subcommands = {
     vim.api.nvim_set_option_value('filetype', 'Solarized', { buf = buf })
     vim.api.nvim_buf_set_name(buf, 'Solarized Colors')
     vim.api.nvim_win_set_buf(0, buf)
-  end,
-  zen = function()
-    local colors = require('solarized.palette').get_colors()
-    local solarized = require('solarized.highlights')
-
-    if not command.zen_mode then
-      local highlights = {
-        Keyword = { fg = colors.base01 },
-        ['@keyword.return'] = { fg = colors.base01 },
-        Statement = { fg = colors.base01 },
-        Delimiter = { fg = colors.base01 },
-        ['@constructor'] = { fg = colors.base01 },
-        ['@tag'] = { fg = colors.base01 },
-        ['Type'] = { fg = colors.base01 },
-        ['@type'] = { fg = colors.base01 },
-        ['@include'] = { fg = colors.base01 },
-      }
-
-      solarized.custom_hl(highlights)
-      command.zen_mode = true
-    else
-      local config = require('solarized.config')
-      solarized.highlights(colors, config.config or config.default_config())
-      command.zen_mode = false
-    end
   end,
 }
 

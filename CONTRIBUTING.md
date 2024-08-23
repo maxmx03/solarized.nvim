@@ -14,9 +14,9 @@ form the core values (with an optional fifth for emphasized content).
 When it comes to manipulating colors, I recommend using the following online
 tools. These resources are excellent for creating tints, shades, and blends,
 
-[maketintshade](https://maketintsandshades.com/)
-[pinetools](https://pinetools.com/blend-colors)
-[colordesigner](https://colordesigner.io/)
+- [maketintshade](https://maketintsandshades.com/)
+- [pinetools](https://pinetools.com/blend-colors)
+- [colordesigner](https://colordesigner.io/)
 
 Additionally, I provide custom functions for color manipulation within the
 plugin. These functions are designed to give users more control over their
@@ -48,7 +48,7 @@ colorscheme.
 | cyan    | #2aa198 | optional                                   |
 | green   | #859900 | optional                                   |
 
-#### Extra colors
+#### Solarized Dark Extra colors
 
 | Name        | Hex (balance 70) | Description                       |
 | ----------- | ---------------- | --------------------------------- |
@@ -83,6 +83,20 @@ colorscheme.
 | cyan    | #41c7b9 | optional                                   |
 | green   | #75b938 | optional                                   |
 
+#### Selenized Dark Extra colors
+
+| Name        | Hex (balance 70) | Description                       |
+| ----------- | ---------------- | --------------------------------- |
+| base04      | #184956          | sidebar background / float window |
+| mix_yellow  | #4c5f3f          | yellow + base03 / optional        |
+| mix_orange  | #525248          | orange + base03 / optional        |
+| mix_red     | #56444a          | red + base03 / optional           |
+| mix_magenta | #534d6b          | magenta + base03 / optional       |
+| mix_violet  | #3f5278          | violet + base03 / optional        |
+| mix_blue    | #20567c           | blue + base03 / optional          |
+| mix_cyan    | #1e6569          | cyan + base03 / optional          |
+| mix_green   | #2e6143          | green + base03 / optional         |
+
 ### Solarized Light
 
 > [!NOTE]
@@ -109,6 +123,19 @@ colorscheme.
 | cyan    | #2aa198 | optional                                   |
 | green   | #859900 | optional                                   |
 
+#### Solarized Light Extra colors
+
+| Name        | Hex (balance 70) | Description                |
+| ----------- | ---------------- | -------------------------- |
+| mix_yellow  | #e7d59e          | yellow + base3 / optional  |
+| mix_orange  | #eec2a5          | orange + base3 /optional   |
+| mix_red     | #f3bbac          | red + base3 / optional     |
+| mix_magenta | #f0bcc5          | magenta + base3 / optional |
+| mix_violet  | #d1ced9          | violet + base3 / optional  |
+| mix_blue    | #bcd5dd          | blue + base3 / optional    |
+| mix_cyan    | #bddccc          | cyan + base3 / optional    |
+| mix_green   | #d9da9e          | green + base3 /optional    |
+
 ### Selenized Light
 
 | Name    | Hex     | Description                                |
@@ -119,7 +146,7 @@ colorscheme.
 | base00  | #53676d | body text / default code / primary content |
 | base0   | #adbcbc | none                                       |
 | base1   | #909995 | comments / secondary content               |
-| base2   | #d5cdb6 | background highlights                      |
+| base2   | #ece3cc | background highlights                      |
 | base3   | #fbf3db | background                                 |
 | yellow  | #ad8900 | optional                                   |
 | orange  | #c25d1e | optional                                   |
@@ -130,7 +157,20 @@ colorscheme.
 | cyan    | #009c8f | optional                                   |
 | green   | #489100 | optional                                   |
 
+#### Selenized Light Extra colors
+
+| Name        | Hex (balance 70) | Description                |
+| ----------- | ---------------- | -------------------------- |
+| mix_yellow  | #e3d399          | yellow + base3 / optional  |
+| mix_orange  | #e9c6a2          | orange + base3 / optional  |
+| mix_red     | #eeb4a6          | red + base3 / optional     |
+| mix_magenta | #ecbfc6          | magenta + base3 / optional |
+| mix_violet  | #d8c7d4          | violet + base3 / optional  |
+| mix_blue    | #afccd8          | blue + base3 / optional    |
+| mix_cyan    | #afd8c4          | cyan + base3 / optional    |
+| mix_green   | #c5d599          | green + base3 / optional   |
+
 ## Solarized & Selenized Website
 
-[ethanschoonover](https://ethanschoonover.com/solarized/)
-[jan-warchol](https://github.com/jan-warchol/selenized/blob/master/README.md)
+- [ethanschoonover](https://ethanschoonover.com/solarized/)
+- [jan-warchol](https://github.com/jan-warchol/selenized/blob/master/README.md)

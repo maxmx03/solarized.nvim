@@ -1,104 +1,56 @@
-local palette = require('solarized.palette')
-local solarized = require('solarized.highlights')
-local colorhelper = require('solarized.utils.colors')
-local utils = require('solarized.utils')
+---@class solarized.styles
+---@field types? vim.api.keyset.highlight
+---@field functions? vim.api.keyset.highlight
+---@field parameters? vim.api.keyset.highlight
+---@field comments? vim.api.keyset.highlight
+---@field strings? vim.api.keyset.highlight
+---@field keywords? vim.api.keyset.highlight
+---@field variables? vim.api.keyset.highlight
+---@field constants? vim.api.keyset.highlight
 
-local M = {}
+---@class solarized.plugins
 
-M.config = nil
-M.colors = nil
-
----  Define and return default config
----@return table default_config
-function M.default_config()
-  return {
-    transparent = false,
-    palette = 'solarized', -- selenized
-    styles = {
-      comments = {},
-      functions = {},
-      variables = {},
-      numbers = {},
-      constants = {},
-      parameters = {},
-      keywords = {},
-      types = {},
-    },
-    enables = {
-      bufferline = true,
-      cmp = true,
-      diagnostic = true,
-      dashboard = true,
-      editor = true,
-      gitsign = true,
-      hop = true,
-      indentblankline = true,
-      lsp = true,
-      lspsaga = true,
-      navic = true,
-      neogit = true,
-      neotree = true,
-      notify = true,
-      noice = true,
-      semantic = true,
-      syntax = true,
-      telescope = true,
-      tree = true,
-      treesitter = true,
-      todo = true,
-      whichkey = true,
-      mini = true,
-    },
-    highlights = {},
-    colors = {},
-    theme = 'default',
-    autocmd = true,
-  }
-end
-
-function M.load()
-  if vim.g.colors_name then vim.cmd('hi clear') end
-
-  if vim.fn.exists('syntax_on') then vim.cmd('syntax reset') end
-
-  vim.o.termguicolors = true
-  vim.g.colors_name = 'solarized'
-
-  local colors = {}
-
-  colors = palette.get_colors()
-  solarized.highlights(M.colors or colors, M.config or M.default_config())
-end
-
---- Solarized setup
----
---- @param opts? table The user-provided configuration to be merged.
----       - transparent (boolean): Specifies if transparency is enabled.
----       - styles (table): A table specifying various style options.
----           - comments (table): Specifies if comments should be styled.
----           - functions (table): Specifies if functions should be styled.
----           - variables (table): Specifies if variables should be styled.
----           - numbers (table): Specifies if numbers should be styled.
----           - constants (table): Specifies if constants should be styled.
----           - parameters (table): Specifies if parameters should be styled.
----           - conditionals (table): Specifies if conditionals should be styled.
----       - highlights (table): A table specifying custom highlight values.
----       - colors (table): A table specifying custom color values.
----       - enables (table): A table specifying plugins to be enabled or disabled
----       - theme (string): Specifies the theme to be used.
-function M.setup(opts)
-  M.config = vim.tbl_deep_extend('force', M.default_config(), opts or {})
-  local colors = palette.get_colors()
-
-  utils.on_config({
-    tbl = function()
-      M.colors = palette.extend_colors(colors, M.config.colors)
-    end,
-    fnc = function()
-      M.colors =
-        palette.extend_colors(colors, M.config.colors(colors, colorhelper))
-    end,
-  }, M.config.colors)
-end
-
-return M
+---@class solarized.config
+---@field transparent? boolean
+---@field on_highlights? fun(colors: solarized.palette, color: solarized.color): solarized.highlights
+---@field on_colors? fun(colors: solarized.palette, color: solarized.color): solarized.palette
+---@field styles? solarized.styles
+---@field palette? "solarized" | "selenized"
+---@field plugins? solarized.plugins
+return {
+  transparent = false,
+  on_highlights = nil,
+  on_colors = nil,
+  palette = 'solarized',
+  styles = {
+    types = {},
+    functions = {},
+    parameters = {},
+    comments = {},
+    strings = {},
+    keywords = {},
+    variables = {},
+    constants = {},
+  },
+  plugins = {
+    ['nvim-treesitter'] = true,
+    ['nvim-lspconfig'] = true,
+    ['nvim-navic'] = true,
+    ['nvim-cmp'] = true,
+    ['indent-blankline.nvim'] = true,
+    ['neo-tree.nvim'] = true,
+    ['nvim-tree.lua'] = true,
+    ['which-key.nvim'] = true,
+    ['dashboard-nvim'] = true,
+    ['gitsigns.nvim'] = true,
+    ['telescope.nvim'] = true,
+    ['noice.nvim'] = true,
+    ['hop.nvim'] = true,
+    ['mini.statusline'] = true,
+    ['mini.tabline'] = true,
+    ['mini.starter'] = true,
+    ['mini.cursorword'] = true,
+    ['nvim-notify'] = true,
+    ['rainbow-delimiters'] = true,
+  },
+}

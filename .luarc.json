@@ -1,3 +1,8 @@
 {
-  "diagnostics.disable": ["undefined-field"]
+  "workspace.library": [
+    "/home/milianor/neovim/share/nvim/runtime",
+    "${3rd}/luv/library",
+    "${3rd}/busted/library",
+    "${3rd}/luassert/library"
+  ]
 }
