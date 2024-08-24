@@ -67,7 +67,7 @@ colorscheme.
 | Name    | Hex     | Description                                |
 | ------- | ------- | ------------------------------------------ |
 | base03  | #103c48 | background                                 |
-| base02  | #2d5b69 | background highlight                       |
+| base02  | #184956 | background highlight                       |
 | base01  | #72898f | comments / secondary comment               |
 | base00  | #53676d | none                                       |
 | base0   | #adbcbc | body text / default code / primary content |
@@ -87,7 +87,7 @@ colorscheme.
 
 | Name        | Hex (balance 70) | Description                       |
 | ----------- | ---------------- | --------------------------------- |
-| base04      | #184956          | sidebar background / float window |
+| base04      | #0b2a32          | sidebar background / float window |
 | mix_yellow  | #4c5f3f          | yellow + base03 / optional        |
 | mix_orange  | #525248          | orange + base03 / optional        |
 | mix_red     | #56444a          | red + base03 / optional           |
@@ -141,7 +141,7 @@ colorscheme.
 | Name    | Hex     | Description                                |
 | ------- | ------- | ------------------------------------------ |
 | base03  | #103c48 | none                                       |
-| base02  | #2d5b69 | none                                       |
+| base02  | #184956 | none                                       |
 | base01  | #3a4d53 | optional emphasized content                |
 | base00  | #53676d | body text / default code / primary content |
 | base0   | #adbcbc | none                                       |

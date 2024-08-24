@@ -45,5 +45,3 @@ else
     },
   }
 end
-
-return theme

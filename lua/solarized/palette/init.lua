@@ -74,8 +74,9 @@ M.solarized = {
 
 ---@type solarized.palette
 M.selenized = {
+  base04 = '#0b2a32',
   base03 = '#103c48',
-  base02 = '#2d5b69',
+  base02 = '#184956',
   base01 = '#72898f',
   base00 = '#53676d',
   base0 = '#adbcbc',
@@ -90,7 +91,6 @@ M.selenized = {
   blue = '#4695f7',
   cyan = '#41c7b9',
   green = '#75b938',
-  base04 = '#184956',
   mix_yellow = '#4c5f3f',
   mix_orange = '#525248',
   mix_red = '#56444a',
