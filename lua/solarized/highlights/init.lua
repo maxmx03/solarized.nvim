@@ -1,321 +1,322 @@
 ---@class solarized.highlights
----@field ColorColumn? table
----@field Conceal? table
----@field CurSearch? table
----@field Cursor? table
----@field lCursor? table
----@field CursorIM? table
----@field CursorColumn? table
----@field CursorLine? table
----@field Directory? table
----@field DiffAdd? table
----@field DiffChange? table
----@field DiffDelete? table
----@field DiffText? table
----@field EndOfBuffer? table
----@field TermCursor? table
----@field TermCursorNC? table
----@field ErrorMsg? table
----@field WinSeparator? table
----@field Folded? table
----@field FoldColumn? table
----@field SignColumn? table
----@field IncSearch? table
----@field Substitute? table
----@field LineNr? table
----@field LineNrAbove? table
----@field LineNrBelow? table
----@field CursorLineNr? table
----@field CursorLineFold? table
----@field CursorLineSign? table
----@field MatchParen? table
----@field ModeMsg? table
----@field MsgArea? table
----@field MsgSeparator? table
----@field MoreMsg? table
----@field NonText? table
----@field Normal? table
----@field NormalFloat? table
----@field FloatBorder? table
----@field FloatTitle? table
----@field NormalNC? table
----@field Pmenu? table
----@field PmenuSel? table
----@field PmenuKind? table
----@field PmenuKindSel? table
----@field PmenuExtra? table
----@field PmenuExtraSel? table
----@field PmenuSbar? table
----@field PmenuThumb? table
----@field Question? table
----@field QuickFixLine? table
----@field Search? table
----@field SpecialKey? table
----@field SpellBad? table
----@field SpellCap? table
----@field SpellLocal? table
----@field SpellRare? table
----@field StatusLine? table
----@field StatusLineNC? table
----@field TabLine? table
----@field TabLineFill? table
----@field TabLineSel? table
----@field Title? table
----@field Visual? table
----@field VisualNOS? table
----@field warningMsg? table
----@field Whitespace? table
----@field WildMenu? table
----@field WinBar? table
----@field WinBarNC? table
----@field Comment? table
----@field Constant? table
----@field String? table
----@field Character? table
----@field Number? table
----@field Boolean? table
----@field Float? table
----@field Identifier? table
----@field Function? table
----@field Statement? table
----@field Conditional? table
----@field Repeat? table
----@field Label? table
----@field Operator? table
----@field Keyword? table
----@field Exception? table
----@field PreProc? table
----@field Include? table
----@field Define? table
----@field Macro? table
----@field PreCondit? table
----@field Type? table
----@field StorageClass? table
----@field Structure? table
----@field Typedef? table
----@field Special? table
----@field SpecialChar? table
----@field Tag? table
----@field Delimiter? table
----@field SpecialComment? table
----@field Debug? table
----@field Underlined? table
----@field Ignore? table
----@field Error? table
----@field Todo? table
----@field Added? table
----@field Changed? table
----@field Removed? table
----@field DiagnosticError? table
----@field DiagnosticWarn? table
----@field DiagnosticInfo? table
----@field DiagnosticHint? table
----@field DiagnosticOk? table
----@field DiagnosticVirtualTextError? table
----@field DiagnosticVirtualTextWarn? table
----@field DiagnosticVirtualTextInfo? table
----@field DiagnosticVirtualTextHint? table
----@field DiagnosticVirtualTextOk? table
----@field DiagnosticUnderlineError? table
----@field DiagnosticUnderlineWarn? table
----@field DiagnosticUnderlineInfo? table
----@field DiagnosticUnderlineHint? table
----@field DiagnosticUnderlineOk? table
----@field LspReferenceText? table
----@field LspReferenceRead? table
----@field LspReferenceWrite? table
----@field LspInlayHint? table
----@field NavicText? table
----@field NavicSeparator? table
----@field NavicIconsMethod? table
----@field NavicIconsFunction? table
----@field NavicIconsField? table
----@field NavicIconsVariable? table
----@field NavicIconsClass? table
----@field NavicIconsInterface? table
----@field NavicIconsModule? table
----@field NavicIconsNamespace? table
----@field NavicIconsProperty? table
----@field NavicIconsUnit? table
----@field NavicIconsEnum? table
----@field NavicIconsKeyword? table
----@field NavicIconsSnippet? table
----@field NavicIconsColor? table
----@field NavicIconsFile? table
----@field NavicIconsReference? table
----@field NavicIconsFolder? table
----@field NavicIconsEnumMember? table
----@field NavicIconsConstant? table
----@field NavicIconsStruct? table
----@field NavicIconsEvent? table
----@field NavicIconsOperator? table
----@field NavicIconsTypeParameter? table
----@field CmpItemKindText? table
----@field CmpItemKindMethod? table
----@field CmpItemKindFunction? table
----@field CmpItemKindField? table
----@field CmpItemKindVariable? table
----@field CmpItemKindClass? table
----@field CmpItemKindInterface? table
----@field CmpItemKindModule? table
----@field CmpItemKindProperty? table
----@field CmpItemKindUnit? table
----@field CmpItemKindEnum? table
----@field CmpItemKindKeyword? table
----@field CmpItemKindSnippet? table
----@field CmpItemKindColor? table
----@field CmpItemKindFile? table
----@field CmpItemKindReference? table
----@field CmpItemKindFolder? table
----@field CmpItemKindEnumMember? table
----@field CmpItemKindConstant? table
----@field CmpItemKindStruct? table
----@field CmpItemKindEvent? table
----@field CmpItemKindOperator? table
----@field CmpItemKindTypeParameter? table
----@field IblIndent? table
----@field IblScope? table
----@field NeoTreeNormal? table
----@field NeoTreeNormalNC? table
----@field NeoTreeDotFile? table
----@field NeoTreeFileNameOpened? table
----@field NeoTreeFloatBorder? table
----@field NeoTreeFloatTitle? table
----@field NeoTreeGitAdded? table
----@field NeoTreeGitConflict? table
----@field NeoTreeGitDeleted? table
----@field NeoTreeGitIgnored? table
----@field NeoTreeGitModified? table
----@field NeoTreeGitUnstaged? table
----@field NeoTreeGitUntracked? table
----@field NeoTreeGitStaged? table
----@field NvimTreeSymlink? table
----@field NvimTreeSymlinkIcon? table
----@field NvimTreeFolderName? table
----@field NvimTreeRootFolder? table
----@field NvimTreeFolderIcon? table
----@field NvimTreeEmptyFolderName? table
----@field NvimTreeExecFile? table
----@field NvimTreeOpenedFile? table
----@field NvimTreeModifiedFile? table
----@field NvimTreeSpecialFile? table
----@field NvimTreeIndentMarker? table
----@field NvimTreeGitDirty? table
----@field NvimTreeGitStaged? table
----@field NvimTreeGitMerge? table
----@field NvimTreeGitRenamed? table
----@field NvimTreeGitNew? table
----@field NvimTreeGitDeleted? table
----@field NvimTreeNormal? table
----@field NvimTreeNormalFloat? table
----@field NvimTreeEndOfBuffer? table
----@field NvimTreeWinSeparator? table
----@field WhichKeyNormal? table
----@field WhichKey? table
----@field WhichKeyDesc? table
----@field WhichKeySeparator? table
----@field WhichKeyGroup? table
----@field DashboardHeader? table
----@field DashboardFooter? table
----@field DashboardDesc? table
----@field DashboardKey? table
----@field DashboardIcon? table
----@field DashboardShotCut? table
----@field GitSignsAdd? table
----@field GitSignsChange? table
----@field GitSignsDelete? table
----@field TelescopeSelection? table
----@field TelescopeSelectionCaret? table
----@field TelescopeMultiIcon? table
----@field TelescopeNormal? table
----@field TelescopePreviewNormal? table
----@field TelescopePromptNormal? table
----@field TelescopeResultsNormal? table
----@field TelescopeBorder? table
----@field TelescopePromptBorder? table
----@field TelescopeResultsBorder? table
----@field TelescopePreviewBorder? table
----@field TelescopeTitle? table
----@field TelescopePromptTitle? table
----@field TelescopeResultsTitle? table
----@field TelescopePreviewTitle? table
----@field TelescopeMatching? table
----@field TelescopePreviewMatch? table
----@field TelescopePromptCounter? table
----@field TelescopePromptPrefix? table
----@field NoiceFormatProgressTodo? table
----@field NoiceFormatProgressDone? table
----@field NoiceLspProgressSpinner? table
----@field NoiceLspProgressClient? table
----@field NoiceLspProgressTitle? table
----@field HopNextKey? table
----@field HopNextKey1? table
----@field HopUnmatched? table
----@field MiniStatuslineModeNormal? table
----@field MiniStatuslineModeInsert? table
----@field MiniStatuslineModeVisual? table
----@field MiniStatuslineModeReplace? table
----@field MiniStatuslineModeCommand? table
----@field MinistatusLineFileName? table
----@field MiniStatuslineDevinfo? table
----@field MiniStatuslineFileinfo? table
----@field MiniStatuslineInactive? table
----@field MiniTablineCurrent? table
----@field MiniTablineVisible? table
----@field MiniTablineHidden? table
----@field MiniTablineModifiedCurrent? table
----@field MiniTablineModifiedVisible? table
----@field MiniTablineModifiedHidden? table
----@field MiniTablineFill? table
----@field MiniTablineTabpagesection? table
----@field MiniStarterCurrent? table
----@field MiniStarterHeader? table
----@field MiniStarterFooter? table
----@field MiniStarterItem? table
----@field MiniStarterItemBullet? table
----@field MiniStarterItemPrefix? table
----@field MiniStarterSection? table
----@field MiniStarterQuery? table
----@field MiniCursorword? table
----@field NotifyBackground? table
----@field NotifyERRORBorder? table
----@field NotifyWARNBorder? table
----@field NotifyINFOBorder? table
----@field NotifyDEBUGBorder? table
----@field NotifyTRACEBorder? table
----@field NotifyERRORIcon? table
----@field NotifyWARNIcon? table
----@field NotifyINFOIcon? table
----@field NotifyDEBUGIcon? table
----@field NotifyTRACEIcon? table
----@field NotifyERRORTitle? table
----@field NotifyWARNTitle? table
----@field NotifyINFOTitle? table
----@field NotifyDEBUGTitle? table
----@field NotifyTRACETitle? table
----@field NotifyERRORBody? table
----@field NotifyWARNBody? table
----@field NotifyINFOBody? table
----@field NotifyDEBUGBody? table
----@field NotifyTRACEBody? table
----@field RainbowDelimiterRed? table
----@field RainbowDelimiteYellow? table
----@field RainbowDelimiterBlue? table
----@field RainbowDelimiterOrange? table
----@field RainbowDelimiterGreen? table
----@field RainbowDelimiterViolet? table
----@field RainbowDelimiterCyan? table
----@field BufferLineFill? table
----@field BufferLineBufferSelected? table
----@field BufferLineSeparator? table
----@field BufferLineSeparatorSelected? table
----@field BufferLineSeparatorVisible? table
----@field LazyH1? table
----@field LazyButton? table
----@field LazyButtonActive? table
----@field LazyReasonStart? table
----@field LazyReasonEvent? table
----@field LazyNormal? table
+---@field ColorColumn? vim.api.keyset.highlight
+---@field Conceal? vim.api.keyset.highlight
+---@field CurSearch? vim.api.keyset.highlight
+---@field Cursor? vim.api.keyset.highlight
+---@field lCursor? vim.api.keyset.highlight
+---@field CursorIM? vim.api.keyset.highlight
+---@field CursorColumn? vim.api.keyset.highlight
+---@field CursorLine? vim.api.keyset.highlight
+---@field Directory? vim.api.keyset.highlight
+---@field DiffAdd? vim.api.keyset.highlight
+---@field DiffChange? vim.api.keyset.highlight
+---@field DiffDelete? vim.api.keyset.highlight
+---@field DiffText? vim.api.keyset.highlight
+---@field EndOfBuffer? vim.api.keyset.highlight
+---@field TermCursor? vim.api.keyset.highlight
+---@field TermCursorNC? vim.api.keyset.highlight
+---@field ErrorMsg? vim.api.keyset.highlight
+---@field WinSeparator? vim.api.keyset.highlight
+---@field Folded? vim.api.keyset.highlight
+---@field FoldColumn? vim.api.keyset.highlight
+---@field SignColumn? vim.api.keyset.highlight
+---@field IncSearch? vim.api.keyset.highlight
+---@field Substitute? vim.api.keyset.highlight
+---@field LineNr? vim.api.keyset.highlight
+---@field LineNrAbove? vim.api.keyset.highlight
+---@field LineNrBelow? vim.api.keyset.highlight
+---@field CursorLineNr? vim.api.keyset.highlight
+---@field CursorLineFold? vim.api.keyset.highlight
+---@field CursorLineSign? vim.api.keyset.highlight
+---@field MatchParen? vim.api.keyset.highlight
+---@field ModeMsg? vim.api.keyset.highlight
+---@field MsgArea? vim.api.keyset.highlight
+---@field MsgSeparator? vim.api.keyset.highlight
+---@field MoreMsg? vim.api.keyset.highlight
+---@field NonText? vim.api.keyset.highlight
+---@field Normal? vim.api.keyset.highlight
+---@field NormalFloat? vim.api.keyset.highlight
+---@field FloatBorder? vim.api.keyset.highlight
+---@field FloatTitle? vim.api.keyset.highlight
+---@field NormalNC? vim.api.keyset.highlight
+---@field Pmenu? vim.api.keyset.highlight
+---@field PmenuSel? vim.api.keyset.highlight
+---@field PmenuKind? vim.api.keyset.highlight
+---@field PmenuKindSel? vim.api.keyset.highlight
+---@field PmenuExtra? vim.api.keyset.highlight
+---@field PmenuExtraSel? vim.api.keyset.highlight
+---@field PmenuSbar? vim.api.keyset.highlight
+---@field PmenuThumb? vim.api.keyset.highlight
+---@field Question? vim.api.keyset.highlight
+---@field QuickFixLine? vim.api.keyset.highlight
+---@field Search? vim.api.keyset.highlight
+---@field SpecialKey? vim.api.keyset.highlight
+---@field SpellBad? vim.api.keyset.highlight
+---@field SpellCap? vim.api.keyset.highlight
+---@field SpellLocal? vim.api.keyset.highlight
+---@field SpellRare? vim.api.keyset.highlight
+---@field StatusLine? vim.api.keyset.highlight
+---@field StatusLineNC? vim.api.keyset.highlight
+---@field TabLine? vim.api.keyset.highlight
+---@field TabLineFill? vim.api.keyset.highlight
+---@field TabLineSel? vim.api.keyset.highlight
+---@field Title? vim.api.keyset.highlight
+---@field Visual? vim.api.keyset.highlight
+---@field VisualNOS? vim.api.keyset.highlight
+---@field warningMsg? vim.api.keyset.highlight
+---@field Whitespace? vim.api.keyset.highlight
+---@field WildMenu? vim.api.keyset.highlight
+---@field WinBar? vim.api.keyset.highlight
+---@field WinBarNC? vim.api.keyset.highlight
+---@field Comment? vim.api.keyset.highlight
+---@field Constant? vim.api.keyset.highlight
+---@field String? vim.api.keyset.highlight
+---@field Character? vim.api.keyset.highlight
+---@field Number? vim.api.keyset.highlight
+---@field Boolean? vim.api.keyset.highlight
+---@field Float? vim.api.keyset.highlight
+---@field Identifier? vim.api.keyset.highlight
+---@field Function? vim.api.keyset.highlight
+---@field Statement? vim.api.keyset.highlight
+---@field Conditional? vim.api.keyset.highlight
+---@field Repeat? vim.api.keyset.highlight
+---@field Label? vim.api.keyset.highlight
+---@field Operator? vim.api.keyset.highlight
+---@field Keyword? vim.api.keyset.highlight
+---@field Exception? vim.api.keyset.highlight
+---@field PreProc? vim.api.keyset.highlight
+---@field Include? vim.api.keyset.highlight
+---@field Define? vim.api.keyset.highlight
+---@field Macro? vim.api.keyset.highlight
+---@field PreCondit? vim.api.keyset.highlight
+---@field Type? vim.api.keyset.highlight
+---@field StorageClass? vim.api.keyset.highlight
+---@field Structure? vim.api.keyset.highlight
+---@field Typedef? vim.api.keyset.highlight
+---@field Special? vim.api.keyset.highlight
+---@field SpecialChar? vim.api.keyset.highlight
+---@field Tag? vim.api.keyset.highlight
+---@field Delimiter? vim.api.keyset.highlight
+---@field SpecialComment? vim.api.keyset.highlight
+---@field Debug? vim.api.keyset.highlight
+---@field Underlined? vim.api.keyset.highlight
+---@field Ignore? vim.api.keyset.highlight
+---@field Error? vim.api.keyset.highlight
+---@field Todo? vim.api.keyset.highlight
+---@field Added? vim.api.keyset.highlight
+---@field Changed? vim.api.keyset.highlight
+---@field Removed? vim.api.keyset.highlight
+---@field DiagnosticError? vim.api.keyset.highlight
+---@field DiagnosticWarn? vim.api.keyset.highlight
+---@field DiagnosticInfo? vim.api.keyset.highlight
+---@field DiagnosticHint? vim.api.keyset.highlight
+---@field DiagnosticOk? vim.api.keyset.highlight
+---@field DiagnosticVirtualTextError? vim.api.keyset.highlight
+---@field DiagnosticVirtualTextWarn? vim.api.keyset.highlight
+---@field DiagnosticVirtualTextInfo? vim.api.keyset.highlight
+---@field DiagnosticVirtualTextHint? vim.api.keyset.highlight
+---@field DiagnosticVirtualTextOk? vim.api.keyset.highlight
+---@field DiagnosticUnderlineError? vim.api.keyset.highlight
+---@field DiagnosticUnderlineWarn? vim.api.keyset.highlight
+---@field DiagnosticUnderlineInfo? vim.api.keyset.highlight
+---@field DiagnosticUnderlineHint? vim.api.keyset.highlight
+---@field DiagnosticUnderlineOk? vim.api.keyset.highlight
+---@field LspReferenceText? vim.api.keyset.highlight
+---@field LspReferenceRead? vim.api.keyset.highlight
+---@field LspReferenceWrite? vim.api.keyset.highlight
+---@field LspInlayHint? vim.api.keyset.highlight
+---@field NavicText? vim.api.keyset.highlight
+---@field NavicSeparator? vim.api.keyset.highlight
+---@field NavicIconsMethod? vim.api.keyset.highlight
+---@field NavicIconsFunction? vim.api.keyset.highlight
+---@field NavicIconsField? vim.api.keyset.highlight
+---@field NavicIconsVariable? vim.api.keyset.highlight
+---@field NavicIconsClass? vim.api.keyset.highlight
+---@field NavicIconsInterface? vim.api.keyset.highlight
+---@field NavicIconsModule? vim.api.keyset.highlight
+---@field NavicIconsNamespace? vim.api.keyset.highlight
+---@field NavicIconsProperty? vim.api.keyset.highlight
+---@field NavicIconsUnit? vim.api.keyset.highlight
+---@field NavicIconsEnum? vim.api.keyset.highlight
+---@field NavicIconsKeyword? vim.api.keyset.highlight
+---@field NavicIconsSnippet? vim.api.keyset.highlight
+---@field NavicIconsColor? vim.api.keyset.highlight
+---@field NavicIconsFile? vim.api.keyset.highlight
+---@field NavicIconsReference? vim.api.keyset.highlight
+---@field NavicIconsFolder? vim.api.keyset.highlight
+---@field NavicIconsEnumMember? vim.api.keyset.highlight
+---@field NavicIconsConstant? vim.api.keyset.highlight
+---@field NavicIconsStruct? vim.api.keyset.highlight
+---@field NavicIconsEvent? vim.api.keyset.highlight
+---@field NavicIconsOperator? vim.api.keyset.highlight
+---@field NavicIconsTypeParameter? vim.api.keyset.highlight
+---@field CmpItemKindText? vim.api.keyset.highlight
+---@field CmpItemKindMethod? vim.api.keyset.highlight
+---@field CmpItemKindFunction? vim.api.keyset.highlight
+---@field CmpItemKindField? vim.api.keyset.highlight
+---@field CmpItemKindVariable? vim.api.keyset.highlight
+---@field CmpItemKindClass? vim.api.keyset.highlight
+---@field CmpItemKindInterface? vim.api.keyset.highlight
+---@field CmpItemKindModule? vim.api.keyset.highlight
+---@field CmpItemKindProperty? vim.api.keyset.highlight
+---@field CmpItemKindUnit? vim.api.keyset.highlight
+---@field CmpItemKindEnum? vim.api.keyset.highlight
+---@field CmpItemKindKeyword? vim.api.keyset.highlight
+---@field CmpItemKindSnippet? vim.api.keyset.highlight
+---@field CmpItemKindColor? vim.api.keyset.highlight
+---@field CmpItemKindFile? vim.api.keyset.highlight
+---@field CmpItemKindReference? vim.api.keyset.highlight
+---@field CmpItemKindFolder? vim.api.keyset.highlight
+---@field CmpItemKindEnumMember? vim.api.keyset.highlight
+---@field CmpItemKindConstant? vim.api.keyset.highlight
+---@field CmpItemKindStruct? vim.api.keyset.highlight
+---@field CmpItemKindEvent? vim.api.keyset.highlight
+---@field CmpItemKindOperator? vim.api.keyset.highlight
+---@field CmpItemKindTypeParameter? vim.api.keyset.highlight
+---@field IblIndent? vim.api.keyset.highlight
+---@field IblScope? vim.api.keyset.highlight
+---@field NeoTreeTitleBar? vim.api.keyset.highlight
+---@field NeoTreeNormal? vim.api.keyset.highlight
+---@field NeoTreeNormalNC? vim.api.keyset.highlight
+---@field NeoTreeDotFile? vim.api.keyset.highlight
+---@field NeoTreeFileNameOpened? vim.api.keyset.highlight
+---@field NeoTreeFloatBorder? vim.api.keyset.highlight
+---@field NeoTreeFloatTitle? vim.api.keyset.highlight
+---@field NeoTreeGitAdded? vim.api.keyset.highlight
+---@field NeoTreeGitConflict? vim.api.keyset.highlight
+---@field NeoTreeGitDeleted? vim.api.keyset.highlight
+---@field NeoTreeGitIgnored? vim.api.keyset.highlight
+---@field NeoTreeGitModified? vim.api.keyset.highlight
+---@field NeoTreeGitUnstaged? vim.api.keyset.highlight
+---@field NeoTreeGitUntracked? vim.api.keyset.highlight
+---@field NeoTreeGitStaged? vim.api.keyset.highlight
+---@field NvimTreeSymlink? vim.api.keyset.highlight
+---@field NvimTreeSymlinkIcon? vim.api.keyset.highlight
+---@field NvimTreeFolderName? vim.api.keyset.highlight
+---@field NvimTreeRootFolder? vim.api.keyset.highlight
+---@field NvimTreeFolderIcon? vim.api.keyset.highlight
+---@field NvimTreeEmptyFolderName? vim.api.keyset.highlight
+---@field NvimTreeExecFile? vim.api.keyset.highlight
+---@field NvimTreeOpenedFile? vim.api.keyset.highlight
+---@field NvimTreeModifiedFile? vim.api.keyset.highlight
+---@field NvimTreeSpecialFile? vim.api.keyset.highlight
+---@field NvimTreeIndentMarker? vim.api.keyset.highlight
+---@field NvimTreeGitDirty? vim.api.keyset.highlight
+---@field NvimTreeGitStaged? vim.api.keyset.highlight
+---@field NvimTreeGitMerge? vim.api.keyset.highlight
+---@field NvimTreeGitRenamed? vim.api.keyset.highlight
+---@field NvimTreeGitNew? vim.api.keyset.highlight
+---@field NvimTreeGitDeleted? vim.api.keyset.highlight
+---@field NvimTreeNormal? vim.api.keyset.highlight
+---@field NvimTreeNormalFloat? vim.api.keyset.highlight
+---@field NvimTreeEndOfBuffer? vim.api.keyset.highlight
+---@field NvimTreeWinSeparator? vim.api.keyset.highlight
+---@field WhichKeyNormal? vim.api.keyset.highlight
+---@field WhichKey? vim.api.keyset.highlight
+---@field WhichKeyDesc? vim.api.keyset.highlight
+---@field WhichKeySeparator? vim.api.keyset.highlight
+---@field WhichKeyGroup? vim.api.keyset.highlight
+---@field DashboardHeader? vim.api.keyset.highlight
+---@field DashboardFooter? vim.api.keyset.highlight
+---@field DashboardDesc? vim.api.keyset.highlight
+---@field DashboardKey? vim.api.keyset.highlight
+---@field DashboardIcon? vim.api.keyset.highlight
+---@field DashboardShotCut? vim.api.keyset.highlight
+---@field GitSignsAdd? vim.api.keyset.highlight
+---@field GitSignsChange? vim.api.keyset.highlight
+---@field GitSignsDelete? vim.api.keyset.highlight
+---@field TelescopeSelection? vim.api.keyset.highlight
+---@field TelescopeSelectionCaret? vim.api.keyset.highlight
+---@field TelescopeMultiIcon? vim.api.keyset.highlight
+---@field TelescopeNormal? vim.api.keyset.highlight
+---@field TelescopePreviewNormal? vim.api.keyset.highlight
+---@field TelescopePromptNormal? vim.api.keyset.highlight
+---@field TelescopeResultsNormal? vim.api.keyset.highlight
+---@field TelescopeBorder? vim.api.keyset.highlight
+---@field TelescopePromptBorder? vim.api.keyset.highlight
+---@field TelescopeResultsBorder? vim.api.keyset.highlight
+---@field TelescopePreviewBorder? vim.api.keyset.highlight
+---@field TelescopeTitle? vim.api.keyset.highlight
+---@field TelescopePromptTitle? vim.api.keyset.highlight
+---@field TelescopeResultsTitle? vim.api.keyset.highlight
+---@field TelescopePreviewTitle? vim.api.keyset.highlight
+---@field TelescopeMatching? vim.api.keyset.highlight
+---@field TelescopePreviewMatch? vim.api.keyset.highlight
+---@field TelescopePromptCounter? vim.api.keyset.highlight
+---@field TelescopePromptPrefix? vim.api.keyset.highlight
+---@field NoiceFormatProgressTodo? vim.api.keyset.highlight
+---@field NoiceFormatProgressDone? vim.api.keyset.highlight
+---@field NoiceLspProgressSpinner? vim.api.keyset.highlight
+---@field NoiceLspProgressClient? vim.api.keyset.highlight
+---@field NoiceLspProgressTitle? vim.api.keyset.highlight
+---@field HopNextKey? vim.api.keyset.highlight
+---@field HopNextKey1? vim.api.keyset.highlight
+---@field HopUnmatched? vim.api.keyset.highlight
+---@field MiniStatuslineModeNormal? vim.api.keyset.highlight
+---@field MiniStatuslineModeInsert? vim.api.keyset.highlight
+---@field MiniStatuslineModeVisual? vim.api.keyset.highlight
+---@field MiniStatuslineModeReplace? vim.api.keyset.highlight
+---@field MiniStatuslineModeCommand? vim.api.keyset.highlight
+---@field MinistatusLineFileName? vim.api.keyset.highlight
+---@field MiniStatuslineDevinfo? vim.api.keyset.highlight
+---@field MiniStatuslineFileinfo? vim.api.keyset.highlight
+---@field MiniStatuslineInactive? vim.api.keyset.highlight
+---@field MiniTablineCurrent? vim.api.keyset.highlight
+---@field MiniTablineVisible? vim.api.keyset.highlight
+---@field MiniTablineHidden? vim.api.keyset.highlight
+---@field MiniTablineModifiedCurrent? vim.api.keyset.highlight
+---@field MiniTablineModifiedVisible? vim.api.keyset.highlight
+---@field MiniTablineModifiedHidden? vim.api.keyset.highlight
+---@field MiniTablineFill? vim.api.keyset.highlight
+---@field MiniTablineTabpagesection? vim.api.keyset.highlight
+---@field MiniStarterCurrent? vim.api.keyset.highlight
+---@field MiniStarterHeader? vim.api.keyset.highlight
+---@field MiniStarterFooter? vim.api.keyset.highlight
+---@field MiniStarterItem? vim.api.keyset.highlight
+---@field MiniStarterItemBullet? vim.api.keyset.highlight
+---@field MiniStarterItemPrefix? vim.api.keyset.highlight
+---@field MiniStarterSection? vim.api.keyset.highlight
+---@field MiniStarterQuery? vim.api.keyset.highlight
+---@field MiniCursorword? vim.api.keyset.highlight
+---@field NotifyBackground? vim.api.keyset.highlight
+---@field NotifyERRORBorder? vim.api.keyset.highlight
+---@field NotifyWARNBorder? vim.api.keyset.highlight
+---@field NotifyINFOBorder? vim.api.keyset.highlight
+---@field NotifyDEBUGBorder? vim.api.keyset.highlight
+---@field NotifyTRACEBorder? vim.api.keyset.highlight
+---@field NotifyERRORIcon? vim.api.keyset.highlight
+---@field NotifyWARNIcon? vim.api.keyset.highlight
+---@field NotifyINFOIcon? vim.api.keyset.highlight
+---@field NotifyDEBUGIcon? vim.api.keyset.highlight
+---@field NotifyTRACEIcon? vim.api.keyset.highlight
+---@field NotifyERRORTitle? vim.api.keyset.highlight
+---@field NotifyWARNTitle? vim.api.keyset.highlight
+---@field NotifyINFOTitle? vim.api.keyset.highlight
+---@field NotifyDEBUGTitle? vim.api.keyset.highlight
+---@field NotifyTRACETitle? vim.api.keyset.highlight
+---@field NotifyERRORBody? vim.api.keyset.highlight
+---@field NotifyWARNBody? vim.api.keyset.highlight
+---@field NotifyINFOBody? vim.api.keyset.highlight
+---@field NotifyDEBUGBody? vim.api.keyset.highlight
+---@field NotifyTRACEBody? vim.api.keyset.highlight
+---@field RainbowDelimiterRed? vim.api.keyset.highlight
+---@field RainbowDelimiteYellow? vim.api.keyset.highlight
+---@field RainbowDelimiterBlue? vim.api.keyset.highlight
+---@field RainbowDelimiterOrange? vim.api.keyset.highlight
+---@field RainbowDelimiterGreen? vim.api.keyset.highlight
+---@field RainbowDelimiterViolet? vim.api.keyset.highlight
+---@field RainbowDelimiterCyan? vim.api.keyset.highlight
+---@field BufferLineFill? vim.api.keyset.highlight
+---@field BufferLineBufferSelected? vim.api.keyset.highlight
+---@field BufferLineSeparator? vim.api.keyset.highlight
+---@field BufferLineSeparatorSelected? vim.api.keyset.highlight
+---@field BufferLineSeparatorVisible? vim.api.keyset.highlight
+---@field LazyH1? vim.api.keyset.highlight
+---@field LazyButton? vim.api.keyset.highlight
+---@field LazyButtonActive? vim.api.keyset.highlight
+---@field LazyReasonStart? vim.api.keyset.highlight
+---@field LazyReasonEvent? vim.api.keyset.highlight
+---@field LazyNormal? vim.api.keyset.highlight
 
 local M = {}
 
@@ -390,7 +391,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('SignColumn', { link = 'Normal' })
   nvim_set_hl(
     'IncSearch',
-    { fg = colors.cyan, bg = colors.mix_cyan, bold = true },
+    { fg = colors.magenta, bg = colors.mix_magenta, bold = true },
     { transparent = config.transparent }
   )
   nvim_set_hl('Substitute', { link = 'IncSearch' })
@@ -500,7 +501,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('Removed', { fg = colors.git_delete })
 
   -- PLUGINS
-  if config.plugins['nvim-treesitter'] then
+  if config.plugins.treesitter then
     nvim_set_hl('@variable', { link = 'Identifier' })
     nvim_set_hl('@variable.builtin', { link = 'Constant' })
     nvim_set_hl('@variable.parameter', { fg = colors.blue, italic = true })
@@ -586,7 +587,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@tag.delimiter', { link = 'Delimiter' })
   end
 
-  if config.plugins['nvim-lspconfig'] then
+  if config.plugins.lspconfig then
     nvim_set_hl('@lsp.type.class', { link = 'Type' })
     nvim_set_hl('@lsp.type.decorator', { link = 'Function' })
     nvim_set_hl('@lsp.type.enum', { link = 'Type' })
@@ -627,7 +628,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('LspInlayHint', { fg = colors.base01 })
   end
 
-  if config.plugins['nvim-navic'] then
+  if config.plugins.navic then
     nvim_set_hl('NavicText', { fg = colors.base0 })
     nvim_set_hl('NavicSeparator', { link = 'Keyword' })
     nvim_set_hl('NavicIconsMethod', { link = 'Function' })
@@ -655,7 +656,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NavicIconsTypeParameter', { link = 'Type' })
   end
 
-  if config.plugins['nvim-cmp'] then
+  if config.plugins.cmp then
     nvim_set_hl('CmpItemKindText', { link = 'String' })
     nvim_set_hl('CmpItemKindMethod', { link = 'Function' })
     nvim_set_hl('CmpItemKindFunction', { link = 'Function' })
@@ -681,12 +682,13 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('CmpItemKindTypeParameter', { link = 'Type' })
   end
 
-  if config.plugins['indent-blankline.nvim'] then
+  if config.plugins.indentblankline then
     nvim_set_hl('IblIndent', { fg = colors.base01, nocombine = true })
     nvim_set_hl('IblScope', { fg = colors.base0, nocombine = true })
   end
 
-  if config.plugins['neo-tree.nvim'] then
+  if config.plugins.neotree then
+    nvim_set_hl('NeoTreeTitleBar', { fg = colors.cyan, bg = colors.mix_cyan })
     nvim_set_hl(
       'NeoTreeNormal',
       { fg = colors.base1, bg = colors.base04 },
@@ -709,7 +711,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NeoTreeGitStaged', { fg = colors.git_add })
   end
 
-  if config.plugins['nvim-tree.lua'] then
+  if config.plugins.nvimtree then
     nvim_set_hl('NvimTreeSymlink', { link = 'Underlined' })
     nvim_set_hl('NvimTreeSymlinkIcon', { link = 'Directory' })
     nvim_set_hl('NvimTreeFolderName', { fg = colors.base0 })
@@ -737,7 +739,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NvimTreeWinSeparator', { link = 'WinSeparator' })
   end
 
-  if config.plugins['which-key.nvim'] then
+  if config.plugins.whichkey then
     nvim_set_hl('WhichKeyNormal', { link = 'NormalFloat' })
     nvim_set_hl('WhichKey', { link = 'Function' })
     nvim_set_hl('WhichKeyDesc', { fg = colors.base1 })
@@ -745,7 +747,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('WhichKeyGroup', { link = 'Type' })
   end
 
-  if config.plugins['dashboard-nvim'] then
+  if config.plugins.dashboard then
     nvim_set_hl('DashboardHeader', { fg = colors.base01 })
     nvim_set_hl('DashboardFooter', { fg = colors.violet })
     nvim_set_hl('DashboardDesc', { link = 'Directory' })
@@ -754,13 +756,13 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('DashboardShotCut', { fg = colors.base0 })
   end
 
-  if config.plugins['gitsigns.nvim'] then
+  if config.plugins.gitsigns then
     nvim_set_hl('GitSignsAdd', { fg = colors.git_add })
     nvim_set_hl('GitSignsChange', { fg = colors.git_modify })
     nvim_set_hl('GitSignsDelete', { fg = colors.git_delete })
   end
 
-  if config.plugins['telescope.nvim'] then
+  if config.plugins.telescope then
     nvim_set_hl('TelescopeSelection', { fg = colors.base0 })
     nvim_set_hl('TelescopeSelectionCaret', { fg = colors.blue })
     nvim_set_hl('TelescopeMultiIcon', { fg = colors.blue })
@@ -786,7 +788,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopePromptPrefix', { fg = colors.orange })
   end
 
-  if config.plugins['noice.nvim'] then
+  if config.plugins.noice then
     nvim_set_hl('NoiceFormatProgressTodo', { fg = colors.diag_ok, bg = colors.mix_green })
     nvim_set_hl('NoiceFormatProgressDone', { fg = colors.diag_ok, reverse = true })
     nvim_set_hl('NoiceLspProgressSpinner', { fg = colors.diag_ok })
@@ -794,13 +796,13 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NoiceLspProgressTitle', { link = 'Title' })
   end
 
-  if config.plugins['hop.nvim'] then
+  if config.plugins.hop then
     nvim_set_hl('HopNextKey', { fg = colors.magenta })
     nvim_set_hl('HopNextKey1', { fg = colors.blue })
     nvim_set_hl('HopUnmatched', { fg = colors.base01 })
   end
 
-  if config.plugins['mini.statusline'] then
+  if config.plugins.ministatusline then
     nvim_set_hl('MiniStatuslineModeNormal', { fg = colors.base03, bg = colors.blue })
     nvim_set_hl('MiniStatuslineModeInsert', { fg = colors.base03, bg = colors.green })
     nvim_set_hl('MiniStatuslineModeVisual', { fg = colors.base03, bg = colors.magenta })
@@ -812,7 +814,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('MiniStatuslineInactive', { fg = colors.base01, bg = colors.base03 })
   end
 
-  if config.plugins['mini.tabline'] then
+  if config.plugins.minitabline then
     nvim_set_hl('MiniTablineCurrent', { fg = colors.base0, bg = colors.base03 })
     nvim_set_hl('MiniTablineVisible', { fg = colors.base0, bg = colors.base03 })
     nvim_set_hl('MiniTablineHidden', { fg = colors.base01, bg = colors.base03 })
@@ -823,7 +825,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('MiniTablineTabpagesection', { fg = colors.base0, bg = colors.base04 })
   end
 
-  if config.plugins['mini.starter'] then
+  if config.plugins.ministarter then
     nvim_set_hl('MiniStarterCurrent', { link = 'CursorLine' })
     nvim_set_hl('MiniStarterHeader', { fg = colors.base01 })
     nvim_set_hl('MiniStarterFooter', { fg = colors.violet })
@@ -834,11 +836,11 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('MiniStarterQuery', { fg = colors.blue, bold = true })
   end
 
-  if config.plugins['mini.cursorword'] then
+  if config.plugins.minicursorword then
     nvim_set_hl('MiniCursorword', { bg = colors.base02 })
   end
 
-  if config.plugins['nvim-notify'] then
+  if config.plugins.notify then
     nvim_set_hl('NotifyBackground', { bg = colors.base03 })
     nvim_set_hl('NotifyERRORBorder', { link = 'NotifyERRORBody' })
     nvim_set_hl('NotifyWARNBorder', { link = 'NotifyWARNBody' })
@@ -862,7 +864,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NotifyTRACEBody', { fg = colors.blue, bg = colors.mix_blue })
   end
 
-  if config.plugins['rainbow-delimiters'] then
+  if config.plugins.rainbowdelimiters then
     nvim_set_hl('RainbowDelimiterRed', { fg = colors.red })
     nvim_set_hl('RainbowDelimiteYellow', { fg = colors.yellow })
     nvim_set_hl('RainbowDelimiterBlue', { fg = colors.blue })
@@ -872,7 +874,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('RainbowDelimiterCyan', { fg = colors.cyan })
   end
 
-  if config.plugins['bufferline.nvim'] and config.transparent then
+  if config.plugins.bufferline and config.transparent then
     local color = require 'solarized.color'
     local background = color.shade(colors.base02, 2)
     nvim_set_hl('BufferLineFill', { bg = background })
@@ -882,7 +884,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('BufferLineSeparatorVisible', { fg = background })
   end
 
-  if config.plugins['lazy.nvim'] then
+  if config.plugins.lazy then
     nvim_set_hl('LazyH1', { fg = colors.blue, bold = true })
     nvim_set_hl('LazyButton', { fg = colors.cyan, bg = colors.mix_cyan })
     nvim_set_hl('LazyButtonActive', { fg = colors.violet, bg = colors.mix_violet })

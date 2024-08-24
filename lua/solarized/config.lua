@@ -9,6 +9,27 @@
 ---@field constants? vim.api.keyset.highlight
 
 ---@class solarized.plugins
+---@field treesitter? boolean
+---@field lspconfig? boolean
+---@field navic? boolean
+---@field cmp? boolean
+---@field indentblankline? boolean
+---@field neotree? boolean
+---@field nvimtree? boolean
+---@field whichkey? boolean
+---@field dashboard? boolean
+---@field gitsigns? boolean
+---@field telescope? boolean
+---@field noice? boolean
+---@field hop? boolean
+---@field ministatusline? boolean
+---@field minitabline? boolean
+---@field ministarter? boolean
+---@field minicursorword? boolean
+---@field notify? boolean
+---@field rainbowdelimiters? boolean
+---@field bufferline? boolean
+---@field lazy? boolean
 
 ---@class solarized.config
 ---@field transparent? boolean
@@ -33,26 +54,26 @@ return {
     constants = {},
   },
   plugins = {
-    ['nvim-treesitter'] = true,
-    ['nvim-lspconfig'] = true,
-    ['nvim-navic'] = true,
-    ['nvim-cmp'] = true,
-    ['indent-blankline.nvim'] = true,
-    ['neo-tree.nvim'] = true,
-    ['nvim-tree.lua'] = true,
-    ['which-key.nvim'] = true,
-    ['dashboard-nvim'] = true,
-    ['gitsigns.nvim'] = true,
-    ['telescope.nvim'] = true,
-    ['noice.nvim'] = true,
-    ['hop.nvim'] = true,
-    ['mini.statusline'] = true,
-    ['mini.tabline'] = true,
-    ['mini.starter'] = true,
-    ['mini.cursorword'] = true,
-    ['nvim-notify'] = true,
-    ['rainbow-delimiters'] = true,
-    ['bufferline.nvim'] = true,
-    ['lazy.nvim'] = true,
+    treesitter = true,
+    lspconfig = true,
+    navic = true,
+    cmp = true,
+    indentblankline = true,
+    neotree = true,
+    nvimtree = true,
+    whichkey = true,
+    dashboard = true,
+    gitsigns = true,
+    telescope = true,
+    noice = true,
+    hop = true,
+    ministatusline = true,
+    minitabline = true,
+    ministarter = true,
+    minicursorword = true,
+    notify = true,
+    rainbowdelimiters = true,
+    bufferline = true,
+    lazy = true,
   },
 }

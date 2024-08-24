@@ -1,7 +1,9 @@
 ---@class solarized
----@field config solarized.config
----@field setup fun(config: solarized.config)
----@field load fun()
+---@field config? solarized.config
+---@field setup? fun(config: solarized.config)
+---@field load? fun()
+
+---@type solarized
 local M = {}
 
 M.config = require 'solarized.config'

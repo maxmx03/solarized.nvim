@@ -59,7 +59,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('ErrorMsg', { fg = colors.diag_error })
   nvim_set_hl(
     'WinSeparator',
-    { fg = colors.cyan, bg = colors.base2 },
+    { fg = colors.blue, bg = colors.base2 },
     { transparent = config.transparent }
   )
   nvim_set_hl('Folded', { fg = colors.base00, bg = colors.base2 })
@@ -67,7 +67,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('SignColumn', { link = 'Normal' })
   nvim_set_hl(
     'IncSearch',
-    { fg = colors.green, bg = colors.mix_green, bold = true },
+    { fg = colors.yellow, bg = colors.mix_yellow, bold = true },
     { transparent = config.transparent }
   )
   nvim_set_hl('Substitute', { link = 'IncSearch' })
@@ -118,7 +118,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('PmenuThumb', { bg = colors.blue })
   nvim_set_hl('Question', { fg = colors.diag_info })
   nvim_set_hl('QuickFixLine', { fg = colors.base00, bg = colors.base3 })
-  nvim_set_hl('Search', { fg = colors.magenta, bg = colors.mix_magenta })
+  nvim_set_hl('Search', { fg = colors.green, bg = colors.mix_green })
   nvim_set_hl('SpecialKey', { link = 'NonText' })
   nvim_set_hl('SpellBad', { underline = true, strikethrough = true })
   nvim_set_hl('SpellCap', { fg = colors.diag_hint })
@@ -130,7 +130,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('TabLineFill', { fg = colors.base0, bg = colors.base2 })
   nvim_set_hl('TabLineSel', { fg = colors.base0, bg = colors.base3 })
   nvim_set_hl('Title', { fg = colors.blue })
-  nvim_set_hl('Visual', { bg = colors.mix_cyan })
+  nvim_set_hl('Visual', { fg = colors.green, bg = colors.mix_green })
   nvim_set_hl('VisualNOS', { link = 'Visual' })
   nvim_set_hl('warningMsg', { fg = colors.diag_warning })
   nvim_set_hl('Whitespace', { fg = colors.base01 })
@@ -175,7 +175,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('Added', { fg = colors.git_add })
   nvim_set_hl('Changed', { fg = colors.git_modify })
   nvim_set_hl('Removed', { fg = colors.git_delete }) -- PLUGINS
-  if config.plugins['nvim-treesitter'] then
+  if config.plugins.treesitter then
     nvim_set_hl('@variable', { link = 'Identifier' })
     nvim_set_hl('@variable.builtin', { link = 'Constant' })
     nvim_set_hl('@variable.parameter', { fg = colors.blue, italic = true })
@@ -262,7 +262,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@tag.delimiter', { fg = colors.red })
   end
 
-  if config.plugins['nvim-lspconfig'] then
+  if config.plugins.lspconfig then
     nvim_set_hl('@lsp.type.class', { link = 'Type' })
     nvim_set_hl('@lsp.type.decorator', { link = 'Function' })
     nvim_set_hl('@lsp.type.enum', { link = 'Type' })
@@ -289,8 +289,8 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('DiagnosticOk', { fg = colors.diag_ok })
     nvim_set_hl('DiagnosticVirtualTextError', { fg = colors.diag_error, bg = colors.mix_red })
     nvim_set_hl('DiagnosticVirtualTextWarn', { fg = colors.diag_warning, bg = colors.mix_yellow })
-    nvim_set_hl('DiagnosticVirtualTextInfo', { fg = colors.diag_blue, bg = colors.mix_blue })
-    nvim_set_hl('DiagnosticVirtualTextHint', { fg = colors.diag_blue, bg = colors.mix_blue })
+    nvim_set_hl('DiagnosticVirtualTextInfo', { fg = colors.diag_hint, bg = colors.mix_blue })
+    nvim_set_hl('DiagnosticVirtualTextHint', { fg = colors.diag_info, bg = colors.mix_blue })
     nvim_set_hl('DiagnosticVirtualTextOk', { fg = colors.diag_ok, bg = colors.mix_green })
     nvim_set_hl('DiagnosticUnderlineError', { fg = colors.diag_error, underline = true })
     nvim_set_hl('DiagnosticUnderlineWarn', { fg = colors.diag_warning, underline = true })
@@ -303,7 +303,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('LspInlayHint', { fg = colors.base1 })
   end
 
-  if config.plugins['nvim-navic'] then
+  if config.plugins.navic then
     nvim_set_hl('NavicText', { fg = colors.base0 })
     nvim_set_hl('NavicSeparator', { link = 'Keyword' })
     nvim_set_hl('NavicIconsMethod', { link = 'Function' })
@@ -331,7 +331,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NavicIconsTypeParameter', { link = 'Type' })
   end
 
-  if config.plugins['nvim-cmp'] then
+  if config.plugins.cmp then
     nvim_set_hl('CmpItemKindText', { link = 'String' })
     nvim_set_hl('CmpItemKindMethod', { link = 'Function' })
     nvim_set_hl('CmpItemKindFunction', { link = 'Function' })
@@ -357,12 +357,13 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('CmpItemKindTypeParameter', { link = 'Type' })
   end
 
-  if config.plugins['indent-blankline.nvim'] then
+  if config.plugins.rainbowdelimiters then
     nvim_set_hl('IblIndent', { fg = colors.base01, nocombine = true })
     nvim_set_hl('IblScope', { fg = colors.base0, nocombine = true })
   end
 
-  if config.plugins['neo-tree.nvim'] then
+  if config.plugins.neotree then
+    nvim_set_hl('NeoTreeTitleBar', { fg = colors.blue, reverse = true })
     nvim_set_hl(
       'NeoTreeNormal',
       { fg = colors.base01, bg = colors.base2 },
@@ -385,7 +386,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NeoTreeGitStaged', { fg = colors.git_add })
   end
 
-  if config.plugins['nvim-tree.lua'] then
+  if config.plugins.nvimtree then
     nvim_set_hl('NvimTreeSymlink', { link = 'Underlined' })
     nvim_set_hl('NvimTreeSymlinkIcon', { link = 'Directory' })
     nvim_set_hl('NvimTreeFolderName', { fg = colors.base0 })
@@ -413,7 +414,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NvimTreeWinSeparator', { link = 'WinSeparator' })
   end
 
-  if config.plugins['which-key.nvim'] then
+  if config.plugins.whichkey then
     nvim_set_hl('WhichKeyNormal', { link = 'NormalFloat' })
     nvim_set_hl('WhichKey', { link = 'Function' })
     nvim_set_hl('WhichKeyDesc', { fg = colors.base01 })
@@ -421,7 +422,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('WhichKeyGroup', { link = 'Type' })
   end
 
-  if config.plugins['dashboard-nvim'] then
+  if config.plugins.dashboard then
     nvim_set_hl('DashboardHeader', { fg = colors.base01 })
     nvim_set_hl('DashboardFooter', { fg = colors.magenta })
     nvim_set_hl('DashboardDesc', { link = 'Directory' })
@@ -430,15 +431,15 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('DashboardShotCut', { fg = colors.base0 })
   end
 
-  if config.plugins['gitsigns.nvim'] then
+  if config.plugins.gitsigns then
     nvim_set_hl('GitSignsAdd', { fg = colors.git_add })
     nvim_set_hl('GitSignsChange', { fg = colors.git_modify })
     nvim_set_hl('GitSignsDelete', { fg = colors.git_delete })
   end
 
-  if config.plugins['telescope.nvim'] then
-    nvim_set_hl('TelescopeSelection', { fg = colors.base0 })
-    nvim_set_hl('TelescopeSelectionCaret', { fg = colors.blue })
+  if config.plugins.telescope then
+    nvim_set_hl('TelescopeSelection', { link = 'Visual' })
+    nvim_set_hl('TelescopeSelectionCaret', { fg = colors.blue, bg = colors.mix_green })
     nvim_set_hl('TelescopeMultiIcon', { fg = colors.blue })
     nvim_set_hl(
       'TelescopeNormal',
@@ -448,11 +449,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopePreviewNormal', { link = 'TelescopeNormal' })
     nvim_set_hl('TelescopePromptNormal', { link = 'TelescopeNormal' })
     nvim_set_hl('TelescopeResultsNormal', { link = 'TelescopeNormal' })
-    nvim_set_hl(
-      'TelescopeBorder',
-      { fg = colors.cyan, bg = colors.base2 },
-      { transparent = config.transparent }
-    )
+    nvim_set_hl('TelescopeBorder', { link = 'WinSeparator' })
     nvim_set_hl('TelescopePromptBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopeResultsBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopePreviewBorder', { link = 'TelescopeBorder' })
@@ -466,7 +463,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopePromptPrefix', { fg = colors.orange })
   end
 
-  if config.plugins['noice.nvim'] then
+  if config.plugins.noice then
     nvim_set_hl('NoiceFormatProgressTodo', { fg = colors.diag_ok, bg = colors.mix_green })
     nvim_set_hl('NoiceFormatProgressDone', { fg = colors.diag_ok, reverse = true })
     nvim_set_hl('NoiceLspProgressSpinner', { fg = colors.diag_ok })
@@ -474,13 +471,13 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NoiceLspProgressTitle', { link = 'Title' })
   end
 
-  if config.plugins['hop.nvim'] then
+  if config.plugins.hop then
     nvim_set_hl('HopNextKey', { fg = colors.magenta })
     nvim_set_hl('HopNextKey1', { fg = colors.blue })
     nvim_set_hl('HopUnmatched', { fg = colors.base1 })
   end
 
-  if config.plugins['mini.statusline'] then
+  if config.plugins.ministatusline then
     nvim_set_hl('MiniStatuslineModeNormal', { fg = colors.base3, bg = colors.blue })
     nvim_set_hl('MiniStatuslineModeInsert', { fg = colors.base3, bg = colors.green })
     nvim_set_hl('MiniStatuslineModeVisual', { fg = colors.base3, bg = colors.magenta })
@@ -492,7 +489,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('MiniStatuslineInactive', { fg = colors.base1, bg = colors.base3 })
   end
 
-  if config.plugins['mini.tabline'] then
+  if config.plugins.minitabline then
     nvim_set_hl('MiniTablineCurrent', { fg = colors.base0, bg = colors.base3 })
     nvim_set_hl('MiniTablineVisible', { fg = colors.base0, bg = colors.base3 })
     nvim_set_hl('MiniTablineHidden', { fg = colors.base1, bg = colors.base3 })
@@ -503,7 +500,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('MiniTablineTabpagesection', { fg = colors.base0, bg = colors.base2 })
   end
 
-  if config.plugins['mini.starter'] then
+  if config.plugins.ministarter then
     nvim_set_hl('MiniStarterCurrent', { link = 'CursorLine' })
     nvim_set_hl('MiniStarterHeader', { fg = colors.base01 })
     nvim_set_hl('MiniStarterFooter', { fg = colors.violet })
@@ -514,11 +511,11 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('MiniStarterQuery', { fg = colors.blue, bold = true })
   end
 
-  if config.plugins['mini.cursorword'] then
-    nvim_set_hl('MiniCursorword', { bg = colors.base2 })
+  if config.plugins.minicursorword then
+    nvim_set_hl('MiniCursorword', { fg = colors.green, bg = colors.mix_green, bold = true })
   end
 
-  if config.plugins['nvim-notify'] then
+  if config.plugins.notify then
     nvim_set_hl('NotifyBackground', { bg = colors.base3 })
     nvim_set_hl('NotifyERRORBorder', { link = 'NotifyERRORBody' })
     nvim_set_hl('NotifyWARNBorder', { link = 'NotifyWARNBody' })
@@ -542,7 +539,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NotifyTRACEBody', { fg = colors.blue, bg = colors.mix_blue })
   end
 
-  if config.plugins['rainbow-delimiters'] then
+  if config.plugins.rainbowdelimiters then
     nvim_set_hl('RainbowDelimiterRed', { fg = colors.red })
     nvim_set_hl('RainbowDelimiteYellow', { fg = colors.yellow })
     nvim_set_hl('RainbowDelimiterBlue', { fg = colors.blue })
@@ -552,7 +549,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('RainbowDelimiterCyan', { fg = colors.cyan })
   end
 
-  if config.plugins['bufferline.nvim'] and config.transparent then
+  if config.plugins.bufferline and config.transparent then
     local color = require 'solarized.color'
     local background = color.shade(colors.base2, 2)
     nvim_set_hl('BufferLineFill', { bg = background })
@@ -562,7 +559,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('BufferLineSeparatorVisible', { fg = background })
   end
 
-  if config.plugins['lazy.nvim'] then
+  if config.plugins.lazy then
     nvim_set_hl('LazyH1', { fg = colors.blue, bold = true })
     nvim_set_hl('LazyButton', { fg = colors.green, bg = colors.mix_green })
     nvim_set_hl('LazyButtonActive', { fg = colors.yellow, bg = colors.mix_yellow })

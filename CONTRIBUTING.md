@@ -125,16 +125,16 @@ colorscheme.
 
 #### Solarized Light Extra colors
 
-| Name        | Hex (balance 70) | Description                |
+| Name        | Hex (balance 90) | Description                |
 | ----------- | ---------------- | -------------------------- |
-| mix_yellow  | #e7d59e          | yellow + base3 / optional  |
-| mix_orange  | #eec2a5          | orange + base3 /optional   |
-| mix_red     | #f3bbac          | red + base3 / optional     |
-| mix_magenta | #f0bcc5          | magenta + base3 / optional |
-| mix_violet  | #d1ced9          | violet + base3 / optional  |
-| mix_blue    | #bcd5dd          | blue + base3 / optional    |
-| mix_cyan    | #bddccc          | cyan + base3 / optional    |
-| mix_green   | #d9da9e          | green + base3 /optional    |
+| mix_yellow  | #f5ebcc          | yellow + base3 / optional  |
+| mix_orange  | #f8e4ce          | orange + base3 /optional   |
+| mix_red     | #f9e2d1          | red + base3 / optional     |
+| mix_magenta | #f8e2d9          | magenta + base3 / optional |
+| mix_violet  | #eee8df          | violet + base3 / optional  |
+| mix_blue    | #e7ebe1          | blue + base3 / optional    |
+| mix_cyan    | #e7eddb          | cyan + base3 / optional    |
+| mix_green   | #f1eccc          | green + base3 /optional    |
 
 ### Selenized Light
 
@@ -159,16 +159,16 @@ colorscheme.
 
 #### Selenized Light Extra colors
 
-| Name        | Hex (balance 70) | Description                |
+| Name        | Hex (balance 90) | Description                |
 | ----------- | ---------------- | -------------------------- |
-| mix_yellow  | #e3d399          | yellow + base3 / optional  |
-| mix_orange  | #e9c6a2          | orange + base3 / optional  |
-| mix_red     | #eeb4a6          | red + base3 / optional     |
-| mix_magenta | #ecbfc6          | magenta + base3 / optional |
-| mix_violet  | #d8c7d4          | violet + base3 / optional  |
-| mix_blue    | #afccd8          | blue + base3 / optional    |
-| mix_cyan    | #afd8c4          | cyan + base3 / optional    |
-| mix_green   | #c5d599          | green + base3 / optional   |
+| mix_yellow  | #f3e8c5          | yellow + base3 / optional  |
+| mix_orange  | #f5e4c8          | orange + base3 / optional  |
+| mix_red     | #f6dec9          | red + base3 / optional     |
+| mix_magenta | #f6e1d4          | magenta + base3 / optional |
+| mix_violet  | #efe4d8          | violet + base3 / optional  |
+| mix_blue    | #e1e6da          | blue + base3 / optional    |
+| mix_cyan    | #e1ead3          | cyan + base3 / optional    |
+| mix_green   | #e9e9c5          | green + base3 / optional   |
 
 ## Solarized & Selenized Website
 
