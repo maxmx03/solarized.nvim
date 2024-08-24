@@ -772,11 +772,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopePreviewNormal', { link = 'TelescopeNormal' })
     nvim_set_hl('TelescopePromptNormal', { link = 'TelescopeNormal' })
     nvim_set_hl('TelescopeResultsNormal', { link = 'TelescopeNormal' })
-    nvim_set_hl(
-      'TelescopeBorder',
-      {link = 'WinSeparator'},
-      { transparent = config.transparent }
-    )
+    nvim_set_hl('TelescopeBorder', { link = 'WinSeparator' }, { transparent = config.transparent })
     nvim_set_hl('TelescopePromptBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopeResultsBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopePreviewBorder', { link = 'TelescopeBorder' })
