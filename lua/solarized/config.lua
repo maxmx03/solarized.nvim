@@ -52,5 +52,7 @@ return {
     ['mini.cursorword'] = true,
     ['nvim-notify'] = true,
     ['rainbow-delimiters'] = true,
+    ['bufferline.nvim'] = true,
+    ['lazy.nvim'] = true,
   },
 }

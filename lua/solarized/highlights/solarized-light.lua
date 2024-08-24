@@ -73,7 +73,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('Substitute', { link = 'IncSearch' })
   nvim_set_hl(
     'LineNr',
-    { fg = colors.base01, bg = colors.base2 },
+    { fg = colors.base1, bg = colors.base2 },
     { transparent = config.transparent }
   )
   nvim_set_hl('LineNrAbove', { link = 'LineNr' })
@@ -262,7 +262,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@lsp.type.enum', { link = 'Type' })
     nvim_set_hl('@lsp.type.enumMember', { link = 'Type' })
     nvim_set_hl('@lsp.type.interface', { link = 'Type' })
-    nvim_set_hl('@lsp.type.macro', { link = 'Keyword' })
+    nvim_set_hl('@lsp.type.macro', { link = '@function.builtin' })
     nvim_set_hl('@lsp.type.namespace', { link = 'Type' })
     nvim_set_hl('@lsp.type.parameter', { link = '@parameter' })
     nvim_set_hl('@lsp.type.property', { link = 'Identifier' })
@@ -546,13 +546,39 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('RainbowDelimiterCyan', { fg = colors.cyan })
   end
 
+  if config.plugins['bufferline.nvim'] and config.transparent then
+    local color = require 'solarized.color'
+    local background = color.shade(colors.base2, 2)
+    nvim_set_hl('BufferLineFill', { bg = background })
+    nvim_set_hl('BufferLineBufferSelected', { fg = colors.base0 })
+    nvim_set_hl('BufferLineSeparator', { fg = background })
+    nvim_set_hl('BufferLineSeparatorSelected', { fg = background })
+    nvim_set_hl('BufferLineSeparatorVisible', { fg = background })
+  end
+
+  if config.plugins['lazy.nvim'] then
+    nvim_set_hl('LazyH1', { fg = colors.blue, bold = true })
+    nvim_set_hl('LazyButton', { fg = colors.green, bg = colors.mix_green })
+    nvim_set_hl('LazyButtonActive', { fg = colors.yellow, bg = colors.mix_yellow })
+    nvim_set_hl('LazyReasonStart', { fg = colors.yellow })
+    nvim_set_hl('LazyReasonEvent', { fg = colors.red })
+    nvim_set_hl('LazyNormal', { fg = colors.base01, bg = colors.base2 })
+  end
+
   if config.on_highlights then
     local color = require 'solarized.color'
     local highlights = config.on_highlights(colors, color)
 
     for group_name, group_val in pairs(highlights) do
       local hl = nvim_get_hl { name = group_name, link = true }
-      local val = vim.tbl_extend('force', hl, group_val)
+      local val = {}
+
+      if hl.link then
+        val = group_val
+      else
+        val = vim.tbl_extend('force', hl, group_val)
+      end
+
       vim.api.nvim_set_hl(0, group_name, val)
     end
   end

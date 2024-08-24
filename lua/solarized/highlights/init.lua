@@ -305,6 +305,17 @@
 ---@field RainbowDelimiterGreen? table
 ---@field RainbowDelimiterViolet? table
 ---@field RainbowDelimiterCyan? table
+---@field BufferLineFill? table
+---@field BufferLineBufferSelected? table
+---@field BufferLineSeparator? table
+---@field BufferLineSeparatorSelected? table
+---@field BufferLineSeparatorVisible? table
+---@field LazyH1? table
+---@field LazyButton? table
+---@field LazyButtonActive? table
+---@field LazyReasonStart? table
+---@field LazyReasonEvent? table
+---@field LazyNormal? table
 
 local M = {}
 
@@ -581,7 +592,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@lsp.type.enum', { link = 'Type' })
     nvim_set_hl('@lsp.type.enumMember', { link = 'Type' })
     nvim_set_hl('@lsp.type.interface', { link = 'Type' })
-    nvim_set_hl('@lsp.type.macro', { link = 'Keyword' })
+    nvim_set_hl('@lsp.type.macro', { link = '@function.builtin' })
     nvim_set_hl('@lsp.type.namespace', { link = 'Type' })
     nvim_set_hl('@lsp.type.parameter', { link = '@parameter' })
     nvim_set_hl('@lsp.type.property', { link = 'Identifier' })
@@ -763,7 +774,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopeResultsNormal', { link = 'TelescopeNormal' })
     nvim_set_hl(
       'TelescopeBorder',
-      { fg = colors.cyan, bg = colors.base04 },
+      {link = 'WinSeparator'},
       { transparent = config.transparent }
     )
     nvim_set_hl('TelescopePromptBorder', { link = 'TelescopeBorder' })
@@ -865,13 +876,39 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('RainbowDelimiterCyan', { fg = colors.cyan })
   end
 
+  if config.plugins['bufferline.nvim'] and config.transparent then
+    local color = require 'solarized.color'
+    local background = color.shade(colors.base02, 2)
+    nvim_set_hl('BufferLineFill', { bg = background })
+    nvim_set_hl('BufferLineBufferSelected', { fg = colors.base0 })
+    nvim_set_hl('BufferLineSeparator', { fg = background })
+    nvim_set_hl('BufferLineSeparatorSelected', { fg = background })
+    nvim_set_hl('BufferLineSeparatorVisible', { fg = background })
+  end
+
+  if config.plugins['lazy.nvim'] then
+    nvim_set_hl('LazyH1', { fg = colors.blue, bold = true })
+    nvim_set_hl('LazyButton', { fg = colors.cyan, bg = colors.mix_cyan })
+    nvim_set_hl('LazyButtonActive', { fg = colors.violet, bg = colors.mix_violet })
+    nvim_set_hl('LazyReasonStart', { fg = colors.yellow })
+    nvim_set_hl('LazyReasonEvent', { fg = colors.magenta })
+    nvim_set_hl('LazyNormal', { fg = colors.base0, bg = colors.base04 })
+  end
+
   if config.on_highlights then
     local color = require 'solarized.color'
     local highlights = config.on_highlights(colors, color)
 
     for group_name, group_val in pairs(highlights) do
       local hl = nvim_get_hl { name = group_name, link = true }
-      local val = vim.tbl_extend('force', hl, group_val)
+      local val = {}
+
+      if hl.link then
+        val = group_val
+      else
+        val = vim.tbl_extend('force', hl, group_val)
+      end
+
       vim.api.nvim_set_hl(0, group_name, val)
     end
   end
