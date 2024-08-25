@@ -316,7 +316,6 @@
 ---@field LazyButtonActive? vim.api.keyset.highlight
 ---@field LazyReasonStart? vim.api.keyset.highlight
 ---@field LazyReasonEvent? vim.api.keyset.highlight
----@field LazyNormal? vim.api.keyset.highlight
 
 local M = {}
 
@@ -420,11 +419,7 @@ M.set_highlight = function(colors, config)
     { fg = colors.base0, bg = colors.base03 },
     { transparent = config.transparent }
   )
-  nvim_set_hl(
-    'NormalFloat',
-    { fg = colors.base0, bg = colors.base04 },
-    { transparent = config.transparent }
-  )
+  nvim_set_hl('NormalFloat', { fg = colors.base0, bg = colors.base04 })
   nvim_set_hl('FloatBorder', { link = 'WinSeparator' })
   nvim_set_hl('FloatTitle', { fg = colors.blue })
   nvim_set_hl('NormalNC', { link = 'Normal' })
@@ -740,7 +735,11 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.whichkey then
-    nvim_set_hl('WhichKeyNormal', { link = 'NormalFloat' })
+    nvim_set_hl(
+      'WhichKeyNormal',
+      { fg = colors.base0, bg = colors.base04 },
+      { transparent = config.transparent }
+    )
     nvim_set_hl('WhichKey', { link = 'Function' })
     nvim_set_hl('WhichKeyDesc', { fg = colors.base1 })
     nvim_set_hl('WhichKeySeparator', { link = 'Keyword' })
@@ -890,7 +889,6 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('LazyButtonActive', { fg = colors.violet, bg = colors.mix_violet })
     nvim_set_hl('LazyReasonStart', { fg = colors.yellow })
     nvim_set_hl('LazyReasonEvent', { fg = colors.magenta })
-    nvim_set_hl('LazyNormal', { fg = colors.base0, bg = colors.base04 })
   end
 
   if config.on_highlights then
