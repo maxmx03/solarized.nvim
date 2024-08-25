@@ -126,7 +126,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('TabLineFill', { fg = colors.base0, bg = colors.base2 })
   nvim_set_hl('TabLineSel', { fg = colors.base0, bg = colors.base3 })
   nvim_set_hl('Title', { fg = colors.blue })
-  nvim_set_hl('Visual', { fg = colors.green, bg = colors.mix_green })
+  nvim_set_hl('Visual', { fg = colors.magenta, bg = colors.mix_magenta, bold = true })
   nvim_set_hl('VisualNOS', { link = 'Visual' })
   nvim_set_hl('warningMsg', { fg = colors.diag_warning })
   nvim_set_hl('Whitespace', { fg = colors.base01 })
@@ -293,7 +293,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('DiagnosticUnderlineInfo', { fg = colors.diag_info, underline = true })
     nvim_set_hl('DiagnosticUnderlineHint', { fg = colors.diag_hint, underline = true })
     nvim_set_hl('DiagnosticUnderlineOk', { fg = colors.diag_ok, underline = true })
-    nvim_set_hl('LspReferenceText', { link = 'Visual' })
+    nvim_set_hl('LspReferenceText', { fg = colors.cyan, bg = colors.mix_cyan })
     nvim_set_hl('LspReferenceRead', { link = 'Visual' })
     nvim_set_hl('LspReferenceWrite', { link = 'Visual' })
     nvim_set_hl('LspInlayHint', { fg = colors.base1 })
@@ -434,8 +434,8 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.telescope then
-    nvim_set_hl('TelescopeSelection', { link = 'Visual' })
-    nvim_set_hl('TelescopeSelectionCaret', { fg = colors.blue, bg = colors.mix_green })
+    nvim_set_hl('TelescopeSelection', { fg = colors.blue, bg = colors.mix_blue })
+    nvim_set_hl('TelescopeSelectionCaret', { fg = colors.blue, bg = colors.mix_blue })
     nvim_set_hl('TelescopeMultiIcon', { fg = colors.blue })
     nvim_set_hl(
       'TelescopeNormal',
@@ -465,6 +465,9 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NoiceLspProgressSpinner', { fg = colors.diag_ok })
     nvim_set_hl('NoiceLspProgressClient', { fg = colors.diag_ok })
     nvim_set_hl('NoiceLspProgressTitle', { link = 'Title' })
+    nvim_set_hl('NoiceCmdlineIcon', { link = 'WinSeparator' })
+    nvim_set_hl('NoiceCmdlinePopupBorder', { link = 'WinSeparator' })
+    nvim_set_hl('NoiceCmdlinePopupTitle', { link = 'Title' })
   end
 
   if config.plugins.hop then
@@ -508,7 +511,7 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.minicursorword then
-    nvim_set_hl('MiniCursorword', { fg = colors.green, bg = colors.mix_green, bold = true })
+    nvim_set_hl('MiniCursorword', { link = 'Visual' })
   end
 
   if config.plugins.notify then
@@ -549,7 +552,7 @@ M.set_highlight = function(colors, config)
     local color = require 'solarized.color'
     local background = color.shade(colors.base2, 2)
     nvim_set_hl('BufferLineFill', { bg = background })
-    nvim_set_hl('BufferLineBufferSelected', { fg = colors.base0 })
+    nvim_set_hl('BufferLineBufferSelected', { fg = colors.base01 })
     nvim_set_hl('BufferLineSeparator', { fg = background })
     nvim_set_hl('BufferLineSeparatorSelected', { fg = background })
     nvim_set_hl('BufferLineSeparatorVisible', { fg = background })

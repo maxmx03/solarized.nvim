@@ -93,7 +93,7 @@ colorscheme.
 | mix_red     | #56444a          | red + base03 / optional           |
 | mix_magenta | #534d6b          | magenta + base03 / optional       |
 | mix_violet  | #3f5278          | violet + base03 / optional        |
-| mix_blue    | #20567c           | blue + base03 / optional          |
+| mix_blue    | #20567c          | blue + base03 / optional          |
 | mix_cyan    | #1e6569          | cyan + base03 / optional          |
 | mix_green   | #2e6143          | green + base03 / optional         |
 

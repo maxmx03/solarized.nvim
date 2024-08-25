@@ -18,23 +18,22 @@ designed for use with terminal and gui applications.
 - [Features](#features)
 - [Requirements](#requirements)
 - [Install from package manager](#install-from-package-manager)
+- [Solarized's Annotations](#solarizeds-annotations)
+  - [Using `lspconfig`](#using-lspconfig)
+  - [Using `.luarc.json`](#using-luarcjson)
 - [Manual Installation](#manual-installation)
-- [Help](#help)
+- [Docs](#docs)
 - [Commands](#commands)
 - [Default Config](#default-config)
-- [Config Themes](#config-themes)
 - [Config Styles](#config-styles)
 - [Config Highlights](#config-highlights)
 - [Config Colors](#config-colors)
-- [Config Enables](#config-enables)
-- [Config Autocmd](#config-autocmd)
+- [Config Plugins](#config-plugins)
 - [Lualine](#lualine)
 - [Barbecue](#barbecue)
 - [Api](#api)
   - [Get Colors](#get-colors)
   - [Color utils](#color-utils)
-  - [How to get color shades](#how-to-get-color-shades)
-  - [How to get color tints](#how-to-get-color-tints)
 - [Contributing](#contributing)
 - [Designed by](#designed-by)
 - [Credits and Reference 🎉](#credits-and-reference-🎉)
@@ -64,16 +63,19 @@ Download using your preferred package manager.
 [lazy](https://github.com/folke/lazy.nvim)
 
 ```lua
-  {
-    'maxmx03/solarized.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.o.background = 'dark' -- or 'light'
-
-      vim.cmd.colorscheme 'solarized'
-    end,
-  },
+return {
+  'maxmx03/solarized.nvim',
+  lazy = false,
+  priority = 1000,
+  ---@type solarized.config
+  opts = {},
+  config = function(_, opts)
+    vim.o.termguicolors = true
+    vim.o.background = 'light'
+    require('solarized').setup(opts)
+    vim.cmd.colorscheme 'solarized'
+  end,
+}
 ```
 
 [packer](https://github.com/wbthomason/packer.nvim)
@@ -82,10 +84,49 @@ Download using your preferred package manager.
 use {
     'maxmx03/solarized.nvim',
     config = function()
-      vim.o.background = 'dark' -- or 'light'
-
+      vim.o.background = 'dark'
+      ---@type solarized
+      local solarized = require('solarized')
+      vim.o.termguicolors = true
+      vim.o.background = 'dark'
+      solarized.setup({})
       vim.cmd.colorscheme 'solarized'
     end
+}
+```
+
+## Solarized's Annotations
+
+### Using `lspconfig`
+
+```lua
+  local lsp_config = require 'lspconfig'
+  lsp_config.lua_ls.setup {
+    settings = {
+      Lua = {
+        hint = {
+          enable = true,
+        },
+        runtime = {
+          version = 'LuaJIT',
+        },
+        workspace = {
+          checkThirdParty = true,
+          library = {
+            vim.env.VIMRUNTIME,
+            '~/.local/share/nvim/lazy/solarized.nvim',
+          },
+        },
+      },
+    },
+  }
+```
+
+### Using `.luarc.json`
+
+```json
+{
+  "workspace.library": ["/path/to/nvim/runtime", "/path/to/solarized.nvim"]
 }
 ```
 
@@ -99,14 +140,13 @@ To manually install Solarized, follow these steps:
    `lua`, `plugin`.
 4. Copy these folders to the `~/.config/nvim` directory.
 
-## Help
+## Docs
 
-Use `:h solarized.nvim.txt` to get some help
+Use `:h solarized.nvim.txt` to see docs
 
 ## Commands
 
 - `:Solarized colors` - Display the Solarized palette in a new buffer
-- `:Solarized zen`- Removes highlight colors, emphasizing important code segments.
 
 ## Default Config
 
@@ -115,61 +155,46 @@ vim.o.background = 'dark'
 
 -- default config
 require('solarized').setup({
-    transparent = false, -- enable transparent background
-    palette = 'solarized', -- or selenized
-    styles = {
-      comments = {},
-      functions = {},
-      variables = {},
-      numbers = {},
-      constants = {},
-      parameters = {},
-      keywords = {},
-      types = {},
-    },
-    enables = {
-      bufferline = true,
-      cmp = true,
-      diagnostic = true,
-      dashboard = true,
-      editor = true,
-      gitsign = true,
-      hop = true,
-      indentblankline = true,
-      lsp = true,
-      lspsaga = true,
-      navic = true,
-      neogit = true,
-      neotree = true,
-      notify = true,
-      noice = true,
-      semantic = true,
-      syntax = true,
-      telescope = true,
-      tree = true,
-      treesitter = true,
-      todo = true,
-      whichkey = true,
-      mini = true,
-    },
-    highlights = {},
-    colors = {},
-    theme = 'default', -- or 'neo'
-    autocmd = true,
+  transparent = false, -- false | true
+  on_highlights = nil,
+  on_colors = nil,
+  palette = 'solarized', -- solarized (default) | selenized
+  styles = {
+    types = {},
+    functions = {},
+    parameters = {},
+    comments = {},
+    strings = {},
+    keywords = {},
+    variables = {},
+    constants = {},
+  },
+  plugins = {
+    treesitter = true,
+    lspconfig = true,
+    navic = true,
+    cmp = true,
+    indentblankline = true,
+    neotree = true,
+    nvimtree = true,
+    whichkey = true,
+    dashboard = true,
+    gitsigns = true,
+    telescope = true,
+    noice = true,
+    hop = true,
+    ministatusline = true,
+    minitabline = true,
+    ministarter = true,
+    minicursorword = true,
+    notify = true,
+    rainbowdelimiters = true,
+    bufferline = true,
+    lazy = true,
+  },
 })
 
-vim.cmd.colorscheme = 'solarized' -- or selenized
-```
-
-## Config Themes
-
-Solarized offers two themes: the default Solarized theme and Neo.
-These themes provide different visual styles to enhance your experience.
-
-```lua
-require('solarized').setup({
-    theme = 'neo' -- or comment to use solarized default theme.
-})
+vim.cmd.colorscheme = 'solarized'
 ```
 
 ## Config Styles
@@ -178,12 +203,14 @@ The `styles` config allows you to customize the style of a highlight
 group.
 
 ```lua
-require('solarized').setup({
-    styles = {
+---@type solarized.styles
+local styles = {
       comments = { italic = true, bold = false },
       functions = { italic = true },
       variables = { italic = false },
-    }
+}
+require('solarized').setup({
+    styles = styles,
 })
 ```
 
@@ -195,18 +222,23 @@ example:
 
 ```lua
 require('solarized').setup {
-    highlights = function (colors, colorhelper)
-        local darken = colorhelper.darken
-        local lighten = colorhelper.lighten
-        local blend = colorhelper.blend
+    on_highlights = function (colors, color)
+        local darken = color.darken
+        local lighten = color.lighten
+        local blend = color.blend
+        local shade = color.shade
+        local tint = color.tint
 
-        return {
-            LineNr = { fg = c.base1, bg = c.base02 },
-            CursorLineNr = { bg = c.base02 },
-            CursorLine = { bg = c.base02 },
-            Function = { italic = false },
-            Visual = { bg = c.cyan },
+        ---@type solarized.highlights
+        local groups = {
+            Visual = { bg = colors.base02, standout = true },
+            Function = { fg = colors.yellow },
+            IncSearch = { fg = colors.orange, bg = colors.mix_orange },
+            Search = { fg = colors.violet, bg = shade(colors.violet, 5),
+            NormalFloat = { bg = darken(colors.base03, 25) }
         }
+
+       return groups
     end
 }
 ```
@@ -216,18 +248,20 @@ require('solarized').setup {
 The `colors` config allows you to extend or modify the color palette used by
 solarized.
 
+> [!TIP]
+> Use `:Solarized colors` to see available colors.
+
 example:
 
 ```lua
 require('solarized').setup {
-    colors = function(colors, colorhelper)
-        local darken = colorhelper.darken
-        local lighten = colorhelper.lighten
-        local blend = colorhelper.blend
+    on_colors = function(colors, color)
+        local lighten = color.tint
+        local darken = color.darken
 
         return {
-            fg = '#fff', -- output: #ffffff
-            bg = darken(colors.base03, 100)
+            fg = lighten(colors.base00, 2),
+            bg = darken(colors.base03, 30)
         }
     end,
     highlights = function(colors)
@@ -238,43 +272,37 @@ require('solarized').setup {
 }
 ```
 
-## Config Enables
+## Config Plugins
 
-The enables config allows you to enable or disable solarized support for
+The plugins config allows you to enable or disable solarized support for
 spefic plugins or neovim's default highlights
 
 example:
 
 ```lua
-require('solarized').setup {
-  enables = {
-      editor = true,
-      syntax = true,
-
-      -- PLUGINS
-      bufferline = true,
-      cmp = false, -- disabled
-      diagnostic = true,
-      indentblankline = true,
-      lsp = true,
-      lspsaga = false, -- disabled
-      navic = true,
-      semantic = true,
-      telescope = true,
-      tree = false, -- disabled
-      treesitter = true,
-    },
-    highlights = {
-        -- your implementation of nvim-tree
-        -- your implementation of cmp
-        -- your implementation of lspsaga
+return {
+  'maxmx03/solarized.nvim',
+  lazy = false,
+  priority = 1000,
+  ---@type solarized.config
+  opts = {
+    plugins = {
+        navic = false,
+        nvimtree = false,
+        dashboard = false,
+        noice = false,
+        ministatusline = false,
+        minitabline = false,
+        ministarter = false,
+        rainbowdelimiters = false,
     }
+  },
+  config = function(_, opts)
+    require('solarized').setup(opts)
+    vim.cmd.colorscheme 'solarized'
+  end,
 }
 ```
-
-## Config Autocmd
-
-This option enhances highlighting by enabling Solarized's autocmd feature.
 
 ## Lualine
 
@@ -282,6 +310,7 @@ This option enhances highlighting by enabling Solarized's autocmd feature.
 require('lualine').setup {
   options = {
     theme = 'solarized',
+    -- theme = 'selenized',
     disabled_filetypes = {
         'NvimTree',
     },
@@ -311,13 +340,21 @@ require('barbecue').setup {
 
 ## Api
 
-You can utilize useful functions to customize your Neovim plugins.
-
 ### Get Colors
 
 ```lua
-local palette = require('solarized.palette')
-local colors = palette.get_colors()
+---@type solarized.palette
+local colors = {}
+
+if vim.o.background == 'dark' then
+   highlights = require 'solarized.highlights'
+   local palette = require 'solarized.palette'
+   colors = palette['solarized']
+else
+   highlights = require 'solarized.highlights.solarized-light'
+   local palette = require 'solarized.palette.solarized-light'
+   colors = palette['selenized']
+end
 ```
 
 ### Color utils
@@ -330,36 +367,14 @@ color.hex_to_rgb('#ffffff')
 
 -- Darken a color by a specified percentage
 color.darken('#ffffff', 100)
+color.shade('#ffffff', 10)
 
 -- Lighten a color by a specified percentage
 color.lighten('#000000', 100)
+color.tint('#000000', 10)
 
 -- Blend two colors with a specified ratio
 color.blend('#ffffff', '#000000', 0.15)
-```
-
-### How to get color shades
-
-```lua
-local darken = require('solarized.utils.colors').darken
-local colors = require('solarized.palette').get_colors()
-for i = 1, 10, 1 do
-  local shade = darken(colors.blue, i * 10)
-
-  print(shade)
-end
-```
-
-### How to get color tints
-
-```lua
-local lighten = require('solarized.utils.colors').lighten
-
-for i = 1, 10, 1 do
-  local tints = lighten(colors.blue, i * 10)
-
-  print(tints)
-end
 ```
 
 ## Contributing
@@ -374,8 +389,4 @@ Ethan Schoonover
 
 ## Credits and Reference 🎉
 
-- [onedarkpro](https://github.com/olimorris/onedarkpro.nvim)
 - [solarized-vim](https://github.com/altercation/vim-colors-solarized)
-- [tokyonight](https://github.com/folke/tokyonight.nvim)
-
-[![Raphael](https://github.com/glepnir.png?size=100)](https://github.com/glepnir)

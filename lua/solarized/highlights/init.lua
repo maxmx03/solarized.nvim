@@ -248,6 +248,9 @@
 ---@field NoiceFormatProgressDone? vim.api.keyset.highlight
 ---@field NoiceLspProgressSpinner? vim.api.keyset.highlight
 ---@field NoiceLspProgressClient? vim.api.keyset.highlight
+---@field NoiceCmdlineIcon? vim.api.keyset.highlight
+---@field NoiceCmdlinePopupBorder? vim.api.keyset.highlight
+---@field NoiceCmdlinePopupTitle? vim.api.keyset.highlight
 ---@field NoiceLspProgressTitle? vim.api.keyset.highlight
 ---@field HopNextKey? vim.api.keyset.highlight
 ---@field HopNextKey1? vim.api.keyset.highlight
@@ -388,11 +391,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('Folded', { fg = colors.base0, bg = colors.base02 })
   nvim_set_hl('FoldColumn', { fg = colors.base0, bg = colors.base04 })
   nvim_set_hl('SignColumn', { link = 'Normal' })
-  nvim_set_hl(
-    'IncSearch',
-    { fg = colors.magenta, bg = colors.mix_magenta, bold = true },
-    { transparent = config.transparent }
-  )
+  nvim_set_hl('IncSearch', { fg = colors.magenta, bg = colors.mix_magenta })
   nvim_set_hl('Substitute', { link = 'IncSearch' })
   nvim_set_hl(
     'LineNr',
@@ -437,7 +436,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('PmenuThumb', { bg = colors.blue })
   nvim_set_hl('Question', { fg = colors.diag_info })
   nvim_set_hl('QuickFixLine', { fg = colors.base0, bg = colors.base03 })
-  nvim_set_hl('Search', { fg = colors.violet, bg = colors.mix_violet })
+  nvim_set_hl('Search', { fg = colors.violet, bg = colors.mix_violet, bold = true })
   nvim_set_hl('SpecialKey', { link = 'NonText' })
   nvim_set_hl('SpellBad', { underline = true, strikethrough = true })
   nvim_set_hl('SpellCap', { fg = colors.diag_hint })
@@ -449,7 +448,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('TabLineFill', { fg = colors.base0, bg = colors.base04 })
   nvim_set_hl('TabLineSel', { fg = colors.base0, bg = colors.base03 })
   nvim_set_hl('Title', { fg = colors.blue })
-  nvim_set_hl('Visual', { bg = colors.mix_cyan })
+  nvim_set_hl('Visual', { fg = colors.violet, bg = colors.mix_violet })
   nvim_set_hl('VisualNOS', { link = 'Visual' })
   nvim_set_hl('warningMsg', { fg = colors.diag_warning })
   nvim_set_hl('Whitespace', { fg = colors.base01 })
@@ -617,7 +616,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('DiagnosticUnderlineInfo', { fg = colors.diag_info, underline = true })
     nvim_set_hl('DiagnosticUnderlineHint', { fg = colors.diag_hint, underline = true })
     nvim_set_hl('DiagnosticUnderlineOk', { fg = colors.diag_ok, underline = true })
-    nvim_set_hl('LspReferenceText', { link = 'Visual' })
+    nvim_set_hl('LspReferenceText', { fg = colors.cyan, bg = colors.mix_cyan })
     nvim_set_hl('LspReferenceRead', { link = 'Visual' })
     nvim_set_hl('LspReferenceWrite', { link = 'Visual' })
     nvim_set_hl('LspInlayHint', { fg = colors.base01 })
@@ -781,7 +780,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopePromptTitle', { link = 'TelescopeTitle' })
     nvim_set_hl('TelescopeResultsTitle', { link = 'TelescopeTitle' })
     nvim_set_hl('TelescopePreviewTitle', { link = 'TelescopeTitle' })
-    nvim_set_hl('TelescopeMatching', { link = 'IncSearch' })
+    nvim_set_hl('TelescopeMatching', { fg = colors.cyan, bg = colors.mix_cyan })
     nvim_set_hl('TelescopePreviewMatch', { link = 'TelescopeMatching' })
     nvim_set_hl('TelescopePromptCounter', { link = 'NonText' })
     nvim_set_hl('TelescopePromptPrefix', { fg = colors.orange })
@@ -793,6 +792,9 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NoiceLspProgressSpinner', { fg = colors.diag_ok })
     nvim_set_hl('NoiceLspProgressClient', { fg = colors.diag_ok })
     nvim_set_hl('NoiceLspProgressTitle', { link = 'Title' })
+    nvim_set_hl('NoiceCmdlineIcon', { link = 'WinSeparator' })
+    nvim_set_hl('NoiceCmdlinePopupBorder', { link = 'WinSeparator' })
+    nvim_set_hl('NoiceCmdlinePopupTitle', { link = 'Title' })
   end
 
   if config.plugins.hop then
@@ -836,7 +838,7 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.minicursorword then
-    nvim_set_hl('MiniCursorword', { bg = colors.base02 })
+    nvim_set_hl('MiniCursorword', { link = 'Visual' })
   end
 
   if config.plugins.notify then
