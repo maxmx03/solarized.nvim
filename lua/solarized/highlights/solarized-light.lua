@@ -132,7 +132,9 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('Whitespace', { fg = colors.base01 })
   nvim_set_hl('WildMenu', { fg = colors.base2 })
   nvim_set_hl('WinBar', { link = 'Pmenu' })
-  nvim_set_hl('WinBarNC', { link = 'WinBar' }) -- SYNTAX :h group-name
+  nvim_set_hl('WinBarNC', { link = 'WinBar' }) 
+
+  -- SYNTAX :h group-name
   nvim_set_hl('Comment', { fg = colors.base1 })
   nvim_set_hl('Constant', { fg = colors.magenta })
   nvim_set_hl('String', { fg = colors.cyan })
@@ -170,7 +172,9 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('Todo', { fg = colors.blue })
   nvim_set_hl('Added', { fg = colors.git_add })
   nvim_set_hl('Changed', { fg = colors.git_modify })
-  nvim_set_hl('Removed', { fg = colors.git_delete }) -- PLUGINS
+  nvim_set_hl('Removed', { fg = colors.git_delete }) 
+
+  -- PLUGINS
   if config.plugins.treesitter then
     nvim_set_hl('@variable', { link = 'Identifier' })
     nvim_set_hl('@variable.builtin', { link = 'Constant' })
@@ -179,7 +183,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@constant', { link = 'Constant' })
     nvim_set_hl('@constant.builtin', { link = 'Constant' })
     nvim_set_hl('@constant.macro', { link = 'Constant' })
-    nvim_set_hl('@module', { link = 'Identifier' })
+    nvim_set_hl('@module', { link = 'Type' })
     nvim_set_hl('@module.builtin', { link = 'Constant' })
     nvim_set_hl('@label', { link = 'Statement' })
     nvim_set_hl('@string', { link = 'String' })
