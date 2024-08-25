@@ -102,8 +102,8 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('NormalNC', { link = 'Normal' })
   nvim_set_hl(
     'Pmenu',
-    { fg = colors.base00, bg = colors.base2 },
-    { transparent = config.transparent }
+    { fg = colors.base00, bg = colors.base2 }
+    -- { transparent = config.transparent }
   )
   nvim_set_hl('PmenuSel', { fg = colors.blue, reverse = true })
   nvim_set_hl('PmenuKind', { link = 'Pmenu' })
@@ -416,7 +416,11 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.whichkey then
-    nvim_set_hl('WhichKeyNormal', { fg = colors.base00, bg = colors.base2 })
+    nvim_set_hl(
+      'WhichKeyNormal',
+      { fg = colors.base00, bg = colors.base2 },
+      { transparent = config.transparent }
+    )
     nvim_set_hl('WhichKey', { link = 'Function' })
     nvim_set_hl('WhichKeyDesc', { fg = colors.base01 })
     nvim_set_hl('WhichKeySeparator', { link = 'Keyword' })
@@ -424,7 +428,7 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.dashboard then
-    nvim_set_hl('DashboardHeader', { fg = colors.base01 })
+    nvim_set_hl('DashboardHeader', { fg = colors.base1 })
     nvim_set_hl('DashboardFooter', { fg = colors.magenta })
     nvim_set_hl('DashboardDesc', { link = 'Directory' })
     nvim_set_hl('DashboardKey', { link = 'Keyword' })
