@@ -132,7 +132,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('Whitespace', { fg = colors.base01 })
   nvim_set_hl('WildMenu', { fg = colors.base2 })
   nvim_set_hl('WinBar', { link = 'Pmenu' })
-  nvim_set_hl('WinBarNC', { link = 'WinBar' }) 
+  nvim_set_hl('WinBarNC', { link = 'WinBar' })
 
   -- SYNTAX :h group-name
   nvim_set_hl('Comment', { fg = colors.base1 })
@@ -172,7 +172,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('Todo', { fg = colors.blue })
   nvim_set_hl('Added', { fg = colors.git_add })
   nvim_set_hl('Changed', { fg = colors.git_modify })
-  nvim_set_hl('Removed', { fg = colors.git_delete }) 
+  nvim_set_hl('Removed', { fg = colors.git_delete })
 
   -- PLUGINS
   if config.plugins.treesitter then
@@ -200,7 +200,8 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@type.builtin', { link = 'Keyword' })
     nvim_set_hl('@type.definition', { link = 'Type' })
     nvim_set_hl('@type.qualifier', { link = 'Type' })
-    nvim_set_hl('@property.json', { fg = colors.green })
+    nvim_set_hl('@attribute', { link = 'Keyword' })
+    nvim_set_hl('@property', { fg = colors.green })
     nvim_set_hl('@function', { link = 'Function' })
     nvim_set_hl('@function.builtin', { fg = colors.yellow })
     nvim_set_hl('@function.call', { link = 'Function' })
