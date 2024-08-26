@@ -7,6 +7,7 @@
 ---@field keywords? vim.api.keyset.highlight
 ---@field variables? vim.api.keyset.highlight
 ---@field constants? vim.api.keyset.highlight
+---@field statements? vim.api.keyset.highlight
 
 ---@class solarized.plugins
 ---@field treesitter? boolean
@@ -52,6 +53,7 @@ return {
     strings = {},
     keywords = {},
     variables = {},
+    statements = {},
     constants = {},
   },
   plugins = {
