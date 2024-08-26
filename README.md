@@ -191,6 +191,7 @@ require('solarized').setup({
     rainbowdelimiters = true,
     bufferline = true,
     lazy = true,
+    rendermarkdown = true,
   },
 })
 

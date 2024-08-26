@@ -302,7 +302,7 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.navic then
-    nvim_set_hl('NavicText', { fg = colors.base0 })
+    nvim_set_hl('NavicText', { fg = colors.base00 })
     nvim_set_hl('NavicSeparator', { link = 'Keyword' })
     nvim_set_hl('NavicIconsMethod', { link = 'Function' })
     nvim_set_hl('NavicIconsFunction', { link = 'Function' })
@@ -355,9 +355,9 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('CmpItemKindTypeParameter', { link = 'Type' })
   end
 
-  if config.plugins.rainbowdelimiters then
-    nvim_set_hl('IblIndent', { fg = colors.base01, nocombine = true })
-    nvim_set_hl('IblScope', { fg = colors.base0, nocombine = true })
+  if config.plugins.indentblankline then
+    nvim_set_hl('IblIndent', { fg = colors.base1, nocombine = true })
+    nvim_set_hl('IblScope', { fg = colors.base00, nocombine = true })
   end
 
   if config.plugins.neotree then
@@ -387,10 +387,10 @@ M.set_highlight = function(colors, config)
   if config.plugins.nvimtree then
     nvim_set_hl('NvimTreeSymlink', { link = 'Underlined' })
     nvim_set_hl('NvimTreeSymlinkIcon', { link = 'Directory' })
-    nvim_set_hl('NvimTreeFolderName', { fg = colors.base0 })
+    nvim_set_hl('NvimTreeFolderName', { fg = colors.base01 })
     nvim_set_hl('NvimTreeRootFolder', { link = 'Title' })
     nvim_set_hl('NvimTreeFolderIcon', { link = 'Directory' })
-    nvim_set_hl('NvimTreeEmptyFolderName', { fg = colors.base0 })
+    nvim_set_hl('NvimTreeEmptyFolderName', { fg = colors.base01 })
     nvim_set_hl('NvimTreeExecFile', { link = 'Function' })
     nvim_set_hl('NvimTreeOpenedFile', { fg = colors.blue, bold = true })
     nvim_set_hl('NvimTreeModifiedFile', { fg = colors.git_modify })
@@ -415,7 +415,7 @@ M.set_highlight = function(colors, config)
   if config.plugins.whichkey then
     nvim_set_hl(
       'WhichKeyNormal',
-      { fg = colors.base00, bg = colors.base2 },
+      { fg = colors.base01, bg = colors.base2 },
       { transparent = config.transparent }
     )
     nvim_set_hl('WhichKey', { link = 'Function' })
@@ -430,7 +430,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('DashboardDesc', { link = 'Directory' })
     nvim_set_hl('DashboardKey', { link = 'Keyword' })
     nvim_set_hl('DashboardIcon', { link = 'Directory' })
-    nvim_set_hl('DashboardShotCut', { fg = colors.base0 })
+    nvim_set_hl('DashboardShotCut', { fg = colors.base00 })
   end
 
   if config.plugins.gitsigns then
@@ -502,14 +502,14 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('MiniTablineModifiedVisible', { link = 'MiniTablineVisible' })
     nvim_set_hl('MiniTablineModifiedHidden', { link = 'MiniTablineHidden' })
     nvim_set_hl('MiniTablineFill', { fg = colors.base0, bg = colors.base2 })
-    nvim_set_hl('MiniTablineTabpagesection', { fg = colors.base0, bg = colors.base2 })
+    nvim_set_hl('MiniTablineTabpagesection', { fg = colors.base00, bg = colors.base2 })
   end
 
   if config.plugins.ministarter then
     nvim_set_hl('MiniStarterCurrent', { link = 'CursorLine' })
-    nvim_set_hl('MiniStarterHeader', { fg = colors.base01 })
+    nvim_set_hl('MiniStarterHeader', { fg = colors.base1 })
     nvim_set_hl('MiniStarterFooter', { fg = colors.violet })
-    nvim_set_hl('MiniStarterItem', { fg = colors.base0 })
+    nvim_set_hl('MiniStarterItem', { fg = colors.base00 })
     nvim_set_hl('MiniStarterItemBullet', { fg = colors.blue })
     nvim_set_hl('MiniStarterItemPrefix', { fg = colors.blue })
     nvim_set_hl('MiniStarterSection', { link = 'Title' })
@@ -537,11 +537,11 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NotifyINFOTitle', { fg = colors.diag_info })
     nvim_set_hl('NotifyDEBUGTitle', { fg = colors.magenta })
     nvim_set_hl('NotifyTRACETitle', { fg = colors.blue })
-    nvim_set_hl('NotifyERRORBody', { fg = colors.diag_error, bg = colors.mix_red })
-    nvim_set_hl('NotifyWARNBody', { fg = colors.diag_warning, bg = colors.mix_yellow })
-    nvim_set_hl('NotifyINFOBody', { fg = colors.diag_info, bg = colors.mix_violet })
-    nvim_set_hl('NotifyDEBUGBody', { fg = colors.magenta, bg = colors.mix_magenta })
-    nvim_set_hl('NotifyTRACEBody', { fg = colors.blue, bg = colors.mix_blue })
+    nvim_set_hl('NotifyERRORBody', { fg = colors.diag_error })
+    nvim_set_hl('NotifyWARNBody', { fg = colors.diag_warning })
+    nvim_set_hl('NotifyINFOBody', { fg = colors.diag_info })
+    nvim_set_hl('NotifyDEBUGBody', { fg = colors.magenta })
+    nvim_set_hl('NotifyTRACEBody', { fg = colors.blue })
   end
 
   if config.plugins.rainbowdelimiters then
@@ -558,7 +558,7 @@ M.set_highlight = function(colors, config)
     local color = require 'solarized.color'
     local background = color.shade(colors.base2, 2)
     nvim_set_hl('BufferLineFill', { bg = background })
-    nvim_set_hl('BufferLineBufferSelected', { fg = colors.base01 })
+    nvim_set_hl('BufferLineBufferSelected', { fg = colors.base01, bold = true })
     nvim_set_hl('BufferLineSeparator', { fg = background })
     nvim_set_hl('BufferLineSeparatorSelected', { fg = background })
     nvim_set_hl('BufferLineSeparatorVisible', { fg = background })
