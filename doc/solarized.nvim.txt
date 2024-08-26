@@ -212,6 +212,7 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
         rainbowdelimiters = true,
         bufferline = true,
         lazy = true,
+        rendermarkdown = true,
       },
     })
     
