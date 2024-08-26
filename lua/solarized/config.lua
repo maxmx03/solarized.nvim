@@ -30,6 +30,7 @@
 ---@field rainbowdelimiters? boolean
 ---@field bufferline? boolean
 ---@field lazy? boolean
+---@field rendermarkdown? boolean
 
 ---@class solarized.config
 ---@field transparent? boolean
@@ -75,5 +76,6 @@ return {
     rainbowdelimiters = true,
     bufferline = true,
     lazy = true,
+    rendermarkdown = true,
   },
 }

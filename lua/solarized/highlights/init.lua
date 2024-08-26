@@ -319,6 +319,12 @@
 ---@field LazyButtonActive? vim.api.keyset.highlight
 ---@field LazyReasonStart? vim.api.keyset.highlight
 ---@field LazyReasonEvent? vim.api.keyset.highlight
+---@field RenderMarkdownH1Bg? vim.api.keyset.highlight
+---@field RenderMarkdownH2Bg? vim.api.keyset.highlight
+---@field RenderMarkdownH3Bg? vim.api.keyset.highlight
+---@field RenderMarkdownH4Bg? vim.api.keyset.highlight
+---@field RenderMarkdownH5Bg? vim.api.keyset.highlight
+---@field RenderMarkdownH6Bg? vim.api.keyset.highlight
 
 local M = {}
 
@@ -889,6 +895,15 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('LazyButtonActive', { fg = colors.violet, bg = colors.mix_violet })
     nvim_set_hl('LazyReasonStart', { fg = colors.yellow })
     nvim_set_hl('LazyReasonEvent', { fg = colors.magenta })
+  end
+
+  if config.plugins.rendermarkdown then
+    nvim_set_hl('RenderMarkdownH1Bg', { fg = colors.blue, bg = colors.mix_blue })
+    nvim_set_hl('RenderMarkdownH2Bg', { fg = colors.violet, bg = colors.mix_violet })
+    nvim_set_hl('RenderMarkdownH3Bg', { fg = colors.yellow, bg = colors.mix_yellow })
+    nvim_set_hl('RenderMarkdownH4Bg', { fg = colors.orange, bg = colors.mix_orange })
+    nvim_set_hl('RenderMarkdownH5Bg', { fg = colors.red, bg = colors.mix_red })
+    nvim_set_hl('RenderMarkdownH6Bg', { fg = colors.magenta, bg = colors.mix_magenta })
   end
 
   if config.on_highlights then

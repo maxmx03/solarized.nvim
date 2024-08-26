@@ -100,11 +100,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('FloatBorder', { link = 'WinSeparator' })
   nvim_set_hl('FloatTitle', { fg = colors.blue })
   nvim_set_hl('NormalNC', { link = 'Normal' })
-  nvim_set_hl(
-    'Pmenu',
-    { fg = colors.base00, bg = colors.base2 }
-    -- { transparent = config.transparent }
-  )
+  nvim_set_hl('Pmenu', { fg = colors.base00, bg = colors.base2 })
   nvim_set_hl('PmenuSel', { fg = colors.blue, reverse = true })
   nvim_set_hl('PmenuKind', { link = 'Pmenu' })
   nvim_set_hl('PmenuKindSel', { link = 'PmenuSel' })
@@ -201,7 +197,8 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@type.definition', { link = 'Type' })
     nvim_set_hl('@type.qualifier', { link = 'Type' })
     nvim_set_hl('@attribute', { link = 'Keyword' })
-    nvim_set_hl('@property', { fg = colors.green })
+    nvim_set_hl('@property.json', { fg = colors.green })
+    nvim_set_hl('@property.yaml', { fg = colors.green })
     nvim_set_hl('@function', { link = 'Function' })
     nvim_set_hl('@function.builtin', { fg = colors.yellow })
     nvim_set_hl('@function.call', { link = 'Function' })
@@ -237,8 +234,8 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@markup.italic', { link = 'Underlined' })
     nvim_set_hl('@markup.strikethrough', { fg = colors.base1, strikethrough = true })
     nvim_set_hl('@markup.underline', { link = 'Underlined' })
-    nvim_set_hl('@markup.heading', { fg = colors.blue, bold = true })
-    nvim_set_hl('@markup.heading.1', { fg = colors.red })
+    nvim_set_hl('@markup.heading', { fg = colors.red, bold = true })
+    nvim_set_hl('@markup.heading.1', { fg = colors.red, bold = true })
     nvim_set_hl('@markup.heading.2', { fg = colors.magenta })
     nvim_set_hl('@markup.heading.3', { fg = colors.yellow })
     nvim_set_hl('@markup.heading.4', { fg = colors.orange })
@@ -573,6 +570,15 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('LazyButtonActive', { fg = colors.yellow, bg = colors.mix_yellow })
     nvim_set_hl('LazyReasonStart', { fg = colors.yellow })
     nvim_set_hl('LazyReasonEvent', { fg = colors.red })
+  end
+
+  if config.plugins.rendermarkdown then
+    nvim_set_hl('RenderMarkdownH1Bg', { fg = colors.red, bg = colors.mix_red })
+    nvim_set_hl('RenderMarkdownH2Bg', { fg = colors.magenta, bg = colors.mix_magenta })
+    nvim_set_hl('RenderMarkdownH3Bg', { fg = colors.yellow, bg = colors.mix_yellow })
+    nvim_set_hl('RenderMarkdownH4Bg', { fg = colors.orange, bg = colors.mix_orange })
+    nvim_set_hl('RenderMarkdownH5Bg', { fg = colors.blue, bg = colors.mix_blue })
+    nvim_set_hl('RenderMarkdownH5Bg', { fg = colors.blue, bg = colors.mix_blue })
   end
 
   if config.on_highlights then
