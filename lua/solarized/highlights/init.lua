@@ -325,6 +325,16 @@
 ---@field RenderMarkdownH4Bg? vim.api.keyset.highlight
 ---@field RenderMarkdownH5Bg? vim.api.keyset.highlight
 ---@field RenderMarkdownH6Bg? vim.api.keyset.highlight
+---@field NeogitBranch? vim.api.keyset.highlight
+---@field NeogitRemote? vim.api.keyset.highlight
+---@field NeogitHunkHeader? vim.api.keyset.highlight
+---@field NeogitHunkHeaderHighlight? vim.api.keyset.highlight
+---@field NeogitDiffContextHighlight? vim.api.keyset.highlight
+---@field NeogitDiffContext? vim.api.keyset.highlight
+---@field NeogitDiffDeleteHighlight? vim.api.keyset.highlight
+---@field NeogitDiffDelete? vim.api.keyset.highlight
+---@field NeogitDiffAddHighlight? vim.api.keyset.highlight
+---@field NeogitDiffAdd? vim.api.keyset.highlight
 
 local M = {}
 
@@ -910,6 +920,19 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('RenderMarkdownH4Bg', { fg = colors.orange, bg = colors.mix_orange })
     nvim_set_hl('RenderMarkdownH5Bg', { fg = colors.red, bg = colors.mix_red })
     nvim_set_hl('RenderMarkdownH6Bg', { fg = colors.magenta, bg = colors.mix_magenta })
+  end
+
+  if config.plugins.neogit then
+    nvim_set_hl('NeogitBranch', { fg = colors.magenta })
+    nvim_set_hl('NeogitRemote', { fg = colors.violet })
+    nvim_set_hl('NeogitHunkHeader', { fg = colors.red, bg = colors.mix_red, bold = true })
+    nvim_set_hl('NeogitHunkHeaderHighlight', { link = 'Title' })
+    nvim_set_hl('NeogitDiffContextHighlight', { fg = colors.base1, bg = colors.base02 })
+    nvim_set_hl('NeogitDiffContext', { fg = colors.base0, bg = colors.base03 })
+    nvim_set_hl('NeogitDiffDeleteHighlight', { fg = colors.red, bg = colors.mix_red })
+    nvim_set_hl('NeogitDiffDelete', { fg = colors.red })
+    nvim_set_hl('NeogitDiffAddHighlight', { fg = colors.blue, bg = colors.mix_blue })
+    nvim_set_hl('NeogitDiffAdd', { fg = colors.blue })
   end
 
   if config.on_highlights then

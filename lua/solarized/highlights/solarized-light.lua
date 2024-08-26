@@ -429,8 +429,8 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.dashboard then
-    nvim_set_hl('DashboardHeader', { fg = colors.base1 })
-    nvim_set_hl('DashboardFooter', { fg = colors.magenta })
+    nvim_set_hl('DashboardHeader', { fg = colors.magenta })
+    nvim_set_hl('DashboardFooter', { fg = colors.violet })
     nvim_set_hl('DashboardDesc', { link = 'Directory' })
     nvim_set_hl('DashboardKey', { link = 'Keyword' })
     nvim_set_hl('DashboardIcon', { link = 'Directory' })
@@ -583,6 +583,19 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('RenderMarkdownH4Bg', { fg = colors.orange, bg = colors.mix_orange })
     nvim_set_hl('RenderMarkdownH5Bg', { fg = colors.blue, bg = colors.mix_blue })
     nvim_set_hl('RenderMarkdownH5Bg', { fg = colors.blue, bg = colors.mix_blue })
+  end
+
+  if config.plugins.neogit then
+    nvim_set_hl('NeogitBranch', { fg = colors.magenta })
+    nvim_set_hl('NeogitRemote', { fg = colors.violet })
+    nvim_set_hl('NeogitHunkHeader', { fg = colors.red, bg = colors.mix_red, bold = true })
+    nvim_set_hl('NeogitHunkHeaderHighlight', { link = 'Title' })
+    nvim_set_hl('NeogitDiffContextHighlight', { fg = colors.base01, bg = colors.base2 })
+    nvim_set_hl('NeogitDiffContext', { fg = colors.base00, bg = colors.base3 })
+    nvim_set_hl('NeogitDiffDeleteHighlight', { fg = colors.red, bg = colors.mix_red })
+    nvim_set_hl('NeogitDiffDelete', { fg = colors.red })
+    nvim_set_hl('NeogitDiffAddHighlight', { fg = colors.green, bg = colors.mix_green })
+    nvim_set_hl('NeogitDiffAdd', { fg = colors.green })
   end
 
   if config.on_highlights then

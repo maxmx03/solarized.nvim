@@ -32,6 +32,7 @@
 ---@field bufferline? boolean
 ---@field lazy? boolean
 ---@field rendermarkdown? boolean
+---@field neogit? boolean
 
 ---@class solarized.config
 ---@field transparent? boolean
@@ -79,5 +80,6 @@ return {
     bufferline = true,
     lazy = true,
     rendermarkdown = true,
+    neogit = true,
   },
 }
