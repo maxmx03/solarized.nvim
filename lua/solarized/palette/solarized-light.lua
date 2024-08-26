@@ -2,6 +2,7 @@ local M = {}
 
 ---@type solarized.palette
 M.solarized = {
+  base04 = '#001E26',
   base03 = '#002b36',
   base02 = '#073642',
   base01 = '#586E75',
@@ -10,6 +11,7 @@ M.solarized = {
   base1 = '#93A1A1',
   base2 = '#EEE8D5',
   base3 = '#FDF6E3',
+  base4 = '#fbf3db',
   blue = '#268BD2',
   cyan = '#2AA198',
   orange = '#CB4B16',
@@ -47,6 +49,7 @@ M.selenized = {
   base1 = '#909995',
   base2 = '#ece3cc',
   base3 = '#fbf3db',
+  base4 = '#ece3cc',
   yellow = '#ad8900',
   orange = '#c25d1e',
   red = '#d2212d',

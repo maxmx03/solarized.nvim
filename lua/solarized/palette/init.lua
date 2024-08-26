@@ -8,6 +8,7 @@
 ---@field base1? string
 ---@field base2? string
 ---@field base3? string
+---@field base4? string
 ---@field blue? string
 ---@field cyan? string
 ---@field diag_error? string
@@ -46,6 +47,7 @@ M.solarized = {
   base1 = '#93A1A1',
   base2 = '#eee8d5',
   base3 = '#fdf6e3',
+  base4 = '#fbf3db',
   blue = '#268BD2',
   cyan = '#2AA198',
   diag_error = '#DC322F',
@@ -83,6 +85,7 @@ M.selenized = {
   base1 = '#cad8d9',
   base2 = '#ece3cc',
   base3 = '#fbf3db',
+  base4 = '#ece3cc',
   yellow = '#dbb32d',
   orange = '#ed8649',
   red = '#fa5750',

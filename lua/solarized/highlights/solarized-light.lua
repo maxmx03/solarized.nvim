@@ -59,7 +59,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('ErrorMsg', { fg = colors.diag_error })
   nvim_set_hl(
     'WinSeparator',
-    { fg = colors.blue, bg = colors.base2 },
+    { fg = colors.blue, bg = colors.base4 },
     { transparent = config.transparent }
   )
   nvim_set_hl('Folded', { fg = colors.base00, bg = colors.base2 })
@@ -96,11 +96,11 @@ M.set_highlight = function(colors, config)
     { fg = colors.base00, bg = colors.base3 },
     { transparent = config.transparent }
   )
-  nvim_set_hl('NormalFloat', { fg = colors.base00, bg = colors.base2 })
+  nvim_set_hl('NormalFloat', { fg = colors.base00, bg = colors.base4 })
   nvim_set_hl('FloatBorder', { link = 'WinSeparator' })
   nvim_set_hl('FloatTitle', { fg = colors.blue })
   nvim_set_hl('NormalNC', { link = 'Normal' })
-  nvim_set_hl('Pmenu', { fg = colors.base00, bg = colors.base2 })
+  nvim_set_hl('Pmenu', { fg = colors.base00, bg = colors.base4 })
   nvim_set_hl('PmenuSel', { fg = colors.blue, reverse = true })
   nvim_set_hl('PmenuKind', { link = 'Pmenu' })
   nvim_set_hl('PmenuKindSel', { link = 'PmenuSel' })
@@ -368,7 +368,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NeoTreeTitleBar', { fg = colors.blue, reverse = true })
     nvim_set_hl(
       'NeoTreeNormal',
-      { fg = colors.base01, bg = colors.base2 },
+      { fg = colors.base01, bg = colors.base4 },
       { transparent = config.transparent }
     )
     nvim_set_hl('NeoTreeNormalNC', { link = 'NeoTreeNormal' })
@@ -408,18 +408,18 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NvimTreeGitDeleted', { fg = colors.git_delete })
     nvim_set_hl(
       'NvimTreeNormal',
-      { fg = colors.base01, bg = colors.base2 },
+      { fg = colors.base01, bg = colors.base4 },
       { transparent = config.transparent }
     )
     nvim_set_hl('NvimTreeNormalFloat', { link = 'NvimTreeNormal' })
-    nvim_set_hl('NvimTreeEndOfBuffer', { fg = colors.base2 })
+    nvim_set_hl('NvimTreeEndOfBuffer', { fg = colors.base4 })
     nvim_set_hl('NvimTreeWinSeparator', { link = 'WinSeparator' })
   end
 
   if config.plugins.whichkey then
     nvim_set_hl(
       'WhichKeyNormal',
-      { fg = colors.base01, bg = colors.base2 },
+      { fg = colors.base01, bg = colors.base4 },
       { transparent = config.transparent }
     )
     nvim_set_hl('WhichKey', { link = 'Function' })
@@ -449,7 +449,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopeMultiIcon', { fg = colors.blue })
     nvim_set_hl(
       'TelescopeNormal',
-      { fg = colors.base0, bg = colors.base2 },
+      { fg = colors.base0, bg = colors.base4 },
       { transparent = config.transparent }
     )
     nvim_set_hl('TelescopePreviewNormal', { link = 'TelescopeNormal' })

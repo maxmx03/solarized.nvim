@@ -125,16 +125,17 @@ colorscheme.
 
 #### Solarized Light Extra colors
 
-| Name        | Hex (balance 90) | Description                |
-| ----------- | ---------------- | -------------------------- |
-| mix_yellow  | #f5ebcc          | yellow + base3 / optional  |
-| mix_orange  | #f8e4ce          | orange + base3 /optional   |
-| mix_red     | #f9e2d1          | red + base3 / optional     |
-| mix_magenta | #f8e2d9          | magenta + base3 / optional |
-| mix_violet  | #eee8df          | violet + base3 / optional  |
-| mix_blue    | #e7ebe1          | blue + base3 / optional    |
-| mix_cyan    | #e7eddb          | cyan + base3 / optional    |
-| mix_green   | #f1eccc          | green + base3 /optional    |
+| Name        | Hex (balance 90)          | Description                       |
+| ----------- | ------------------------- | --------------------------------- |
+| mix_yellow  | #f5ebcc                   | yellow + base3 / optional         |
+| mix_orange  | #f8e4ce                   | orange + base3 /optional          |
+| mix_red     | #f9e2d1                   | red + base3 / optional            |
+| mix_magenta | #f8e2d9                   | magenta + base3 / optional        |
+| mix_violet  | #eee8df                   | violet + base3 / optional         |
+| mix_blue    | #e7ebe1                   | blue + base3 / optional           |
+| mix_cyan    | #e7eddb                   | cyan + base3 / optional           |
+| mix_green   | #f1eccc                   | green + base3 /optional           |
+| base4       | #fbf3db (selenized base3) | sidebar background / float window |
 
 ### Selenized Light
 
@@ -159,16 +160,16 @@ colorscheme.
 
 #### Selenized Light Extra colors
 
-| Name        | Hex (balance 90) | Description                |
-| ----------- | ---------------- | -------------------------- |
-| mix_yellow  | #f3e8c5          | yellow + base3 / optional  |
-| mix_orange  | #f5e4c8          | orange + base3 / optional  |
-| mix_red     | #f6dec9          | red + base3 / optional     |
-| mix_magenta | #f6e1d4          | magenta + base3 / optional |
-| mix_violet  | #efe4d8          | violet + base3 / optional  |
-| mix_blue    | #e1e6da          | blue + base3 / optional    |
-| mix_cyan    | #e1ead3          | cyan + base3 / optional    |
-| mix_green   | #e9e9c5          | green + base3 / optional   |
+| Name        | Hex (balance 90)          | Description                |
+| ----------- | ------------------------- | -------------------------- |
+| mix_yellow  | #f3e8c5                   | yellow + base3 / optional  |
+| mix_orange  | #f5e4c8                   | orange + base3 / optional  |
+| mix_red     | #f6dec9                   | red + base3 / optional     |
+| mix_magenta | #f6e1d4                   | magenta + base3 / optional |
+| mix_violet  | #efe4d8                   | violet + base3 / optional  |
+| mix_blue    | #e1e6da                   | blue + base3 / optional    |
+| mix_cyan    | #e1ead3                   | cyan + base3 / optional    |
+| mix_green   | #e9e9c5                   | green + base3 / optional   |
 
 ## Solarized & Selenized Website
 
