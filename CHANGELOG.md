@@ -1,5 +1,33 @@
 # Changelog
 
+## [3.1.0](https://github.com/maxmx03/solarized.nvim/compare/v3.0.0...v3.1.0) (2024-08-27)
+
+
+### Features
+
+* ale,alpha,yanky,gitgutter,coc,leap ([d58a43b](https://github.com/maxmx03/solarized.nvim/commit/d58a43b9f7bc6f91273d8ae5ad9a8418dc25cc0c))
+* annotation for config ([10eb62f](https://github.com/maxmx03/solarized.nvim/commit/10eb62fe0f15a2732c86da6cc06dadf5824ff20f))
+* base4 for solarized-light ([abb2cae](https://github.com/maxmx03/solarized.nvim/commit/abb2cae5d36518a5ed4b7dc6cad5c00732343e7f))
+* docker-compose ([3a19787](https://github.com/maxmx03/solarized.nvim/commit/3a197875c76803e4a64d4b1491c6dd0d22b161cd))
+* highlight color for markup headings ([dfc4d62](https://github.com/maxmx03/solarized.nvim/commit/dfc4d6272513ed6f4debea9b5dc5352156b0f372))
+* lazynvim, ci test removed ([8ac84d6](https://github.com/maxmx03/solarized.nvim/commit/8ac84d6d2e8a8c6e390e68f95bf908338b07690c))
+* mix_base1, todocomments ([7c2a916](https://github.com/maxmx03/solarized.nvim/commit/7c2a91680281132d8ed27a2c046e476cd8e7f9b4))
+* more control over transparent ([10295bb](https://github.com/maxmx03/solarized.nvim/commit/10295bbfc93a1fe5eaf993cbac0fb4d7a606be17))
+* neogit ([8f48353](https://github.com/maxmx03/solarized.nvim/commit/8f48353da2a8fd998b5bb43a3135739ef0c342bb))
+* rendermarkdown highlights ([892e50a](https://github.com/maxmx03/solarized.nvim/commit/892e50a7df38e8af84dbb822a6f184ba348c9a23))
+* Solarized theme restructuring ([5b304a1](https://github.com/maxmx03/solarized.nvim/commit/5b304a17ae992a668b58689908b58b1d796de7de))
+* solarized-light.yml ([322be5d](https://github.com/maxmx03/solarized.nvim/commit/322be5da46dafa3e9482341108040baa8a1312cd))
+* solarized-light.yml, contributing.md ([6f127f8](https://github.com/maxmx03/solarized.nvim/commit/6f127f8257166b9f48550febb61c1b4d4a6c1d84))
+* solarized.yml ([f4e11fa](https://github.com/maxmx03/solarized.nvim/commit/f4e11fa69a1676059f78d104382c6e2ef7e1713d))
+* tests, styles config ([9a9399e](https://github.com/maxmx03/solarized.nvim/commit/9a9399e9a45057f17a261eb8433742c373893eff))
+
+
+### Bug Fixes
+
+* barbecue theme ([fb1997b](https://github.com/maxmx03/solarized.nvim/commit/fb1997be521d1a9cd0dcb2117178c5a158021662))
+* selenized and solarized extra colors ([10eb62f](https://github.com/maxmx03/solarized.nvim/commit/10eb62fe0f15a2732c86da6cc06dadf5824ff20f))
+* selenized base02 and base04 ([c84571d](https://github.com/maxmx03/solarized.nvim/commit/c84571d806ac7eb8445b502b40694f4fb689eb52))
+
 ## [3.0.0](https://github.com/maxmx03/solarized.nvim/compare/v2.2.0...v3.0.0) (2024-05-13)
 
 
