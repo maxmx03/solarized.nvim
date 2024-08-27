@@ -45,6 +45,12 @@
 ---@field rendermarkdown? boolean
 ---@field neogit? boolean
 ---@field todocomments? boolean
+---@field ale? boolean
+---@field alpha? boolean
+---@field yanky? boolean
+---@field gitgutter? boolean
+---@field coc? boolean
+---@field leap? boolean
 
 ---@class solarized.config
 ---@field transparent? solarized.transparent

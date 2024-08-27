@@ -357,6 +357,32 @@
 ---@field TodoBgNOTE? vim.api.keyset.highlight
 ---@field TodoBgHACK? vim.api.keyset.highlight
 ---@field TodoBgFIX? vim.api.keyset.highlight
+---@field ALEErrorSign? vim.api.keyset.highlight
+---@field ALEWarningSign? vim.api.keyset.highlight
+---@field AlphaShortcut? vim.api.keyset.highlight
+---@field AlphaHeader? vim.api.keyset.highlight
+---@field AlphaHeaderLabel? vim.api.keyset.highlight
+---@field AlphaFooter? vim.api.keyset.highlight
+---@field AlphaButtons? vim.api.keyset.highlight
+---@field YankyPut? vim.api.keyset.highlight
+---@field YankyYanked? vim.api.keyset.highlight
+---@field GitGutterAdd? vim.api.keyset.highlight
+---@field GitGutterChange? vim.api.keyset.highlight
+---@field GitGutterDelete? vim.api.keyset.highlight
+---@field GitGutterAddLineNr? vim.api.keyset.highlight
+---@field GitGutterChangeLineNr? vim.api.keyset.highlight
+---@field GitGutterDeleteLineNr? vim.api.keyset.highlight
+---@field CocErrorSign? vim.api.keyset.highlight
+---@field CocWarningSign? vim.api.keyset.highlight
+---@field CocInfoSign? vim.api.keyset.highlight
+---@field CocHintSign? vim.api.keyset.highlight
+---@field CocErrorVirtualText? vim.api.keyset.highlight
+---@field CocWarningVirtualText? vim.api.keyset.highlight
+---@field CocInfoVirtualText? vim.api.keyset.highlight
+---@field CocHintVirtualText? vim.api.keyset.highlight
+---@field LeapMatch? vim.api.keyset.highlight
+---@field LeapLabel? vim.api.keyset.highlight
+---@field LeapBackDrop? vim.api.keyset.highlight
 
 local M = {}
 
@@ -663,15 +689,15 @@ M.set_highlight = function(colors, config)
     )
     nvim_set_hl(
       'DiagnosticInfo',
-      { fg = colors.base1, bg = colors.mix_base1 },
+      { fg = colors.diag_info, bg = colors.mix_base1 },
       { transparent = config.transparent.enabled }
     )
-    nvim_set_hl('DiagnosticHint', { link = 'DiagnosticHint' })
+    nvim_set_hl('DiagnosticHint', { fg = colors.diag_hint, bg = colors.mix_base1 })
     nvim_set_hl('DiagnosticOk', { fg = colors.diag_ok })
     nvim_set_hl('DiagnosticVirtualTextError', { fg = colors.diag_error })
     nvim_set_hl('DiagnosticVirtualTextWarn', { fg = colors.diag_warning })
-    nvim_set_hl('DiagnosticVirtualTextInfo', { fg = colors.base1 })
-    nvim_set_hl('DiagnosticVirtualTextHint', { link = 'DiagnosticVirtualTextInfo' })
+    nvim_set_hl('DiagnosticVirtualTextInfo', { fg = colors.diag_info })
+    nvim_set_hl('DiagnosticVirtualTextHint', { fg = colors.diag_hint })
     nvim_set_hl('DiagnosticVirtualTextOk', { fg = colors.green, bg = colors.mix_green })
     nvim_set_hl('DiagnosticUnderlineError', { fg = colors.diag_error, underline = true })
     nvim_set_hl('DiagnosticUnderlineWarn', { fg = colors.diag_warning, underline = true })
@@ -874,6 +900,7 @@ M.set_highlight = function(colors, config)
   if config.plugins.hop then
     nvim_set_hl('HopNextKey', { fg = colors.magenta })
     nvim_set_hl('HopNextKey1', { fg = colors.blue })
+    nvim_set_hl('HopNextKey2', { fg = colors.cyan })
     nvim_set_hl('HopUnmatched', { fg = colors.base01 })
   end
 
@@ -1016,6 +1043,50 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TodoBgNOTE', { fg = colors.cyan, bg = colors.mix_cyan })
     nvim_set_hl('TodoBgHACK', { fg = colors.orange, bg = colors.mix_orange })
     nvim_set_hl('TodoBgFIX', { fg = colors.red, bg = colors.mix_red })
+  end
+
+  if config.plugins.ale then
+    nvim_set_hl('ALEErrorSign', { fg = colors.diag_error })
+    nvim_set_hl('ALEWarningSign', { fg = colors.diag_warning })
+  end
+
+  if config.plugins.alpha then
+    nvim_set_hl('AlphaShortcut', { fg = colors.base0 })
+    nvim_set_hl('AlphaHeader', { fg = colors.base01 })
+    nvim_set_hl('AlphaHeaderLabel', { fg = colors.orange })
+    nvim_set_hl('AlphaFooter', { fg = colors.violet })
+    nvim_set_hl('AlphaButtons', { link = 'Directory' })
+  end
+
+  if config.plugins.yanky then
+    nvim_set_hl('YankyPut', { link = 'Search' })
+    nvim_set_hl('YankyYanked', { link = 'IncSearch' })
+  end
+
+  if config.plugins.gitgutter then
+    nvim_set_hl('GitGutterAdd', { fg = colors.git_add })
+    nvim_set_hl('GitGutterChange', { fg = colors.git_modify })
+    nvim_set_hl('GitGutterDelete', { fg = colors.git_delete })
+    nvim_set_hl('GitGutterAddLineNr', { fg = colors.git_add })
+    nvim_set_hl('GitGutterChangeLineNr', { fg = colors.git_modify })
+    nvim_set_hl('GitGutterDeleteLineNr', { fg = colors.git_delete })
+  end
+
+  if config.plugins.coc then
+    nvim_set_hl('CocErrorSign', { fg = colors.diag_error })
+    nvim_set_hl('CocWarningSign', { fg = colors.diag_warning })
+    nvim_set_hl('CocInfoSign', { fg = colors.diag_info })
+    nvim_set_hl('CocHintSign', { fg = colors.diag_hint })
+    nvim_set_hl('CocErrorVirtualText', { fg = colors.diag_error, bg = colors.mix_red })
+    nvim_set_hl('CocWarningVirtualText', { fg = colors.diag_warning, bg = colors.mix_yellow })
+    nvim_set_hl('CocInfoVirtualText', { fg = colors.diag_info, bg = colors.mix_base1 })
+    nvim_set_hl('CocHintVirtualText', { fg = colors.diag_hint, bg = colors.mix_base1 })
+  end
+
+  if config.plugins.leap then
+    nvim_set_hl('LeapMatch', { fg = colors.magenta, bg = colors.mix_magenta, bold = true })
+    nvim_set_hl('LeapLabel', { fg = colors.magenta, bold = true })
+    nvim_set_hl('LeapBackDrop', { fg = colors.base01 })
   end
 
   if config.on_highlights then

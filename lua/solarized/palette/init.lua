@@ -30,6 +30,7 @@
 ---@field mix_violet? string
 ---@field mix_yellow? string
 ---@field mix_base1? string
+---@field mix_base01? string
 ---@field orange? string
 ---@field red? string
 ---@field violet? string
@@ -52,8 +53,8 @@ M.solarized = {
   blue = '#268BD2',
   cyan = '#2AA198',
   diag_error = '#DC322F',
-  diag_hint = '#859900',
-  diag_info = '#859900',
+  diag_hint = '#93A1A1',
+  diag_info = '#93A1A1',
   diag_ok = '#859900',
   diag_warning = '#B58900',
   git_add = '#268BD2',

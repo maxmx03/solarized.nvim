@@ -687,6 +687,50 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TodoBgFIX', { fg = colors.red, bg = colors.mix_red })
   end
 
+  if config.plugins.ale then
+    nvim_set_hl('ALEErrorSign', { fg = colors.diag_error })
+    nvim_set_hl('ALEWarningSign', { fg = colors.diag_warning })
+  end
+
+  if config.plugins.alpha then
+    nvim_set_hl('AlphaShortcut', { fg = colors.base00 })
+    nvim_set_hl('AlphaHeader', { fg = colors.magenta })
+    nvim_set_hl('AlphaHeaderLabel', { fg = colors.red })
+    nvim_set_hl('AlphaFooter', { fg = colors.violet })
+    nvim_set_hl('AlphaButtons', { link = 'Directory' })
+  end
+
+  if config.plugins.yanky then
+    nvim_set_hl('YankyPut', { link = 'Search' })
+    nvim_set_hl('YankyYanked', { link = 'IncSearch' })
+  end
+
+  if config.plugins.gitgutter then
+    nvim_set_hl('GitGutterAdd', { fg = colors.git_add })
+    nvim_set_hl('GitGutterChange', { fg = colors.git_modify })
+    nvim_set_hl('GitGutterDelete', { fg = colors.git_delete })
+    nvim_set_hl('GitGutterAddLineNr', { fg = colors.git_add })
+    nvim_set_hl('GitGutterChangeLineNr', { fg = colors.git_modify })
+    nvim_set_hl('GitGutterDeleteLineNr', { fg = colors.git_delete })
+  end
+
+  if config.plugins.coc then
+    nvim_set_hl('CocErrorSign', { fg = colors.diag_error })
+    nvim_set_hl('CocWarningSign', { fg = colors.diag_warning })
+    nvim_set_hl('CocInfoSign', { fg = colors.diag_info })
+    nvim_set_hl('CocHintSign', { fg = colors.diag_hint })
+    nvim_set_hl('CocErrorVirtualText', { fg = colors.diag_error, bg = colors.mix_red })
+    nvim_set_hl('CocWarningVirtualText', { fg = colors.diag_warning, bg = colors.mix_yellow })
+    nvim_set_hl('CocInfoVirtualText', { fg = colors.diag_info, bg = colors.mix_blue })
+    nvim_set_hl('CocHintVirtualText', { fg = colors.diag_hint, bg = colors.mix_blue })
+  end
+
+  if config.plugins.leap then
+    nvim_set_hl('LeapMatch', { fg = colors.magenta, bg = colors.mix_magenta, bold = true })
+    nvim_set_hl('LeapLabel', { fg = colors.magenta, bold = true })
+    nvim_set_hl('LeapBackDrop', { fg = colors.base01 })
+  end
+
   if config.on_highlights then
     local color = require 'solarized.color'
     local highlights = config.on_highlights(colors, color)
