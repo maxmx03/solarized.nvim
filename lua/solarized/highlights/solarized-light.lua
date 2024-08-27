@@ -107,7 +107,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('FloatTitle', { fg = colors.blue })
   nvim_set_hl('NormalNC', { link = 'Normal' })
   nvim_set_hl('Pmenu', { fg = colors.base00, bg = colors.base4 }, {
-    transparent = config.transparent.pmenu and config.transparent.enabled
+    transparent = config.transparent.pmenu and config.transparent.enabled,
   })
   nvim_set_hl('PmenuSel', { fg = colors.blue, reverse = true })
   nvim_set_hl('PmenuKind', { link = 'Pmenu' })
@@ -630,7 +630,7 @@ M.set_highlight = function(colors, config)
 
   if config.plugins.lazy then
     nvim_set_hl('LazyNormal', { fg = colors.base0, bg = colors.base04 }, {
-      transparent = config.transparent.lazy and config.transparent.enabled
+      transparent = config.transparent.lazy and config.transparent.enabled,
     })
     nvim_set_hl('LazyH1', { fg = colors.blue, bold = true })
     nvim_set_hl('LazyButton', { fg = colors.green, bg = colors.mix_green })
