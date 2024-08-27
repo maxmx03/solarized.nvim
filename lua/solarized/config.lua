@@ -1,3 +1,14 @@
+---@class solarized.transparent
+---@field normal? boolean
+---@field normalfloat? boolean
+---@field pmenu? boolean
+---@field neotree? boolean
+---@field nvimtree? boolean
+---@field telescope? boolean
+---@field whichkey? boolean
+---@field lazy? boolean
+---@field enabled? boolean
+
 ---@class solarized.styles
 ---@field types? vim.api.keyset.highlight
 ---@field functions? vim.api.keyset.highlight
@@ -36,14 +47,24 @@
 ---@field todocomments? boolean
 
 ---@class solarized.config
----@field transparent? boolean
+---@field transparent? solarized.transparent
 ---@field on_highlights? fun(colors: solarized.palette, color: solarized.color): solarized.highlights
 ---@field on_colors? fun(colors: solarized.palette, color: solarized.color): solarized.palette
 ---@field styles? solarized.styles
 ---@field palette? "solarized" | "selenized"
 ---@field plugins? solarized.plugins
 return {
-  transparent = false,
+  transparent = {
+    enabled = false,
+    pmenu = true,
+    normal = true,
+    normalfloat = true,
+    neotree = true,
+    nvimtree = true,
+    whichkey = true,
+    telescope = true,
+    lazy = true,
+  },
   on_highlights = nil,
   on_colors = nil,
   palette = 'solarized',

@@ -60,32 +60,32 @@ M.set_highlight = function(colors, config)
   nvim_set_hl(
     'WinSeparator',
     { fg = colors.blue, bg = colors.base4 },
-    { transparent = config.transparent }
+    { transparent = config.transparent.enabled }
   )
   nvim_set_hl('Folded', { fg = colors.base00, bg = colors.base2 })
   nvim_set_hl('FoldColumn', { fg = colors.base00, bg = colors.base2 })
   nvim_set_hl(
     'SignColumn',
     { fg = colors.base00, bg = colors.base2 },
-    { transparent = config.transparent }
+    { transparent = config.transparent.enabled }
   )
   nvim_set_hl(
     'IncSearch',
     { fg = colors.yellow, bg = colors.mix_yellow, bold = true },
-    { transparent = config.transparent }
+    { transparent = config.transparent.enabled }
   )
   nvim_set_hl('Substitute', { link = 'IncSearch' })
   nvim_set_hl(
     'LineNr',
     { fg = colors.base1, bg = colors.base2 },
-    { transparent = config.transparent }
+    { transparent = config.transparent.enabled }
   )
   nvim_set_hl('LineNrAbove', { link = 'LineNr' })
   nvim_set_hl('LineNrBelow', { link = 'LineNr' })
   nvim_set_hl(
     'CursorLineNr',
     { fg = colors.base01, bg = colors.base2 },
-    { transparent = config.transparent }
+    { transparent = config.transparent.enabled }
   )
   nvim_set_hl('CursorLineFold', { link = 'FoldColumn' })
   nvim_set_hl('CursorLineSign', { link = 'SignColumn' })
@@ -98,13 +98,17 @@ M.set_highlight = function(colors, config)
   nvim_set_hl(
     'Normal',
     { fg = colors.base00, bg = colors.base3 },
-    { transparent = config.transparent }
+    { transparent = config.transparent.normal and config.transparent.enabled }
   )
-  nvim_set_hl('NormalFloat', { fg = colors.base00, bg = colors.base4 })
+  nvim_set_hl('NormalFloat', { fg = colors.base00, bg = colors.base4 }, {
+    transparent = config.transparent.normalfloat and config.transparent.enabled,
+  })
   nvim_set_hl('FloatBorder', { link = 'WinSeparator' })
   nvim_set_hl('FloatTitle', { fg = colors.blue })
   nvim_set_hl('NormalNC', { link = 'Normal' })
-  nvim_set_hl('Pmenu', { fg = colors.base00, bg = colors.base4 })
+  nvim_set_hl('Pmenu', { fg = colors.base00, bg = colors.base4 }, {
+    transparent = config.transparent.pmenu and config.transparent.enabled
+  })
   nvim_set_hl('PmenuSel', { fg = colors.blue, reverse = true })
   nvim_set_hl('PmenuKind', { link = 'Pmenu' })
   nvim_set_hl('PmenuKindSel', { link = 'PmenuSel' })
@@ -291,52 +295,52 @@ M.set_highlight = function(colors, config)
     nvim_set_hl(
       'DiagnosticError',
       { fg = colors.diag_error, bg = colors.mix_red },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'DiagnosticWarn',
       { fg = colors.diag_warning, bg = colors.mix_yellow },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'DiagnosticInfo',
       { fg = colors.diag_info, bg = colors.mix_blue },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'DiagnosticHint',
       { fg = colors.diag_hint, bg = colors.mix_blue },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'DiagnosticOk',
       { fg = colors.diag_ok, bg = colors.mix_green },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'DiagnosticVirtualTextError',
       { fg = colors.diag_error, bg = colors.mix_red },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'DiagnosticVirtualTextWarn',
       { fg = colors.diag_warning, bg = colors.mix_yellow },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'DiagnosticVirtualTextInfo',
       { fg = colors.diag_hint, bg = colors.mix_blue },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'DiagnosticVirtualTextHint',
       { fg = colors.diag_info, bg = colors.mix_blue },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'DiagnosticVirtualTextOk',
       { fg = colors.diag_ok, bg = colors.mix_green },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl('DiagnosticUnderlineError', { fg = colors.diag_error, underline = true })
     nvim_set_hl('DiagnosticUnderlineWarn', { fg = colors.diag_warning, underline = true })
@@ -413,7 +417,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl(
       'NeoTreeNormal',
       { fg = colors.base01, bg = colors.base4 },
-      { transparent = config.transparent }
+      { transparent = config.transparent.neotree and config.transparent.enabled }
     )
     nvim_set_hl('NeoTreeNormalNC', { link = 'NeoTreeNormal' })
     nvim_set_hl('NeoTreeDotFile', { fg = colors.base1 })
@@ -453,7 +457,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl(
       'NvimTreeNormal',
       { fg = colors.base01, bg = colors.base4 },
-      { transparent = config.transparent }
+      { transparent = config.transparent.nvimtree and config.transparent.enabled }
     )
     nvim_set_hl('NvimTreeNormalFloat', { link = 'NvimTreeNormal' })
     nvim_set_hl('NvimTreeEndOfBuffer', { fg = colors.base4 })
@@ -464,7 +468,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl(
       'WhichKeyNormal',
       { fg = colors.base01, bg = colors.base4 },
-      { transparent = config.transparent }
+      { transparent = config.transparent.whichkey and config.transparent.enabled }
     )
     nvim_set_hl('WhichKey', { link = 'Function' })
     nvim_set_hl('WhichKeyDesc', { fg = colors.base01 })
@@ -485,17 +489,17 @@ M.set_highlight = function(colors, config)
     nvim_set_hl(
       'GitSignsAdd',
       { fg = colors.git_add, bg = colors.base2 },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'GitSignsChange',
       { fg = colors.git_modify, bg = colors.base2 },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
     nvim_set_hl(
       'GitSignsDelete',
       { fg = colors.git_delete, bg = colors.base2 },
-      { transparent = config.transparent }
+      { transparent = config.transparent.enabled }
     )
   end
 
@@ -506,7 +510,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl(
       'TelescopeNormal',
       { fg = colors.base0, bg = colors.base4 },
-      { transparent = config.transparent }
+      { transparent = config.transparent.telescope and config.transparent.enabled }
     )
     nvim_set_hl('TelescopePreviewNormal', { link = 'TelescopeNormal' })
     nvim_set_hl('TelescopePromptNormal', { link = 'TelescopeNormal' })
@@ -625,6 +629,9 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.lazy then
+    nvim_set_hl('LazyNormal', { fg = colors.base0, bg = colors.base04 }, {
+      transparent = config.transparent.lazy and config.transparent.enabled
+    })
     nvim_set_hl('LazyH1', { fg = colors.blue, bold = true })
     nvim_set_hl('LazyButton', { fg = colors.green, bg = colors.mix_green })
     nvim_set_hl('LazyButtonActive', { fg = colors.yellow, bg = colors.mix_yellow })

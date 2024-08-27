@@ -25,6 +25,7 @@ designed for use with terminal and gui applications.
 - [Docs](#docs)
 - [Commands](#commands)
 - [Default Config](#default-config)
+- [Config Transparency](#config-transparency)
 - [Config Styles](#config-styles)
 - [Config Highlights](#config-highlights)
 - [Config Colors](#config-colors)
@@ -155,7 +156,17 @@ vim.o.background = 'dark'
 
 -- default config
 require('solarized').setup({
-  transparent = false, -- false | true
+  transparent = {
+    enabled = false,
+    pmenu = true,
+    normal = true,
+    normalfloat = true,
+    neotree = true,
+    nvimtree = true,
+    whichkey = true,
+    telescope = true,
+    lazy = true,
+  },
   on_highlights = nil,
   on_colors = nil,
   palette = 'solarized', -- solarized (default) | selenized
@@ -196,6 +207,27 @@ require('solarized').setup({
 })
 
 vim.cmd.colorscheme = 'solarized'
+```
+
+## Config Transparency
+
+By default, transparency is turned off, but you can easily enable it and
+customize which specific UI components should be transparent.
+
+```lua
+require('solarized').setup {
+ transparent = {
+    enabled = true,         -- Master switch to enable transparency
+    pmenu = true,           -- Popup menu (e.g., autocomplete suggestions)
+    normal = true,          -- Main editor window background
+    normalfloat = true,     -- Floating windows
+    neotree = true,         -- Neo-tree file explorer
+    nvimtree = true,        -- Nvim-tree file explorer
+    whichkey = true,        -- Which-key popup
+    telescope = true,       -- Telescope fuzzy finder
+    lazy = true,            -- Lazy plugin manager UI
+  },
+}
 ```
 
 ## Config Styles

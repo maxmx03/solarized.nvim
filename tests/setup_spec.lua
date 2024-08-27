@@ -7,7 +7,9 @@ describe('solarized.setup', function()
     local solarized = require 'solarized'
 
     solarized.setup {
-      transparent = true,
+      transparent = {
+        enabled = true,
+      },
       styles = {
         strings = { italic = true },
         comments = { bold = true },
