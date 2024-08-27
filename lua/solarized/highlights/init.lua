@@ -801,10 +801,10 @@ M.set_highlight = function(colors, config)
       { fg = colors.base0, bg = colors.base04 },
       { transparent = config.transparent.whichkey and config.transparent.enabled }
     )
-    nvim_set_hl('WhichKey', { link = 'Function' })
-    nvim_set_hl('WhichKeyDesc', { fg = colors.base1 })
-    nvim_set_hl('WhichKeySeparator', { link = 'Keyword' })
-    nvim_set_hl('WhichKeyGroup', { link = 'Type' })
+    nvim_set_hl('WhichKey', { fg = colors.base1 })
+    nvim_set_hl('WhichKeyDesc', { fg = colors.blue })
+    nvim_set_hl('WhichKeySeparator', { fg = colors.green })
+    nvim_set_hl('WhichKeyGroup', { fg = colors.cyan })
   end
 
   if config.plugins.dashboard then
