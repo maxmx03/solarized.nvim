@@ -18,6 +18,20 @@ local function nvim_get_hl(name)
   return t
 end
 
+local function get_colors()
+  local config = require('solarized').config
+  local colors = {}
+  if vim.o.background == 'dark' then
+    local palette = require 'solarized.palette'
+    colors = palette[config.palette]
+  else
+    local palette = require 'solarized.palette.solarized-light'
+    colors = palette[config.palette]
+  end
+  return colors
+end
+
 return {
+  get_colors = get_colors,
   nvim_get_hl = nvim_get_hl,
 }

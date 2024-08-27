@@ -64,7 +64,11 @@ M.set_highlight = function(colors, config)
   )
   nvim_set_hl('Folded', { fg = colors.base00, bg = colors.base2 })
   nvim_set_hl('FoldColumn', { fg = colors.base00, bg = colors.base2 })
-  nvim_set_hl('SignColumn', { link = 'Normal' })
+  nvim_set_hl(
+    'SignColumn',
+    { fg = colors.base00, bg = colors.base2 },
+    { transparent = config.transparent }
+  )
   nvim_set_hl(
     'IncSearch',
     { fg = colors.yellow, bg = colors.mix_yellow, bold = true },
@@ -284,16 +288,56 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@lsp.typemod.keyword.documentation', { link = 'Statement' })
     nvim_set_hl('@lsp.typemod.class.documentation', { link = 'Type' })
     nvim_set_hl('@lsp.typemod.property.readonly', { link = 'Constant' })
-    nvim_set_hl('DiagnosticError', { fg = colors.diag_error })
-    nvim_set_hl('DiagnosticWarn', { fg = colors.diag_warning })
-    nvim_set_hl('DiagnosticInfo', { fg = colors.diag_info })
-    nvim_set_hl('DiagnosticHint', { fg = colors.diag_hint })
-    nvim_set_hl('DiagnosticOk', { fg = colors.diag_ok })
-    nvim_set_hl('DiagnosticVirtualTextError', { fg = colors.diag_error, bg = colors.mix_red })
-    nvim_set_hl('DiagnosticVirtualTextWarn', { fg = colors.diag_warning, bg = colors.mix_yellow })
-    nvim_set_hl('DiagnosticVirtualTextInfo', { fg = colors.diag_hint, bg = colors.mix_blue })
-    nvim_set_hl('DiagnosticVirtualTextHint', { fg = colors.diag_info, bg = colors.mix_blue })
-    nvim_set_hl('DiagnosticVirtualTextOk', { fg = colors.diag_ok, bg = colors.mix_green })
+    nvim_set_hl(
+      'DiagnosticError',
+      { fg = colors.diag_error, bg = colors.mix_red },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticWarn',
+      { fg = colors.diag_warning, bg = colors.mix_yellow },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticInfo',
+      { fg = colors.diag_info, bg = colors.mix_blue },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticHint',
+      { fg = colors.diag_hint, bg = colors.mix_blue },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticOk',
+      { fg = colors.diag_ok, bg = colors.mix_green },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticVirtualTextError',
+      { fg = colors.diag_error, bg = colors.mix_red },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticVirtualTextWarn',
+      { fg = colors.diag_warning, bg = colors.mix_yellow },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticVirtualTextInfo',
+      { fg = colors.diag_hint, bg = colors.mix_blue },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticVirtualTextHint',
+      { fg = colors.diag_info, bg = colors.mix_blue },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticVirtualTextOk',
+      { fg = colors.diag_ok, bg = colors.mix_green },
+      { transparent = config.transparent }
+    )
     nvim_set_hl('DiagnosticUnderlineError', { fg = colors.diag_error, underline = true })
     nvim_set_hl('DiagnosticUnderlineWarn', { fg = colors.diag_warning, underline = true })
     nvim_set_hl('DiagnosticUnderlineInfo', { fg = colors.diag_info, underline = true })
@@ -438,9 +482,21 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.gitsigns then
-    nvim_set_hl('GitSignsAdd', { fg = colors.git_add })
-    nvim_set_hl('GitSignsChange', { fg = colors.git_modify })
-    nvim_set_hl('GitSignsDelete', { fg = colors.git_delete })
+    nvim_set_hl(
+      'GitSignsAdd',
+      { fg = colors.git_add, bg = colors.base2 },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'GitSignsChange',
+      { fg = colors.git_modify, bg = colors.base2 },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'GitSignsDelete',
+      { fg = colors.git_delete, bg = colors.base2 },
+      { transparent = config.transparent }
+    )
   end
 
   if config.plugins.telescope then
@@ -459,7 +515,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopePromptBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopeResultsBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopePreviewBorder', { link = 'TelescopeBorder' })
-    nvim_set_hl('TelescopeTitle', { link = 'Title' })
+    nvim_set_hl('TelescopeTitle', { fg = colors.mix_blue, bg = colors.blue })
     nvim_set_hl('TelescopePromptTitle', { link = 'TelescopeTitle' })
     nvim_set_hl('TelescopeResultsTitle', { link = 'TelescopeTitle' })
     nvim_set_hl('TelescopePreviewTitle', { link = 'TelescopeTitle' })
@@ -596,6 +652,32 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NeogitDiffDelete', { fg = colors.red })
     nvim_set_hl('NeogitDiffAddHighlight', { fg = colors.green, bg = colors.mix_green })
     nvim_set_hl('NeogitDiffAdd', { fg = colors.green })
+  end
+
+  if config.plugins.todocomments then
+    nvim_set_hl('TodoFgTODO', { fg = colors.blue })
+    nvim_set_hl('TodoFgWARN', { fg = colors.yellow })
+    nvim_set_hl('TodoFgTEST', { fg = colors.violet })
+    nvim_set_hl('TodoFgPERF', { fg = colors.magenta })
+    nvim_set_hl('TodoFgNOTE', { fg = colors.cyan })
+    nvim_set_hl('TodoFgHACK', { fg = colors.orange })
+    nvim_set_hl('TodoFgFIX', { fg = colors.red })
+
+    nvim_set_hl('TodoSignTODO', { fg = colors.blue })
+    nvim_set_hl('TodoSignWARN', { fg = colors.yellow })
+    nvim_set_hl('TodoSignTEST', { fg = colors.violet })
+    nvim_set_hl('TodoSignPERF', { fg = colors.magenta })
+    nvim_set_hl('TodoSignNOTE', { fg = colors.cyan })
+    nvim_set_hl('TodoSignHACK', { fg = colors.orange })
+    nvim_set_hl('TodoSignFIX', { fg = colors.red })
+
+    nvim_set_hl('TodoBgTODO', { fg = colors.blue, bg = colors.mix_blue })
+    nvim_set_hl('TodoBgWARN', { fg = colors.yellow, bg = colors.mix_yellow })
+    nvim_set_hl('TodoBgTEST', { fg = colors.violet, bg = colors.mix_violet })
+    nvim_set_hl('TodoBgPERF', { fg = colors.magenta, bg = colors.mix_magenta })
+    nvim_set_hl('TodoBgNOTE', { fg = colors.cyan, bg = colors.mix_cyan })
+    nvim_set_hl('TodoBgHACK', { fg = colors.orange, bg = colors.mix_orange })
+    nvim_set_hl('TodoBgFIX', { fg = colors.red, bg = colors.mix_red })
   end
 
   if config.on_highlights then

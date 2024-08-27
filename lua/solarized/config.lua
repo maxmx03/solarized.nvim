@@ -33,6 +33,7 @@
 ---@field lazy? boolean
 ---@field rendermarkdown? boolean
 ---@field neogit? boolean
+---@field todocomments? boolean
 
 ---@class solarized.config
 ---@field transparent? boolean
@@ -81,5 +82,6 @@ return {
     lazy = true,
     rendermarkdown = true,
     neogit = true,
+    todocomments = true,
   },
 }

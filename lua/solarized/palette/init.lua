@@ -29,6 +29,7 @@
 ---@field mix_red? string
 ---@field mix_violet? string
 ---@field mix_yellow? string
+---@field mix_base1? string
 ---@field orange? string
 ---@field red? string
 ---@field violet? string
@@ -51,8 +52,8 @@ M.solarized = {
   blue = '#268BD2',
   cyan = '#2AA198',
   diag_error = '#DC322F',
-  diag_hint = '#6C71C4',
-  diag_info = '#6C71C4',
+  diag_hint = '#859900',
+  diag_info = '#859900',
   diag_ok = '#859900',
   diag_warning = '#B58900',
   git_add = '#268BD2',
@@ -68,6 +69,7 @@ M.solarized = {
   mix_red = '#422D33',
   mix_violet = '#204060',
   mix_yellow = '#364725',
+  mix_base1 = '#2C4E56',
   orange = '#CB4B16',
   red = '#DC322F',
   violet = '#6C71C4',
@@ -102,9 +104,10 @@ M.selenized = {
   mix_blue = '#20567c',
   mix_cyan = '#1e6569',
   mix_green = '#2e6143',
+  mix_base1 = '#486B74',
   diag_error = '#fa5750',
-  diag_hint = '#af88eb',
-  diag_info = '#af88eb',
+  diag_hint = '#75b938',
+  diag_info = '#75b938',
   diag_ok = '#75b938',
   diag_warning = '#dbb32d',
   git_add = '#4695f7',

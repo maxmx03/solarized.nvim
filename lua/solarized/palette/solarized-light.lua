@@ -33,6 +33,7 @@ M.solarized = {
   mix_green = '#f1eccc',
   mix_magenta = '#f8e2d9',
   mix_orange = '#f8e4ce',
+  mix_base1 = '#2C4E56',
   mix_red = '#f9e2d1',
   mix_violet = '#eee8df',
   mix_yellow = '#f5ebcc',
@@ -74,6 +75,7 @@ M.selenized = {
   mix_blue = '#e1e6da',
   mix_cyan = '#e1ead3',
   mix_green = '#e9e9c5',
+  mix_base1 = '#486B74',
 }
 
 return M

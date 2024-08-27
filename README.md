@@ -341,41 +341,37 @@ require('barbecue').setup {
 
 ## Api
 
-### Get Colors
-
 ```lua
 ---@type solarized.palette
-local colors = {}
+local colors = require('solarized.utils').get_colors()
+---@type solarized.color
+local color = require('solarized.color')
+local darken = color.darken
+local lighten = color.lighten
+local blend = color.blend
+local shade = color.shade
+local tint = color.tint
 
-if vim.o.background == 'dark' then
-   highlights = require 'solarized.highlights'
-   local palette = require 'solarized.palette'
-   colors = palette['solarized']
-else
-   highlights = require 'solarized.highlights.solarized-light'
-   local palette = require 'solarized.palette.solarized-light'
-   colors = palette['selenized']
+-- example 1: get shades
+for i = 1, 10, 1 do
+    print(shade(colors.yellow, i))
 end
-```
 
-### Color utils
+for i = 1, 100, 10 do
+    print(darken(colors.yellow, i))
+end
 
-```lua
-local color = require('solarized.utils.colors')
+-- example 2: get tints
+for i = 1, 10, 1 do
+    print(tint(colors.yellow, i))
+end
 
--- Convert a hex color code to RGB
-color.hex_to_rgb('#ffffff')
+for i = 1, 100, 10 do
+    print(lighten(colors.yellow, i))
+end
 
--- Darken a color by a specified percentage
-color.darken('#ffffff', 100)
-color.shade('#ffffff', 10)
-
--- Lighten a color by a specified percentage
-color.lighten('#000000', 100)
-color.tint('#000000', 10)
-
--- Blend two colors with a specified ratio
-color.blend('#ffffff', '#000000', 0.15)
+-- example 3: blend color
+local new_color = blend(colors.yellow, colors.base03, 0.2)
 ```
 
 ## Contributing

@@ -335,6 +335,27 @@
 ---@field NeogitDiffDelete? vim.api.keyset.highlight
 ---@field NeogitDiffAddHighlight? vim.api.keyset.highlight
 ---@field NeogitDiffAdd? vim.api.keyset.highlight
+---@field TodoFgTODO? vim.api.keyset.highlight
+---@field TodoFgWARN? vim.api.keyset.highlight
+---@field TodoFgTEST? vim.api.keyset.highlight
+---@field TodoFgPERF? vim.api.keyset.highlight
+---@field TodoFgNOTE? vim.api.keyset.highlight
+---@field TodoFgHACK? vim.api.keyset.highlight
+---@field TodoFgFIX? vim.api.keyset.highlight
+---@field TodoSignTODO? vim.api.keyset.highlight
+---@field TodoSignWARN? vim.api.keyset.highlight
+---@field TodoSignTEST? vim.api.keyset.highlight
+---@field TodoSignPERF? vim.api.keyset.highlight
+---@field TodoSignNOTE? vim.api.keyset.highlight
+---@field TodoSignHACK? vim.api.keyset.highlight
+---@field TodoSignFIX? vim.api.keyset.highlight
+---@field TodoBgTODO? vim.api.keyset.highlight
+---@field TodoBgWARN? vim.api.keyset.highlight
+---@field TodoBgTEST? vim.api.keyset.highlight
+---@field TodoBgPERF? vim.api.keyset.highlight
+---@field TodoBgNOTE? vim.api.keyset.highlight
+---@field TodoBgHACK? vim.api.keyset.highlight
+---@field TodoBgFIX? vim.api.keyset.highlight
 
 local M = {}
 
@@ -382,7 +403,7 @@ M.set_highlight = function(colors, config)
     colors = vim.tbl_extend('force', colors, config.on_colors(colors, color))
   end
   -- EDITOR :h highlight-groups
-  nvim_set_hl('ColorColumn', { bg = colors.base04 })
+  nvim_set_hl('ColorColumn', { bg = colors.base02 })
   nvim_set_hl('Conceal', { fg = colors.blue })
   nvim_set_hl('CurSearch', { link = 'IncSearch' })
   nvim_set_hl('Cursor', { fg = colors.base03, bg = colors.base0 })
@@ -401,13 +422,17 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('ErrorMsg', { fg = colors.diag_error })
   nvim_set_hl(
     'WinSeparator',
-    { fg = colors.cyan, bg = colors.base04 },
+    { fg = colors.base01, bg = colors.base04 },
     { transparent = config.transparent }
   )
   nvim_set_hl('Folded', { fg = colors.base0, bg = colors.base02 })
   nvim_set_hl('FoldColumn', { fg = colors.base0, bg = colors.base04 })
-  nvim_set_hl('SignColumn', { link = 'Normal' })
-  nvim_set_hl('IncSearch', { fg = colors.magenta, bg = colors.mix_magenta })
+  nvim_set_hl(
+    'SignColumn',
+    { fg = colors.base01, bg = colors.base02 },
+    { transparent = config.transparent }
+  )
+  nvim_set_hl('IncSearch', { fg = colors.orange, bg = colors.mix_orange })
   nvim_set_hl('Substitute', { link = 'IncSearch' })
   nvim_set_hl(
     'LineNr',
@@ -439,16 +464,16 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('FloatTitle', { fg = colors.blue })
   nvim_set_hl('NormalNC', { link = 'Normal' })
   nvim_set_hl('Pmenu', { fg = colors.base0, bg = colors.base04 })
-  nvim_set_hl('PmenuSel', { fg = colors.blue, reverse = true })
+  nvim_set_hl('PmenuSel', { fg = colors.base2, bg = colors.base01 })
   nvim_set_hl('PmenuKind', { link = 'Pmenu' })
   nvim_set_hl('PmenuKindSel', { link = 'PmenuSel' })
   nvim_set_hl('PmenuExtra', { link = 'Pmenu' })
   nvim_set_hl('PmenuExtraSel', { link = 'PmenuSel' })
   nvim_set_hl('PmenuSbar', { bg = colors.base04 })
-  nvim_set_hl('PmenuThumb', { bg = colors.blue })
+  nvim_set_hl('PmenuThumb', { bg = colors.base1 })
   nvim_set_hl('Question', { fg = colors.diag_info })
   nvim_set_hl('QuickFixLine', { fg = colors.base0, bg = colors.base03 })
-  nvim_set_hl('Search', { fg = colors.violet, bg = colors.mix_violet, bold = true })
+  nvim_set_hl('Search', { fg = colors.yellow, bg = colors.mix_yellow, bold = true })
   nvim_set_hl('SpecialKey', { link = 'NonText' })
   nvim_set_hl('SpellBad', { underline = true, strikethrough = true })
   nvim_set_hl('SpellCap', { fg = colors.diag_hint })
@@ -460,7 +485,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('TabLineFill', { fg = colors.base0, bg = colors.base04 })
   nvim_set_hl('TabLineSel', { fg = colors.base0, bg = colors.base03 })
   nvim_set_hl('Title', { fg = colors.blue })
-  nvim_set_hl('Visual', { fg = colors.violet, bg = colors.mix_violet })
+  nvim_set_hl('Visual', { fg = colors.base1, bg = colors.mix_base1 })
   nvim_set_hl('VisualNOS', { link = 'Visual' })
   nvim_set_hl('warningMsg', { fg = colors.diag_warning })
   nvim_set_hl('Whitespace', { fg = colors.base01 })
@@ -621,24 +646,36 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@lsp.typemod.keyword.documentation', { link = 'Keyword' })
     nvim_set_hl('@lsp.typemod.class.documentation', { link = 'Type' })
     nvim_set_hl('@lsp.typemod.property.readonly', { link = 'Constant' })
-    nvim_set_hl('DiagnosticError', { fg = colors.diag_error })
-    nvim_set_hl('DiagnosticWarn', { fg = colors.diag_warning })
-    nvim_set_hl('DiagnosticInfo', { fg = colors.diag_info })
-    nvim_set_hl('DiagnosticHint', { fg = colors.diag_hint })
+    nvim_set_hl(
+      'DiagnosticError',
+      { fg = colors.diag_error, bg = colors.mix_red },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticWarn',
+      { fg = colors.diag_warning, bg = colors.mix_yellow },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl(
+      'DiagnosticInfo',
+      { fg = colors.base1, bg = colors.mix_base1 },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl('DiagnosticHint', { link = 'DiagnosticHint' })
     nvim_set_hl('DiagnosticOk', { fg = colors.diag_ok })
-    nvim_set_hl('DiagnosticVirtualTextError', { fg = colors.diag_error, bg = colors.mix_red })
-    nvim_set_hl('DiagnosticVirtualTextWarn', { fg = colors.diag_warning, bg = colors.mix_yellow })
-    nvim_set_hl('DiagnosticVirtualTextInfo', { fg = colors.diag_info, bg = colors.mix_violet })
-    nvim_set_hl('DiagnosticVirtualTextHint', { fg = colors.diag_hint, bg = colors.mix_violet })
-    nvim_set_hl('DiagnosticVirtualTextOk', { fg = colors.diag_ok, bg = colors.mix_green })
+    nvim_set_hl('DiagnosticVirtualTextError', { fg = colors.diag_error })
+    nvim_set_hl('DiagnosticVirtualTextWarn', { fg = colors.diag_warning })
+    nvim_set_hl('DiagnosticVirtualTextInfo', { fg = colors.base1 })
+    nvim_set_hl('DiagnosticVirtualTextHint', { link = 'DiagnosticVirtualTextInfo' })
+    nvim_set_hl('DiagnosticVirtualTextOk', { fg = colors.green, bg = colors.mix_green })
     nvim_set_hl('DiagnosticUnderlineError', { fg = colors.diag_error, underline = true })
     nvim_set_hl('DiagnosticUnderlineWarn', { fg = colors.diag_warning, underline = true })
     nvim_set_hl('DiagnosticUnderlineInfo', { fg = colors.diag_info, underline = true })
     nvim_set_hl('DiagnosticUnderlineHint', { fg = colors.diag_hint, underline = true })
     nvim_set_hl('DiagnosticUnderlineOk', { fg = colors.diag_ok, underline = true })
     nvim_set_hl('LspReferenceText', { fg = colors.cyan, bg = colors.mix_cyan })
-    nvim_set_hl('LspReferenceRead', { link = 'Visual' })
-    nvim_set_hl('LspReferenceWrite', { link = 'Visual' })
+    nvim_set_hl('LspReferenceRead', { fg = colors.green, bg = colors.mix_green })
+    nvim_set_hl('LspReferenceWrite', { fg = colors.green, bg = colors.mix_green })
     nvim_set_hl('LspInlayHint', { fg = colors.base01 })
   end
 
@@ -775,15 +812,23 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.gitsigns then
-    nvim_set_hl('GitSignsAdd', { fg = colors.git_add })
-    nvim_set_hl('GitSignsChange', { fg = colors.git_modify })
-    nvim_set_hl('GitSignsDelete', { fg = colors.git_delete })
+    nvim_set_hl(
+      'GitSignsAdd',
+      { fg = colors.git_add, bg = colors.base02 },
+      { transparent = config.transparent }
+    )
+    nvim_set_hl('GitSignsChange', { fg = colors.git_modify, bg = colors.base02 }, {
+      transparent = config.transparent,
+    })
+    nvim_set_hl('GitSignsDelete', { fg = colors.git_delete, bg = colors.base02 }, {
+      transparent = config.transparent,
+    })
   end
 
   if config.plugins.telescope then
     nvim_set_hl('TelescopeSelection', { fg = colors.base0 })
-    nvim_set_hl('TelescopeSelectionCaret', { fg = colors.blue })
-    nvim_set_hl('TelescopeMultiIcon', { fg = colors.blue })
+    nvim_set_hl('TelescopeSelectionCaret', { fg = colors.base1 })
+    nvim_set_hl('TelescopeMultiIcon', { fg = colors.base1 })
     nvim_set_hl(
       'TelescopeNormal',
       { fg = colors.base0, bg = colors.base04 },
@@ -796,14 +841,14 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopePromptBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopeResultsBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopePreviewBorder', { link = 'TelescopeBorder' })
-    nvim_set_hl('TelescopeTitle', { fg = colors.blue, bg = colors.mix_blue })
+    nvim_set_hl('TelescopeTitle', { fg = colors.mix_base1, bg = colors.base1 })
     nvim_set_hl('TelescopePromptTitle', { link = 'TelescopeTitle' })
     nvim_set_hl('TelescopeResultsTitle', { link = 'TelescopeTitle' })
     nvim_set_hl('TelescopePreviewTitle', { link = 'TelescopeTitle' })
     nvim_set_hl('TelescopeMatching', { fg = colors.cyan, bg = colors.mix_cyan })
     nvim_set_hl('TelescopePreviewMatch', { link = 'TelescopeMatching' })
     nvim_set_hl('TelescopePromptCounter', { link = 'NonText' })
-    nvim_set_hl('TelescopePromptPrefix', { fg = colors.orange })
+    nvim_set_hl('TelescopePromptPrefix', { fg = colors.cyan })
   end
 
   if config.plugins.noice then
@@ -858,7 +903,7 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.minicursorword then
-    nvim_set_hl('MiniCursorword', { link = 'Visual' })
+    nvim_set_hl('MiniCursorword', { fg = colors.cyan, bg = colors.mix_cyan })
   end
 
   if config.plugins.notify then
@@ -923,9 +968,9 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.neogit then
-    nvim_set_hl('NeogitBranch', { fg = colors.magenta })
+    nvim_set_hl('NeogitBranch', { fg = colors.red })
     nvim_set_hl('NeogitRemote', { fg = colors.violet })
-    nvim_set_hl('NeogitHunkHeader', { fg = colors.red, bg = colors.mix_red, bold = true })
+    nvim_set_hl('NeogitHunkHeader', { fg = colors.blue, bg = colors.mix_blue, bold = true })
     nvim_set_hl('NeogitHunkHeaderHighlight', { link = 'Title' })
     nvim_set_hl('NeogitDiffContextHighlight', { fg = colors.base1, bg = colors.base02 })
     nvim_set_hl('NeogitDiffContext', { fg = colors.base0, bg = colors.base03 })
@@ -933,6 +978,32 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('NeogitDiffDelete', { fg = colors.red })
     nvim_set_hl('NeogitDiffAddHighlight', { fg = colors.blue, bg = colors.mix_blue })
     nvim_set_hl('NeogitDiffAdd', { fg = colors.blue })
+  end
+
+  if config.plugins.todocomments then
+    nvim_set_hl('TodoFgTODO', { fg = colors.blue })
+    nvim_set_hl('TodoFgWARN', { fg = colors.yellow })
+    nvim_set_hl('TodoFgTEST', { fg = colors.violet })
+    nvim_set_hl('TodoFgPERF', { fg = colors.magenta })
+    nvim_set_hl('TodoFgNOTE', { fg = colors.cyan })
+    nvim_set_hl('TodoFgHACK', { fg = colors.orange })
+    nvim_set_hl('TodoFgFIX', { fg = colors.red })
+
+    nvim_set_hl('TodoSignTODO', { fg = colors.blue })
+    nvim_set_hl('TodoSignWARN', { fg = colors.yellow })
+    nvim_set_hl('TodoSignTEST', { fg = colors.violet })
+    nvim_set_hl('TodoSignPERF', { fg = colors.magenta })
+    nvim_set_hl('TodoSignNOTE', { fg = colors.cyan })
+    nvim_set_hl('TodoSignHACK', { fg = colors.orange })
+    nvim_set_hl('TodoSignFIX', { fg = colors.red })
+
+    nvim_set_hl('TodoBgTODO', { fg = colors.blue, bg = colors.mix_blue })
+    nvim_set_hl('TodoBgWARN', { fg = colors.yellow, bg = colors.mix_yellow })
+    nvim_set_hl('TodoBgTEST', { fg = colors.violet, bg = colors.mix_violet })
+    nvim_set_hl('TodoBgPERF', { fg = colors.magenta, bg = colors.mix_magenta })
+    nvim_set_hl('TodoBgNOTE', { fg = colors.cyan, bg = colors.mix_cyan })
+    nvim_set_hl('TodoBgHACK', { fg = colors.orange, bg = colors.mix_orange })
+    nvim_set_hl('TodoBgFIX', { fg = colors.red, bg = colors.mix_red })
   end
 
   if config.on_highlights then
