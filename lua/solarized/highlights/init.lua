@@ -314,6 +314,7 @@
 ---@field BufferLineSeparator? vim.api.keyset.highlight
 ---@field BufferLineSeparatorSelected? vim.api.keyset.highlight
 ---@field BufferLineSeparatorVisible? vim.api.keyset.highlight
+---@field LazyNormal? vim.api.keyset.highlight
 ---@field LazyH1? vim.api.keyset.highlight
 ---@field LazyButton? vim.api.keyset.highlight
 ---@field LazyButtonActive? vim.api.keyset.highlight
@@ -432,7 +433,7 @@ M.set_highlight = function(colors, config)
     { fg = colors.base01, bg = colors.base02 },
     { transparent = config.transparent.enabled }
   )
-  nvim_set_hl('IncSearch', { fg = colors.orange, bg = colors.mix_orange })
+  nvim_set_hl('IncSearch', { fg = colors.magenta, bg = colors.mix_magenta })
   nvim_set_hl('Substitute', { link = 'IncSearch' })
   nvim_set_hl(
     'LineNr',
@@ -477,7 +478,7 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('PmenuThumb', { bg = colors.base1 })
   nvim_set_hl('Question', { fg = colors.diag_info })
   nvim_set_hl('QuickFixLine', { fg = colors.base0, bg = colors.base03 })
-  nvim_set_hl('Search', { fg = colors.yellow, bg = colors.mix_yellow, bold = true })
+  nvim_set_hl('Search', { fg = colors.base1, bg = colors.mix_base1, bold = true })
   nvim_set_hl('SpecialKey', { link = 'NonText' })
   nvim_set_hl('SpellBad', { underline = true, strikethrough = true })
   nvim_set_hl('SpellCap', { fg = colors.diag_hint })
