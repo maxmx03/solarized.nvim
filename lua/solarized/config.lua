@@ -110,5 +110,11 @@ return {
     rendermarkdown = true,
     neogit = true,
     todocomments = true,
+    ale = true,
+    coc = true,
+    leap = true,
+    alpha = true,
+    yanky = true,
+    gitgutter = true,
   },
 }

@@ -205,6 +205,12 @@ require('solarized').setup({
     bufferline = true,
     lazy = true,
     rendermarkdown = true,
+    ale = true,
+    coc = true,
+    leap = true,
+    alpha = true,
+    yanky = true,
+    gitgutter = true,
   },
 })
 
