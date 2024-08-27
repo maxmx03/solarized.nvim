@@ -1,30 +1,23 @@
-local utils = require('solarized.utils.test')
-local to_hex = utils.to_hex
+local nvim_get_hl = require('solarized.utils').nvim_get_hl
 
-describe('Initialization', function()
+describe('solarized.load', function()
   setup(function()
-    vim.o.background = 'light'
-    vim.cmd.colorscheme('solarized')
+    vim.o.background = 'dark'
+    vim.cmd.colorscheme 'solarized'
   end)
 
-  test('Loads without encountering any errors', function()
-    assert.equal('solarized', vim.g.colors_name)
-    assert.is_true(vim.o.termguicolors)
+  test('name', function()
+    local expected = 'solarized'
+    assert.equal(expected, vim.g.colors_name)
   end)
 
-  test('Background is set to light', function()
-    local output = vim.api.nvim_get_hl(0, { name = 'Normal' })
-    local expect = '#fdf6e3'
-
-    assert.equals(expect, to_hex(output.bg))
+  test('default config', function()
+    local config = require 'solarized.config'
+    assert.True(type(config) == 'table')
   end)
 
-  test('Selenized is being loaded', function()
-    require('solarized').setup({ palette = 'selenized' })
-    vim.cmd.colorscheme('solarized')
-    local output = vim.api.nvim_get_hl(0, { name = 'Normal' })
-    local expect = '#fbf3db'
-
-    assert.equals(expect, to_hex(output.bg))
+  test('set_highlight', function()
+    local Comment = nvim_get_hl 'Comment'
+    assert.True('#586E75' == Comment.fg)
   end)
 end)

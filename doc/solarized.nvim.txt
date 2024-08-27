@@ -1,4 +1,4 @@
-*solarized.nvim.txt*        For NVIM v0.9.4        Last change: 2024 August 03
+*solarized.nvim.txt*        For NVIM v0.9.4        Last change: 2024 August 27
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -6,16 +6,16 @@ Table of Contents                           *solarized.nvim-table-of-contents*
   - Features                                         |solarized.nvim-features|
   - Requirements                                 |solarized.nvim-requirements|
   - Install from package manager |solarized.nvim-install-from-package-manager|
+  - Solarized’s Annotations       |solarized.nvim-solarized’s-annotations|
   - Manual Installation                   |solarized.nvim-manual-installation|
-  - Help                                                 |solarized.nvim-help|
+  - Docs                                                 |solarized.nvim-docs|
   - Commands                                         |solarized.nvim-commands|
   - Default Config                             |solarized.nvim-default-config|
-  - Config Themes                               |solarized.nvim-config-themes|
+  - Config Transparency                   |solarized.nvim-config-transparency|
   - Config Styles                               |solarized.nvim-config-styles|
   - Config Highlights                       |solarized.nvim-config-highlights|
   - Config Colors                               |solarized.nvim-config-colors|
-  - Config Enables                             |solarized.nvim-config-enables|
-  - Config Autocmd                             |solarized.nvim-config-autocmd|
+  - Config Plugins                             |solarized.nvim-config-plugins|
   - Lualine                                           |solarized.nvim-lualine|
   - Barbecue                                         |solarized.nvim-barbecue|
   - Api                                                   |solarized.nvim-api|
@@ -31,23 +31,23 @@ designed for use with terminal and gui applications. click here to learn more
 - |solarized.nvim-features|
 - |solarized.nvim-requirements|
 - |solarized.nvim-install-from-package-manager|
+- |solarized.nvim-solarized’s-annotations|
+    - |solarized.nvim-using-`lspconfig`|
+    - |solarized.nvim-using-`.luarc.json`|
 - |solarized.nvim-manual-installation|
-- |solarized.nvim-help|
+- |solarized.nvim-docs|
 - |solarized.nvim-commands|
 - |solarized.nvim-default-config|
-- |solarized.nvim-config-themes|
+- |solarized.nvim-config-transparency|
 - |solarized.nvim-config-styles|
 - |solarized.nvim-config-highlights|
 - |solarized.nvim-config-colors|
-- |solarized.nvim-config-enables|
-- |solarized.nvim-config-autocmd|
+- |solarized.nvim-config-plugins|
 - |solarized.nvim-lualine|
 - |solarized.nvim-barbecue|
 - |solarized.nvim-api|
     - |solarized.nvim-get-colors|
     - |solarized.nvim-color-utils|
-    - |solarized.nvim-how-to-get-color-shades|
-    - |solarized.nvim-how-to-get-color-tints|
 - |solarized.nvim-contributing|
 - |solarized.nvim-designed-by|
 - |solarized.nvim-credits-and-reference-🎉|
@@ -79,16 +79,19 @@ Download using your preferred package manager.
 lazy <https://github.com/folke/lazy.nvim>
 
 >lua
-      {
-        'maxmx03/solarized.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-          vim.o.background = 'dark' -- or 'light'
-    
-          vim.cmd.colorscheme 'solarized'
-        end,
-      },
+    return {
+      'maxmx03/solarized.nvim',
+      lazy = false,
+      priority = 1000,
+      ---@type solarized.config
+      opts = {},
+      config = function(_, opts)
+        vim.o.termguicolors = true
+        vim.o.background = 'light'
+        require('solarized').setup(opts)
+        vim.cmd.colorscheme 'solarized'
+      end,
+    }
 <
 
 packer <https://github.com/wbthomason/packer.nvim>
@@ -97,10 +100,52 @@ packer <https://github.com/wbthomason/packer.nvim>
     use {
         'maxmx03/solarized.nvim',
         config = function()
-          vim.o.background = 'dark' -- or 'light'
-    
+          vim.o.background = 'dark'
+          ---@type solarized
+          local solarized = require('solarized')
+          vim.o.termguicolors = true
+          vim.o.background = 'dark'
+          solarized.setup({})
           vim.cmd.colorscheme 'solarized'
         end
+    }
+<
+
+
+SOLARIZED’S ANNOTATIONS           *solarized.nvim-solarized’s-annotations*
+
+
+USING LSPCONFIG ~
+
+>lua
+      local lsp_config = require 'lspconfig'
+      lsp_config.lua_ls.setup {
+        settings = {
+          Lua = {
+            hint = {
+              enable = true,
+            },
+            runtime = {
+              version = 'LuaJIT',
+            },
+            workspace = {
+              checkThirdParty = true,
+              library = {
+                vim.env.VIMRUNTIME,
+                '~/.local/share/nvim/lazy/solarized.nvim',
+              },
+            },
+          },
+        },
+      }
+<
+
+
+USING .LUARC.JSON ~
+
+>json
+    {
+      "workspace.library": ["/path/to/nvim/runtime", "/path/to/solarized.nvim"]
     }
 <
 
@@ -116,15 +161,14 @@ To manually install Solarized, follow these steps:
 4. Copy these folders to the `~/.config/nvim` directory.
 
 
-HELP                                                     *solarized.nvim-help*
+DOCS                                                     *solarized.nvim-docs*
 
-Use |solarized.nvim.txt| to get some help
+Use |solarized.nvim.txt| to see docs
 
 
 COMMANDS                                             *solarized.nvim-commands*
 
 - `:Solarized colors` - Display the Solarized palette in a new buffer
-- `:Solarized zen`- Removes highlight colors, emphasizing important code segments.
 
 
 DEFAULT CONFIG                                 *solarized.nvim-default-config*
@@ -134,62 +178,79 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
     
     -- default config
     require('solarized').setup({
-        transparent = false, -- enable transparent background
-        palette = 'solarized', -- or selenized
-        styles = {
-          comments = {},
-          functions = {},
-          variables = {},
-          numbers = {},
-          constants = {},
-          parameters = {},
-          keywords = {},
-          types = {},
-        },
-        enables = {
-          bufferline = true,
-          cmp = true,
-          diagnostic = true,
-          dashboard = true,
-          editor = true,
-          gitsign = true,
-          hop = true,
-          indentblankline = true,
-          lsp = true,
-          lspsaga = true,
-          navic = true,
-          neogit = true,
-          neotree = true,
-          notify = true,
-          noice = true,
-          semantic = true,
-          syntax = true,
-          telescope = true,
-          tree = true,
-          treesitter = true,
-          todo = true,
-          whichkey = true,
-          mini = true,
-        },
-        highlights = {},
-        colors = {},
-        theme = 'default', -- or 'neo'
-        autocmd = true,
+      transparent = {
+        enabled = false,
+        pmenu = true,
+        normal = true,
+        normalfloat = true,
+        neotree = true,
+        nvimtree = true,
+        whichkey = true,
+        telescope = true,
+        lazy = true,
+      },
+      on_highlights = nil,
+      on_colors = nil,
+      palette = 'solarized', -- solarized (default) | selenized
+      styles = {
+        types = {},
+        functions = {},
+        parameters = {},
+        comments = {},
+        strings = {},
+        keywords = {},
+        variables = {},
+        constants = {},
+      },
+      plugins = {
+        treesitter = true,
+        lspconfig = true,
+        navic = true,
+        cmp = true,
+        indentblankline = true,
+        neotree = true,
+        nvimtree = true,
+        whichkey = true,
+        dashboard = true,
+        gitsigns = true,
+        telescope = true,
+        noice = true,
+        hop = true,
+        ministatusline = true,
+        minitabline = true,
+        ministarter = true,
+        minicursorword = true,
+        notify = true,
+        rainbowdelimiters = true,
+        bufferline = true,
+        lazy = true,
+        rendermarkdown = true,
+      },
     })
     
-    vim.cmd.colorscheme = 'solarized' -- or selenized
+    vim.cmd.colorscheme = 'solarized'
 <
 
 
-CONFIG THEMES                                   *solarized.nvim-config-themes*
+CONFIG TRANSPARENCY                       *solarized.nvim-config-transparency*
 
-Solarized offers two themes: the default Solarized theme and Neo. These themes
-provide different visual styles to enhance your experience.
+By default, transparency is turned off, but you can easily enable it and
+customize which specific UI components should be transparent.
 
 >lua
-    require('solarized').setup({
-        theme = 'neo' -- or comment to use solarized default theme.
-    })
+    require('solarized').setup {
+     transparent = {
+        enabled = true,         -- Master switch to enable transparency
+        pmenu = true,           -- Popup menu (e.g., autocomplete suggestions)
+        normal = true,          -- Main editor window background
+        normalfloat = true,     -- Floating windows
+        neotree = true,         -- Neo-tree file explorer
+        nvimtree = true,        -- Nvim-tree file explorer
+        whichkey = true,        -- Which-key popup
+        telescope = true,       -- Telescope fuzzy finder
+        lazy = true,            -- Lazy plugin manager UI
+      },
+    }
 <
 
 
@@ -198,12 +259,14 @@ CONFIG STYLES                                   *solarized.nvim-config-styles*
 The `styles` config allows you to customize the style of a highlight group.
 
 >lua
-    require('solarized').setup({
-        styles = {
+    ---@type solarized.styles
+    local styles = {
           comments = { italic = true, bold = false },
           functions = { italic = true },
           variables = { italic = false },
-        }
+    }
+    require('solarized').setup({
+        styles = styles,
     })
 <
 
@@ -216,18 +279,23 @@ example:
 
 >lua
     require('solarized').setup {
-        highlights = function (colors, colorhelper)
-            local darken = colorhelper.darken
-            local lighten = colorhelper.lighten
-            local blend = colorhelper.blend
+        on_highlights = function (colors, color)
+            local darken = color.darken
+            local lighten = color.lighten
+            local blend = color.blend
+            local shade = color.shade
+            local tint = color.tint
     
-            return {
-                LineNr = { fg = c.base1, bg = c.base02 },
-                CursorLineNr = { bg = c.base02 },
-                CursorLine = { bg = c.base02 },
-                Function = { italic = false },
-                Visual = { bg = c.cyan },
+            ---@type solarized.highlights
+            local groups = {
+                Visual = { bg = colors.base02, standout = true },
+                Function = { fg = colors.yellow },
+                IncSearch = { fg = colors.orange, bg = colors.mix_orange },
+                Search = { fg = colors.violet, bg = shade(colors.violet, 5),
+                NormalFloat = { bg = darken(colors.base03, 25) }
             }
+    
+           return groups
         end
     }
 <
@@ -238,18 +306,19 @@ CONFIG COLORS                                   *solarized.nvim-config-colors*
 The `colors` config allows you to extend or modify the color palette used by
 solarized.
 
+
+  [!TIP] Use `:Solarized colors` to see available colors.
 example:
 
 >lua
     require('solarized').setup {
-        colors = function(colors, colorhelper)
-            local darken = colorhelper.darken
-            local lighten = colorhelper.lighten
-            local blend = colorhelper.blend
+        on_colors = function(colors, color)
+            local lighten = color.tint
+            local darken = color.darken
     
             return {
-                fg = '#fff', -- output: #ffffff
-                bg = darken(colors.base03, 100)
+                fg = lighten(colors.base00, 2),
+                bg = darken(colors.base03, 30)
             }
         end,
         highlights = function(colors)
@@ -261,44 +330,37 @@ example:
 <
 
 
-CONFIG ENABLES                                 *solarized.nvim-config-enables*
+CONFIG PLUGINS                                 *solarized.nvim-config-plugins*
 
-The enables config allows you to enable or disable solarized support for spefic
+The plugins config allows you to enable or disable solarized support for spefic
 plugins or neovim’s default highlights
 
 example:
 
 >lua
-    require('solarized').setup {
-      enables = {
-          editor = true,
-          syntax = true,
-    
-          -- PLUGINS
-          bufferline = true,
-          cmp = false, -- disabled
-          diagnostic = true,
-          indentblankline = true,
-          lsp = true,
-          lspsaga = false, -- disabled
-          navic = true,
-          semantic = true,
-          telescope = true,
-          tree = false, -- disabled
-          treesitter = true,
-        },
-        highlights = {
-            -- your implementation of nvim-tree
-            -- your implementation of cmp
-            -- your implementation of lspsaga
+    return {
+      'maxmx03/solarized.nvim',
+      lazy = false,
+      priority = 1000,
+      ---@type solarized.config
+      opts = {
+        plugins = {
+            navic = false,
+            nvimtree = false,
+            dashboard = false,
+            noice = false,
+            ministatusline = false,
+            minitabline = false,
+            ministarter = false,
+            rainbowdelimiters = false,
         }
+      },
+      config = function(_, opts)
+        require('solarized').setup(opts)
+        vim.cmd.colorscheme 'solarized'
+      end,
     }
 <
-
-
-CONFIG AUTOCMD                                 *solarized.nvim-config-autocmd*
-
-This option enhances highlighting by enabling Solarized’s autocmd feature.
 
 
 LUALINE                                               *solarized.nvim-lualine*
@@ -307,6 +369,7 @@ LUALINE                                               *solarized.nvim-lualine*
     require('lualine').setup {
       options = {
         theme = 'solarized',
+        -- theme = 'selenized',
         disabled_filetypes = {
             'NvimTree',
         },
@@ -339,59 +402,37 @@ BARBECUE                                             *solarized.nvim-barbecue*
 
 API                                                       *solarized.nvim-api*
 
-You can utilize useful functions to customize your Neovim plugins.
-
-
-GET COLORS ~
-
 >lua
-    local palette = require('solarized.palette')
-    local colors = palette.get_colors()
-<
-
-
-COLOR UTILS ~
-
->lua
-    local color = require('solarized.utils.colors')
+    ---@type solarized.palette
+    local colors = require('solarized.utils').get_colors()
+    ---@type solarized.color
+    local color = require('solarized.color')
+    local darken = color.darken
+    local lighten = color.lighten
+    local blend = color.blend
+    local shade = color.shade
+    local tint = color.tint
     
-    -- Convert a hex color code to RGB
-    color.hex_to_rgb('#ffffff')
-    
-    -- Darken a color by a specified percentage
-    color.darken('#ffffff', 100)
-    
-    -- Lighten a color by a specified percentage
-    color.lighten('#000000', 100)
-    
-    -- Blend two colors with a specified ratio
-    color.blend('#ffffff', '#000000', 0.15)
-<
-
-
-HOW TO GET COLOR SHADES ~
-
->lua
-    local darken = require('solarized.utils.colors').darken
-    local colors = require('solarized.palette').get_colors()
+    -- example 1: get shades
     for i = 1, 10, 1 do
-      local shade = darken(colors.blue, i * 10)
-    
-      print(shade)
+        print(shade(colors.yellow, i))
     end
-<
-
-
-HOW TO GET COLOR TINTS ~
-
->lua
-    local lighten = require('solarized.utils.colors').lighten
     
+    for i = 1, 100, 10 do
+        print(darken(colors.yellow, i))
+    end
+    
+    -- example 2: get tints
     for i = 1, 10, 1 do
-      local tints = lighten(colors.blue, i * 10)
-    
-      print(tints)
+        print(tint(colors.yellow, i))
     end
+    
+    for i = 1, 100, 10 do
+        print(lighten(colors.yellow, i))
+    end
+    
+    -- example 3: blend color
+    local new_color = blend(colors.yellow, colors.base03, 0.2)
 <
 
 
@@ -409,7 +450,6 @@ Ethan Schoonover
 
 CREDITS AND REFERENCE 🎉         *solarized.nvim-credits-and-reference-🎉*
 
-- onedarkpro <https://github.com/olimorris/onedarkpro.nvim>
 - solarized-vim <https://github.com/altercation/vim-colors-solarized>
 - tokyonight <https://github.com/folke/tokyonight.nvim>
 
@@ -418,9 +458,10 @@ CREDITS AND REFERENCE 🎉         *solarized.nvim-credits-and-reference-🎉*
 ==============================================================================
 1. Links                                                *solarized.nvim-links*
 
-1. *solarized*: https://github.com/maxmx03/solarized.nvim/assets/50273941/3c2ffda7-9efb-46f4-ad82-7dfd257dda39
-2. *Ethan Schoonover*: https://github.com/altercation.png?size=100
-3. *Raphael*: https://github.com/glepnir.png?size=100
+1. *Component 3*: https://github.com/user-attachments/assets/bee944af-df49-46dc-ad9b-c732369b4a3f
+2. *Component 1*: https://github.com/user-attachments/assets/11d8bd97-0f99-4413-937a-a5eaf4b2a4db
+3. *Ethan Schoonover*: https://github.com/altercation.png?size=100
+4. *Raphael*: https://github.com/glepnir.png?size=100
 
 Generated by panvimdoc <https://github.com/kdheepak/panvimdoc>
 

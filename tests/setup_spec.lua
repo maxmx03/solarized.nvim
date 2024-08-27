@@ -1,85 +1,49 @@
-local solarized_palette = require('solarized.palette')
-local utils = require('solarized.utils.test')
-local to_hex = utils.to_hex
+local nvim_get_hl = require('solarized.utils').nvim_get_hl
 
-describe('Setup', function()
+describe('solarized.setup', function()
   setup(function()
-    local solarized = require('solarized')
+    vim.o.background = 'light'
+    ---@type solarized
+    local solarized = require 'solarized'
 
-    solarized.setup({
-      theme = 'neo',
-      colors = function(c, helper)
-        return {
-          fg = '#c7e8f3',
-          bg = '#000',
-          yellow2 = helper.darken(c.yellow, 20),
-        }
-      end,
-      styles = {
-        comments = { italic = false, bold = true, underline = true },
-        functions = { italic = true },
+    solarized.setup {
+      transparent = {
+        enabled = true,
       },
-      highlights = function(c)
+      styles = {
+        strings = { italic = true },
+        comments = { bold = true },
+      },
+      on_colors = function()
         return {
-          Normal = { fg = c.fg, bg = c.bg },
-          Function = { italic = false },
-          Type = { fg = c.yellow2 },
-          ['@function.builtin'] = { link = 'Special' },
+          mycolor = '#ffffff',
         }
       end,
-    })
-
-    vim.cmd.colorscheme('solarized')
+      on_highlights = function(colors)
+        return {
+          ---@diagnostic disable-next-line: undefined-field
+          CustomHighlight = { fg = colors.mycolor },
+        }
+      end,
+    }
+    vim.cmd 'colorscheme solarized'
   end)
 
-  test('Customizing Highlight Groups', function()
-    local colors = solarized_palette.get_colors()
-    local output1 = vim.api.nvim_get_hl(0, { name = 'Normal' })
-    local output2 = vim.api.nvim_get_hl(0, { name = 'Function' })
-
-    assert.equals('#c7e8f3', to_hex(output1.fg))
-    assert.equals('#000000', to_hex(output1.bg))
-    assert.are_not.same(colors.yellow, to_hex(output2.fg))
+  test('transparent', function()
+    local normal = nvim_get_hl 'Normal'
+    assert.falsy(normal.bg)
   end)
 
-  test('Changing Comment Style', function()
-    local output = vim.api.nvim_get_hl(0, { name = 'Comment' })
-
-    assert.is_true(output.bold)
-    assert.is_true(output.underline)
-    assert.is_nil(output.italic)
+  test('on_colors and on_highlight', function()
+    local user_group = nvim_get_hl 'CustomHighlight'
+    local expected = { fg = '#FFFFFF' }
+    assert.are.same(expected, user_group)
   end)
 
-  test('Changing  Function Style', function()
-    local output = vim.api.nvim_get_hl(0, { name = 'Function' })
-
-    assert.is_true(output.cterm.italic)
+  test('styles', function()
+    local strings = nvim_get_hl 'String'
+    local comments = nvim_get_hl 'Comment'
+    assert.True(strings.italic)
+    assert.True(comments.bold)
   end)
-
-  test(
-    'Customizable Highlight Groups Without Losing Previous Configuration',
-    function()
-      local output = vim.api.nvim_get_hl(0, { name = 'Function' })
-      local default_colors = solarized_palette.get_colors()
-
-      assert.is_nil(output.italic)
-      assert.equals(default_colors.blue, to_hex(output.fg))
-    end
-  )
-
-  test('Ability to Change the Default Theme', function()
-    local colors = solarized_palette.get_colors()
-    local output = vim.api.nvim_get_hl(0, { name = 'Directory' })
-
-    assert.equals(colors.orange, to_hex(output.fg))
-  end)
-
-  test(
-    'Function.builtin in linked to special, but doesnt have guifg',
-    function()
-      local output = vim.api.nvim_get_hl(0, { name = '@function.builtin' })
-      local expected = { link = 'Special' }
-      assert.are.same(expected, output)
-    end
-  )
 end)
