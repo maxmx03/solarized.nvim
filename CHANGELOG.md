@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.1](https://github.com/maxmx03/solarized.nvim/compare/v3.1.0...v3.1.1) (2024-08-27)
+
+
+### Bug Fixes
+
+* some plugins was not enabled like ale,coc,leap ([d364127](https://github.com/maxmx03/solarized.nvim/commit/d3641274ca0849f35347a2824c46e4e6a8966c26))
+
 ## [3.1.0](https://github.com/maxmx03/solarized.nvim/compare/v3.0.0...v3.1.0) (2024-08-27)
 
 
