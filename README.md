@@ -11,7 +11,9 @@ Solarized is a sixteen color palette (eight monotones, eight accent colors)
 designed for use with terminal and gui applications.
 [click here to learn more](https://ethanschoonover.com/solarized/)
 
-![Solarized](https://github.com/user-attachments/assets/b5002482-6f61-4856-be1d-5e07f2462b6e)
+![Component 3](https://github.com/user-attachments/assets/bee944af-df49-46dc-ad9b-c732369b4a3f)
+
+![Component 1](https://github.com/user-attachments/assets/11d8bd97-0f99-4413-937a-a5eaf4b2a4db)
 
 <!--toc:start-->
 
