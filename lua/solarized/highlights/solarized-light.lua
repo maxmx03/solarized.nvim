@@ -408,8 +408,8 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.indentblankline then
-    nvim_set_hl('IblIndent', { fg = colors.base1, nocombine = true })
-    nvim_set_hl('IblScope', { fg = colors.base00, nocombine = true })
+    nvim_set_hl('IblIndent', { fg = colors.mix_base01 })
+    nvim_set_hl('IblScope', { fg = colors.base1 })
   end
 
   if config.plugins.neotree then

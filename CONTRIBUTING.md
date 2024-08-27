@@ -145,6 +145,7 @@ colorscheme.
 | mix_cyan    | #e7eddb                   | cyan + base3 / optional           |
 | mix_green   | #f1eccc                   | green + base3 /optional           |
 | base4       | #fbf3db (selenized base3) | sidebar background / float window |
+| mix_base01  | #CCCDC2                   | indent blankline                  |
 
 ### Selenized Light
 
@@ -179,6 +180,7 @@ colorscheme.
 | mix_blue    | #e1e6da          | blue + base3 / optional    |
 | mix_cyan    | #e1ead3          | cyan + base3 / optional    |
 | mix_green   | #e9e9c5          | green + base3 / optional   |
+| mix_base01  | #CACBBC          | indent blankline           |
 
 ## Solarized & Selenized Website
 
