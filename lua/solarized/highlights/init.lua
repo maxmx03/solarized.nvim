@@ -687,18 +687,22 @@ M.set_highlight = function(colors, config)
       { fg = colors.diag_warning, bg = colors.mix_yellow },
       { transparent = config.transparent.enabled }
     )
+    nvim_set_hl('DiagnosticInfo', { fg = colors.diag_info, bg = colors.mix_base1 }, {
+      { transparent = config.transparent.enabled },
+    })
     nvim_set_hl(
-      'DiagnosticInfo',
-      { fg = colors.diag_info, bg = colors.mix_base1 },
+      'DiagnosticHint',
+      { fg = colors.diag_hint, bg = colors.mix_base1 },
       { transparent = config.transparent.enabled }
     )
-    nvim_set_hl('DiagnosticHint', { fg = colors.diag_hint, bg = colors.mix_base1 })
-    nvim_set_hl('DiagnosticOk', { fg = colors.diag_ok })
+    nvim_set_hl('DiagnosticOk', { fg = colors.diag_ok, bg = colors.mix_green }, {
+      { transparent = config.transparent.enabled },
+    })
     nvim_set_hl('DiagnosticVirtualTextError', { fg = colors.diag_error })
     nvim_set_hl('DiagnosticVirtualTextWarn', { fg = colors.diag_warning })
     nvim_set_hl('DiagnosticVirtualTextInfo', { fg = colors.diag_info })
     nvim_set_hl('DiagnosticVirtualTextHint', { fg = colors.diag_hint })
-    nvim_set_hl('DiagnosticVirtualTextOk', { fg = colors.green, bg = colors.mix_green })
+    nvim_set_hl('DiagnosticVirtualTextOk', { fg = colors.diag_ok })
     nvim_set_hl('DiagnosticUnderlineError', { fg = colors.diag_error, underline = true })
     nvim_set_hl('DiagnosticUnderlineWarn', { fg = colors.diag_warning, underline = true })
     nvim_set_hl('DiagnosticUnderlineInfo', { fg = colors.diag_info, underline = true })

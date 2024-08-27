@@ -77,7 +77,7 @@ M.selenized = {
   mix_cyan = '#e1ead3',
   mix_green = '#e9e9c5',
   mix_base1 = '#486B74',
-  mix_base01 = "#CACBBC",
+  mix_base01 = '#CACBBC',
 }
 
 return M
