@@ -56,7 +56,7 @@ colorscheme.
 
 | Name        | Hex (balance 70 / 0.3) | Description                       |
 | ----------- | ---------------------- | --------------------------------- |
-| base04      | #00222b                | sidebar background / float window |
+| base04      | #002731                | sidebar background / float window |
 | mix_yellow  | #364725                | yellow + base03 / optional        |
 | mix_orange  | #3c342c                | orange + base03 / optional        |
 | mix_red     | #422d33                | red + base03 / optional           |
@@ -92,7 +92,7 @@ colorscheme.
 
 | Name        | Hex (balance 70 / 0.3) | Description                       |
 | ----------- | ---------------------- | --------------------------------- |
-| base04      | #0b2a32                | sidebar background / float window |
+| base04      | #0e3641                | sidebar background / float window |
 | mix_yellow  | #4c5f3f                | yellow + base03 / optional        |
 | mix_orange  | #525248                | orange + base03 / optional        |
 | mix_red     | #56444a                | red + base03 / optional           |
