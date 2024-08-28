@@ -629,7 +629,7 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.lazy then
-    nvim_set_hl('LazyNormal', { fg = colors.base0, bg = colors.base04 }, {
+    nvim_set_hl('LazyNormal', { fg = colors.base0, bg = colors.base4 }, {
       transparent = config.transparent.lazy and config.transparent.enabled,
     })
     nvim_set_hl('LazyH1', { fg = colors.blue, bold = true })
