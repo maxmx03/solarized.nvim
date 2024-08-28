@@ -7,6 +7,7 @@
 ---@field telescope? boolean
 ---@field whichkey? boolean
 ---@field lazy? boolean
+---@field mason? boolean
 ---@field enabled? boolean
 
 ---@class solarized.styles
@@ -51,6 +52,7 @@
 ---@field gitgutter? boolean
 ---@field coc? boolean
 ---@field leap? boolean
+---@field mason? boolean
 
 ---@class solarized.config
 ---@field transparent? solarized.transparent
@@ -70,6 +72,7 @@ return {
     whichkey = true,
     telescope = true,
     lazy = true,
+    mason = true,
   },
   on_highlights = nil,
   on_colors = nil,
@@ -116,5 +119,6 @@ return {
     alpha = true,
     yanky = true,
     gitgutter = true,
+    mason = true,
   },
 }

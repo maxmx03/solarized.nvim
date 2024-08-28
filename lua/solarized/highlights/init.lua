@@ -1097,6 +1097,17 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('LeapBackDrop', { fg = colors.base01 })
   end
 
+  if config.plugins.mason then
+    nvim_set_hl(
+      'MasonNormal',
+      { fg = colors.base0, bg = colors.base04 },
+      { transparent = config.transparent.mason and config.transparent.enabled }
+    )
+    nvim_set_hl('MasonHighlight', { fg = colors.cyan })
+    nvim_set_hl('MasonHighlightBlock', { fg = colors.mix_cyan, bg = colors.cyan })
+    nvim_set_hl('MasonHighlightBlockBold', { fg = colors.mix_cyan, bg = colors.cyan, bold = true })
+  end
+
   if config.on_highlights then
     local color = require 'solarized.color'
     local highlights = config.on_highlights(colors, color)
