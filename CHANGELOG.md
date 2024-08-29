@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.2.0](https://github.com/maxmx03/solarized.nvim/compare/v3.1.1...v3.2.0) (2024-08-29)
+
+
+### Features
+
+* hl group mason ([138bb8a](https://github.com/maxmx03/solarized.nvim/commit/138bb8aff8686428b668cec7c78cd67ab83b69e0))
+
+
+### Bug Fixes
+
+* solarized-dark diagnostics config ([e41b3cf](https://github.com/maxmx03/solarized.nvim/commit/e41b3cf6431918dcffcc2d9fac96a4e1cf4d5471))
+* solarized-light lazynormal bg ([8759a70](https://github.com/maxmx03/solarized.nvim/commit/8759a70227b3cfd00d9ece28804c56b296c8ff9d))
+
 ## [3.1.1](https://github.com/maxmx03/solarized.nvim/compare/v3.1.0...v3.1.1) (2024-08-27)
 
 
