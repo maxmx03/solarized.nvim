@@ -1,4 +1,4 @@
-*solarized.nvim.txt*        For NVIM v0.9.4        Last change: 2024 August 28
+*solarized.nvim.txt*        For NVIM v0.9.4        Last change: 2024 August 29
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -255,6 +255,7 @@ customize which specific UI components should be transparent.
         whichkey = true,        -- Which-key popup
         telescope = true,       -- Telescope fuzzy finder
         lazy = true,            -- Lazy plugin manager UI
+        mason = true,           -- Mason manage external tooling
       },
     }
 <
