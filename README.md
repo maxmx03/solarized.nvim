@@ -234,6 +234,7 @@ require('solarized').setup {
     whichkey = true,        -- Which-key popup
     telescope = true,       -- Telescope fuzzy finder
     lazy = true,            -- Lazy plugin manager UI
+    mason = true,           -- Mason manage external tooling
   },
 }
 ```
