@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.3.0](https://github.com/maxmx03/solarized.nvim/compare/v3.2.0...v3.3.0) (2024-08-30)
+
+
+### Features
+
+* solarized theme based on seasons ([650dbd5](https://github.com/maxmx03/solarized.nvim/commit/650dbd58fe622a93ac93526476e597e91f810014))
+
+
+### Bug Fixes
+
+* **docs:** fix code example under Config Highlighs in README ([8ca7c63](https://github.com/maxmx03/solarized.nvim/commit/8ca7c63acc1edb2a7077900d295d53b4bc78eb9a))
+
 ## [3.2.0](https://github.com/maxmx03/solarized.nvim/compare/v3.1.1...v3.2.0) (2024-08-29)
 
 
