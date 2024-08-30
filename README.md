@@ -276,7 +276,7 @@ require('solarized').setup {
             Visual = { bg = colors.base02, standout = true },
             Function = { fg = colors.yellow },
             IncSearch = { fg = colors.orange, bg = colors.mix_orange },
-            Search = { fg = colors.violet, bg = shade(colors.violet, 5),
+            Search = { fg = colors.violet, bg = shade(colors.violet, 5) },
             NormalFloat = { bg = darken(colors.base03, 25) }
         }
 
