@@ -1,4 +1,4 @@
-*solarized.nvim.txt*        For NVIM v0.9.4        Last change: 2024 August 29
+*solarized.nvim.txt*        For NVIM v0.9.4        Last change: 2024 August 30
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -298,7 +298,7 @@ example:
                 Visual = { bg = colors.base02, standout = true },
                 Function = { fg = colors.yellow },
                 IncSearch = { fg = colors.orange, bg = colors.mix_orange },
-                Search = { fg = colors.violet, bg = shade(colors.violet, 5),
+                Search = { fg = colors.violet, bg = shade(colors.violet, 5) },
                 NormalFloat = { bg = darken(colors.base03, 25) }
             }
     
