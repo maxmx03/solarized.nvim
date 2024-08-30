@@ -35,8 +35,8 @@ end
 ---@param colors solarized.palette
 ---@param config solarized.config
 M.set_highlight = function(colors, config)
+  local color = require 'solarized.color'
   if config.on_colors then
-    local color = require 'solarized.color'
     colors = vim.tbl_extend('force', colors, config.on_colors(colors, color))
   end
   -- EDITOR :h highlight-groups
@@ -138,56 +138,23 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('WinBar', { link = 'Pmenu' })
   nvim_set_hl('WinBarNC', { link = 'WinBar' })
 
-  -- SYNTAX :h group-name
-  nvim_set_hl('Comment', { fg = colors.base1 }, { styles = config.styles.comments })
-  nvim_set_hl('Constant', { fg = colors.magenta }, { styles = config.styles.constants })
-  nvim_set_hl('String', { fg = colors.cyan }, { styles = config.styles.strings })
-  nvim_set_hl('Character', { link = 'String' })
-  nvim_set_hl('Number', { link = 'Constant' })
-  nvim_set_hl('Boolean', { link = 'Constant' })
-  nvim_set_hl('Float', { link = 'Constant' })
-  nvim_set_hl('Identifier', { fg = colors.blue })
-  nvim_set_hl('Function', { fg = colors.blue }, { styles = config.styles.functions })
-  nvim_set_hl('Statement', { fg = colors.green }, { styles = config.styles.statements })
-  nvim_set_hl('Conditional', { link = 'Statement' })
-  nvim_set_hl('Repeat', { link = 'Statement' })
-  nvim_set_hl('Label', { link = 'Statement' })
-  nvim_set_hl('Operator', { link = 'Statement' })
-  nvim_set_hl('Keyword', { fg = colors.green }, { styles = config.styles.keywords })
-  nvim_set_hl('Exception', { link = 'Statement' })
-  nvim_set_hl('PreProc', { link = 'Statement' })
-  nvim_set_hl('Include', { link = 'Statement' })
-  nvim_set_hl('Define', { link = 'Statement' })
-  nvim_set_hl('Macro', { link = 'Statement' })
-  nvim_set_hl('PreCondit', { link = 'Statement' })
-  nvim_set_hl('Type', { fg = colors.orange }, { styles = config.styles.types })
-  nvim_set_hl('StorageClass', { link = 'Statement' })
-  nvim_set_hl('Structure', { link = 'Type' })
-  nvim_set_hl('Typedef', { link = 'Statement' })
-  nvim_set_hl('Special', { fg = colors.magenta })
-  nvim_set_hl('SpecialChar', { fg = colors.magenta })
-  nvim_set_hl('Tag', { fg = colors.red })
-  nvim_set_hl('Delimiter', { fg = colors.base01 })
-  nvim_set_hl('SpecialComment', { link = 'Statement' })
-  nvim_set_hl('Debug', { fg = colors.magenta })
-  nvim_set_hl('Underlined', { fg = colors.violet, underline = true })
-  nvim_set_hl('Ignore', {})
-  nvim_set_hl('Error', { fg = colors.diag_error, bold = true })
-  nvim_set_hl('Todo', { fg = colors.blue })
-  nvim_set_hl('Added', { fg = colors.git_add })
-  nvim_set_hl('Changed', { fg = colors.git_modify })
-  nvim_set_hl('Removed', { fg = colors.git_delete })
+  local solarized_light = require 'solarized.variants.solarized-light'
+  solarized_light.set_variant {
+    config = config,
+    nvim_set_hl = nvim_set_hl,
+    colors = colors,
+    color = color,
+  }
 
   -- PLUGINS
   if config.plugins.treesitter then
     nvim_set_hl('@variable', { link = 'Identifier' })
     nvim_set_hl('@variable.builtin', { link = 'Constant' })
-    nvim_set_hl(
-      '@variable.parameter',
-      { fg = colors.blue, italic = true },
-      { styles = config.styles.parameters }
-    )
-    nvim_set_hl('@variable.member', { link = 'Identifier' })
+    nvim_set_hl('@variable.parameter', { link = 'Parameter' })
+    nvim_set_hl('@variable.member', { link = 'Property' })
+    nvim_set_hl('@property', { link = 'Property' })
+    nvim_set_hl('@property.json', { fg = colors.green })
+    nvim_set_hl('@property.yaml', { fg = colors.green })
     nvim_set_hl('@constant', { link = 'Constant' })
     nvim_set_hl('@constant.builtin', { link = 'Constant' })
     nvim_set_hl('@constant.macro', { link = 'Constant' })
@@ -209,10 +176,8 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@type.definition', { link = 'Type' })
     nvim_set_hl('@type.qualifier', { link = 'Type' })
     nvim_set_hl('@attribute', { link = 'Keyword' })
-    nvim_set_hl('@property.json', { fg = colors.green })
-    nvim_set_hl('@property.yaml', { fg = colors.green })
     nvim_set_hl('@function', { link = 'Function' })
-    nvim_set_hl('@function.builtin', { fg = colors.yellow })
+    nvim_set_hl('@function.builtin', { link = 'Function' })
     nvim_set_hl('@function.call', { link = 'Function' })
     nvim_set_hl('@function.macro', { link = 'Function' })
     nvim_set_hl('@function.method', { link = 'Function' })
@@ -224,7 +189,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@keyword.coroutine', { link = 'Statement' })
     nvim_set_hl('@keyword.function', { link = 'Keyword' })
     nvim_set_hl('@keyword.operator', { link = 'Statement' })
-    nvim_set_hl('@keyword.import', { link = 'Keyword' })
+    nvim_set_hl('@keyword.import', { link = 'Include' })
     nvim_set_hl('@keyword.repeat', { link = 'Statement' })
     nvim_set_hl('@keyword.return', { link = 'Statement' })
     nvim_set_hl('@keyword.debug', { link = 'Statement' })
@@ -267,9 +232,9 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@diff.plus', { fg = colors.git_add })
     nvim_set_hl('@diff.minus', { fg = colors.git_delete })
     nvim_set_hl('@diff.delta', { fg = colors.git_modify })
-    nvim_set_hl('@tag', { fg = colors.red })
-    nvim_set_hl('@tag.attribute', { fg = colors.blue })
-    nvim_set_hl('@tag.delimiter', { fg = colors.red })
+    nvim_set_hl('@tag', { link = 'Tag' })
+    nvim_set_hl('@tag.attribute', { link = 'TagAttribute' })
+    nvim_set_hl('@tag.delimiter', { link = 'Delimiter' })
   end
 
   if config.plugins.lspconfig then
@@ -618,8 +583,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('RainbowDelimiterCyan', { fg = colors.cyan })
   end
 
-  if config.plugins.bufferline and config.transparent then
-    local color = require 'solarized.color'
+  if config.plugins.bufferline and config.transparent.enabled then
     local background = color.shade(colors.base2, 2)
     nvim_set_hl('BufferLineFill', { bg = background })
     nvim_set_hl('BufferLineBufferSelected', { fg = colors.base01, bold = true })
@@ -743,7 +707,6 @@ M.set_highlight = function(colors, config)
   end
 
   if config.on_highlights then
-    local color = require 'solarized.color'
     local highlights = config.on_highlights(colors, color)
 
     for group_name, group_val in pairs(highlights) do

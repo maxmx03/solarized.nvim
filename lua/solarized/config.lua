@@ -60,6 +60,7 @@
 ---@field on_colors? fun(colors: solarized.palette, color: solarized.color): solarized.palette
 ---@field styles? solarized.styles
 ---@field palette? "solarized" | "selenized"
+---@field variant? "spring" | "summer" | "autumn" | "winter"
 ---@field plugins? solarized.plugins
 return {
   transparent = {
@@ -77,6 +78,7 @@ return {
   on_highlights = nil,
   on_colors = nil,
   palette = 'solarized',
+  variant = 'winter',
   styles = {
     types = {},
     functions = {},

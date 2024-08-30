@@ -172,6 +172,7 @@ require('solarized').setup({
   on_highlights = nil,
   on_colors = nil,
   palette = 'solarized', -- solarized (default) | selenized
+  variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
   styles = {
     types = {},
     functions = {},
