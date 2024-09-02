@@ -54,6 +54,10 @@
 ---@field leap? boolean
 ---@field mason? boolean
 
+---@class solarized.error_lens
+---@field text? boolean
+---@field symbol? boolean
+
 ---@class solarized.config
 ---@field transparent? solarized.transparent
 ---@field on_highlights? fun(colors: solarized.palette, color: solarized.color): solarized.highlights
@@ -62,6 +66,7 @@
 ---@field palette? "solarized" | "selenized"
 ---@field variant? "spring" | "summer" | "autumn" | "winter"
 ---@field plugins? solarized.plugins
+---@field error_lens? solarized.error_lens
 return {
   transparent = {
     enabled = false,
@@ -79,6 +84,10 @@ return {
   on_colors = nil,
   palette = 'solarized',
   variant = 'winter',
+  error_lens = {
+    text = false,
+    symbol = false,
+  },
   styles = {
     types = {},
     functions = {},

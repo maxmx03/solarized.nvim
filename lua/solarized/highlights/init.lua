@@ -403,6 +403,7 @@ end
 ---@class solarized.nvim_set_hl.config
 ---@field transparent? boolean
 ---@field styles? vim.api.keyset.highlight
+---@field error_lens? boolean
 
 ---@param group_name string
 ---@param group_val vim.api.keyset.highlight
@@ -417,6 +418,17 @@ local nvim_set_hl = function(group_name, group_val, config)
 
     if config and config.styles then
       group_val = vim.tbl_extend('force', group_val, config.styles)
+    end
+
+    if config and config.error_lens then
+      local color = require 'solarized.color'
+      local editor = require('solarized.utils').nvim_get_hl 'Normal'
+      local ok, mix_color = pcall(color.blend, group_val.fg, editor.bg, 0.3)
+      if ok then
+        group_val.bg = mix_color
+      else
+        group_val.bg = color.shade(group_val.fg, 5)
+      end
     end
 
     val = vim.tbl_extend('force', val, group_val)
@@ -646,41 +658,81 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@lsp.typemod.keyword.documentation', { link = 'Keyword' })
     nvim_set_hl('@lsp.typemod.class.documentation', { link = 'Type' })
     nvim_set_hl('@lsp.typemod.property.readonly', { link = 'Constant' })
+    nvim_set_hl('DiagnosticError', { fg = colors.diag_error })
+    nvim_set_hl('DiagnosticWarn', { fg = colors.diag_warning })
+    nvim_set_hl('DiagnosticInfo', { fg = colors.diag_info })
+    nvim_set_hl('DiagnosticHint', { fg = colors.diag_hint })
+    nvim_set_hl('DiagnosticOk', { fg = colors.diag_ok })
     nvim_set_hl(
-      'DiagnosticError',
-      { fg = colors.diag_error, bg = colors.mix_red },
-      { transparent = config.transparent.enabled }
+      'DiagnosticVirtualTextError',
+      { fg = colors.diag_error },
+      { error_lens = config.error_lens.text }
     )
     nvim_set_hl(
-      'DiagnosticWarn',
-      { fg = colors.diag_warning, bg = colors.mix_yellow },
-      { transparent = config.transparent.enabled }
+      'DiagnosticVirtualTextWarn',
+      { fg = colors.diag_warning },
+      { error_lens = config.error_lens.text }
     )
     nvim_set_hl(
-      'DiagnosticInfo',
-      { fg = colors.diag_info, bg = colors.mix_base1 },
-      { transparent = config.transparent.enabled }
+      'DiagnosticVirtualTextInfo',
+      { fg = colors.diag_info },
+      { error_lens = config.error_lens.text }
     )
     nvim_set_hl(
-      'DiagnosticHint',
-      { fg = colors.diag_hint, bg = colors.mix_base1 },
-      { transparent = config.transparent.enabled }
+      'DiagnosticVirtualTextHint',
+      { fg = colors.diag_hint },
+      { error_lens = config.error_lens.text }
     )
     nvim_set_hl(
-      'DiagnosticOk',
-      { fg = colors.diag_ok, bg = colors.mix_green },
-      { transparent = config.transparent.enabled }
+      'DiagnosticVirtualTextOk',
+      { fg = colors.diag_ok },
+      { error_lens = config.error_lens.text }
     )
-    nvim_set_hl('DiagnosticVirtualTextError', { fg = colors.diag_error })
-    nvim_set_hl('DiagnosticVirtualTextWarn', { fg = colors.diag_warning })
-    nvim_set_hl('DiagnosticVirtualTextInfo', { fg = colors.diag_info })
-    nvim_set_hl('DiagnosticVirtualTextHint', { fg = colors.diag_hint })
-    nvim_set_hl('DiagnosticVirtualTextOk', { fg = colors.diag_ok })
-    nvim_set_hl('DiagnosticUnderlineError', { fg = colors.diag_error, underline = true })
-    nvim_set_hl('DiagnosticUnderlineWarn', { fg = colors.diag_warning, underline = true })
-    nvim_set_hl('DiagnosticUnderlineInfo', { fg = colors.diag_info, underline = true })
-    nvim_set_hl('DiagnosticUnderlineHint', { fg = colors.diag_hint, underline = true })
-    nvim_set_hl('DiagnosticUnderlineOk', { fg = colors.diag_ok, underline = true })
+    nvim_set_hl(
+      'DiagnosticUnderlineError',
+      { fg = colors.diag_error, underline = true, sp = colors.diag_error }
+    )
+    nvim_set_hl(
+      'DiagnosticUnderlineWarn',
+      { fg = colors.diag_warning, underline = true, sp = colors.diag_warning }
+    )
+    nvim_set_hl(
+      'DiagnosticUnderlineInfo',
+      { fg = colors.diag_info, underline = true, sp = colors.diag_info }
+    )
+    nvim_set_hl(
+      'DiagnosticUnderlineHint',
+      { fg = colors.diag_hint, underline = true, sp = colors.diag_hint }
+    )
+    nvim_set_hl(
+      'DiagnosticUnderlineOk',
+      { fg = colors.diag_ok, underline = true, sp = colors.diag_ok }
+    )
+    nvim_set_hl(
+      'DiagnosticSignError',
+      { fg = colors.diag_error, bg = colors.base02 },
+      { transparent = config.transparent.enabled, error_lens = config.error_lens.symbol }
+    ) -- Used for "Error" signs in sign column.
+    nvim_set_hl(
+      'DiagnosticSignWarn',
+      { fg = colors.diag_warning, bg = colors.base02 },
+      { transparent = config.transparent.enabled, error_lens = config.error_lens.symbol }
+    ) -- Used for "Warn" signs in sign column.
+    nvim_set_hl(
+      'DiagnosticSignInfo',
+      { fg = colors.diag_info, bg = colors.base02 },
+      { transparent = config.transparent.enabled, error_lens = config.error_lens.symbol }
+    ) -- Used for "Info" signs in sign column.
+    nvim_set_hl(
+      'DiagnosticSignHint',
+      { fg = colors.diag_hint, bg = colors.base02 },
+      { transparent = config.transparent.enabled, error_lens = config.error_lens.symbol }
+    ) -- Used for "Hint" signs in sign column.
+    nvim_set_hl(
+      'DiagnosticSignOk',
+      { fg = colors.diag_ok, bg = colors.base02 },
+      { transparent = config.transparent.enabled, error_lens = config.error_lens.symbol }
+    )
     nvim_set_hl('LspReferenceText', { fg = colors.cyan, bg = colors.mix_cyan })
     nvim_set_hl('LspReferenceRead', { fg = colors.green, bg = colors.mix_green })
     nvim_set_hl('LspReferenceWrite', { fg = colors.green, bg = colors.mix_green })
@@ -1049,14 +1101,38 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.coc then
-    nvim_set_hl('CocErrorSign', { fg = colors.diag_error })
-    nvim_set_hl('CocWarningSign', { fg = colors.diag_warning })
-    nvim_set_hl('CocInfoSign', { fg = colors.diag_info })
-    nvim_set_hl('CocHintSign', { fg = colors.diag_hint })
-    nvim_set_hl('CocErrorVirtualText', { fg = colors.diag_error, bg = colors.mix_red })
-    nvim_set_hl('CocWarningVirtualText', { fg = colors.diag_warning, bg = colors.mix_yellow })
-    nvim_set_hl('CocInfoVirtualText', { fg = colors.diag_info, bg = colors.mix_base1 })
-    nvim_set_hl('CocHintVirtualText', { fg = colors.diag_hint, bg = colors.mix_base1 })
+    nvim_set_hl(
+      'CocErrorSign',
+      { fg = colors.diag_error },
+      { error_lens = config.error_lens.symbol }
+    )
+    nvim_set_hl(
+      'CocWarningSign',
+      { fg = colors.diag_warning },
+      { error_lens = config.error_lens.symbol }
+    )
+    nvim_set_hl('CocInfoSign', { fg = colors.diag_info }, { error_lens = config.error_lens.symbol })
+    nvim_set_hl('CocHintSign', { fg = colors.diag_hint }, { error_lens = config.error_lens.symbol })
+    nvim_set_hl(
+      'CocErrorVirtualText',
+      { fg = colors.diag_error },
+      { error_lens = config.error_lens.text }
+    )
+    nvim_set_hl(
+      'CocWarningVirtualText',
+      { fg = colors.diag_warning },
+      { error_lens = config.error_lens.text }
+    )
+    nvim_set_hl(
+      'CocInfoVirtualText',
+      { fg = colors.diag_info },
+      { error_lens = config.error_lens.text }
+    )
+    nvim_set_hl(
+      'CocHintVirtualText',
+      { fg = colors.diag_hint },
+      { error_lens = config.error_lens.text }
+    )
   end
 
   if config.plugins.leap then

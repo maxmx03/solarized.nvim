@@ -25,20 +25,19 @@ designed for use with terminal and gui applications.
 - [Docs](#docs)
 - [Commands](#commands)
 - [Default Config](#default-config)
-- [Config Variant](#config-transparency)
+- [Config Variant](#config-variant)
 - [Config Transparency](#config-transparency)
 - [Config Styles](#config-styles)
 - [Config Highlights](#config-highlights)
 - [Config Colors](#config-colors)
 - [Config Plugins](#config-plugins)
+- [Config Error Lens](#config-error-lens)
 - [Lualine](#lualine)
 - [Barbecue](#barbecue)
 - [Api](#api)
-  - [Get Colors](#get-colors)
-  - [Color utils](#color-utils)
 - [Contributing](#contributing)
 - [Designed by](#designed-by)
-- [Credits and Reference 🎉](#credits-and-reference-🎉)
+- [Credits and Reference](#credits-and-reference)
 <!--toc:end-->
 
 ## Features
@@ -172,6 +171,10 @@ require('solarized').setup({
   on_colors = nil,
   palette = 'solarized', -- solarized (default) | selenized
   variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
+  error_lens = {
+    text = false,
+    symbol = false,
+  },
   styles = {
     types = {},
     functions = {},
@@ -217,7 +220,7 @@ require('solarized').setup({
 vim.cmd.colorscheme = 'solarized'
 ```
 
-## Config Variants
+## Config Variant
 
 Solarized includes four variants: spring, summer, autumn, and winter.
 
@@ -358,6 +361,29 @@ return {
 }
 ```
 
+## Config Error Lens
+
+Enables additional highlights for diagnostic virtual text and symbols.
+
+```lua
+return {
+  'maxmx03/solarized.nvim',
+  lazy = false,
+  priority = 1000,
+  ---@type solarized.config
+  opts = {
+    error_lens = {
+      text = true,
+      symbol = true,
+    }
+  },
+  config = function(_, opts)
+    require('solarized').setup(opts)
+    vim.cmd.colorscheme 'solarized'
+  end,
+}
+```
+
 ## Lualine
 
 ```lua
@@ -437,7 +463,7 @@ Pull requests are welcome and appreciated.
 
 Ethan Schoonover
 
-## Credits and Reference 🎉
+## Credits and Reference
 
 - [solarized-vim](https://github.com/altercation/vim-colors-solarized)
 - [tokyonight](https://github.com/folke/tokyonight.nvim)
