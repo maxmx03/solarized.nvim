@@ -1,4 +1,4 @@
-*solarized.nvim.txt*        For NVIM v0.9.4        Last change: 2024 August 30
+*solarized.nvim.txt*       For NVIM v0.9.4      Last change: 2024 September 02
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -11,18 +11,19 @@ Table of Contents                           *solarized.nvim-table-of-contents*
   - Docs                                                 |solarized.nvim-docs|
   - Commands                                         |solarized.nvim-commands|
   - Default Config                             |solarized.nvim-default-config|
-  - Config Variants                           |solarized.nvim-config-variants|
+  - Config Variant                             |solarized.nvim-config-variant|
   - Config Transparency                   |solarized.nvim-config-transparency|
   - Config Styles                               |solarized.nvim-config-styles|
   - Config Highlights                       |solarized.nvim-config-highlights|
   - Config Colors                               |solarized.nvim-config-colors|
   - Config Plugins                             |solarized.nvim-config-plugins|
+  - Config Error Lens                       |solarized.nvim-config-error-lens|
   - Lualine                                           |solarized.nvim-lualine|
   - Barbecue                                         |solarized.nvim-barbecue|
   - Api                                                   |solarized.nvim-api|
   - Contributing                                 |solarized.nvim-contributing|
   - Designed by                                   |solarized.nvim-designed-by|
-  - Credits and Reference 🎉     |solarized.nvim-credits-and-reference-🎉|
+  - Credits and Reference               |solarized.nvim-credits-and-reference|
 1. Links                                                |solarized.nvim-links|
 
 Solarized is a sixteen color palette (eight monotones, eight accent colors)
@@ -45,14 +46,13 @@ designed for use with terminal and gui applications. click here to learn more
 - |solarized.nvim-config-highlights|
 - |solarized.nvim-config-colors|
 - |solarized.nvim-config-plugins|
+- |solarized.nvim-config-error-lens|
 - |solarized.nvim-lualine|
 - |solarized.nvim-barbecue|
 - |solarized.nvim-api|
-    - |solarized.nvim-get-colors|
-    - |solarized.nvim-color-utils|
 - |solarized.nvim-contributing|
 - |solarized.nvim-designed-by|
-- |solarized.nvim-credits-and-reference-🎉|
+- |solarized.nvim-credits-and-reference|
 
 
 FEATURES                                             *solarized.nvim-features*
@@ -195,6 +195,10 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
       on_colors = nil,
       palette = 'solarized', -- solarized (default) | selenized
       variant = 'winter', -- "spring" | "summer" | "autumn" | "winter" (default)
+      error_lens = {
+        text = false,
+        symbol = false,
+      },
       styles = {
         types = {},
         functions = {},
@@ -241,7 +245,7 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
 <
 
 
-CONFIG VARIANTS                               *solarized.nvim-config-variants*
+CONFIG VARIANT                                 *solarized.nvim-config-variant*
 
 Solarized includes four variants: spring, summer, autumn, and winter.
 
@@ -386,6 +390,30 @@ example:
 <
 
 
+CONFIG ERROR LENS                           *solarized.nvim-config-error-lens*
+
+Enables additional highlights for diagnostic virtual text and symbols.
+
+>lua
+    return {
+      'maxmx03/solarized.nvim',
+      lazy = false,
+      priority = 1000,
+      ---@type solarized.config
+      opts = {
+        error_lens = {
+          text = true,
+          symbol = true,
+        }
+      },
+      config = function(_, opts)
+        require('solarized').setup(opts)
+        vim.cmd.colorscheme 'solarized'
+      end,
+    }
+<
+
+
 LUALINE                                               *solarized.nvim-lualine*
 
 >lua
@@ -471,7 +499,7 @@ DESIGNED BY                                       *solarized.nvim-designed-by*
 Ethan Schoonover
 
 
-CREDITS AND REFERENCE 🎉         *solarized.nvim-credits-and-reference-🎉*
+CREDITS AND REFERENCE                   *solarized.nvim-credits-and-reference*
 
 - solarized-vim <https://github.com/altercation/vim-colors-solarized>
 - tokyonight <https://github.com/folke/tokyonight.nvim>
