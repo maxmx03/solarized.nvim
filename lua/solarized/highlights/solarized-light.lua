@@ -50,6 +50,14 @@ M.set_highlight = function(colors, config)
   if config.on_colors then
     colors = vim.tbl_extend('force', colors, config.on_colors(colors, color))
   end
+  local solarized_light = require 'solarized.variants.solarized-light'
+  solarized_light.set_variant {
+    config = config,
+    nvim_set_hl = nvim_set_hl,
+    colors = colors,
+    color = color,
+  }
+
   -- EDITOR :h highlight-groups
   nvim_set_hl('ColorColumn', { bg = colors.base2 })
   nvim_set_hl('Conceal', { fg = colors.blue })
@@ -68,36 +76,36 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('TermCursor', { link = 'Cursor' })
   nvim_set_hl('TermCursorNC', { fg = colors.base3, bg = colors.base00 })
   nvim_set_hl('ErrorMsg', { fg = colors.diag_error })
-  nvim_set_hl(
-    'WinSeparator',
-    { fg = colors.blue, bg = colors.base4 },
-    { transparent = config.transparent.enabled }
-  )
+  -- nvim_set_hl(
+  --   'WinSeparator',
+  --   { fg = colors.blue, bg = colors.base4 },
+  --   { transparent = config.transparent.enabled }
+  -- )
   nvim_set_hl('Folded', { fg = colors.base00, bg = colors.base2 })
   nvim_set_hl('FoldColumn', { fg = colors.base00, bg = colors.base2 })
-  nvim_set_hl(
-    'SignColumn',
-    { fg = colors.base00, bg = colors.base2 },
-    { transparent = config.transparent.enabled }
-  )
+  -- nvim_set_hl(
+  --   'SignColumn',
+  --   { fg = colors.base00, bg = colors.base2 },
+  --   { transparent = config.transparent.enabled }
+  -- )
   nvim_set_hl(
     'IncSearch',
     { fg = colors.yellow, bg = colors.mix_yellow, bold = true },
     { transparent = config.transparent.enabled }
   )
   nvim_set_hl('Substitute', { link = 'IncSearch' })
-  nvim_set_hl(
-    'LineNr',
-    { fg = colors.base1, bg = colors.base2 },
-    { transparent = config.transparent.enabled }
-  )
+  -- nvim_set_hl(
+  --   'LineNr',
+  --   { fg = colors.base1, bg = colors.base2 },
+  --   { transparent = config.transparent.enabled }
+  -- )
   nvim_set_hl('LineNrAbove', { link = 'LineNr' })
   nvim_set_hl('LineNrBelow', { link = 'LineNr' })
-  nvim_set_hl(
-    'CursorLineNr',
-    { fg = colors.base01, bg = colors.base2 },
-    { transparent = config.transparent.enabled }
-  )
+  -- nvim_set_hl(
+  --   'CursorLineNr',
+  --   { fg = colors.base01, bg = colors.base2 },
+  --   { transparent = config.transparent.enabled }
+  -- )
   nvim_set_hl('CursorLineFold', { link = 'FoldColumn' })
   nvim_set_hl('CursorLineSign', { link = 'SignColumn' })
   nvim_set_hl('MatchParen', { fg = colors.cyan })
@@ -114,8 +122,8 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('NormalFloat', { fg = colors.base00, bg = colors.base4 }, {
     transparent = config.transparent.normalfloat and config.transparent.enabled,
   })
-  nvim_set_hl('FloatBorder', { link = 'WinSeparator' })
-  nvim_set_hl('FloatTitle', { fg = colors.blue })
+  -- nvim_set_hl('FloatBorder', { link = 'WinSeparator' })
+  -- nvim_set_hl('FloatTitle', { fg = colors.blue })
   nvim_set_hl('NormalNC', { link = 'Normal' })
   nvim_set_hl('Pmenu', { fg = colors.base00, bg = colors.base4 }, {
     transparent = config.transparent.pmenu and config.transparent.enabled,
@@ -149,14 +157,6 @@ M.set_highlight = function(colors, config)
   nvim_set_hl('WinBar', { link = 'Pmenu' })
   nvim_set_hl('WinBarNC', { link = 'WinBar' })
 
-  local solarized_light = require 'solarized.variants.solarized-light'
-  solarized_light.set_variant {
-    config = config,
-    nvim_set_hl = nvim_set_hl,
-    colors = colors,
-    color = color,
-  }
-
   -- PLUGINS
   if config.plugins.treesitter then
     nvim_set_hl('@variable', { link = 'Identifier' })
@@ -164,11 +164,12 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@variable.parameter', { link = 'Parameter' })
     nvim_set_hl('@variable.member', { link = 'Property' })
     nvim_set_hl('@property', { link = 'Property' })
-    nvim_set_hl('@property.json', { fg = colors.green })
-    nvim_set_hl('@property.yaml', { fg = colors.green })
+    nvim_set_hl('@property.json', { link = 'Keyword' })
+    nvim_set_hl('@property.yaml', { link = 'Keyword' })
     nvim_set_hl('@constant', { link = 'Constant' })
     nvim_set_hl('@constant.builtin', { link = 'Constant' })
     nvim_set_hl('@constant.macro', { link = 'Constant' })
+    nvim_set_hl('@constant.html', { link = 'Tag' })
     nvim_set_hl('@module', { link = 'Type' })
     nvim_set_hl('@module.builtin', { link = 'Constant' })
     nvim_set_hl('@label', { link = 'Statement' })
@@ -248,6 +249,7 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('@tag.delimiter', { link = 'Delimiter' })
   end
 
+  local signcolumn = require('solarized.utils').nvim_get_hl 'SignColumn'
   if config.plugins.lspconfig then
     nvim_set_hl('@lsp.type.class', { link = 'Type' })
     nvim_set_hl('@lsp.type.decorator', { link = 'Function' })
@@ -320,27 +322,27 @@ M.set_highlight = function(colors, config)
     )
     nvim_set_hl(
       'DiagnosticSignError',
-      { fg = colors.diag_error, bg = colors.base2 },
+      { fg = colors.diag_error, bg = signcolumn.bg },
       { transparent = config.transparent.enabled, error_lens = config.error_lens.symbol }
     ) -- Used for "Error" signs in sign column.
     nvim_set_hl(
       'DiagnosticSignWarn',
-      { fg = colors.diag_warning, bg = colors.base2 },
+      { fg = colors.diag_warning, bg = signcolumn.bg },
       { transparent = config.transparent.enabled, error_lens = config.error_lens.symbol }
     ) -- Used for "Warn" signs in sign column.
     nvim_set_hl(
       'DiagnosticSignInfo',
-      { fg = colors.diag_info, bg = colors.base2 },
+      { fg = colors.diag_info, bg = signcolumn.bg },
       { transparent = config.transparent.enabled, error_lens = config.error_lens.symbol }
     ) -- Used for "Info" signs in sign column.
     nvim_set_hl(
       'DiagnosticSignHint',
-      { fg = colors.diag_hint, bg = colors.base2 },
+      { fg = colors.diag_hint, bg = signcolumn.bg },
       { transparent = config.transparent.enabled, error_lens = config.error_lens.symbol }
     ) -- Used for "Hint" signs in sign column.
     nvim_set_hl(
       'DiagnosticSignOk',
-      { fg = colors.diag_ok, bg = colors.base2 },
+      { fg = colors.diag_ok, bg = signcolumn.bg },
       { transparent = config.transparent.enabled }
     )
     nvim_set_hl('LspReferenceText', { fg = colors.cyan, bg = colors.mix_cyan })
@@ -466,10 +468,10 @@ M.set_highlight = function(colors, config)
       { fg = colors.base01, bg = colors.base4 },
       { transparent = config.transparent.whichkey and config.transparent.enabled }
     )
-    nvim_set_hl('WhichKey', { link = 'Function' })
-    nvim_set_hl('WhichKeyDesc', { fg = colors.base01 })
+    nvim_set_hl('WhichKey', { link = 'Property' })
+    nvim_set_hl('WhichKeyDesc', { link = 'String' })
     nvim_set_hl('WhichKeySeparator', { link = 'Keyword' })
-    nvim_set_hl('WhichKeyGroup', { link = 'Type' })
+    nvim_set_hl('WhichKeyGroup', { link = 'Constant' })
   end
 
   if config.plugins.dashboard then
@@ -484,19 +486,15 @@ M.set_highlight = function(colors, config)
   if config.plugins.gitsigns then
     nvim_set_hl(
       'GitSignsAdd',
-      { fg = colors.git_add, bg = colors.base2 },
+      { fg = colors.git_add, bg = signcolumn.bg },
       { transparent = config.transparent.enabled }
     )
-    nvim_set_hl(
-      'GitSignsChange',
-      { fg = colors.git_modify, bg = colors.base2 },
-      { transparent = config.transparent.enabled }
-    )
-    nvim_set_hl(
-      'GitSignsDelete',
-      { fg = colors.git_delete, bg = colors.base2 },
-      { transparent = config.transparent.enabled }
-    )
+    nvim_set_hl('GitSignsChange', { fg = colors.git_modify, bg = signcolumn.bg }, {
+      transparent = config.transparent.enabled,
+    })
+    nvim_set_hl('GitSignsDelete', { fg = colors.git_delete, bg = signcolumn.bg }, {
+      transparent = config.transparent.enabled,
+    })
   end
 
   if config.plugins.telescope then
@@ -511,11 +509,11 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('TelescopePreviewNormal', { link = 'TelescopeNormal' })
     nvim_set_hl('TelescopePromptNormal', { link = 'TelescopeNormal' })
     nvim_set_hl('TelescopeResultsNormal', { link = 'TelescopeNormal' })
-    nvim_set_hl('TelescopeBorder', { link = 'WinSeparator' })
+    nvim_set_hl('TelescopeBorder', { link = 'FloatBorder' })
     nvim_set_hl('TelescopePromptBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopeResultsBorder', { link = 'TelescopeBorder' })
     nvim_set_hl('TelescopePreviewBorder', { link = 'TelescopeBorder' })
-    nvim_set_hl('TelescopeTitle', { fg = colors.mix_blue, bg = colors.blue })
+    nvim_set_hl('TelescopeTitle', { link = 'FloatTitle' })
     nvim_set_hl('TelescopePromptTitle', { link = 'TelescopeTitle' })
     nvim_set_hl('TelescopeResultsTitle', { link = 'TelescopeTitle' })
     nvim_set_hl('TelescopePreviewTitle', { link = 'TelescopeTitle' })
@@ -712,16 +710,24 @@ M.set_highlight = function(colors, config)
   if config.plugins.coc then
     nvim_set_hl(
       'CocErrorSign',
-      { fg = colors.diag_error },
+      { fg = colors.diag_error, bg = signcolumn.bg },
       { error_lens = config.error_lens.symbol }
     )
     nvim_set_hl(
       'CocWarningSign',
-      { fg = colors.diag_warning },
+      { fg = colors.diag_warning, bg = signcolumn.bg },
       { error_lens = config.error_lens.symbol }
     )
-    nvim_set_hl('CocInfoSign', { fg = colors.diag_info }, { error_lens = config.error_lens.symbol })
-    nvim_set_hl('CocHintSign', { fg = colors.diag_hint }, { error_lens = config.error_lens.symbol })
+    nvim_set_hl(
+      'CocInfoSign',
+      { fg = colors.diag_info, bg = signcolumn.bg },
+      { error_lens = config.error_lens.symbol }
+    )
+    nvim_set_hl(
+      'CocHintSign',
+      { fg = colors.diag_hint, bg = signcolumn.bg },
+      { error_lens = config.error_lens.symbol }
+    )
     nvim_set_hl(
       'CocErrorVirtualText',
       { fg = colors.diag_error },
@@ -751,6 +757,7 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.mason then
+    nvim_set_hl('MasonHeader', { link = 'FloatTitle' })
     nvim_set_hl(
       'MasonNormal',
       { fg = colors.base00, bg = colors.base4 },

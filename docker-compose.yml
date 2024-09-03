@@ -2,4 +2,7 @@ services:
   solarized:
     build: .
     volumes:
-      - .:/solarized
+      - solarized:/solarized
+
+volumes:
+  solarized:
