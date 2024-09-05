@@ -32,7 +32,7 @@ M.set_variant = function(opts)
     )
     nvim_set_hl(
       'CursorLineNr',
-      { fg = colors.base1, bg = colors.base02 },
+      { fg = colors.cyan, bg = colors.mix_cyan, bold = true },
       { transparent = config.transparent.enabled }
     )
 
@@ -102,7 +102,7 @@ M.set_variant = function(opts)
     )
     nvim_set_hl(
       'CursorLineNr',
-      { fg = colors.base1, bg = colors.base03 },
+      { fg = colors.yellow, bg = colors.mix_yellow, bold = true },
       { transparent = config.transparent.enabled }
     )
 
@@ -172,7 +172,7 @@ M.set_variant = function(opts)
     )
     nvim_set_hl(
       'CursorLineNr',
-      { fg = colors.base1, bg = colors.base03 },
+      { fg = colors.orange, bg = colors.mix_orange, bold = true },
       { transparent = config.transparent.enabled }
     )
 
@@ -242,7 +242,7 @@ M.set_variant = function(opts)
     )
     nvim_set_hl(
       'CursorLineNr',
-      { fg = colors.base1, bg = colors.base03 },
+      { fg = colors.magenta, bg = colors.mix_magenta, bold = true },
       { transparent = config.transparent.enabled }
     )
 
