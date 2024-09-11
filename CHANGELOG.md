@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.4.0](https://github.com/maxmx03/solarized.nvim/compare/v3.3.0...v3.4.0) (2024-09-06)
+
+
+### Features
+
+* add/remove css, scss queries ([b97faa8](https://github.com/maxmx03/solarized.nvim/commit/b97faa8f679396bd1e23464242d2b5b86dc920c8))
+* cursorlinenr colors ([b4ea862](https://github.com/maxmx03/solarized.nvim/commit/b4ea862ee9e80392c84fcd19e1a4ef7adffcf323))
+* error_lens config ([7cd9784](https://github.com/maxmx03/solarized.nvim/commit/7cd978401e2767fc77fe86bb8fc531869fb2f79e))
+* **variants:** editor looks different on each variant ([ed090c9](https://github.com/maxmx03/solarized.nvim/commit/ed090c9effacf60c2f2939d9a068e31d483ff6c7))
+
+
+### Bug Fixes
+
+* solarized-light lsp property and parameter ([c87752f](https://github.com/maxmx03/solarized.nvim/commit/c87752fd71feba3fc2f473b7fbafaf6c76a70977))
+
 ## [3.3.0](https://github.com/maxmx03/solarized.nvim/compare/v3.2.0...v3.3.0) (2024-08-30)
 
 
