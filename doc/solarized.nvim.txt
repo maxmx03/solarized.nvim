@@ -200,6 +200,7 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
         symbol = false,
       },
       styles = {
+        enabled = true,
         types = {},
         functions = {},
         parameters = {},
@@ -301,7 +302,7 @@ You can also disable all highlight group styles.
 
 >lua
     require('solarized').setup({
-        styles = { enabled = false } },
+        styles = { enabled = false },
     })
 <
 
