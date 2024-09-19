@@ -1,4 +1,4 @@
 fmt:
 	stylua -f ./stylua.toml .
-test:
+test: fmt
 	vusted ./tests
