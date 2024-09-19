@@ -90,6 +90,7 @@ return {
     symbol = false,
   },
   styles = {
+    enabled = true,
     types = {},
     functions = {},
     parameters = {},
