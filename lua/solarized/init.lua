@@ -9,7 +9,7 @@ local M = {}
 M.config = require 'solarized.config'
 
 M.setup = function(config)
-  M.config = vim.tbl_deep_extend('force', M.config, config)
+  M.config = vim.tbl_deep_extend('force', M.config, config or {})
 
   if M.config.styles.enabled == false then
     M.config.styles = {

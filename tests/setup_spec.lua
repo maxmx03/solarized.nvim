@@ -46,4 +46,27 @@ describe('solarized.setup', function()
     assert.True(strings.italic)
     assert.True(comments.bold)
   end)
+
+  test('styles.enabled', function()
+    local solarized = require 'solarized'
+    solarized.setup {
+      styles = {
+        enabled = false,
+        strings = { italic = true },
+        comments = { bold = true },
+      },
+    }
+    vim.cmd 'colorscheme solarized'
+
+    local strings = nvim_get_hl 'String'
+    local comments = nvim_get_hl 'Comment'
+    assert.Nil(strings.italic)
+    assert.Nil(comments.bold)
+  end)
+
+  test('nil config', function()
+    local solarized = require 'solarized'
+    solarized.setup()
+    vim.cmd 'colorscheme solarized'
+  end)
 end)
