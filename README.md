@@ -176,6 +176,7 @@ require('solarized').setup({
     symbol = false,
   },
   styles = {
+    enabled = true,
     types = {},
     functions = {},
     parameters = {},
@@ -274,7 +275,7 @@ require('solarized').setup({
 You can also disable all highlight group styles.
 ```lua
 require('solarized').setup({
-    styles = { enabled = false } },
+    styles = { enabled = false },
 })
 ```
 
