@@ -271,6 +271,13 @@ require('solarized').setup({
 })
 ```
 
+You can also disable all highlight group styles.
+```lua
+require('solarized').setup({
+    styles = { enabled = false } },
+})
+```
+
 ## Config Highlights
 
 The `highlights` config allows you to customize the highlights groups.

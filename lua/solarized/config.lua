@@ -11,6 +11,7 @@
 ---@field enabled? boolean
 
 ---@class solarized.styles
+---@field enabled? boolean
 ---@field types? vim.api.keyset.highlight
 ---@field functions? vim.api.keyset.highlight
 ---@field parameters? vim.api.keyset.highlight

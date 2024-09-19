@@ -10,6 +10,19 @@ M.config = require 'solarized.config'
 
 M.setup = function(config)
   M.config = vim.tbl_deep_extend('force', M.config, config)
+
+  if M.config.styles.enabled == false then
+    M.config.styles = {
+      types = { italic = false, bold = false },
+      functions = { italic = false, bold = false },
+      parameters = { italic = false, bold = false },
+      comments = { italic = false, bold = false },
+      strings = { italic = false, bold = false },
+      keywords = { italic = false, bold = false },
+      variables = { italic = false, bold = false },
+      constants = { italic = false, bold = false },
+    }
+  end
 end
 
 M.load = function()
