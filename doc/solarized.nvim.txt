@@ -1,4 +1,4 @@
-*solarized.nvim.txt*       For NVIM v0.9.4      Last change: 2024 September 18
+*solarized.nvim.txt*       For NVIM v0.9.4      Last change: 2024 September 19
 
 ==============================================================================
 Table of Contents                           *solarized.nvim-table-of-contents*
@@ -294,6 +294,14 @@ The `styles` config allows you to customize the style of a highlight group.
     }
     require('solarized').setup({
         styles = styles,
+    })
+<
+
+You can also disable all highlight group styles.
+
+>lua
+    require('solarized').setup({
+        styles = { enabled = false } },
     })
 <
 
