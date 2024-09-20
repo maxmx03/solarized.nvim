@@ -516,7 +516,7 @@ M.set_highlight = function(colors, config)
     { transparent = config.transparent.normal and config.transparent.enabled }
   )
   nvim_set_hl('NormalFloat', { fg = colors.base0, bg = colors.base04 }, {
-    transparent = config.transparent.normal and config.transparent.enabled,
+    transparent = config.transparent.normalfloat and config.transparent.enabled,
   })
   -- nvim_set_hl('FloatBorder', { fg = colors.base01, bg = colors.base04 }, {
   --   transparent = config.transparent.enabled,
