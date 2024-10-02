@@ -215,6 +215,8 @@ require('solarized').setup({
     alpha = true,
     yanky = true,
     gitgutter = true,
+    mason = true,
+    flash = true,
   },
 })
 
