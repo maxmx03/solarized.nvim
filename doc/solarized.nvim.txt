@@ -239,6 +239,8 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
         alpha = true,
         yanky = true,
         gitgutter = true,
+        mason = true,
+        flash = true,
       },
     })
     
