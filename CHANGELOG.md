@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.5.0](https://github.com/maxmx03/solarized.nvim/compare/v3.4.0...v3.5.0) (2024-10-02)
+
+
+### Features
+
+* add enabled field for styles class ([0ff0f10](https://github.com/maxmx03/solarized.nvim/commit/0ff0f10a31c5d233427d5c2063c72604d271f2f2))
+* hl flash ([952ed14](https://github.com/maxmx03/solarized.nvim/commit/952ed14cf7074326c152e293d4a13ecc1f2f5f44))
+
+
+### Bug Fixes
+
+* markup italic ([6d11c34](https://github.com/maxmx03/solarized.nvim/commit/6d11c340d2cca5c889e5fefedf55dc7c81ad4ecd))
+* normalfloat's transparent config ([e9fd95b](https://github.com/maxmx03/solarized.nvim/commit/e9fd95bd9631882af9d76c3df6004becb5fe3ed9))
+* prevent error when user pass a nil value to setup ([3ae785b](https://github.com/maxmx03/solarized.nvim/commit/3ae785b55367ef25ccb35569915461b391becd75))
+
 ## [3.4.0](https://github.com/maxmx03/solarized.nvim/compare/v3.3.0...v3.4.0) (2024-09-06)
 
 
