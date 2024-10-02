@@ -768,6 +768,12 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('MasonHighlightBlockBold', { fg = colors.mix_blue, bg = colors.blue, bold = true })
   end
 
+  if config.plugins.flash then
+    nvim_set_hl('FlashMatch', { fg = colors.green })
+    nvim_set_hl('FlashLabel', { fg = colors.yellow })
+    nvim_set_hl('FlashCurrent', { fg = colors.magenta })
+  end
+
   if config.on_highlights then
     local highlights = config.on_highlights(colors, color)
 

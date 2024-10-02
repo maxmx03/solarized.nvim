@@ -54,6 +54,7 @@
 ---@field coc? boolean
 ---@field leap? boolean
 ---@field mason? boolean
+---@field flash? boolean
 
 ---@class solarized.error_lens
 ---@field text? boolean
@@ -133,5 +134,6 @@ return {
     yanky = true,
     gitgutter = true,
     mason = true,
+    flash = true,
   },
 }
