@@ -769,7 +769,7 @@ M.set_highlight = function(colors, config)
   end
 
   if config.plugins.flash then
-    nvim_set_hl('FlashMatch', { fg = colors.green })
+    nvim_set_hl('FlashMatch', { fg = colors.base01 })
     nvim_set_hl('FlashLabel', { fg = colors.yellow })
     nvim_set_hl('FlashCurrent', { fg = colors.magenta })
   end
