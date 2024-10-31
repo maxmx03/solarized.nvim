@@ -50,6 +50,29 @@ M.set_highlight = function(colors, config)
   if config.on_colors then
     colors = vim.tbl_extend('force', colors, config.on_colors(colors, color))
   end
+
+  local term = {
+    'base4',
+    'red',
+    'green',
+    'yellow',
+    'magenta',
+    'violet',
+    'cyan',
+    'base1',
+    'base1',
+    'orange',
+    'green',
+    'yellow',
+    'blue',
+    'red',
+    'green',
+    'base1',
+  }
+  for index, key in ipairs(term) do
+    vim.g['terminal_color_' .. index - 1] = colors[key]
+  end
+
   local solarized_light = require 'solarized.variants.solarized-light'
   solarized_light.set_variant {
     config = config,
