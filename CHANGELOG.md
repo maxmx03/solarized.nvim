@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.0](https://github.com/maxmx03/solarized.nvim/compare/v3.5.0...v3.6.0) (2024-10-31)
+
+
+### Features
+
+* term colors ([5d3cbf0](https://github.com/maxmx03/solarized.nvim/commit/5d3cbf03a554785c3e707a532166659801c45ef6))
+
 ## [3.5.0](https://github.com/maxmx03/solarized.nvim/compare/v3.4.0...v3.5.0) (2024-10-02)
 
 
