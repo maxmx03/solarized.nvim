@@ -28,6 +28,7 @@
 ---@field navic? boolean
 ---@field cmp? boolean
 ---@field indentblankline? boolean
+---@field indentmini? boolean
 ---@field neotree? boolean
 ---@field nvimtree? boolean
 ---@field whichkey? boolean
@@ -108,6 +109,7 @@ return {
     navic = true,
     cmp = true,
     indentblankline = true,
+    indentmini = true,
     neotree = true,
     nvimtree = true,
     whichkey = true,

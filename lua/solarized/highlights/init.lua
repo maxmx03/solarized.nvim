@@ -439,6 +439,11 @@ M.set_highlight = function(colors, config)
     nvim_set_hl('IblScope', { fg = colors.base01 })
   end
 
+  if config.plugins.indentmini then
+    nvim_set_hl('IndentLine', { fg = colors.base02 })
+    nvim_set_hl('IndentLineCurrent', { fg = colors.base01 })
+  end
+
   if config.plugins.neotree then
     nvim_set_hl('NeoTreeTitleBar', { fg = colors.cyan, bg = colors.mix_cyan })
     nvim_set_hl(

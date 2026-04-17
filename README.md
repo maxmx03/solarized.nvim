@@ -192,6 +192,7 @@ require('solarized').setup({
     navic = true,
     cmp = true,
     indentblankline = true,
+    indentmini = true,
     neotree = true,
     nvimtree = true,
     whichkey = true,
