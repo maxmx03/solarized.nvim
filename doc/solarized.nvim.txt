@@ -216,6 +216,7 @@ DEFAULT CONFIG                                 *solarized.nvim-default-config*
         navic = true,
         cmp = true,
         indentblankline = true,
+        indentmini = true,
         neotree = true,
         nvimtree = true,
         whichkey = true,

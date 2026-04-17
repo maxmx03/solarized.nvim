@@ -179,6 +179,8 @@
 ---@field CmpItemKindTypeParameter? vim.api.keyset.highlight
 ---@field IblIndent? vim.api.keyset.highlight
 ---@field IblScope? vim.api.keyset.highlight
+---@field IndentLine? vim.api.keyset.highlight
+---@field IndentLineCurrent? vim.api.keyset.highlight
 ---@field NeoTreeTitleBar? vim.api.keyset.highlight
 ---@field NeoTreeNormal? vim.api.keyset.highlight
 ---@field NeoTreeNormalNC? vim.api.keyset.highlight
